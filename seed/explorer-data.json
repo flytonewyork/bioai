@@ -1,0 +1,2278 @@
+{
+ "meta": {
+  "as_of": "2026-10-02",
+  "status": "UNVERIFIED SEED from chat research. Ingest via staging; verifier must re-source every number before present mode.",
+  "origin": "reference/bioai-explorer.html"
+ },
+ "axes": {
+  "layers": [
+   {
+    "name": "Compute",
+    "sub": "chips, infra"
+   },
+   {
+    "name": "Data",
+    "sub": "atlases, assays"
+   },
+   {
+    "name": "Models",
+    "sub": "foundation"
+   },
+   {
+    "name": "Agents",
+    "sub": "AI scientists"
+   },
+   {
+    "name": "Automation",
+    "sub": "robotic labs"
+   },
+   {
+    "name": "Software",
+    "sub": "workflow"
+   },
+   {
+    "name": "Drug assets",
+    "sub": "programs, NewCos, M&A"
+   },
+   {
+    "name": "Trust",
+    "sub": "validation"
+   }
+  ],
+  "stages": [
+   "Concept",
+   "Funded build",
+   "Technical proof",
+   "External validation",
+   "Outcome proof",
+   "At scale"
+  ],
+  "maturity_scale": "0 concept, 1 funded build, 2 technical proof, 3 external validation, 4 outcome proof, 5 at scale (continuous values allowed)"
+ },
+ "vocab": {
+  "capital_source": {
+   "tech": "Tech and generalist VC",
+   "health": "Biotech VC and studios",
+   "pharma": "Pharma and strategic",
+   "front": "Frontier AI lab",
+   "gov": "Government and philanthropy",
+   "pub": "Public markets"
+  },
+  "value_verdict": {
+   "acc": "Value accruing",
+   "unp": "Unpriced",
+   "con": "Contested",
+   "cap": "Capped",
+   "com": "Commoditising",
+   "inc": "Incumbent or public good"
+  },
+  "geography": {
+   "bay": "Bay Area",
+   "boston": "Boston",
+   "london": "London",
+   "china": "China and Hong Kong",
+   "other": "Elsewhere in the US"
+  },
+  "capital_basis": {
+   "raised": "Disclosed capital raised",
+   "committed": "Committed funding",
+   "deal": "Deal value, headline",
+   "cash": "Cash on hand, approx.",
+   "revenue": "2025 software revenue",
+   "burn": "2026 cash burn guidance",
+   "data": "Claimed value of underlying data",
+   "none": "No disclosed capital"
+  }
+ },
+ "bets": [
+  {
+   "id": "nvidia",
+   "name": "Nvidia bio stack",
+   "short": "Nvidia",
+   "layer": 0,
+   "layer_name": "Compute",
+   "capital_source": "pharma",
+   "geography": "bay",
+   "value_verdict": "inc",
+   "kind": "co",
+   "capital_basis": "committed",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [],
+   "narratives": [
+    "frontier"
+   ],
+   "confidence": "Med",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2022.72,
+     "maturity": 2.5,
+     "capital_usd_m": 0,
+     "note": "BioNeMo launched for biology model training",
+     "projected": false
+    },
+    {
+     "t": 2025.5,
+     "maturity": 3.5,
+     "capital_usd_m": 0,
+     "note": "NVentures backs Terray, Superluminal, Proxima, Relation (approx.)",
+     "projected": false
+    },
+    {
+     "t": 2026.03,
+     "maturity": 4,
+     "capital_usd_m": 1000,
+     "note": "Lilly–Nvidia co-innovation lab: $1B over five years",
+     "projected": false
+    },
+    {
+     "t": 2026.37,
+     "maturity": 4,
+     "capital_usd_m": 1000,
+     "note": "Partners with Edison on scientific agent training",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "genesis",
+   "name": "Genesis Mission (DOE)",
+   "short": "Genesis",
+   "layer": 0,
+   "layer_name": "Compute",
+   "capital_source": "gov",
+   "geography": "other",
+   "value_verdict": "con",
+   "kind": "policy",
+   "capital_basis": "committed",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "C1",
+    "C2"
+   ],
+   "narratives": [
+    "auto",
+    "frontier"
+   ],
+   "confidence": "Med",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2025.9,
+     "maturity": 1,
+     "capital_usd_m": 0,
+     "note": "Executive order launches Genesis Mission (24 Nov 2025)",
+     "projected": false
+    },
+    {
+     "t": 2026.15,
+     "maturity": 1.5,
+     "capital_usd_m": 320,
+     "note": "DOE ~$320M first funding; 24 MoUs incl. Anthropic, Nvidia, OpenAI",
+     "projected": false
+    },
+    {
+     "t": 2026.39,
+     "maturity": 1.8,
+     "capital_usd_m": 320,
+     "note": "Reflection AI to supply an open platform to 17 national labs",
+     "projected": false
+    },
+    {
+     "t": 2026.56,
+     "maturity": 2,
+     "capital_usd_m": 320,
+     "note": "Review of national-lab robotic labs due 22 July",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "tahoe",
+   "name": "Tahoe Therapeutics",
+   "short": "Tahoe",
+   "layer": 1,
+   "layer_name": "Data",
+   "capital_source": "tech",
+   "geography": "bay",
+   "value_verdict": "acc",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N1",
+    "N2"
+   ],
+   "narratives": [
+    "vcell"
+   ],
+   "confidence": "Med",
+   "valuations": [
+    {
+     "t": 2025.61,
+     "usd_m": 120
+    }
+   ],
+   "milestones": [
+    {
+     "t": 2022.3,
+     "maturity": 1,
+     "capital_usd_m": 12,
+     "note": "Seed $12M, as Vevo Therapeutics",
+     "projected": false
+    },
+    {
+     "t": 2025.15,
+     "maturity": 2,
+     "capital_usd_m": 12,
+     "note": "Releases Tahoe‑100M openly; ~100k downloads",
+     "projected": false
+    },
+    {
+     "t": 2025.61,
+     "maturity": 2.4,
+     "capital_usd_m": 42,
+     "note": "$30M Series A at $120M; next datasets proprietary, one partner",
+     "projected": false
+    },
+    {
+     "t": 2026.03,
+     "maturity": 2.7,
+     "capital_usd_m": 42,
+     "note": "Joins Arc and Biohub on a 120M‑cell open dataset",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "arc",
+   "name": "Arc Institute virtual cell",
+   "short": "Arc",
+   "layer": 1,
+   "layer_name": "Data",
+   "capital_source": "gov",
+   "geography": "bay",
+   "value_verdict": "inc",
+   "kind": "co",
+   "capital_basis": "committed",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N2"
+   ],
+   "narratives": [
+    "vcell"
+   ],
+   "confidence": "Med",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2021.95,
+     "maturity": 1,
+     "capital_usd_m": 650,
+     "note": "Arc launches with $650M+ committed (institute-wide)",
+     "projected": false
+    },
+    {
+     "t": 2025.45,
+     "maturity": 2.3,
+     "capital_usd_m": 650,
+     "note": "STATE virtual cell model released",
+     "projected": false
+    },
+    {
+     "t": 2025.95,
+     "maturity": 2.5,
+     "capital_usd_m": 650,
+     "note": "Virtual Cell Challenge: 5,000+ registrants; models rarely beat naive baselines",
+     "projected": false
+    },
+    {
+     "t": 2026.03,
+     "maturity": 2.7,
+     "capital_usd_m": 650,
+     "note": "Stack model; 120M‑cell open dataset with Tahoe and Biohub",
+     "projected": false
+    },
+    {
+     "t": 2026.4,
+     "maturity": 2.8,
+     "capital_usd_m": 650,
+     "note": "2026 challenge: zero-shot prediction in unseen cell contexts",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "recursion",
+   "name": "Recursion",
+   "short": "Recursion",
+   "layer": 1,
+   "layer_name": "Data",
+   "capital_source": "pub",
+   "geography": "other",
+   "value_verdict": "con",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": 2021.29,
+   "exit_type": "listed",
+   "theses": [
+    "C3"
+   ],
+   "narratives": [
+    "vcell",
+    "platform"
+   ],
+   "confidence": "Med",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2021.29,
+     "maturity": 3,
+     "capital_usd_m": 1300,
+     "note": "IPO; phenomics data-moat thesis (approx. $1.3B raised to date)",
+     "projected": false
+    },
+    {
+     "t": 2024.88,
+     "maturity": 3.3,
+     "capital_usd_m": 1300,
+     "note": "Merges with Exscientia, $688M all-stock",
+     "projected": false
+    },
+    {
+     "t": 2025.4,
+     "maturity": 3.1,
+     "capital_usd_m": 1300,
+     "note": "Pipeline cut from 11 to 7 programmes; ~20% layoffs",
+     "projected": false
+    },
+    {
+     "t": 2026,
+     "maturity": 3.2,
+     "capital_usd_m": 1300,
+     "note": "Najat Khan becomes CEO",
+     "projected": false
+    },
+    {
+     "t": 2026.6,
+     "maturity": 3.2,
+     "capital_usd_m": 1300,
+     "note": "~$1.7B market cap; Q2 revenue $7.3M; runway into late 2027",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "tunelab",
+   "name": "Lilly TuneLab",
+   "short": "TuneLab",
+   "layer": 1,
+   "layer_name": "Data",
+   "capital_source": "pharma",
+   "geography": "other",
+   "value_verdict": "com",
+   "kind": "program",
+   "capital_basis": "data",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N1"
+   ],
+   "narratives": [
+    "platform"
+   ],
+   "confidence": "High",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2025.7,
+     "maturity": 2.5,
+     "capital_usd_m": 1000,
+     "note": "Lilly launches federated models trained on $1B+ of its data",
+     "projected": false
+    },
+    {
+     "t": 2026.18,
+     "maturity": 3,
+     "capital_usd_m": 1000,
+     "note": "Opening to 1,300+ biotechs through Benchling",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "xaira",
+   "name": "Xaira Therapeutics",
+   "short": "Xaira",
+   "layer": 2,
+   "layer_name": "Models",
+   "capital_source": "health",
+   "geography": "bay",
+   "value_verdict": "con",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N1",
+    "N2"
+   ],
+   "narratives": [
+    "vcell"
+   ],
+   "confidence": "Med",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2024.3,
+     "maturity": 1,
+     "capital_usd_m": 1000,
+     "note": "Launches with $1B+ (ARCH, Foresite, Sequoia)",
+     "projected": false
+    },
+    {
+     "t": 2025.7,
+     "maturity": 2.2,
+     "capital_usd_m": 1000,
+     "note": "Publishes a large public Perturb‑seq atlas (approx.)",
+     "projected": false
+    },
+    {
+     "t": 2026.21,
+     "maturity": 2.5,
+     "capital_usd_m": 1000,
+     "note": "X‑Cell, its first virtual cell model",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "boltz",
+   "name": "Boltz",
+   "short": "Boltz",
+   "layer": 2,
+   "layer_name": "Models",
+   "capital_source": "tech",
+   "geography": "boston",
+   "value_verdict": "com",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N1"
+   ],
+   "narratives": [
+    "platform"
+   ],
+   "confidence": "High",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2024.88,
+     "maturity": 2,
+     "capital_usd_m": 0,
+     "note": "Boltz‑1: fully open AlphaFold 3‑class model from MIT",
+     "projected": false
+    },
+    {
+     "t": 2025.45,
+     "maturity": 2.3,
+     "capital_usd_m": 0,
+     "note": "Boltz‑2 adds binding affinity",
+     "projected": false
+    },
+    {
+     "t": 2025.88,
+     "maturity": 2.4,
+     "capital_usd_m": 0,
+     "note": "BoltzGen: open protein design",
+     "projected": false
+    },
+    {
+     "t": 2026.03,
+     "maturity": 2.9,
+     "capital_usd_m": 28,
+     "note": "Public benefit company, $28M seed; Pfizer exclusive-model deal",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "iso",
+   "name": "Isomorphic Labs",
+   "short": "Isomorphic",
+   "layer": 2,
+   "layer_name": "Models",
+   "capital_source": "tech",
+   "geography": "london",
+   "value_verdict": "con",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N1",
+    "N3",
+    "C1",
+    "C3"
+   ],
+   "narratives": [
+    "frontier",
+    "platform"
+   ],
+   "confidence": "High",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2021.85,
+     "maturity": 1,
+     "capital_usd_m": 0,
+     "note": "Spun out of DeepMind, funded by Alphabet",
+     "projected": false
+    },
+    {
+     "t": 2024.05,
+     "maturity": 3,
+     "capital_usd_m": 0,
+     "note": "Lilly and Novartis deals, ~$82.5M combined upfront",
+     "projected": false
+    },
+    {
+     "t": 2024.36,
+     "maturity": 3.1,
+     "capital_usd_m": 0,
+     "note": "AlphaFold 3 published",
+     "projected": false
+    },
+    {
+     "t": 2025.22,
+     "maturity": 3.1,
+     "capital_usd_m": 600,
+     "note": "First external round: $600M, led by Thrive",
+     "projected": false
+    },
+    {
+     "t": 2026.1,
+     "maturity": 3.2,
+     "capital_usd_m": 600,
+     "note": "IsoDDE report: >2× AlphaFold 3 on hardest cases; J&J deal",
+     "projected": false
+    },
+    {
+     "t": 2026.36,
+     "maturity": 3.2,
+     "capital_usd_m": 2700,
+     "note": "$2.1B Series B; no patient dosed yet",
+     "projected": false
+    },
+    {
+     "t": 2027,
+     "maturity": 3.6,
+     "capital_usd_m": 2700,
+     "note": "Company target: first-in-human by end of 2026",
+     "projected": true
+    }
+   ]
+  },
+  {
+   "id": "chai",
+   "name": "Chai Discovery",
+   "short": "Chai",
+   "layer": 2,
+   "layer_name": "Models",
+   "capital_source": "tech",
+   "geography": "bay",
+   "value_verdict": "con",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N1",
+    "N2",
+    "N3",
+    "C1",
+    "C3"
+   ],
+   "narratives": [
+    "platform"
+   ],
+   "confidence": "High",
+   "valuations": [
+    {
+     "t": 2025.95,
+     "usd_m": 1300
+    },
+    {
+     "t": 2026.54,
+     "usd_m": 3800
+    }
+   ],
+   "milestones": [
+    {
+     "t": 2024.7,
+     "maturity": 1,
+     "capital_usd_m": 30,
+     "note": "Seed $30M (Thrive); Chai‑1 with open weights",
+     "projected": false
+    },
+    {
+     "t": 2025.45,
+     "maturity": 2.4,
+     "capital_usd_m": 30,
+     "note": "Chai‑2: zero-shot antibody design",
+     "projected": false
+    },
+    {
+     "t": 2025.6,
+     "maturity": 2.5,
+     "capital_usd_m": 100,
+     "note": "$70M Series A, led by Menlo",
+     "projected": false
+    },
+    {
+     "t": 2025.95,
+     "maturity": 2.6,
+     "capital_usd_m": 230,
+     "note": "$130M Series B at $1.3B",
+     "projected": false
+    },
+    {
+     "t": 2026.05,
+     "maturity": 3,
+     "capital_usd_m": 230,
+     "note": "Lilly collaboration: a model trained on Lilly data",
+     "projected": false
+    },
+    {
+     "t": 2026.44,
+     "maturity": 3.1,
+     "capital_usd_m": 230,
+     "note": "Pfizer licence: Chai‑3 plus a Pfizer-only model",
+     "projected": false
+    },
+    {
+     "t": 2026.54,
+     "maturity": 3.2,
+     "capital_usd_m": 630,
+     "note": "$400M Series C at $3.8B; Novartis and argenx deals",
+     "projected": false
+    },
+    {
+     "t": 2027.95,
+     "maturity": 3.6,
+     "capital_usd_m": 630,
+     "note": "Investor-stated: first partner clinical candidates by end‑2027",
+     "projected": true
+    }
+   ]
+  },
+  {
+   "id": "openfold",
+   "name": "OpenFold3 pharma consortium",
+   "short": "OpenFold3",
+   "layer": 2,
+   "layer_name": "Models",
+   "capital_source": "pharma",
+   "geography": "other",
+   "value_verdict": "com",
+   "kind": "program",
+   "capital_basis": "none",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N1"
+   ],
+   "narratives": [
+    "platform"
+   ],
+   "confidence": "Med",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2025.8,
+     "maturity": 2.2,
+     "capital_usd_m": 0,
+     "note": "AbbVie, J&J, BMS, Takeda, Astex co-train OpenFold3, federated",
+     "projected": false
+    },
+    {
+     "t": 2026.3,
+     "maturity": 2.4,
+     "capital_usd_m": 0,
+     "note": "Proprietary structures improve co-folding without data leaving each firm",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "edison",
+   "name": "Edison Scientific",
+   "short": "Edison",
+   "layer": 3,
+   "layer_name": "Agents",
+   "capital_source": "tech",
+   "geography": "bay",
+   "value_verdict": "con",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N3",
+    "C1",
+    "C2"
+   ],
+   "narratives": [
+    "auto"
+   ],
+   "confidence": "High",
+   "valuations": [
+    {
+     "t": 2025.96,
+     "usd_m": 250
+    }
+   ],
+   "milestones": [
+    {
+     "t": 2023.84,
+     "maturity": 1,
+     "capital_usd_m": 0,
+     "note": "FutureHouse nonprofit launches",
+     "projected": false
+    },
+    {
+     "t": 2025.35,
+     "maturity": 2.3,
+     "capital_usd_m": 0,
+     "note": "Robin agent’s discovery published in Nature (approx.)",
+     "projected": false
+    },
+    {
+     "t": 2025.85,
+     "maturity": 2.5,
+     "capital_usd_m": 0,
+     "note": "Edison spun out; Kosmos AI scientist launched",
+     "projected": false
+    },
+    {
+     "t": 2025.96,
+     "maturity": 2.6,
+     "capital_usd_m": 70,
+     "note": "$70M seed at ~$250M (Spark, Triatomic)",
+     "projected": false
+    },
+    {
+     "t": 2026.37,
+     "maturity": 2.8,
+     "capital_usd_m": 70,
+     "note": "Claims six months of research per run-day; Nvidia partnership",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "lila",
+   "name": "Lila Sciences",
+   "short": "Lila",
+   "layer": 3,
+   "layer_name": "Agents",
+   "capital_source": "health",
+   "geography": "boston",
+   "value_verdict": "con",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N3",
+    "C2",
+    "C3"
+   ],
+   "narratives": [
+    "auto"
+   ],
+   "confidence": "Med",
+   "valuations": [
+    {
+     "t": 2025.78,
+     "usd_m": 1300
+    },
+    {
+     "t": 2026.42,
+     "usd_m": 8500
+    }
+   ],
+   "milestones": [
+    {
+     "t": 2023.5,
+     "maturity": 0.5,
+     "capital_usd_m": 0,
+     "note": "Built in stealth inside Flagship",
+     "projected": false
+    },
+    {
+     "t": 2025.18,
+     "maturity": 1.5,
+     "capital_usd_m": 200,
+     "note": "Unveiled with a $200M seed",
+     "projected": false
+    },
+    {
+     "t": 2025.78,
+     "maturity": 1.8,
+     "capital_usd_m": 550,
+     "note": "$350M Series A, >$1.3B; 235k sq ft Cambridge lease",
+     "projected": false
+    },
+    {
+     "t": 2026.42,
+     "maturity": 2,
+     "capital_usd_m": 550,
+     "note": "Reported $2B Series B talks at ~$8.5B pre-money, unconfirmed",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "openai",
+   "name": "OpenAI life sciences",
+   "short": "OpenAI",
+   "layer": 3,
+   "layer_name": "Agents",
+   "capital_source": "front",
+   "geography": "bay",
+   "value_verdict": "con",
+   "kind": "co",
+   "capital_basis": "none",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N3",
+    "N5",
+    "C1"
+   ],
+   "narratives": [
+    "frontier"
+   ],
+   "confidence": "High",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2026.29,
+     "maturity": 2.6,
+     "capital_usd_m": 0,
+     "note": "GPT‑Rosalind life-sciences model, research preview",
+     "projected": false
+    },
+    {
+     "t": 2026.46,
+     "maturity": 2.7,
+     "capital_usd_m": 0,
+     "note": "LifeSciBench; Amgen, Moderna and Thermo Fisher as partners",
+     "projected": false
+    },
+    {
+     "t": 2026.69,
+     "maturity": 3,
+     "capital_usd_m": 0,
+     "note": "Rosalind generally available through trusted access",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "anthropic",
+   "name": "Anthropic life sciences",
+   "short": "Anthropic",
+   "layer": 3,
+   "layer_name": "Agents",
+   "capital_source": "front",
+   "geography": "bay",
+   "value_verdict": "con",
+   "kind": "co",
+   "capital_basis": "deal",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N3",
+    "C1"
+   ],
+   "narratives": [
+    "frontier"
+   ],
+   "confidence": "High",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2025.8,
+     "maturity": 2.5,
+     "capital_usd_m": 0,
+     "note": "Claude for Life Sciences launched",
+     "projected": false
+    },
+    {
+     "t": 2026.03,
+     "maturity": 2.7,
+     "capital_usd_m": 0,
+     "note": "Claude for Healthcare launched",
+     "projected": false
+    },
+    {
+     "t": 2026.26,
+     "maturity": 2.9,
+     "capital_usd_m": 400,
+     "note": "Acquires Coefficient Bio, ~$400M in stock",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "coefficient",
+   "name": "Coefficient Bio",
+   "short": "Coefficient",
+   "layer": 3,
+   "layer_name": "Agents",
+   "capital_source": "tech",
+   "geography": "other",
+   "value_verdict": "acc",
+   "kind": "co",
+   "capital_basis": "deal",
+   "listed_or_acquired": 2026.26,
+   "exit_type": "acquired",
+   "theses": [
+    "C1"
+   ],
+   "narratives": [
+    "frontier"
+   ],
+   "confidence": "High",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2025.6,
+     "maturity": 1,
+     "capital_usd_m": 0,
+     "note": "Founded by ex-Genentech Prescient Design team",
+     "projected": false
+    },
+    {
+     "t": 2026.26,
+     "maturity": 1.5,
+     "capital_usd_m": 400,
+     "note": "Acquired by Anthropic, ~$400M stock for ~10 people",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "ginkgo",
+   "name": "Ginkgo Bioworks",
+   "short": "Ginkgo",
+   "layer": 4,
+   "layer_name": "Automation",
+   "capital_source": "pub",
+   "geography": "boston",
+   "value_verdict": "cap",
+   "kind": "co",
+   "capital_basis": "burn",
+   "listed_or_acquired": 2021.7,
+   "exit_type": "listed",
+   "theses": [
+    "C2"
+   ],
+   "narratives": [
+    "auto"
+   ],
+   "confidence": "High",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2021.7,
+     "maturity": 3,
+     "capital_usd_m": 140,
+     "note": "Lists via SPAC as a cell-programming foundry",
+     "projected": false
+    },
+    {
+     "t": 2026.15,
+     "maturity": 3,
+     "capital_usd_m": 140,
+     "note": "Bets 2026 on autonomous labs; burn guidance $125–150M",
+     "projected": false
+    },
+    {
+     "t": 2026.18,
+     "maturity": 3.1,
+     "capital_usd_m": 140,
+     "note": "GPT‑5 runs 36,000 experiments in its cloud lab",
+     "projected": false
+    },
+    {
+     "t": 2026.59,
+     "maturity": 3.2,
+     "capital_usd_m": 140,
+     "note": "Builds autonomous-lab nodes at MIT, Caltech, Northwestern, Maryland",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "automata",
+   "name": "Automata",
+   "short": "Automata",
+   "layer": 4,
+   "layer_name": "Automation",
+   "capital_source": "pharma",
+   "geography": "london",
+   "value_verdict": "con",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "C2"
+   ],
+   "narratives": [
+    "auto"
+   ],
+   "confidence": "Low",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2026.15,
+     "maturity": 2.8,
+     "capital_usd_m": 45,
+     "note": "$45M round; Danaher joins as strategic investor (date approx.)",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "xtalpi",
+   "name": "XtalPi",
+   "short": "XtalPi",
+   "layer": 4,
+   "layer_name": "Automation",
+   "capital_source": "pub",
+   "geography": "china",
+   "value_verdict": "con",
+   "kind": "co",
+   "capital_basis": "cash",
+   "listed_or_acquired": 2024.45,
+   "exit_type": "listed",
+   "theses": [
+    "N4",
+    "C2"
+   ],
+   "narratives": [
+    "china",
+    "auto"
+   ],
+   "confidence": "Med",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2024.45,
+     "maturity": 3,
+     "capital_usd_m": 1200,
+     "note": "Lists in Hong Kong",
+     "projected": false
+    },
+    {
+     "t": 2025.6,
+     "maturity": 3.4,
+     "capital_usd_m": 1200,
+     "note": "DoveTree pipeline deal: ~$6B headline, $51M upfront",
+     "projected": false
+    },
+    {
+     "t": 2026.23,
+     "maturity": 3.5,
+     "capital_usd_m": 1200,
+     "note": "First annual profit (2025), driven by one-off items",
+     "projected": false
+    },
+    {
+     "t": 2026.63,
+     "maturity": 3.5,
+     "capital_usd_m": 1200,
+     "note": "H1 2026 revenue falls; robotics lab line grows 120%+",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "schrodinger",
+   "name": "Schrödinger",
+   "short": "Schrödinger",
+   "layer": 5,
+   "layer_name": "Software",
+   "capital_source": "pub",
+   "geography": "other",
+   "value_verdict": "cap",
+   "kind": "co",
+   "capital_basis": "revenue",
+   "listed_or_acquired": 2021,
+   "exit_type": "listed",
+   "theses": [
+    "N3",
+    "C3"
+   ],
+   "narratives": [
+    "platform"
+   ],
+   "confidence": "High",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2021,
+     "maturity": 4,
+     "capital_usd_m": 200,
+     "note": "Public physics-based design software at scale",
+     "projected": false
+    },
+    {
+     "t": 2025.4,
+     "maturity": 4,
+     "capital_usd_m": 200,
+     "note": "Stops independent clinical development",
+     "projected": false
+    },
+    {
+     "t": 2026.2,
+     "maturity": 4,
+     "capital_usd_m": 200,
+     "note": "Lilly buys Ajax, which Schrödinger co-founded, for $2.3B",
+     "projected": false
+    },
+    {
+     "t": 2026.6,
+     "maturity": 4,
+     "capital_usd_m": 200,
+     "note": "Two customers are 42% of Q2 revenue; ACV guide +10–15%",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "benchling",
+   "name": "Benchling",
+   "short": "Benchling",
+   "layer": 5,
+   "layer_name": "Software",
+   "capital_source": "tech",
+   "geography": "bay",
+   "value_verdict": "con",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N1"
+   ],
+   "narratives": [
+    "platform"
+   ],
+   "confidence": "Low",
+   "valuations": [
+    {
+     "t": 2021.85,
+     "usd_m": 6100
+    }
+   ],
+   "milestones": [
+    {
+     "t": 2021.85,
+     "maturity": 4,
+     "capital_usd_m": 412,
+     "note": "$6.1B at last primary round (~$412M raised)",
+     "projected": false
+    },
+    {
+     "t": 2025.8,
+     "maturity": 4,
+     "capital_usd_m": 412,
+     "note": "Benchling AI puts AlphaFold, Chai‑1 and Boltz‑2 in the workflow",
+     "projected": false
+    },
+    {
+     "t": 2026.18,
+     "maturity": 4.1,
+     "capital_usd_m": 412,
+     "note": "Becomes the distribution channel for Lilly TuneLab",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "openevidence",
+   "name": "OpenEvidence",
+   "short": "OpenEvidence",
+   "layer": 5,
+   "layer_name": "Software",
+   "capital_source": "tech",
+   "geography": "other",
+   "value_verdict": "acc",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [],
+   "narratives": [
+    "adjacent"
+   ],
+   "confidence": "Med",
+   "valuations": [
+    {
+     "t": 2025.15,
+     "usd_m": 1000
+    },
+    {
+     "t": 2025.78,
+     "usd_m": 6000
+    },
+    {
+     "t": 2026.05,
+     "usd_m": 12000
+    },
+    {
+     "t": 2026.55,
+     "usd_m": 20000
+    }
+   ],
+   "milestones": [
+    {
+     "t": 2025.15,
+     "maturity": 3.2,
+     "capital_usd_m": 75,
+     "note": "$75M at ~$1B, from Sequoia",
+     "projected": false
+    },
+    {
+     "t": 2025.78,
+     "maturity": 3.8,
+     "capital_usd_m": 275,
+     "note": "$200M Series C at $6B",
+     "projected": false
+    },
+    {
+     "t": 2026.05,
+     "maturity": 4,
+     "capital_usd_m": 525,
+     "note": "$250M at $12B (Thrive, DST); >$100M annualised revenue in 2025",
+     "projected": false
+    },
+    {
+     "t": 2026.55,
+     "maturity": 4,
+     "capital_usd_m": 525,
+     "note": "Reportedly exploring a round at $20B",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "generate",
+   "name": "Generate Biomedicines",
+   "short": "Generate",
+   "layer": 6,
+   "layer_name": "Drug assets",
+   "capital_source": "health",
+   "geography": "boston",
+   "value_verdict": "acc",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": 2026.16,
+   "exit_type": "listed",
+   "theses": [
+    "N4",
+    "C3"
+   ],
+   "narratives": [
+    "platform"
+   ],
+   "confidence": "Med",
+   "valuations": [
+    {
+     "t": 2026.16,
+     "usd_m": 2040
+    }
+   ],
+   "milestones": [
+    {
+     "t": 2022.05,
+     "maturity": 3,
+     "capital_usd_m": 812,
+     "note": "Amgen collaboration; ~$0.8B raised before IPO (approx.)",
+     "projected": false
+    },
+    {
+     "t": 2025.5,
+     "maturity": 3.8,
+     "capital_usd_m": 812,
+     "note": "GB‑0895 in Phase 3 for severe asthma (date approx.)",
+     "projected": false
+    },
+    {
+     "t": 2026.16,
+     "maturity": 4,
+     "capital_usd_m": 1212,
+     "note": "$400M IPO at $2.04B; falls 21% on day one",
+     "projected": false
+    },
+    {
+     "t": 2026.7,
+     "maturity": 4,
+     "capital_usd_m": 1212,
+     "note": "Trades ~$17, just above its $16 IPO price",
+     "projected": false
+    },
+    {
+     "t": 2028,
+     "maturity": 4.6,
+     "capital_usd_m": 1212,
+     "note": "Analyst-cited launch target around 2028",
+     "projected": true
+    }
+   ]
+  },
+  {
+   "id": "insilico",
+   "name": "Insilico Medicine",
+   "short": "Insilico",
+   "layer": 6,
+   "layer_name": "Drug assets",
+   "capital_source": "pharma",
+   "geography": "china",
+   "value_verdict": "acc",
+   "kind": "co",
+   "capital_basis": "deal",
+   "listed_or_acquired": 2026,
+   "exit_type": "listed",
+   "theses": [
+    "N4"
+   ],
+   "narratives": [
+    "china",
+    "platform"
+   ],
+   "confidence": "Med",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2021.5,
+     "maturity": 2.6,
+     "capital_usd_m": 0,
+     "note": "AI-discovered TNIK inhibitor enters Phase 1 (approx.)",
+     "projected": false
+    },
+    {
+     "t": 2023.5,
+     "maturity": 3.2,
+     "capital_usd_m": 0,
+     "note": "Phase 2a in IPF begins (approx.)",
+     "projected": false
+    },
+    {
+     "t": 2024.87,
+     "maturity": 3.8,
+     "capital_usd_m": 0,
+     "note": "Positive Phase 2a topline",
+     "projected": false
+    },
+    {
+     "t": 2025.45,
+     "maturity": 4,
+     "capital_usd_m": 0,
+     "note": "Phase 2a published in Nature Medicine",
+     "projected": false
+    },
+    {
+     "t": 2026.24,
+     "maturity": 4.1,
+     "capital_usd_m": 115,
+     "note": "Lilly deal: $115M upfront, ~$2.75B headline",
+     "projected": false
+    },
+    {
+     "t": 2026.51,
+     "maturity": 4.2,
+     "capital_usd_m": 175,
+     "note": "Takeda ~$60M near-term; 320-patient Phase 3 starts in China",
+     "projected": false
+    },
+    {
+     "t": 2029.9,
+     "maturity": 4.7,
+     "capital_usd_m": 175,
+     "note": "Company timeline: Phase 3 results around end of 2029",
+     "projected": true
+    }
+   ]
+  },
+  {
+   "id": "earendil",
+   "name": "Earendil Labs",
+   "short": "Earendil",
+   "layer": 6,
+   "layer_name": "Drug assets",
+   "capital_source": "tech",
+   "geography": "china",
+   "value_verdict": "acc",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N4"
+   ],
+   "narratives": [
+    "china"
+   ],
+   "confidence": "High",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2025.27,
+     "maturity": 3,
+     "capital_usd_m": 0,
+     "note": "Sanofi worldwide licence for two bispecifics",
+     "projected": false
+    },
+    {
+     "t": 2026.04,
+     "maturity": 3.1,
+     "capital_usd_m": 0,
+     "note": "Broader Sanofi platform collaboration",
+     "projected": false
+    },
+    {
+     "t": 2026.22,
+     "maturity": 3.3,
+     "capital_usd_m": 787,
+     "note": "$787M (Dimension, DST, Sanofi, Hillhouse–Pfizer fund); IBD asset Phase 2-ready",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "kailera",
+   "name": "Kailera Therapeutics",
+   "short": "Kailera",
+   "layer": 6,
+   "layer_name": "Drug assets",
+   "capital_source": "health",
+   "geography": "boston",
+   "value_verdict": "acc",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": 2026.3,
+   "exit_type": "listed",
+   "theses": [
+    "N4"
+   ],
+   "narratives": [
+    "obesity",
+    "china"
+   ],
+   "confidence": "Med",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2024.38,
+     "maturity": 3,
+     "capital_usd_m": 400,
+     "note": "Launches on licensed Hengrui obesity assets, ~$400M (approx.)",
+     "projected": false
+    },
+    {
+     "t": 2025.7,
+     "maturity": 3.6,
+     "capital_usd_m": 1000,
+     "note": "$600M Series B (date approx.)",
+     "projected": false
+    },
+    {
+     "t": 2026.3,
+     "maturity": 4,
+     "capital_usd_m": 1719,
+     "note": "$718.8M IPO, among the largest biotech debuts on record",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "metsera",
+   "name": "Metsera",
+   "short": "Metsera",
+   "layer": 6,
+   "layer_name": "Drug assets",
+   "capital_source": "pharma",
+   "geography": "other",
+   "value_verdict": "acc",
+   "kind": "co",
+   "capital_basis": "deal",
+   "listed_or_acquired": 2025.85,
+   "exit_type": "acquired",
+   "theses": [],
+   "narratives": [
+    "obesity"
+   ],
+   "confidence": "High",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2025.85,
+     "maturity": 4,
+     "capital_usd_m": 10000,
+     "note": "Pfizer wins a bidding war with Novo, up to $10B",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "kelonia",
+   "name": "Kelonia Therapeutics",
+   "short": "Kelonia",
+   "layer": 6,
+   "layer_name": "Drug assets",
+   "capital_source": "pharma",
+   "geography": "boston",
+   "value_verdict": "acc",
+   "kind": "co",
+   "capital_basis": "deal",
+   "listed_or_acquired": 2026.3,
+   "exit_type": "acquired",
+   "theses": [],
+   "narratives": [
+    "carT"
+   ],
+   "confidence": "High",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2026.3,
+     "maturity": 3.2,
+     "capital_usd_m": 7000,
+     "note": "Lilly acquires the in vivo CAR‑T developer, up to $7B",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "orna",
+   "name": "Orna Therapeutics",
+   "short": "Orna",
+   "layer": 6,
+   "layer_name": "Drug assets",
+   "capital_source": "pharma",
+   "geography": "boston",
+   "value_verdict": "acc",
+   "kind": "co",
+   "capital_basis": "deal",
+   "listed_or_acquired": 2026.1,
+   "exit_type": "acquired",
+   "theses": [],
+   "narratives": [
+    "carT"
+   ],
+   "confidence": "High",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2026.1,
+     "maturity": 2.2,
+     "capital_usd_m": 2400,
+     "note": "Lilly acquires preclinical in vivo CAR‑T, up to $2.4B",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "orbital",
+   "name": "Orbital Therapeutics",
+   "short": "Orbital",
+   "layer": 6,
+   "layer_name": "Drug assets",
+   "capital_source": "pharma",
+   "geography": "boston",
+   "value_verdict": "acc",
+   "kind": "co",
+   "capital_basis": "deal",
+   "listed_or_acquired": 2025.8,
+   "exit_type": "acquired",
+   "theses": [],
+   "narratives": [
+    "carT"
+   ],
+   "confidence": "Med",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2025.8,
+     "maturity": 2.2,
+     "capital_usd_m": 1500,
+     "note": "BMS acquires preclinical in vivo CAR‑T, $1.5B",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "ajax",
+   "name": "Ajax Therapeutics",
+   "short": "Ajax",
+   "layer": 6,
+   "layer_name": "Drug assets",
+   "capital_source": "pharma",
+   "geography": "other",
+   "value_verdict": "acc",
+   "kind": "co",
+   "capital_basis": "deal",
+   "listed_or_acquired": 2026.2,
+   "exit_type": "acquired",
+   "theses": [
+    "N3"
+   ],
+   "narratives": [
+    "platform"
+   ],
+   "confidence": "Med",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2026.2,
+     "maturity": 3.2,
+     "capital_usd_m": 2300,
+     "note": "Lilly acquires the Schrödinger co-founded company, $2.3B",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "chinaflow",
+   "name": "China out-licensing flow",
+   "short": "China licensing",
+   "layer": 6,
+   "layer_name": "Drug assets",
+   "capital_source": "pharma",
+   "geography": "china",
+   "value_verdict": "acc",
+   "kind": "flow",
+   "capital_basis": "deal",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N4"
+   ],
+   "narratives": [
+    "china",
+    "obesity"
+   ],
+   "confidence": "High",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2024.5,
+     "maturity": 3.3,
+     "capital_usd_m": 51900,
+     "note": "Headline out-licensing: $51.9B across 94 deals",
+     "projected": false
+    },
+    {
+     "t": 2025.5,
+     "maturity": 3.5,
+     "capital_usd_m": 135700,
+     "note": "$135.7B across 157 deals; 40% of big-pharma in-licensed assets",
+     "projected": false
+    },
+    {
+     "t": 2026.5,
+     "maturity": 3.6,
+     "capital_usd_m": 135700,
+     "note": "H1 2026 alone: $92B; BINSA would add federal review (filed 7 Aug)",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "newlimit",
+   "name": "NewLimit",
+   "short": "NewLimit",
+   "layer": 6,
+   "layer_name": "Drug assets",
+   "capital_source": "tech",
+   "geography": "bay",
+   "value_verdict": "con",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [],
+   "narratives": [
+    "longevity"
+   ],
+   "confidence": "Med",
+   "valuations": [
+    {
+     "t": 2026.42,
+     "usd_m": 3100
+    }
+   ],
+   "milestones": [
+    {
+     "t": 2023.4,
+     "maturity": 1.5,
+     "capital_usd_m": 40,
+     "note": "$40M Series A",
+     "projected": false
+    },
+    {
+     "t": 2025.35,
+     "maturity": 2,
+     "capital_usd_m": 170,
+     "note": "$130M Series B, led by Kleiner Perkins",
+     "projected": false
+    },
+    {
+     "t": 2026.42,
+     "maturity": 2.3,
+     "capital_usd_m": 605,
+     "note": "$435M Series C at $3.1B; first human trial planned",
+     "projected": false
+    },
+    {
+     "t": 2027,
+     "maturity": 3,
+     "capital_usd_m": 605,
+     "note": "Company plan: first human trial in liver disease",
+     "projected": true
+    }
+   ]
+  },
+  {
+   "id": "retro",
+   "name": "Retro Biosciences",
+   "short": "Retro",
+   "layer": 6,
+   "layer_name": "Drug assets",
+   "capital_source": "tech",
+   "geography": "bay",
+   "value_verdict": "con",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [],
+   "narratives": [
+    "longevity"
+   ],
+   "confidence": "Med",
+   "valuations": [
+    {
+     "t": 2026.37,
+     "usd_m": 1800
+    }
+   ],
+   "milestones": [
+    {
+     "t": 2023.3,
+     "maturity": 1.5,
+     "capital_usd_m": 180,
+     "note": "$180M from Sam Altman (approx.)",
+     "projected": false
+    },
+    {
+     "t": 2026.37,
+     "maturity": 3,
+     "capital_usd_m": 180,
+     "note": "New round at $1.8B pre-money; clinical-stage autophagy programme",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "altos",
+   "name": "Altos Labs",
+   "short": "Altos",
+   "layer": 6,
+   "layer_name": "Drug assets",
+   "capital_source": "tech",
+   "geography": "bay",
+   "value_verdict": "con",
+   "kind": "co",
+   "capital_basis": "raised",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [],
+   "narratives": [
+    "longevity"
+   ],
+   "confidence": "Low",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2022.05,
+     "maturity": 1,
+     "capital_usd_m": 3000,
+     "note": "Launches with ~$3B, a record start-up financing",
+     "projected": false
+    },
+    {
+     "t": 2026.5,
+     "maturity": 2,
+     "capital_usd_m": 3000,
+     "note": "Reported total funding near $6B (unverified); no registered rejuvenation trial",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "fda_ai",
+   "name": "FDA AI credibility framework",
+   "short": "FDA AI rules",
+   "layer": 7,
+   "layer_name": "Trust",
+   "capital_source": "gov",
+   "geography": "other",
+   "value_verdict": "unp",
+   "kind": "policy",
+   "capital_basis": "none",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N5"
+   ],
+   "narratives": [],
+   "confidence": "High",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2025.02,
+     "maturity": 1.5,
+     "capital_usd_m": 0,
+     "note": "Draft guidance: seven-step AI credibility framework",
+     "projected": false
+    },
+    {
+     "t": 2026.03,
+     "maturity": 2,
+     "capital_usd_m": 0,
+     "note": "FDA and EMA publish joint Good AI Practice principles",
+     "projected": false
+    },
+    {
+     "t": 2026.7,
+     "maturity": 2,
+     "capital_usd_m": 0,
+     "note": "Credibility guidance still draft",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "biosec",
+   "name": "Biosecurity and synthesis screening",
+   "short": "Biosecurity",
+   "layer": 7,
+   "layer_name": "Trust",
+   "capital_source": "gov",
+   "geography": "other",
+   "value_verdict": "unp",
+   "kind": "policy",
+   "capital_basis": "none",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N5"
+   ],
+   "narratives": [
+    "frontier"
+   ],
+   "confidence": "High",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2025.36,
+     "maturity": 1,
+     "capital_usd_m": 0,
+     "note": "Executive order on biological research safety (EO 14292)",
+     "projected": false
+    },
+    {
+     "t": 2026.08,
+     "maturity": 1.4,
+     "capital_usd_m": 0,
+     "note": "S.3741 would mandate DNA synthesis screening",
+     "projected": false
+    },
+    {
+     "t": 2026.13,
+     "maturity": 1.5,
+     "capital_usd_m": 0,
+     "note": "Epoch: 3.2% of 1,196 bio AI models document safeguards",
+     "projected": false
+    },
+    {
+     "t": 2026.45,
+     "maturity": 1.8,
+     "capital_usd_m": 0,
+     "note": "OpenAI, DeepMind, Anthropic and Microsoft back mandatory screening",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "evals",
+   "name": "Benchmarks and evaluations",
+   "short": "Evals",
+   "layer": 7,
+   "layer_name": "Trust",
+   "capital_source": "gov",
+   "geography": "bay",
+   "value_verdict": "unp",
+   "kind": "program",
+   "capital_basis": "none",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N5"
+   ],
+   "narratives": [
+    "vcell"
+   ],
+   "confidence": "Med",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2024.55,
+     "maturity": 1.5,
+     "capital_usd_m": 0,
+     "note": "LAB-Bench biology research benchmark (FutureHouse)",
+     "projected": false
+    },
+    {
+     "t": 2025.95,
+     "maturity": 2.2,
+     "capital_usd_m": 0,
+     "note": "Virtual Cell Challenge exposes weak baselines",
+     "projected": false
+    },
+    {
+     "t": 2026.46,
+     "maturity": 2.4,
+     "capital_usd_m": 0,
+     "note": "LifeSciBench and LAB-Bench 2: model builders also set the tests",
+     "projected": false
+    }
+   ]
+  },
+  {
+   "id": "gating",
+   "name": "Trusted-access gating",
+   "short": "Gating",
+   "layer": 7,
+   "layer_name": "Trust",
+   "capital_source": "front",
+   "geography": "bay",
+   "value_verdict": "unp",
+   "kind": "policy",
+   "capital_basis": "none",
+   "listed_or_acquired": null,
+   "exit_type": null,
+   "theses": [
+    "N5",
+    "C1"
+   ],
+   "narratives": [
+    "frontier"
+   ],
+   "confidence": "High",
+   "valuations": [],
+   "milestones": [
+    {
+     "t": 2026.29,
+     "maturity": 2,
+     "capital_usd_m": 0,
+     "note": "GPT‑Rosalind ships only through trusted access",
+     "projected": false
+    },
+    {
+     "t": 2026.44,
+     "maturity": 2.1,
+     "capital_usd_m": 0,
+     "note": "US export controls pause Anthropic’s newest models, 12 Jun to 1 Jul",
+     "projected": false
+    },
+    {
+     "t": 2026.69,
+     "maturity": 2.3,
+     "capital_usd_m": 0,
+     "note": "Rosalind general availability, still through trusted access",
+     "projected": false
+    }
+   ]
+  }
+ ],
+ "value_out_events": [
+  {
+   "t": 2024.05,
+   "layer": 2,
+   "m": 3,
+   "v": 82.5,
+   "id": "iso",
+   "label": "Isomorphic upfronts from Lilly and Novartis"
+  },
+  {
+   "t": 2025.6,
+   "layer": 4,
+   "m": 3.4,
+   "v": 51,
+   "id": "xtalpi",
+   "label": "XtalPi upfront from DoveTree"
+  },
+  {
+   "t": 2025.8,
+   "layer": 6,
+   "m": 2.2,
+   "v": 1500,
+   "id": "orbital",
+   "label": "BMS acquires Orbital"
+  },
+  {
+   "t": 2025.85,
+   "layer": 6,
+   "m": 4,
+   "v": 10000,
+   "id": "metsera",
+   "label": "Pfizer acquires Metsera, up to"
+  },
+  {
+   "t": 2026.1,
+   "layer": 6,
+   "m": 2.2,
+   "v": 2400,
+   "id": "orna",
+   "label": "Lilly acquires Orna, up to"
+  },
+  {
+   "t": 2026.16,
+   "layer": 6,
+   "m": 4,
+   "v": 400,
+   "id": "generate",
+   "label": "Generate IPO proceeds"
+  },
+  {
+   "t": 2026.2,
+   "layer": 6,
+   "m": 3.2,
+   "v": 2300,
+   "id": "ajax",
+   "label": "Lilly acquires Ajax"
+  },
+  {
+   "t": 2026.24,
+   "layer": 6,
+   "m": 4.1,
+   "v": 115,
+   "id": "insilico",
+   "label": "Insilico upfront from Lilly"
+  },
+  {
+   "t": 2026.26,
+   "layer": 3,
+   "m": 1.5,
+   "v": 400,
+   "id": "coefficient",
+   "label": "Anthropic acquires Coefficient Bio"
+  },
+  {
+   "t": 2026.3,
+   "layer": 6,
+   "m": 4,
+   "v": 718.8,
+   "id": "kailera",
+   "label": "Kailera IPO proceeds"
+  },
+  {
+   "t": 2026.3,
+   "layer": 6,
+   "m": 3.2,
+   "v": 7000,
+   "id": "kelonia",
+   "label": "Lilly acquires Kelonia, up to"
+  },
+  {
+   "t": 2026.3,
+   "layer": 2,
+   "m": 3,
+   "v": 50,
+   "theses": [
+    "N1",
+    "N3"
+   ],
+   "narr": [
+    "platform",
+    "vcell"
+   ],
+   "label": "Noetik upfront from GSK, subscription model (date approx.)"
+  },
+  {
+   "t": 2026.51,
+   "layer": 6,
+   "m": 4.2,
+   "v": 60,
+   "id": "insilico",
+   "label": "Insilico near-term payments from Takeda"
+  }
+ ],
+ "lenses": {
+  "N1": {
+   "t": "Rent the model, own the data",
+   "stage": "Consensus forming",
+   "claim": "Model access is becoming a commodity input. Durable value sits with whoever owns data a model can’t get elsewhere: pharma, federated pools and closed-loop data generators.",
+   "ev": [
+    "Chai and Boltz build pharma-only models trained on that pharma’s own data",
+    "Lilly opens TuneLab models to 1,300+ biotechs through Benchling",
+    "Five pharmas co-train OpenFold3 without exposing their structures"
+   ],
+   "counter": "Isomorphic’s proprietary engine more than doubles AlphaFold 3 on the hardest cases.",
+   "fals": "A closed-model company shows a sustained clinical-output edge using only public data."
+  },
+  "N2": {
+   "t": "Data generators are mispriced",
+   "stage": "Non-consensus",
+   "claim": "The industry calls data the bottleneck, then prices the companies generating it like service shops.",
+   "ev": [
+    "Tahoe at $120M (2025) against Chai at $3.8B",
+    "Tahoe‑100M became a training base for major AI labs",
+    "Virtual Cell Challenge models rarely beat naive baselines"
+   ],
+   "counter": "Data generation is capex-heavy, and open datasets from Arc and Biohub erode exclusivity.",
+   "fals": "Open datasets close the performance gap with proprietary ones."
+  },
+  "N3": {
+   "t": "Software budget or labour budget",
+   "stage": "Debated",
+   "claim": "If pharma pays from software budgets, model companies meet Schrödinger’s ~$200M ceiling. If agents are priced against scientist headcount, today’s valuations can work.",
+   "ev": [
+    "Schrödinger: $199.5M of 2025 software revenue, 10–15% ACV growth guide",
+    "Its largest value event was equity: Lilly bought Ajax for $2.3B",
+    "Edison claims six months of research per day; frontier labs ship bio models"
+   ],
+   "counter": "AI isn’t yet cited as a cause of biotech layoffs, so labour substitution is unproven.",
+   "fals": "A model company reports $500M+ of software-like revenue without royalties."
+  },
+  "N4": {
+   "t": "Cash lands on assets, China runs the factory",
+   "stage": "Consensus on assets, not on China",
+   "claim": "Exits flow to clinical assets. The winning structure is a platform that works as an asset factory, and China has already industrialised that.",
+   "ev": [
+    "Q2 2026 set a record for VC-backed exit value, almost all asset deals",
+    "Generate was priced on its Phase 3 antibody, not its platform",
+    "Earendil raised $787M; China supplied 40% of in-licensed assets in 2025"
+   ],
+   "counter": "BINSA could put China licensing under mandatory federal review.",
+   "fals": "AI platforms get acquired at platform valuations without assets."
+  },
+  "N5": {
+   "t": "Trust is the unpriced layer",
+   "stage": "Pre-consensus",
+   "claim": "Validation, regulatory credibility and biosecurity gating are becoming mandatory, with almost no capital behind them.",
+   "ev": [
+    "FDA AI credibility guidance is still draft; FDA–EMA principles came in January",
+    "Bio-capable frontier models ship through trusted access",
+    "S.3741 would mandate DNA synthesis screening"
+   ],
+   "counter": "Compliance markets are small, and CROs or the Big Four may capture them.",
+   "fals": "Validation stays in-house at pharma and model builders."
+  },
+  "C1": {
+   "t": "Frontier labs absorb the specialists",
+   "stage": "Contrarian, built with Claude, weigh accordingly",
+   "claim": "General-purpose AI labs become the platform winners, and specialist model companies become talent acquisitions.",
+   "ev": [
+    "Anthropic paid ~$400M for a ~10-person, 8-month-old team",
+    "OpenAI made GPT‑Rosalind generally available to pharma",
+    "Both labs are Genesis Mission partners"
+   ],
+   "counter": "Pharma trusts specialists, and general labs avoid drug liability.",
+   "fals": "Specialists keep winning head-to-head on design benchmarks and pharma deals."
+  },
+  "C2": {
+   "t": "Autonomous labs are state infrastructure",
+   "stage": "Contrarian",
+   "claim": "Robotic science factories are a capex trap for venture money but viable when governments are the buyer.",
+   "ev": [
+    "Ginkgo guides $125–150M of burn while pivoting to autonomous labs",
+    "Genesis Mission funds robotic labs across 17 national labs",
+    "XtalPi’s robotics line grew 120%+ in H1 2026"
+   ],
+   "counter": "Lila’s reported ~$8.5B pre-money is the opposite bet.",
+   "fals": "A private autonomous lab reaches positive unit economics on pharma demand."
+  },
+  "C3": {
+   "t": "This is 2021 techbio, rebranded",
+   "stage": "Contrarian",
+   "claim": "Foundation-model valuations repeat the 2021 platform thesis, and public markets have already re-priced that cohort.",
+   "ev": [
+    "Recursion trades near $1.7B after IPO, merger and pipeline cuts",
+    "Chai at $3.8B; Lila at a reported ~$8.5B pre-money",
+    "Schrödinger retreated from independent clinical development"
+   ],
+   "counter": "Hit rates really improved: Pfizer reported ~20% for Chai‑2.",
+   "fals": "The 2024–26 cohort’s first-in-human output beats the 2021 cohort’s."
+  },
+  "china": {
+   "t": "China asset flow",
+   "narr": true,
+   "claim": "China supplied 40% of big-pharma in-licensed assets in 2025, with $135.7B of headline licensing. H1 2026 reached $92B. BINSA would add federal review."
+  },
+  "frontier": {
+   "t": "Frontier labs in biology",
+   "narr": true,
+   "claim": "OpenAI, Anthropic and Google’s Isomorphic now sell or build directly in biology, while gating access to bio-capable models."
+  },
+  "vcell": {
+   "t": "Virtual cell and data",
+   "narr": true,
+   "claim": "Perturbation data, open atlases and the first virtual cell models. Benchmarks show models still struggle to beat simple baselines."
+  },
+  "auto": {
+   "t": "Autonomous labs",
+   "narr": true,
+   "claim": "AI scientists plus robotic labs, from venture bets like Lila to public infrastructure like Genesis."
+  },
+  "platform": {
+   "t": "Platform versus asset",
+   "narr": true,
+   "claim": "Where platforms sell software, where they own assets, and which of the two markets pays for."
+  },
+  "carT": {
+   "t": "In vivo CAR‑T",
+   "narr": true,
+   "claim": "Pharma paid $1.5B to $7B for in vivo cell therapy, including preclinical programmes, ahead of autoimmune human data."
+  },
+  "obesity": {
+   "t": "Obesity",
+   "narr": true,
+   "claim": "The incretin market keeps buying: Pfizer–Metsera up to $10B, China-sourced NewCos like Kailera, and AstraZeneca–CSPC."
+  },
+  "longevity": {
+   "t": "Longevity",
+   "narr": true,
+   "claim": "Tech-founder money funding preclinical rejuvenation at multi-billion valuations, with first human trials only now starting."
+  },
+  "adjacent": {
+   "t": "Adjacent clinical AI",
+   "narr": true,
+   "claim": "Clinician-facing AI with real revenue, priced far above most bio-AI platforms, funded by the same lead investors."
+  }
+ }
+}

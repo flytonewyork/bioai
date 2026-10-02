@@ -1,0 +1,823 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bio×AI capital and value explorer</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Instrument+Sans:ital,wdth,wght@0,75..100,400..700;1,75..100,400..700&display=swap">
+<style>
+:root{
+  --paper:#F1F4F5;--panel:#FFFFFF;--ink:#132029;--ink-2:#475864;--ink-3:#6E7F89;
+  --well:#FBFCFC;--line:#CBD5DA;--line-2:#A9B7BF;--halo:#FBFCFC;
+  --cap:#2F49C8;--val:#C78800;--focus:#2F49C8;
+  --s-tech:#D2456B;--s-health:#138A6D;--s-pharma:#6A4FCF;--s-sov:#D9762F;--s-front:#0B86A8;--s-gov:#6B8A2E;--s-pub:#7C838D;
+  --v-acc:#1F9D55;--v-unp:#0B86A8;--v-con:#A35BB8;--v-cap:#D9762F;--v-com:#C2413B;--v-inc:#7C838D;
+  --font:"Instrument Sans",system-ui,-apple-system,"Segoe UI",Roboto,"Helvetica Neue",Arial,sans-serif;
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --paper:#0C1317;--panel:#121B21;--ink:#E3EBEE;--ink-2:#A8B6BE;--ink-3:#8293A0;
+    --well:#0F171C;--line:#26353D;--line-2:#3A4C56;--halo:#0F171C;
+    --cap:#8C9CFF;--val:#F0BD45;--focus:#8C9CFF;
+    --s-tech:#F07896;--s-health:#3CC79F;--s-pharma:#A08CF5;--s-sov:#F0A066;--s-front:#4FC3E3;--s-gov:#A6C964;--s-pub:#A9B0B9;
+    --v-acc:#4CD38A;--v-unp:#4FC3E3;--v-con:#CE8FE0;--v-cap:#F0A066;--v-com:#EE7A72;--v-inc:#A9B0B9;
+  }
+}
+:root[data-theme="dark"]{
+  --paper:#0C1317;--panel:#121B21;--ink:#E3EBEE;--ink-2:#A8B6BE;--ink-3:#8293A0;
+  --well:#0F171C;--line:#26353D;--line-2:#3A4C56;--halo:#0F171C;
+  --cap:#8C9CFF;--val:#F0BD45;--focus:#8C9CFF;
+  --s-tech:#F07896;--s-health:#3CC79F;--s-pharma:#A08CF5;--s-sov:#F0A066;--s-front:#4FC3E3;--s-gov:#A6C964;--s-pub:#A9B0B9;
+  --v-acc:#4CD38A;--v-unp:#4FC3E3;--v-con:#CE8FE0;--v-cap:#F0A066;--v-com:#EE7A72;--v-inc:#A9B0B9;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--font);font-size:16px;line-height:1.55;-webkit-font-smoothing:antialiased;font-variant-numeric:tabular-nums}
+.wrap{max-width:1260px;margin:0 auto;padding:28px 20px 48px}
+h1{font-stretch:76%;font-weight:640;font-size:clamp(32px,5.4vw,58px);line-height:1.0;letter-spacing:-0.012em;margin:0 0 12px;max-width:17ch}
+.dek{color:var(--ink-2);max-width:66ch;margin:0 0 22px;font-size:17px;line-height:1.6}
+.console{display:flex;flex-wrap:wrap;gap:16px 22px;align-items:flex-end;padding:16px 0 18px;border-top:1px solid var(--line);border-bottom:1px solid var(--line);margin-bottom:18px}
+.ctl{display:flex;flex-direction:column;gap:6px;min-width:0}
+.lab{font-size:13px;color:var(--ink-2)}
+select,button{font:inherit;font-size:14px;color:var(--ink);background:var(--panel);border:1px solid var(--line-2);border-radius:8px;padding:6px 11px;min-height:36px}
+button{cursor:pointer}
+button:hover{border-color:var(--ink-3)}
+button[aria-pressed="true"]{background:var(--ink);color:var(--paper);border-color:var(--ink)}
+.seg{display:inline-flex;border:1px solid var(--line-2);border-radius:8px;overflow:hidden}
+.seg button{border:0;border-radius:0;border-right:1px solid var(--line-2)}
+.seg button:last-child{border-right:0}
+.time{flex:1 1 420px}
+.timebar{display:flex;gap:12px;align-items:center}
+.play{width:40px;min-width:40px;padding:0;display:inline-flex;align-items:center;justify-content:center}
+.yr{font-stretch:78%;font-weight:620;font-size:24px;min-width:104px;line-height:1}
+.sl{position:relative;flex:1;min-width:160px}
+input[type=range]{width:100%;accent-color:var(--cap);margin:0}
+.ticks{position:relative;height:16px;font-size:11.5px;color:var(--ink-3)}
+.ticks span{position:absolute;transform:translateX(-50%);white-space:nowrap}
+.ticker{font-size:13.5px;color:var(--ink-2);min-height:21px;margin-top:4px;max-width:70ch;overflow:hidden;text-overflow:ellipsis;white-space:nowrap}
+.bench{display:grid;grid-template-columns:minmax(0,1fr) 330px;gap:22px;align-items:start}
+@media (max-width:1000px){.bench{grid-template-columns:minmax(0,1fr)}}
+.platebox{overflow-x:auto;-webkit-overflow-scrolling:touch;position:relative}
+.plateinner{min-width:790px;position:relative}
+svg{display:block;width:100%;height:auto}
+.legend{font-size:13px;color:var(--ink-2);margin:12px 0 0}
+.lrow{display:flex;flex-wrap:wrap;gap:6px 16px;align-items:center;margin-bottom:6px}
+.hint{display:none;font-size:13px;color:var(--ink-3);margin:0 0 6px}
+@media (max-width:820px){.hint{display:block}}
+.sw{display:inline-block;width:10px;height:10px;border-radius:50%;margin-right:6px;vertical-align:-1px}
+.readout{background:var(--panel);border:1px solid var(--line);border-radius:16px;padding:18px 20px;position:sticky;top:calc(env(safe-area-inset-top,0px) + 14px)}
+@media (max-width:1000px){.readout{position:static}}
+.readout h2{font-stretch:80%;font-weight:620;font-size:22px;line-height:1.15;margin:0 0 6px}
+.readout h3{font-size:14px;font-weight:600;margin:16px 0 6px;color:var(--ink)}
+.readout p{margin:0 0 10px;font-size:14.5px;line-height:1.55}
+.muted{color:var(--ink-2)}
+.kv{display:grid;grid-template-columns:auto 1fr;gap:6px 14px;margin:12px 0 10px;font-size:14px}
+.kv dt{color:var(--ink-2)}
+.kv dd{margin:0;text-align:right}
+.chips{margin:10px 0 2px}
+.chip{display:inline-block;font-size:12.5px;padding:3px 10px;border-radius:999px;border:1px solid var(--line-2);margin:0 6px 6px 0;background:transparent;color:var(--ink);min-height:0;cursor:pointer}
+.chip:hover{border-color:var(--ink-2)}
+.tl{list-style:none;margin:0;padding:0;font-size:13.5px}
+.tl li{display:grid;grid-template-columns:72px 1fr;gap:8px;padding:6px 0;border-top:1px solid var(--line)}
+.tl .d{color:var(--ink-3)}
+.tl li.future{color:var(--ink-2);font-style:italic}
+.tl li.now{font-weight:600}
+.ev{margin:0 0 4px;padding-left:18px;font-size:14px}
+.ev li{margin-bottom:4px}
+.stage{display:inline-block;font-size:12.5px;color:var(--ink-2);border:1px solid var(--line-2);border-radius:999px;padding:2px 10px;margin:2px 0 10px}
+.textbtn{border:0;background:none;padding:0;min-height:0;color:var(--cap);font-size:14px;text-decoration:underline;text-underline-offset:3px;margin-top:12px}
+.members{display:flex;flex-wrap:wrap;gap:6px;margin-top:6px}
+.ledgerhead{margin:30px 0 4px}
+.ledgerhead h2{font-stretch:80%;font-weight:620;font-size:24px;margin:0 0 4px}
+.ledgerhead p{margin:0;color:var(--ink-2);max-width:72ch;font-size:15px}
+.tip{position:absolute;pointer-events:none;background:var(--panel);border:1px solid var(--line-2);border-radius:10px;padding:8px 11px;font-size:13px;line-height:1.45;max-width:260px;opacity:0;transition:opacity .12s;z-index:5}
+.tip b{font-weight:620}
+.notes{color:var(--ink-3);font-size:13px;max-width:84ch;margin-top:28px;border-top:1px solid var(--line);padding-top:16px;line-height:1.6}
+.notes p{margin:0 0 8px}
+.colh{font-size:14.5px;font-weight:620;font-stretch:84%;fill:var(--ink)}
+.cols{font-size:12px;fill:var(--ink-3)}
+.rowh{font-size:13.5px;fill:var(--ink-2)}
+.wid{font-size:11px;fill:var(--ink-3)}
+.lbl{font-size:12px;fill:var(--ink);paint-order:stroke;stroke:var(--halo);stroke-width:3.2px;stroke-linejoin:round;pointer-events:none}
+.wsx{font-size:11px;fill:var(--ink);paint-order:stroke;stroke:var(--halo);stroke-width:3.4px;stroke-linejoin:round}
+.lt{font-size:12.5px;fill:var(--ink-2)}
+.lv{font-size:12px;fill:var(--ink)}
+.node{cursor:pointer}
+.node:focus{outline:none}
+.node:focus-visible .dot{stroke:var(--focus)!important;stroke-width:3px!important}
+.well{cursor:pointer}
+:focus-visible{outline:2px solid var(--focus);outline-offset:2px}
+.err{color:var(--v-com);font-size:14px;margin:8px 0}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion: reduce){*{transition:none!important}}
+</style>
+</head>
+<body>
+<div class="wrap">
+  <header>
+    <h1>Where the money sits, and where the value lands</h1>
+    <p class="dek">The Bio×AI venture landscape from 2021 to today, laid out like a 48‑well plate. Across: the layer of the stack each bet occupies. Up: how much evidence it has. Size: capital or deal value. Press play to watch money arrive and bets mature, then pick a lens to see what a thesis rests on.</p>
+  </header>
+
+  <section class="console" aria-label="Controls">
+    <div class="ctl time">
+      <div class="timebar">
+        <button class="play" id="play" aria-label="Play">
+          <svg width="16" height="16" viewBox="0 0 16 16" aria-hidden="true"><path id="playicon" d="M4 2.5v11l9-5.5z" fill="currentColor"/></svg>
+        </button>
+        <div class="yr" id="yr" aria-live="polite">Jan 2021</div>
+        <div class="sl">
+          <label class="sr" for="year">Date</label>
+          <input id="year" type="range" min="2021" max="2026.75" step="0.01" value="2021">
+          <div class="ticks" id="ticks"></div>
+        </div>
+      </div>
+      <div class="ticker" id="ticker" aria-live="polite"></div>
+    </div>
+    <div class="ctl">
+      <label class="lab" for="lens">Lens</label>
+      <select id="lens">
+        <option value="all">Everything</option>
+        <optgroup label="Theses">
+          <option value="N1">N1 Rent the model, own the data</option>
+          <option value="N2">N2 Data generators are mispriced</option>
+          <option value="N3">N3 Software budget or labour budget</option>
+          <option value="N4">N4 Cash lands on assets, China runs the factory</option>
+          <option value="N5">N5 Trust is the unpriced layer</option>
+          <option value="C1">C1 Frontier labs absorb the specialists</option>
+          <option value="C2">C2 Autonomous labs are state infrastructure</option>
+          <option value="C3">C3 This is 2021 techbio, rebranded</option>
+        </optgroup>
+        <optgroup label="Narratives">
+          <option value="china">China asset flow</option>
+          <option value="frontier">Frontier labs in biology</option>
+          <option value="vcell">Virtual cell and data</option>
+          <option value="auto">Autonomous labs</option>
+          <option value="platform">Platform versus asset</option>
+          <option value="carT">In vivo CAR‑T</option>
+          <option value="obesity">Obesity</option>
+          <option value="longevity">Longevity</option>
+          <option value="adjacent">Adjacent clinical AI</option>
+        </optgroup>
+      </select>
+    </div>
+    <div class="ctl">
+      <span class="lab" id="colLab">Colour by</span>
+      <div class="seg" role="group" aria-labelledby="colLab" id="colour">
+        <button data-v="source" aria-pressed="true">Capital source</button>
+        <button data-v="verdict" aria-pressed="false">Value verdict</button>
+        <button data-v="geo" aria-pressed="false">Geography</button>
+      </div>
+    </div>
+    <div class="ctl">
+      <span class="lab" id="heatLab">Hot spots</span>
+      <div class="seg" role="group" aria-labelledby="heatLab" id="heat">
+        <button data-v="off" aria-pressed="false">Off</button>
+        <button data-v="cap" aria-pressed="true">Capital in</button>
+        <button data-v="val" aria-pressed="false">Value out</button>
+      </div>
+    </div>
+    <div class="ctl">
+      <span class="lab" id="layLab">Layers</span>
+      <div style="display:flex;gap:8px;flex-wrap:wrap" role="group" aria-labelledby="layLab">
+        <button id="tTrails" aria-pressed="false">Trails</button>
+        <button id="tWhite" aria-pressed="false">Whitespace</button>
+        <button id="tProj" aria-pressed="false">Stated milestones</button>
+        <label class="sr" for="labels">Labels</label>
+        <select id="labels"><option value="key">Key labels</option><option value="all">All labels</option><option value="off">No labels</option></select>
+      </div>
+    </div>
+  </section>
+
+  <main class="bench">
+    <div>
+      <p class="hint">Scroll the plate sideways to see all eight layers.</p>
+      <div class="platebox" id="platebox">
+        <div class="plateinner" id="plateinner">
+          <svg id="plate" viewBox="0 0 1000 648" role="group" aria-labelledby="plateTitle plateDesc">
+            <title id="plateTitle">Stack layer by evidence maturity plate</title>
+            <desc id="plateDesc">Bubbles for each tracked Bio×AI bet, placed by stack layer across and evidence maturity up, sized by capital or deal value, animated from 2021 to October 2026.</desc>
+          </svg>
+          <svg id="ledger" viewBox="0 0 1000 270" role="img" aria-labelledby="ledgerTitle">
+            <title id="ledgerTitle">Capital in versus value out by stack layer</title>
+          </svg>
+          <div class="tip" id="tip" role="status"></div>
+        </div>
+      </div>
+      <div class="legend" id="legend"></div>
+      <div class="err" id="err" hidden></div>
+    </div>
+    <aside class="readout" id="readout" aria-live="polite"></aside>
+  </main>
+
+
+  <footer class="notes">
+    <p>The strip under the plate shares its columns. Capital in sums disclosed rounds and commitments for tracked bets up to the selected date; value out sums tracked M&amp;A and licensing headlines, IPO proceeds and upfronts. Both follow the active lens. Bar height scales with the square root of value.</p>
+    <p>Maturity positions are analyst judgment from public reporting as of 2 October 2026. Each bubble uses the capital measure named in its readout (rounds raised, committed spend, deal headline, cash, revenue or claimed data value), so sizes are comparable in order of magnitude only and are not additive across measures. Headline deal values include contingent milestones; upfront cash is typically a few percent of the headline.</p>
+    <p>Dates marked approximate are estimated to the quarter. Beyond October 2026, the stated-milestones layer plots company or investor timelines, not forecasts. Lila’s Series B is reported, not confirmed; Tahoe’s valuation dates from 2025; Benchling figures conflict across sources.</p>
+    <p>Sources include company releases and filings (SEC, HKEX), PitchBook’s Q2 2026 biopharma report, IQVIA’s mid‑2026 M&amp;A update, BioPharma Dive, BioSpace, Fierce Biotech, Endpoints, STAT, Bloomberg, Reuters, The Information and Newcomer. Built with Claude; Anthropic is itself a participant in this market.</p>
+  </footer>
+</div>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/7.8.5/d3.min.js"></script>
+<script>
+(function(){
+"use strict";
+var errBox=document.getElementById('err');
+if(!window.d3){errBox.hidden=false;errBox.textContent='The chart library didn’t load. Check your connection and reload the page.';return;}
+
+var START=2021.0, NOW=2026.75, PEND=2030.0;
+var MON=['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug','Sep','Oct','Nov','Dec'];
+var LAYERS=[
+  {k:'Compute',s:'chips, infra',u:0.85},
+  {k:'Data',s:'atlases, assays',u:1},
+  {k:'Models',s:'foundation',u:1.1},
+  {k:'Agents',s:'AI scientists',u:1.1},
+  {k:'Automation',s:'robotic labs',u:0.9},
+  {k:'Software',s:'workflow',u:0.95},
+  {k:'Drug assets',s:'programs, NewCos, M&A',u:2.25},
+  {k:'Trust',s:'validation',u:0.85}
+];
+var STAGES=['Concept','Funded build','Technical proof','External validation','Outcome proof','At scale'];
+var STAGE_HELP=['Idea or stealth','Capital raised, building','Benchmarks, preclinical data or open datasets','Paying partners or first human dosing','Human efficacy data, scaled revenue or reproducible ROI','Category-defining scale'];
+
+var PX0=150, PX1=986, PY0=92, PY1=632, ROWH=(PY1-PY0)/6;
+var unitSum=LAYERS.reduce(function(a,l){return a+l.u;},0), unitW=(PX1-PX0)/unitSum, acc=0;
+LAYERS.forEach(function(l){l.x0=PX0+acc*unitW;acc+=l.u;l.x1=PX0+acc*unitW;l.w=l.x1-l.x0;l.cx=(l.x0+l.x1)/2;});
+function yOf(m){m=Math.max(-0.35,Math.min(5.35,m));return PY1-(m+0.5)*ROWH;}
+function rOf(c){return c>0?6+7.2*Math.log10(1+c/10):4.8;}
+
+var SRC={tech:{n:'Tech and generalist VC',v:'--s-tech'},health:{n:'Biotech VC and studios',v:'--s-health'},pharma:{n:'Pharma and strategic',v:'--s-pharma'},front:{n:'Frontier AI lab',v:'--s-front'},gov:{n:'Government and philanthropy',v:'--s-gov'},pub:{n:'Public markets',v:'--s-pub'}};
+var VERD={acc:{n:'Value accruing',v:'--v-acc'},unp:{n:'Unpriced',v:'--v-unp'},con:{n:'Contested',v:'--v-con'},cap:{n:'Capped',v:'--v-cap'},com:{n:'Commoditising',v:'--v-com'},inc:{n:'Incumbent or public good',v:'--v-inc'}};
+var GEO={bay:{n:'Bay Area',v:'--s-tech'},boston:{n:'Boston',v:'--s-health'},london:{n:'London',v:'--s-pharma'},china:{n:'China and Hong Kong',v:'--s-sov'},other:{n:'Elsewhere in the US',v:'--s-pub'}};
+var BASIS={raised:'Disclosed capital raised',committed:'Committed funding',deal:'Deal value, headline',cash:'Cash on hand, approx.',revenue:'2025 software revenue',burn:'2026 cash burn guidance',data:'Claimed value of underlying data',none:'No disclosed capital'};
+var CONF={High:'High',Med:'Medium',Low:'Low'};
+
+/* id, name, short, layer, dx, src, geo, verdict, kind, basis, listed, theses, narratives, conf, valuations, points [t, maturity, capital $M, note, projected] */
+var ENT=[
+ {id:'nvidia',name:'Nvidia bio stack',short:'Nvidia',layer:0,dx:-0.18,src:'pharma',geo:'bay',verdict:'inc',kind:'co',basis:'committed',theses:[],narr:['frontier'],conf:'Med',
+  pts:[[2022.72,2.5,0,'BioNeMo launched for biology model training'],[2025.5,3.5,0,'NVentures backs Terray, Superluminal, Proxima, Relation (approx.)'],[2026.03,4,1000,'Lilly–Nvidia co-innovation lab: $1B over five years'],[2026.37,4,1000,'Partners with Edison on scientific agent training']]},
+ {id:'genesis',name:'Genesis Mission (DOE)',short:'Genesis',layer:0,dx:0.22,src:'gov',geo:'other',verdict:'con',kind:'policy',basis:'committed',theses:['C1','C2'],narr:['auto','frontier'],conf:'Med',
+  pts:[[2025.9,1,0,'Executive order launches Genesis Mission (24 Nov 2025)'],[2026.15,1.5,320,'DOE ~$320M first funding; 24 MoUs incl. Anthropic, Nvidia, OpenAI'],[2026.39,1.8,320,'Reflection AI to supply an open platform to 17 national labs'],[2026.56,2,320,'Review of national-lab robotic labs due 22 July']]},
+ {id:'tahoe',name:'Tahoe Therapeutics',short:'Tahoe',layer:1,dx:-0.16,src:'tech',geo:'bay',verdict:'acc',kind:'co',basis:'raised',theses:['N1','N2'],narr:['vcell'],conf:'Med',val:[[2025.61,120]],
+  pts:[[2022.3,1,12,'Seed $12M, as Vevo Therapeutics'],[2025.15,2,12,'Releases Tahoe‑100M openly; ~100k downloads'],[2025.61,2.4,42,'$30M Series A at $120M; next datasets proprietary, one partner'],[2026.03,2.7,42,'Joins Arc and Biohub on a 120M‑cell open dataset']]},
+ {id:'arc',name:'Arc Institute virtual cell',short:'Arc',layer:1,dx:0.22,src:'gov',geo:'bay',verdict:'inc',kind:'co',basis:'committed',theses:['N2'],narr:['vcell'],conf:'Med',
+  pts:[[2021.95,1,650,'Arc launches with $650M+ committed (institute-wide)'],[2025.45,2.3,650,'STATE virtual cell model released'],[2025.95,2.5,650,'Virtual Cell Challenge: 5,000+ registrants; models rarely beat naive baselines'],[2026.03,2.7,650,'Stack model; 120M‑cell open dataset with Tahoe and Biohub'],[2026.4,2.8,650,'2026 challenge: zero-shot prediction in unseen cell contexts']]},
+ {id:'recursion',name:'Recursion',short:'Recursion',layer:1,dx:0.0,src:'pub',geo:'other',verdict:'con',kind:'co',basis:'raised',listed:2021.29,theses:['C3'],narr:['vcell','platform'],conf:'Med',
+  pts:[[2021.29,3,1300,'IPO; phenomics data-moat thesis (approx. $1.3B raised to date)'],[2024.88,3.3,1300,'Merges with Exscientia, $688M all-stock'],[2025.4,3.1,1300,'Pipeline cut from 11 to 7 programmes; ~20% layoffs'],[2026.0,3.2,1300,'Najat Khan becomes CEO'],[2026.6,3.2,1300,'~$1.7B market cap; Q2 revenue $7.3M; runway into late 2027']]},
+ {id:'tunelab',name:'Lilly TuneLab',short:'TuneLab',layer:1,dx:-0.4,src:'pharma',geo:'other',verdict:'com',kind:'program',basis:'data',theses:['N1'],narr:['platform'],conf:'High',
+  pts:[[2025.7,2.5,1000,'Lilly launches federated models trained on $1B+ of its data'],[2026.18,3,1000,'Opening to 1,300+ biotechs through Benchling']]},
+ {id:'xaira',name:'Xaira Therapeutics',short:'Xaira',layer:2,dx:-0.3,src:'health',geo:'bay',verdict:'con',kind:'co',basis:'raised',theses:['N1','N2'],narr:['vcell'],conf:'Med',
+  pts:[[2024.3,1,1000,'Launches with $1B+ (ARCH, Foresite, Sequoia)'],[2025.7,2.2,1000,'Publishes a large public Perturb‑seq atlas (approx.)'],[2026.21,2.5,1000,'X‑Cell, its first virtual cell model']]},
+ {id:'boltz',name:'Boltz',short:'Boltz',layer:2,dx:-0.12,src:'tech',geo:'boston',verdict:'com',kind:'co',basis:'raised',theses:['N1'],narr:['platform'],conf:'High',
+  pts:[[2024.88,2,0,'Boltz‑1: fully open AlphaFold 3‑class model from MIT'],[2025.45,2.3,0,'Boltz‑2 adds binding affinity'],[2025.88,2.4,0,'BoltzGen: open protein design'],[2026.03,2.9,28,'Public benefit company, $28M seed; Pfizer exclusive-model deal']]},
+ {id:'iso',name:'Isomorphic Labs',short:'Isomorphic',layer:2,dx:0.08,src:'tech',geo:'london',verdict:'con',kind:'co',basis:'raised',theses:['N1','N3','C1','C3'],narr:['frontier','platform'],conf:'High',
+  pts:[[2021.85,1,0,'Spun out of DeepMind, funded by Alphabet'],[2024.05,3,0,'Lilly and Novartis deals, ~$82.5M combined upfront'],[2024.36,3.1,0,'AlphaFold 3 published'],[2025.22,3.1,600,'First external round: $600M, led by Thrive'],[2026.1,3.2,600,'IsoDDE report: >2× AlphaFold 3 on hardest cases; J&J deal'],[2026.36,3.2,2700,'$2.1B Series B; no patient dosed yet'],[2027.0,3.6,2700,'Company target: first-in-human by end of 2026',1]]},
+ {id:'chai',name:'Chai Discovery',short:'Chai',layer:2,dx:0.34,src:'tech',geo:'bay',verdict:'con',kind:'co',basis:'raised',theses:['N1','N2','N3','C1','C3'],narr:['platform'],conf:'High',val:[[2025.95,1300],[2026.54,3800]],
+  pts:[[2024.7,1,30,'Seed $30M (Thrive); Chai‑1 with open weights'],[2025.45,2.4,30,'Chai‑2: zero-shot antibody design'],[2025.6,2.5,100,'$70M Series A, led by Menlo'],[2025.95,2.6,230,'$130M Series B at $1.3B'],[2026.05,3,230,'Lilly collaboration: a model trained on Lilly data'],[2026.44,3.1,230,'Pfizer licence: Chai‑3 plus a Pfizer-only model'],[2026.54,3.2,630,'$400M Series C at $3.8B; Novartis and argenx deals'],[2027.95,3.6,630,'Investor-stated: first partner clinical candidates by end‑2027',1]]},
+ {id:'openfold',name:'OpenFold3 pharma consortium',short:'OpenFold3',layer:2,dx:-0.42,src:'pharma',geo:'other',verdict:'com',kind:'program',basis:'none',theses:['N1'],narr:['platform'],conf:'Med',
+  pts:[[2025.8,2.2,0,'AbbVie, J&J, BMS, Takeda, Astex co-train OpenFold3, federated'],[2026.3,2.4,0,'Proprietary structures improve co-folding without data leaving each firm']]},
+ {id:'edison',name:'Edison Scientific',short:'Edison',layer:3,dx:-0.24,src:'tech',geo:'bay',verdict:'con',kind:'co',basis:'raised',theses:['N3','C1','C2'],narr:['auto'],conf:'High',val:[[2025.96,250]],
+  pts:[[2023.84,1,0,'FutureHouse nonprofit launches'],[2025.35,2.3,0,'Robin agent’s discovery published in Nature (approx.)'],[2025.85,2.5,0,'Edison spun out; Kosmos AI scientist launched'],[2025.96,2.6,70,'$70M seed at ~$250M (Spark, Triatomic)'],[2026.37,2.8,70,'Claims six months of research per run-day; Nvidia partnership']]},
+ {id:'lila',name:'Lila Sciences',short:'Lila',layer:3,dx:0.38,src:'health',geo:'boston',verdict:'con',kind:'co',basis:'raised',theses:['N3','C2','C3'],narr:['auto'],conf:'Med',val:[[2025.78,1300],[2026.42,8500]],
+  pts:[[2023.5,0.5,0,'Built in stealth inside Flagship'],[2025.18,1.5,200,'Unveiled with a $200M seed'],[2025.78,1.8,550,'$350M Series A, >$1.3B; 235k sq ft Cambridge lease'],[2026.42,2,550,'Reported $2B Series B talks at ~$8.5B pre-money, unconfirmed']]},
+ {id:'openai',name:'OpenAI life sciences',short:'OpenAI',layer:3,dx:0.05,src:'front',geo:'bay',verdict:'con',kind:'co',basis:'none',theses:['N3','N5','C1'],narr:['frontier'],conf:'High',
+  pts:[[2026.29,2.6,0,'GPT‑Rosalind life-sciences model, research preview'],[2026.46,2.7,0,'LifeSciBench; Amgen, Moderna and Thermo Fisher as partners'],[2026.69,3,0,'Rosalind generally available through trusted access']]},
+ {id:'anthropic',name:'Anthropic life sciences',short:'Anthropic',layer:3,dx:0.22,src:'front',geo:'bay',verdict:'con',kind:'co',basis:'deal',theses:['N3','C1'],narr:['frontier'],conf:'High',
+  pts:[[2025.8,2.5,0,'Claude for Life Sciences launched'],[2026.03,2.7,0,'Claude for Healthcare launched'],[2026.26,2.9,400,'Acquires Coefficient Bio, ~$400M in stock']]},
+ {id:'coefficient',how:'acquired',name:'Coefficient Bio',short:'Coefficient',layer:3,dx:-0.4,src:'tech',geo:'other',verdict:'acc',kind:'co',basis:'deal',listed:2026.26,theses:['C1'],narr:['frontier'],conf:'High',
+  pts:[[2025.6,1,0,'Founded by ex-Genentech Prescient Design team'],[2026.26,1.5,400,'Acquired by Anthropic, ~$400M stock for ~10 people']]},
+ {id:'ginkgo',name:'Ginkgo Bioworks',short:'Ginkgo',layer:4,dx:-0.22,src:'pub',geo:'boston',verdict:'cap',kind:'co',basis:'burn',listed:2021.7,theses:['C2'],narr:['auto'],conf:'High',
+  pts:[[2021.7,3,140,'Lists via SPAC as a cell-programming foundry'],[2026.15,3,140,'Bets 2026 on autonomous labs; burn guidance $125–150M'],[2026.18,3.1,140,'GPT‑5 runs 36,000 experiments in its cloud lab'],[2026.59,3.2,140,'Builds autonomous-lab nodes at MIT, Caltech, Northwestern, Maryland']]},
+ {id:'automata',name:'Automata',short:'Automata',layer:4,dx:0.12,src:'pharma',geo:'london',verdict:'con',kind:'co',basis:'raised',theses:['C2'],narr:['auto'],conf:'Low',
+  pts:[[2026.15,2.8,45,'$45M round; Danaher joins as strategic investor (date approx.)']]},
+ {id:'xtalpi',name:'XtalPi',short:'XtalPi',layer:4,dx:0.34,src:'pub',geo:'china',verdict:'con',kind:'co',basis:'cash',listed:2024.45,theses:['N4','C2'],narr:['china','auto'],conf:'Med',
+  pts:[[2024.45,3,1200,'Lists in Hong Kong'],[2025.6,3.4,1200,'DoveTree pipeline deal: ~$6B headline, $51M upfront'],[2026.23,3.5,1200,'First annual profit (2025), driven by one-off items'],[2026.63,3.5,1200,'H1 2026 revenue falls; robotics lab line grows 120%+']]},
+ {id:'schrodinger',name:'Schrödinger',short:'Schrödinger',layer:5,dx:-0.24,src:'pub',geo:'other',verdict:'cap',kind:'co',basis:'revenue',listed:2021.0,theses:['N3','C3'],narr:['platform'],conf:'High',
+  pts:[[2021.0,4,200,'Public physics-based design software at scale'],[2025.4,4,200,'Stops independent clinical development'],[2026.2,4,200,'Lilly buys Ajax, which Schrödinger co-founded, for $2.3B'],[2026.6,4,200,'Two customers are 42% of Q2 revenue; ACV guide +10–15%']]},
+ {id:'benchling',name:'Benchling',short:'Benchling',layer:5,dx:0.1,src:'tech',geo:'bay',verdict:'con',kind:'co',basis:'raised',theses:['N1'],narr:['platform'],conf:'Low',val:[[2021.85,6100]],
+  pts:[[2021.85,4,412,'$6.1B at last primary round (~$412M raised)'],[2025.8,4,412,'Benchling AI puts AlphaFold, Chai‑1 and Boltz‑2 in the workflow'],[2026.18,4.1,412,'Becomes the distribution channel for Lilly TuneLab']]},
+ {id:'openevidence',name:'OpenEvidence',short:'OpenEvidence',layer:5,dx:0.38,src:'tech',geo:'other',verdict:'acc',kind:'co',basis:'raised',theses:[],narr:['adjacent'],conf:'Med',val:[[2025.15,1000],[2025.78,6000],[2026.05,12000],[2026.55,20000]],
+  pts:[[2025.15,3.2,75,'$75M at ~$1B, from Sequoia'],[2025.78,3.8,275,'$200M Series C at $6B'],[2026.05,4,525,'$250M at $12B (Thrive, DST); >$100M annualised revenue in 2025'],[2026.55,4,525,'Reportedly exploring a round at $20B']]},
+ {id:'generate',name:'Generate Biomedicines',short:'Generate',layer:6,dx:-0.36,src:'health',geo:'boston',verdict:'acc',kind:'co',basis:'raised',listed:2026.16,theses:['N4','C3'],narr:['platform'],conf:'Med',val:[[2026.16,2040]],
+  pts:[[2022.05,3,812,'Amgen collaboration; ~$0.8B raised before IPO (approx.)'],[2025.5,3.8,812,'GB‑0895 in Phase 3 for severe asthma (date approx.)'],[2026.16,4,1212,'$400M IPO at $2.04B; falls 21% on day one'],[2026.7,4,1212,'Trades ~$17, just above its $16 IPO price'],[2028.0,4.6,1212,'Analyst-cited launch target around 2028',1]]},
+ {id:'insilico',name:'Insilico Medicine',short:'Insilico',layer:6,dx:-0.1,src:'pharma',geo:'china',verdict:'acc',kind:'co',basis:'deal',listed:2026.0,theses:['N4'],narr:['china','platform'],conf:'Med',
+  pts:[[2021.5,2.6,0,'AI-discovered TNIK inhibitor enters Phase 1 (approx.)'],[2023.5,3.2,0,'Phase 2a in IPF begins (approx.)'],[2024.87,3.8,0,'Positive Phase 2a topline'],[2025.45,4,0,'Phase 2a published in Nature Medicine'],[2026.24,4.1,115,'Lilly deal: $115M upfront, ~$2.75B headline'],[2026.51,4.2,175,'Takeda ~$60M near-term; 320-patient Phase 3 starts in China'],[2029.9,4.7,175,'Company timeline: Phase 3 results around end of 2029',1]]},
+ {id:'earendil',name:'Earendil Labs',short:'Earendil',layer:6,dx:0.06,src:'tech',geo:'china',verdict:'acc',kind:'co',basis:'raised',theses:['N4'],narr:['china'],conf:'High',
+  pts:[[2025.27,3,0,'Sanofi worldwide licence for two bispecifics'],[2026.04,3.1,0,'Broader Sanofi platform collaboration'],[2026.22,3.3,787,'$787M (Dimension, DST, Sanofi, Hillhouse–Pfizer fund); IBD asset Phase 2-ready']]},
+ {id:'kailera',name:'Kailera Therapeutics',short:'Kailera',layer:6,dx:0.28,src:'health',geo:'boston',verdict:'acc',kind:'co',basis:'raised',listed:2026.3,theses:['N4'],narr:['obesity','china'],conf:'Med',
+  pts:[[2024.38,3,400,'Launches on licensed Hengrui obesity assets, ~$400M (approx.)'],[2025.7,3.6,1000,'$600M Series B (date approx.)'],[2026.3,4,1719,'$718.8M IPO, among the largest biotech debuts on record']]},
+ {id:'metsera',how:'acquired',name:'Metsera',short:'Metsera',layer:6,dx:0.42,src:'pharma',geo:'other',verdict:'acc',kind:'co',basis:'deal',listed:2025.85,theses:[],narr:['obesity'],conf:'High',
+  pts:[[2025.85,4,10000,'Pfizer wins a bidding war with Novo, up to $10B']]},
+ {id:'kelonia',how:'acquired',name:'Kelonia Therapeutics',short:'Kelonia',layer:6,dx:-0.28,src:'pharma',geo:'boston',verdict:'acc',kind:'co',basis:'deal',listed:2026.3,theses:[],narr:['carT'],conf:'High',
+  pts:[[2026.3,3.2,7000,'Lilly acquires the in vivo CAR‑T developer, up to $7B']]},
+ {id:'orna',how:'acquired',name:'Orna Therapeutics',short:'Orna',layer:6,dx:0.18,src:'pharma',geo:'boston',verdict:'acc',kind:'co',basis:'deal',listed:2026.1,theses:[],narr:['carT'],conf:'High',
+  pts:[[2026.1,2.2,2400,'Lilly acquires preclinical in vivo CAR‑T, up to $2.4B']]},
+ {id:'orbital',how:'acquired',name:'Orbital Therapeutics',short:'Orbital',layer:6,dx:0.36,src:'pharma',geo:'boston',verdict:'acc',kind:'co',basis:'deal',listed:2025.8,theses:[],narr:['carT'],conf:'Med',
+  pts:[[2025.8,2.2,1500,'BMS acquires preclinical in vivo CAR‑T, $1.5B']]},
+ {id:'ajax',how:'acquired',name:'Ajax Therapeutics',short:'Ajax',layer:6,dx:-0.02,src:'pharma',geo:'other',verdict:'acc',kind:'co',basis:'deal',listed:2026.2,theses:['N3'],narr:['platform'],conf:'Med',
+  pts:[[2026.2,3.2,2300,'Lilly acquires the Schrödinger co-founded company, $2.3B']]},
+ {id:'chinaflow',name:'China out-licensing flow',short:'China licensing',layer:6,dx:0.0,src:'pharma',geo:'china',verdict:'acc',kind:'flow',basis:'deal',theses:['N4'],narr:['china','obesity'],conf:'High',
+  pts:[[2024.5,3.3,51900,'Headline out-licensing: $51.9B across 94 deals'],[2025.5,3.5,135700,'$135.7B across 157 deals; 40% of big-pharma in-licensed assets'],[2026.5,3.6,135700,'H1 2026 alone: $92B; BINSA would add federal review (filed 7 Aug)']]},
+ {id:'newlimit',name:'NewLimit',short:'NewLimit',layer:6,dx:-0.42,src:'tech',geo:'bay',verdict:'con',kind:'co',basis:'raised',theses:[],narr:['longevity'],conf:'Med',val:[[2026.42,3100]],
+  pts:[[2023.4,1.5,40,'$40M Series A'],[2025.35,2,170,'$130M Series B, led by Kleiner Perkins'],[2026.42,2.3,605,'$435M Series C at $3.1B; first human trial planned'],[2027.0,3,605,'Company plan: first human trial in liver disease',1]]},
+ {id:'retro',name:'Retro Biosciences',short:'Retro',layer:6,dx:-0.2,src:'tech',geo:'bay',verdict:'con',kind:'co',basis:'raised',theses:[],narr:['longevity'],conf:'Med',val:[[2026.37,1800]],
+  pts:[[2023.3,1.5,180,'$180M from Sam Altman (approx.)'],[2026.37,3,180,'New round at $1.8B pre-money; clinical-stage autophagy programme']]},
+ {id:'altos',name:'Altos Labs',short:'Altos',layer:6,dx:0.22,src:'tech',geo:'bay',verdict:'con',kind:'co',basis:'raised',theses:[],narr:['longevity'],conf:'Low',
+  pts:[[2022.05,1,3000,'Launches with ~$3B, a record start-up financing'],[2026.5,2,3000,'Reported total funding near $6B (unverified); no registered rejuvenation trial']]},
+ {id:'fda_ai',name:'FDA AI credibility framework',short:'FDA AI rules',layer:7,dx:-0.26,src:'gov',geo:'other',verdict:'unp',kind:'policy',basis:'none',theses:['N5'],narr:[],conf:'High',
+  pts:[[2025.02,1.5,0,'Draft guidance: seven-step AI credibility framework'],[2026.03,2,0,'FDA and EMA publish joint Good AI Practice principles'],[2026.7,2,0,'Credibility guidance still draft']]},
+ {id:'biosec',name:'Biosecurity and synthesis screening',short:'Biosecurity',layer:7,dx:0.24,src:'gov',geo:'other',verdict:'unp',kind:'policy',basis:'none',theses:['N5'],narr:['frontier'],conf:'High',
+  pts:[[2025.36,1,0,'Executive order on biological research safety (EO 14292)'],[2026.08,1.4,0,'S.3741 would mandate DNA synthesis screening'],[2026.13,1.5,0,'Epoch: 3.2% of 1,196 bio AI models document safeguards'],[2026.45,1.8,0,'OpenAI, DeepMind, Anthropic and Microsoft back mandatory screening']]},
+ {id:'evals',name:'Benchmarks and evaluations',short:'Evals',layer:7,dx:0.0,src:'gov',geo:'bay',verdict:'unp',kind:'program',basis:'none',theses:['N5'],narr:['vcell'],conf:'Med',
+  pts:[[2024.55,1.5,0,'LAB-Bench biology research benchmark (FutureHouse)'],[2025.95,2.2,0,'Virtual Cell Challenge exposes weak baselines'],[2026.46,2.4,0,'LifeSciBench and LAB-Bench 2: model builders also set the tests']]},
+ {id:'gating',name:'Trusted-access gating',short:'Gating',layer:7,dx:0.3,src:'front',geo:'bay',verdict:'unp',kind:'policy',basis:'none',theses:['N5','C1'],narr:['frontier'],conf:'High',
+  pts:[[2026.29,2,0,'GPT‑Rosalind ships only through trusted access'],[2026.44,2.1,0,'US export controls pause Anthropic’s newest models, 12 Jun to 1 Jul'],[2026.69,2.3,0,'Rosalind general availability, still through trusted access']]}
+];
+
+var EVENTS=[
+ {t:2024.05,layer:2,m:3,v:82.5,id:'iso',label:'Isomorphic upfronts from Lilly and Novartis'},
+ {t:2025.6,layer:4,m:3.4,v:51,id:'xtalpi',label:'XtalPi upfront from DoveTree'},
+ {t:2025.8,layer:6,m:2.2,v:1500,id:'orbital',label:'BMS acquires Orbital'},
+ {t:2025.85,layer:6,m:4,v:10000,id:'metsera',label:'Pfizer acquires Metsera, up to'},
+ {t:2026.1,layer:6,m:2.2,v:2400,id:'orna',label:'Lilly acquires Orna, up to'},
+ {t:2026.16,layer:6,m:4,v:400,id:'generate',label:'Generate IPO proceeds'},
+ {t:2026.2,layer:6,m:3.2,v:2300,id:'ajax',label:'Lilly acquires Ajax'},
+ {t:2026.24,layer:6,m:4.1,v:115,id:'insilico',label:'Insilico upfront from Lilly'},
+ {t:2026.26,layer:3,m:1.5,v:400,id:'coefficient',label:'Anthropic acquires Coefficient Bio'},
+ {t:2026.3,layer:6,m:4,v:718.8,id:'kailera',label:'Kailera IPO proceeds'},
+ {t:2026.3,layer:6,m:3.2,v:7000,id:'kelonia',label:'Lilly acquires Kelonia, up to'},
+ {t:2026.3,layer:2,m:3,v:50,theses:['N1','N3'],narr:['platform','vcell'],label:'Noetik upfront from GSK, subscription model (date approx.)'},
+ {t:2026.51,layer:6,m:4.2,v:60,id:'insilico',label:'Insilico near-term payments from Takeda'}
+];
+
+var LENS={
+ N1:{t:'Rent the model, own the data',stage:'Consensus forming',claim:'Model access is becoming a commodity input. Durable value sits with whoever owns data a model can’t get elsewhere: pharma, federated pools and closed-loop data generators.',ev:['Chai and Boltz build pharma-only models trained on that pharma’s own data','Lilly opens TuneLab models to 1,300+ biotechs through Benchling','Five pharmas co-train OpenFold3 without exposing their structures'],counter:'Isomorphic’s proprietary engine more than doubles AlphaFold 3 on the hardest cases.',fals:'A closed-model company shows a sustained clinical-output edge using only public data.'},
+ N2:{t:'Data generators are mispriced',stage:'Non-consensus',claim:'The industry calls data the bottleneck, then prices the companies generating it like service shops.',ev:['Tahoe at $120M (2025) against Chai at $3.8B','Tahoe‑100M became a training base for major AI labs','Virtual Cell Challenge models rarely beat naive baselines'],counter:'Data generation is capex-heavy, and open datasets from Arc and Biohub erode exclusivity.',fals:'Open datasets close the performance gap with proprietary ones.'},
+ N3:{t:'Software budget or labour budget',stage:'Debated',claim:'If pharma pays from software budgets, model companies meet Schrödinger’s ~$200M ceiling. If agents are priced against scientist headcount, today’s valuations can work.',ev:['Schrödinger: $199.5M of 2025 software revenue, 10–15% ACV growth guide','Its largest value event was equity: Lilly bought Ajax for $2.3B','Edison claims six months of research per day; frontier labs ship bio models'],counter:'AI isn’t yet cited as a cause of biotech layoffs, so labour substitution is unproven.',fals:'A model company reports $500M+ of software-like revenue without royalties.'},
+ N4:{t:'Cash lands on assets, China runs the factory',stage:'Consensus on assets, not on China',claim:'Exits flow to clinical assets. The winning structure is a platform that works as an asset factory, and China has already industrialised that.',ev:['Q2 2026 set a record for VC-backed exit value, almost all asset deals','Generate was priced on its Phase 3 antibody, not its platform','Earendil raised $787M; China supplied 40% of in-licensed assets in 2025'],counter:'BINSA could put China licensing under mandatory federal review.',fals:'AI platforms get acquired at platform valuations without assets.'},
+ N5:{t:'Trust is the unpriced layer',stage:'Pre-consensus',claim:'Validation, regulatory credibility and biosecurity gating are becoming mandatory, with almost no capital behind them.',ev:['FDA AI credibility guidance is still draft; FDA–EMA principles came in January','Bio-capable frontier models ship through trusted access','S.3741 would mandate DNA synthesis screening'],counter:'Compliance markets are small, and CROs or the Big Four may capture them.',fals:'Validation stays in-house at pharma and model builders.'},
+ C1:{t:'Frontier labs absorb the specialists',stage:'Contrarian, built with Claude, weigh accordingly',claim:'General-purpose AI labs become the platform winners, and specialist model companies become talent acquisitions.',ev:['Anthropic paid ~$400M for a ~10-person, 8-month-old team','OpenAI made GPT‑Rosalind generally available to pharma','Both labs are Genesis Mission partners'],counter:'Pharma trusts specialists, and general labs avoid drug liability.',fals:'Specialists keep winning head-to-head on design benchmarks and pharma deals.'},
+ C2:{t:'Autonomous labs are state infrastructure',stage:'Contrarian',claim:'Robotic science factories are a capex trap for venture money but viable when governments are the buyer.',ev:['Ginkgo guides $125–150M of burn while pivoting to autonomous labs','Genesis Mission funds robotic labs across 17 national labs','XtalPi’s robotics line grew 120%+ in H1 2026'],counter:'Lila’s reported ~$8.5B pre-money is the opposite bet.',fals:'A private autonomous lab reaches positive unit economics on pharma demand.'},
+ C3:{t:'This is 2021 techbio, rebranded',stage:'Contrarian',claim:'Foundation-model valuations repeat the 2021 platform thesis, and public markets have already re-priced that cohort.',ev:['Recursion trades near $1.7B after IPO, merger and pipeline cuts','Chai at $3.8B; Lila at a reported ~$8.5B pre-money','Schrödinger retreated from independent clinical development'],counter:'Hit rates really improved: Pfizer reported ~20% for Chai‑2.',fals:'The 2024–26 cohort’s first-in-human output beats the 2021 cohort’s.'},
+ china:{t:'China asset flow',narr:true,claim:'China supplied 40% of big-pharma in-licensed assets in 2025, with $135.7B of headline licensing. H1 2026 reached $92B. BINSA would add federal review.'},
+ frontier:{t:'Frontier labs in biology',narr:true,claim:'OpenAI, Anthropic and Google’s Isomorphic now sell or build directly in biology, while gating access to bio-capable models.'},
+ vcell:{t:'Virtual cell and data',narr:true,claim:'Perturbation data, open atlases and the first virtual cell models. Benchmarks show models still struggle to beat simple baselines.'},
+ auto:{t:'Autonomous labs',narr:true,claim:'AI scientists plus robotic labs, from venture bets like Lila to public infrastructure like Genesis.'},
+ platform:{t:'Platform versus asset',narr:true,claim:'Where platforms sell software, where they own assets, and which of the two markets pays for.'},
+ carT:{t:'In vivo CAR‑T',narr:true,claim:'Pharma paid $1.5B to $7B for in vivo cell therapy, including preclinical programmes, ahead of autoimmune human data.'},
+ obesity:{t:'Obesity',narr:true,claim:'The incretin market keeps buying: Pfizer–Metsera up to $10B, China-sourced NewCos like Kailera, and AstraZeneca–CSPC.'},
+ longevity:{t:'Longevity',narr:true,claim:'Tech-founder money funding preclinical rejuvenation at multi-billion valuations, with first human trials only now starting.'},
+ adjacent:{t:'Adjacent clinical AI',narr:true,claim:'Clinician-facing AI with real revenue, priced far above most bio-AI platforms, funded by the same lead investors.'}
+};
+
+var WHITE=[{c:7,r:2,l:['Mandatory soon,','barely funded']},{c:1,r:3,l:['Exclusive data,','priced as services']},{c:3,r:4,l:['No agent with','outcome proof']}];
+
+var BYID={};
+ENT.forEach(function(e){
+  BYID[e.id]=e;
+  e.pts=e.pts.map(function(p){return {t:p[0],m:p[1],c:p[2],note:p[3],proj:!!p[4]};});
+  var act=e.pts.filter(function(p){return !p.proj;});
+  e.lastActual=act[act.length-1].t;
+  e.vis=false;e.r=0;e.s=null;
+});
+
+var reduced=window.matchMedia&&window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+var state={t:START,playing:false,colour:'source',heat:'cap',trails:false,white:false,proj:false,labels:'key',lens:'all',sel:null,well:null};
+
+function fmtMoney(m){if(!m)return '$0';if(m<1000)return '$'+(m<10?m.toFixed(1):Math.round(m))+'M';var b=m/1000;return '$'+(b>=10?Math.round(b):b.toFixed(1))+'B';}
+function fmtDate(t){var y=Math.floor(t+1e-6);var mo=Math.min(11,Math.max(0,Math.floor((t-y)*12+1e-6)));return MON[mo]+' '+y;}
+function wellId(c,r){return 'ABCDEF'[5-r]+(c+1);}
+function stageOf(m){return Math.max(0,Math.min(5,Math.round(m)));}
+function inLens(e){if(state.lens==='all')return true;return (e.theses||[]).indexOf(state.lens)>=0||(e.narr||[]).indexOf(state.lens)>=0;}
+function evInLens(v){if(state.lens==='all')return true;return inLens(v.id?BYID[v.id]:v);}
+function colourOf(e){var map=state.colour==='source'?SRC:state.colour==='verdict'?VERD:GEO;var key=state.colour==='source'?e.src:state.colour==='verdict'?e.verdict:e.geo;return 'var('+map[key].v+')';}
+function catName(e){var map=state.colour==='source'?SRC:state.colour==='verdict'?VERD:GEO;var key=state.colour==='source'?e.src:state.colour==='verdict'?e.verdict:e.geo;return map[key].n;}
+function valAt(e,t){if(!e.val)return null;var v=null;e.val.forEach(function(x){if(x[0]<=t)v=x;});return v;}
+
+function stateAt(e,t){
+  var pts=e.pts.filter(function(p){return state.proj||!p.proj;});
+  if(t<pts[0].t-1e-9)return null;
+  var i=0;while(i+1<pts.length&&pts[i+1].t<=t)i++;
+  var a=pts[i],b=pts[i+1],m=a.m;
+  if(b){var f=(t-a.t)/(b.t-a.t);m=a.m+(b.m-a.m)*Math.max(0,Math.min(1,f));}
+  var proj=a.proj||(b&&b.proj&&t>e.lastActual);
+  return {m:m,c:a.c,note:a.note,nt:a.t,proj:!!proj,idx:i};
+}
+
+/* ---------- plate scaffold ---------- */
+var svg=d3.select('#plate');
+var gHead=svg.append('g'),gWells=svg.append('g'),gTrail=svg.append('g'),gPulse=svg.append('g'),gNodes=svg.append('g'),gLabels=svg.append('g').style('pointer-events','none'),gWhite=svg.append('g'),gNote=svg.append('g');
+LAYERS.forEach(function(l){
+  gHead.append('text').attr('class','colh').attr('x',l.cx).attr('y',46).attr('text-anchor','middle').text(l.k);
+  gHead.append('text').attr('class','cols').attr('x',l.cx).attr('y',65).attr('text-anchor','middle').text(l.s);
+});
+STAGES.forEach(function(s,r){
+  var t=gHead.append('text').attr('class','rowh').attr('x',PX0-14).attr('y',PY1-(r+0.5)*ROWH+5).attr('text-anchor','end').text(s);
+  t.append('title').text(STAGE_HELP[r]);
+});
+gHead.append('text').attr('class','cols').attr('x',PX0-14).attr('y',PY0-10).attr('text-anchor','end').text('Evidence ↑');
+var wells=[];
+LAYERS.forEach(function(l,c){for(var r=0;r<6;r++){wells.push({c:c,r:r,x:l.x0+3,y:PY1-(r+1)*ROWH+3,w:l.w-6,h:ROWH-6,id:wellId(c,r)});}});
+var wSel=gWells.selectAll('g.well').data(wells).join('g').attr('class','well');
+wSel.append('rect').attr('x',function(d){return d.x;}).attr('y',function(d){return d.y;}).attr('width',function(d){return d.w;}).attr('height',function(d){return d.h;}).attr('rx',16).style('fill','var(--well)').style('stroke','var(--line)').style('stroke-width',1);
+var heatRects=wSel.append('rect').attr('class','wheat').attr('x',function(d){return d.x;}).attr('y',function(d){return d.y;}).attr('width',function(d){return d.w;}).attr('height',function(d){return d.h;}).attr('rx',16).style('fill','var(--cap)').style('opacity',0).style('pointer-events','none');
+wSel.append('text').attr('class','wid').attr('x',function(d){return d.x+10;}).attr('y',function(d){return d.y+17;}).text(function(d){return d.id;});
+wSel.on('click',function(ev,d){ev.stopPropagation();state.sel=null;state.well={c:d.c,r:d.r};drawNodes();renderReadout();});
+
+WHITE.forEach(function(w){
+  var l=LAYERS[w.c],x=l.x0+8,y=PY1-(w.r+1)*ROWH+8,wd=l.w-16,ht=ROWH-16;
+  gWhite.append('rect').attr('x',x).attr('y',y).attr('width',wd).attr('height',ht).attr('rx',12).style('fill','none').style('stroke','var(--ink-2)').style('stroke-width',1.2).style('stroke-dasharray','5 4').style('pointer-events','none');
+  var tx=gWhite.append('text').attr('class','wsx').attr('x',x+8).attr('y',y+26).style('pointer-events','none');
+  w.l.forEach(function(line,i){tx.append('tspan').attr('x',x+8).attr('dy',i?13:0).text(line);});
+});
+gWhite.style('display','none');
+var projNote=gNote.append('text').attr('class','cols').attr('x',PX1).attr('y',PY0-10).attr('text-anchor','end').style('display','none').text('Beyond Oct 2026: stated targets, not forecasts');
+svg.on('click',function(){if(state.sel||state.well){state.sel=null;state.well=null;drawNodes();renderReadout();}});
+
+/* ---------- ledger scaffold ---------- */
+var led=d3.select('#ledger'),MID=132,LMAX=92,LREF=26000;
+var ledTitle=led.append('text').attr('class','colh').attr('x',22).attr('y',18).text('Money in versus value out, by layer');
+led.append('line').attr('x1',PX0).attr('x2',PX1).attr('y1',MID).attr('y2',MID).style('stroke','var(--line-2)').style('stroke-width',1);
+led.append('rect').attr('x',22).attr('y',MID-50).attr('width',10).attr('height',10).attr('rx',2).style('fill','var(--val)');
+led.append('text').attr('class','lt').attr('x',38).attr('y',MID-41).text('Value out');
+led.append('rect').attr('x',22).attr('y',MID+38).attr('width',10).attr('height',10).attr('rx',2).style('fill','var(--cap)');
+led.append('text').attr('class','lt').attr('x',38).attr('y',MID+47).text('Capital in');
+led.append('text').attr('class','lt').attr('x',22).attr('y',260).text('Out per $1 in');
+var lcols=led.selectAll('g.lc').data(LAYERS).join('g').attr('class','lc');
+lcols.append('rect').attr('class','bv').attr('rx',3).style('fill','var(--val)');
+lcols.append('rect').attr('class','bc').attr('rx',3).style('fill','var(--cap)');
+lcols.append('text').attr('class','lv tv').attr('text-anchor','middle');
+lcols.append('text').attr('class','lv tc').attr('text-anchor','middle');
+lcols.append('text').attr('class','lt tr').attr('text-anchor','middle').attr('y',260);
+
+/* ---------- simulation ---------- */
+var visible=[];
+var sim=d3.forceSimulation([])
+  .force('x',d3.forceX(function(d){return d.tx;}).strength(0.2))
+  .force('y',d3.forceY(function(d){return d.ty;}).strength(0.6))
+  .force('collide',d3.forceCollide(function(d){return d.kind==='flow'?0:d.r+1.8;}).iterations(2))
+  .alphaDecay(0.05).velocityDecay(0.38)
+  .on('tick',onTick).stop();
+
+function clampNode(e){
+  var L=LAYERS[e.layer],lo=L.x0+e.r+4,hi=L.x1-e.r-4;
+  e.x=lo<hi?Math.max(lo,Math.min(hi,e.x)):L.cx;
+  e.y=Math.max(PY0+e.r+2,Math.min(PY1-e.r-2,e.y));
+}
+function onTick(){
+  visible.forEach(function(e){e.r+=(e.tr-e.r)*0.2;clampNode(e);});
+  sim.force('collide').radius(function(d){return d.kind==='flow'?0:d.r+1.8;});
+  drawNodes();
+}
+
+function update(kick){
+  var vis=[];
+  ENT.forEach(function(e){
+    var s=stateAt(e,state.t);e.s=s;
+    if(!s){e.vis=false;return;}
+    var L=LAYERS[e.layer];
+    e.tx=L.cx+e.dx*L.w;e.ty=yOf(s.m);e.tr=rOf(s.c);
+    if(!e.vis){e.vis=true;e.x=e.tx;e.y=e.ty+26;e.r=Math.max(2,e.tr*0.4);e.vx=0;e.vy=0;}
+    vis.push(e);
+  });
+  vis.sort(function(a,b){return (a.kind==='flow'?0:1)-(b.kind==='flow'?0:1);});
+  var changed=vis.length!==visible.length||vis.some(function(e,i){return visible[i]!==e;});
+  visible=vis;
+  if(changed)sim.nodes(visible);
+  sim.force('x').x(function(d){return d.tx;});
+  sim.force('y').y(function(d){return d.ty;});
+  if(reduced){
+    visible.forEach(function(e){e.r=e.tr;});
+    sim.force('collide').radius(function(d){return d.kind==='flow'?0:d.r+1.8;});
+    sim.stop();for(var i=0;i<140;i++){sim.tick();visible.forEach(clampNode);}
+    drawNodes();
+  }else{
+    sim.alpha(Math.max(sim.alpha(),kick||0.3)).restart();
+  }
+  drawHeat();drawLedger();updateTime();
+}
+
+/* ---------- drawing ---------- */
+function nodeOpacity(e){
+  if(state.lens!=='all'&&!inLens(e))return 0.12;
+  return 1;
+}
+function showLabel(e){
+  if(state.labels==='off')return state.sel===e.id;
+  if(state.labels==='all')return true;
+  if(state.sel===e.id)return true;
+  if(state.lens!=='all')return inLens(e);
+  return e.tr>=15;
+}
+function drawNodes(){
+  var sel=gNodes.selectAll('g.node').data(visible,function(d){return d.id;}).join(function(enter){
+    var g=enter.append('g').attr('class','node').attr('tabindex',0).attr('role','button');
+    g.append('circle').attr('class','ring').style('fill','none').style('stroke','var(--ink-2)').style('stroke-width',1.2);
+    g.append('circle').attr('class','dot');
+    g.on('mouseenter',function(ev,d){showTip(ev,d);}).on('mousemove',function(ev,d){showTip(ev,d);}).on('mouseleave',hideTip)
+     .on('click',function(ev,d){ev.stopPropagation();selectEnt(d.id);})
+     .on('keydown',function(ev,d){if(ev.key==='Enter'||ev.key===' '){ev.preventDefault();selectEnt(d.id);}})
+     .on('focus',function(ev,d){showTipAt(d);}).on('blur',hideTip);
+    return g;
+  });
+  sel.attr('transform',function(d){return 'translate('+d.x.toFixed(1)+','+d.y.toFixed(1)+')';})
+     .style('opacity',nodeOpacity)
+     .attr('aria-label',function(d){return d.name+', '+LAYERS[d.layer].k+', '+STAGES[stageOf(d.s.m)];});
+  sel.select('circle.dot')
+     .attr('r',function(d){return Math.max(2,d.r);})
+     .style('fill',colourOf)
+     .style('fill-opacity',function(d){return d.kind==='flow'?0.14:(d.s.proj?0.32:0.9);})
+     .style('stroke',function(d){return d.kind==='flow'?colourOf(d):(state.sel===d.id?'var(--ink)':'var(--halo)');})
+     .style('stroke-width',function(d){return d.kind==='flow'?2.6:(state.sel===d.id?2.8:1.4);})
+     .style('stroke-dasharray',function(d){return d.s.proj?'3 3':null;});
+  sel.select('circle.ring')
+     .attr('r',function(d){return d.r+4.2;})
+     .style('display',function(d){return d.listed!=null&&state.t>=d.listed?null:'none';});
+  placeLabels();
+  gLabels.selectAll('text.lbl').data(visible.filter(function(d){return d._lab&&d._lab.show;}),function(d){return d.id;})
+     .join('text').attr('class','lbl')
+     .attr('x',function(d){return (d.x+d._lab.x).toFixed(1);}).attr('y',function(d){return (d.y+d._lab.y).toFixed(1);})
+     .attr('text-anchor',function(d){return d._lab.a;})
+     .style('opacity',function(d){return nodeOpacity(d)<1?0.35:1;})
+     .text(function(d){return d.short;});
+  if(state.trails)drawTrails();
+}
+function placeLabels(){
+  var placed=[];
+  function hit(b){for(var i=0;i<placed.length;i++){var p=placed[i];if(!(b.x2<p.x1||b.x1>p.x2||b.y2<p.y1||b.y1>p.y2))return true;}return false;}
+  function prio(d){return (state.sel===d.id?1000:0)+(state.lens!=='all'&&inLens(d)?100:0)+(d.kind==='flow'?-20:d.r);}
+  visible.forEach(function(d){d._lab={show:false};});
+  visible.filter(showLabel).sort(function(a,b){return prio(b)-prio(a);}).forEach(function(d){
+    var w=d.short.length*6.5+2,opts={
+      r:{x1:d.x+d.r+4,x2:d.x+d.r+4+w,y1:d.y-9,y2:d.y+6,lx:d.r+5,ly:4,a:'start'},
+      l:{x1:d.x-d.r-4-w,x2:d.x-d.r-4,y1:d.y-9,y2:d.y+6,lx:-(d.r+5),ly:4,a:'end'},
+      b:{x1:d.x-w/2,x2:d.x+w/2,y1:d.y+d.r+2,y2:d.y+d.r+16,lx:0,ly:d.r+13,a:'middle'}
+    };
+    var order=d._side?[d._side].concat(['r','l','b'].filter(function(k){return k!==d._side;})):['r','l','b'];
+    for(var i=0;i<order.length;i++){
+      var k=order[i],b=opts[k];
+      if(b.x2>PX1+10||b.x1<PX0-4)continue;
+      if(!hit(b)){placed.push(b);d._side=k;d._lab={show:true,x:b.lx,y:b.ly,a:b.a};return;}
+    }
+    if(state.sel===d.id){var f=opts.r;placed.push(f);d._lab={show:true,x:f.lx,y:f.ly,a:f.a};}
+  });
+}
+function drawTrails(){
+  var data=state.trails?visible.filter(function(e){return state.lens==='all'||inLens(e);}):[];
+  var g=gTrail.selectAll('g.tr').data(data,function(d){return d.id;}).join(function(en){var g=en.append('g').attr('class','tr');g.append('line').style('stroke','var(--line-2)').style('stroke-width',1.4);return g;});
+  g.select('line').attr('x1',function(d){return d.x;}).attr('x2',function(d){return d.x;}).attr('y1',function(d){return yOf(d.pts[0].m);}).attr('y2',function(d){return d.y;});
+  g.each(function(d){
+    var passed=d.pts.filter(function(p){return p.t<=state.t&&(!p.proj||state.proj);});
+    d3.select(this).selectAll('circle').data(passed).join('circle').attr('r',2.2).attr('cx',d.x).attr('cy',function(p){return yOf(p.m);}).style('fill','var(--ink-3)');
+  });
+}
+
+var capGrid=new Array(48).fill(0),valGrid=new Array(48).fill(0);
+function computeGrids(){
+  capGrid.fill(0);valGrid.fill(0);
+  visible.forEach(function(e){
+    if(e.kind==='flow'||!inLens(e))return;
+    if(e.basis!=='raised'&&e.basis!=='committed')return;
+    capGrid[e.layer*6+stageOf(e.s.m)]+=e.s.c;
+  });
+  EVENTS.forEach(function(v){if(v.t<=state.t&&evInLens(v))valGrid[v.layer*6+stageOf(v.m)]+=v.v;});
+}
+function drawHeat(){
+  computeGrids();
+  var mode=state.heat,ref=mode==='cap'?12000:22000,grid=mode==='cap'?capGrid:valGrid;
+  heatRects.style('fill',mode==='val'?'var(--val)':'var(--cap)')
+    .style('opacity',function(d){if(mode==='off')return 0;var v=grid[d.c*6+d.r];if(!v)return 0;var n=Math.min(1,Math.log10(1+v/10)/Math.log10(1+ref/10));return 0.05+0.34*n;});
+}
+function ledgerSums(){
+  var cin=LAYERS.map(function(){return 0;}),out=LAYERS.map(function(){return 0;});
+  visible.forEach(function(e){if((e.basis==='raised'||e.basis==='committed')&&inLens(e))cin[e.layer]+=e.s.c;});
+  EVENTS.forEach(function(v){if(v.t<=state.t&&evInLens(v))out[v.layer]+=v.v;});
+  return {cin:cin,out:out};
+}
+function drawLedger(){
+  var s=ledgerSums();
+  ledTitle.text('Money in versus value out, by layer'+(state.lens==='all'?'':', '+(LENS[state.lens].narr?'':state.lens+' ')+LENS[state.lens].t));
+  lcols.each(function(l,i){
+    var g=d3.select(this),bw=Math.min(34,l.w*0.36),x=l.cx-bw/2;
+    var hv=s.out[i]?Math.max(2,LMAX*Math.sqrt(Math.min(1,s.out[i]/LREF))):0;
+    var hc=s.cin[i]?Math.max(2,LMAX*Math.sqrt(Math.min(1,s.cin[i]/LREF))):0;
+    g.select('rect.bv').attr('x',x).attr('width',bw).attr('y',MID-hv).attr('height',hv);
+    g.select('rect.bc').attr('x',x).attr('width',bw).attr('y',MID).attr('height',hc);
+    g.select('text.tv').attr('x',l.cx).attr('y',MID-hv-6).text(s.out[i]?fmtMoney(s.out[i]):'');
+    g.select('text.tc').attr('x',l.cx).attr('y',MID+hc+15).text(s.cin[i]?fmtMoney(s.cin[i]):'');
+    var cin=s.cin[i],out=s.out[i],ratio=cin?out/cin:0,txt='';
+    if(!cin)txt=out?'no tracked capital':'';
+    else if(cin<100)txt=out?'thin data':'';
+    else if(!out)txt='$0';
+    else txt=ratio>=10?'$'+Math.round(ratio):ratio>=1?'$'+ratio.toFixed(1):'$'+ratio.toFixed(2);
+    g.select('text.tr').attr('x',l.cx).text(txt);
+  });
+}
+
+/* ---------- tooltip ---------- */
+var tip=document.getElementById('tip'),inner=document.getElementById('plateinner');
+function tipHtml(d){
+  var v=valAt(d,state.t);
+  return '<b>'+d.name+'</b><br>'+LAYERS[d.layer].k+', '+STAGES[stageOf(d.s.m)].toLowerCase()+(d.s.proj?' (stated target)':'')+'<br>'+(d.basis==='none'?BASIS.none:BASIS[d.basis]+': '+fmtMoney(d.s.c))+(v?'<br>Valuation '+fmtMoney(v[1])+' ('+Math.floor(v[0])+')':'')+'<br><span class="muted">'+fmtDate(d.s.nt)+': '+d.s.note+'</span>';
+}
+function placeTip(px,py){
+  var rect=inner.getBoundingClientRect(),w=tip.offsetWidth,h=tip.offsetHeight;
+  var x=px+14,y=py+14;
+  if(x+w>rect.width-4)x=px-w-14;
+  if(y+h>rect.height-4)y=py-h-14;
+  tip.style.left=Math.max(4,x)+'px';tip.style.top=Math.max(4,y)+'px';tip.style.opacity=1;
+}
+function showTip(ev,d){
+  tip.innerHTML=tipHtml(d);
+  var rect=inner.getBoundingClientRect();placeTip(ev.clientX-rect.left,ev.clientY-rect.top);
+}
+function showTipAt(d){
+  tip.innerHTML=tipHtml(d);
+  var svgEl=document.getElementById('plate'),r=svgEl.getBoundingClientRect(),ir=inner.getBoundingClientRect(),k=r.width/1000;
+  placeTip(d.x*k+(r.left-ir.left),d.y*k+(r.top-ir.top));
+}
+function hideTip(){tip.style.opacity=0;}
+
+/* ---------- readout ---------- */
+var readout=document.getElementById('readout');
+function esc(s){return String(s).replace(/&/g,'&amp;').replace(/</g,'&lt;');}
+function hottest(grid){var best=-1,bi=-1;grid.forEach(function(v,i){if(v>best){best=v;bi=i;}});if(best<=0)return null;return {c:Math.floor(bi/6),r:bi%6,v:best};}
+function wellName(c,r){return LAYERS[c].k+', '+STAGES[r].toLowerCase()+' ('+wellId(c,r)+')';}
+function renderReadout(){
+  if(state.sel){renderEntity(ENT.filter(function(e){return e.id===state.sel;})[0]);return;}
+  if(state.well){renderWell(state.well.c,state.well.r);return;}
+  if(state.lens!=='all'){renderLens(state.lens);return;}
+  computeGrids();
+  var s=ledgerSums(),cin=s.cin.reduce(function(a,b){return a+b;},0),out=s.out.reduce(function(a,b){return a+b;},0);
+  var hc=hottest(capGrid),hv=hottest(valGrid);
+  readout.innerHTML='<h2>'+fmtDate(state.t)+'</h2>'+
+   '<p class="muted">Each well is one layer of the stack at one level of evidence. Bubbles are bets, sized by capital or deal value on a log scale.</p>'+
+   '<dl class="kv"><dt>Bets on the plate</dt><dd>'+visible.length+'</dd>'+
+   '<dt>Capital in, tracked</dt><dd>'+fmtMoney(cin)+'</dd>'+
+   '<dt>Value out, tracked</dt><dd>'+fmtMoney(out)+'</dd></dl>'+
+   '<h3>Most capital sits in</h3><p>'+(hc?wellName(hc.c,hc.r)+', '+fmtMoney(hc.v):'Nothing yet')+'</p>'+
+   '<h3>Most value realised in</h3><p>'+(hv?wellName(hv.c,hv.r)+', '+fmtMoney(hv.v):'No tracked exits yet')+'</p>'+
+   '<h3>Value out per $1 of capital in</h3><p>'+perDollar(s)+'</p>'+
+   '<p class="muted">Pick a lens to see what a thesis rests on, or select any bubble or well.</p>';
+}
+function perDollar(s){
+  function r(i){var c=s.cin[i],o=s.out[i];if(c<100)return 'n/a';var x=o/c;return '$'+(x>=10?Math.round(x):x>=1?x.toFixed(1):x.toFixed(2));}
+  return 'Models '+r(2)+', agents '+r(3)+', drug assets '+r(6)+'.';
+}
+function chipsFor(e){
+  var h='';e.theses.forEach(function(k){h+='<button class="chip" data-lens="'+k+'">'+k+' '+esc(LENS[k].t)+'</button>';});
+  e.narr.forEach(function(k){h+='<button class="chip" data-lens="'+k+'">'+esc(LENS[k].t)+'</button>';});
+  return h?'<div class="chips">'+h+'</div>':'';
+}
+function renderEntity(e){
+  var s=e.s,v=valAt(e,state.t);
+  var head='<h2>'+esc(e.name)+'</h2>';
+  if(!s){readout.innerHTML=head+'<p class="muted">Not on the plate yet at '+fmtDate(state.t)+'. First appears '+fmtDate(e.pts[0].t)+'.</p><button class="textbtn" data-clear="1">Back to overview</button>';return;}
+  var st=stageOf(s.m);
+  var cats='<dt>Lead capital</dt><dd>'+SRC[e.src].n+'</dd><dt>Base</dt><dd>'+GEO[e.geo].n+'</dd><dt>Value verdict</dt><dd><span class="sw" style="background:var('+VERD[e.verdict].v+')"></span>'+VERD[e.verdict].n+'</dd>';
+  var tl='<ol class="tl">'+e.pts.filter(function(p){return !p.proj||state.proj;}).map(function(p){
+    var cls=p.t>state.t+1e-6?'future':(p===e.pts[s.idx]?'now':'');
+    return '<li class="'+cls+'"><span class="d">'+fmtDate(p.t)+'</span><span>'+esc(p.note)+(p.proj?' (stated target)':'')+'</span></li>';
+  }).join('')+'</ol>';
+  readout.innerHTML=head+'<p class="muted">'+LAYERS[e.layer].k+', '+STAGES[st].toLowerCase()+', well '+wellId(e.layer,st)+(e.listed!=null&&state.t>=e.listed?(e.how==='acquired'?', acquired':', listed'):'')+'</p>'+
+   '<dl class="kv"><dt>'+(e.basis==='none'?'Capital':BASIS[e.basis])+'</dt><dd>'+(e.basis==='none'?'Not disclosed':fmtMoney(s.c))+'</dd>'+
+   (v?'<dt>Valuation</dt><dd>'+fmtMoney(v[1])+' ('+Math.floor(v[0])+')</dd>':'')+cats+
+   '<dt>Confidence</dt><dd>'+CONF[e.conf]+'</dd></dl>'+chipsFor(e)+'<h3>Milestones</h3>'+tl+
+   (e.id==='anthropic'||e.id==='coefficient'?'<p class="muted" style="margin-top:10px">Disclosure: this explorer was built with Claude, made by Anthropic.</p>':'')+
+   '<button class="textbtn" data-clear="1">Back to overview</button>';
+}
+function renderWell(c,r){
+  computeGrids();
+  var here=visible.filter(function(e){return e.layer===c&&stageOf(e.s.m)===r;});
+  var ev=EVENTS.filter(function(v){return v.t<=state.t&&v.layer===c&&stageOf(v.m)===r;});
+  readout.innerHTML='<h2>Well '+wellId(c,r)+'</h2><p class="muted">'+LAYERS[c].k+' at '+STAGES[r].toLowerCase()+'. '+STAGE_HELP[r]+'.</p>'+
+   '<dl class="kv"><dt>Capital here</dt><dd>'+fmtMoney(capGrid[c*6+r])+'</dd><dt>Value realised here</dt><dd>'+fmtMoney(valGrid[c*6+r])+'</dd></dl>'+
+   '<h3>Bets in this well</h3>'+(here.length?'<div class="members">'+here.map(function(e){return '<button class="chip" data-ent="'+e.id+'">'+esc(e.short)+'</button>';}).join('')+'</div>':'<p class="muted">Empty at '+fmtDate(state.t)+'.</p>')+
+   (ev.length?'<h3>Exits and payments</h3><ul class="ev">'+ev.map(function(v){return '<li>'+esc(v.label)+', '+fmtMoney(v.v)+'</li>';}).join('')+'</ul>':'')+
+   '<button class="textbtn" data-clear="1">Back to overview</button>';
+}
+function renderLens(k){
+  var L=LENS[k],mem=ENT.filter(function(e){return e.theses.indexOf(k)>=0||e.narr.indexOf(k)>=0;});
+  var h='<h2>'+(L.narr?'':k+' ')+esc(L.t)+'</h2>'+(L.stage?'<span class="stage">'+esc(L.stage)+'</span>':'')+'<p>'+esc(L.claim)+'</p>';
+  if(!L.narr){
+    h+='<h3>Evidence</h3><ul class="ev">'+L.ev.map(function(x){return '<li>'+esc(x)+'</li>';}).join('')+'</ul>'+
+       '<h3>Strongest counter</h3><p>'+esc(L.counter)+'</p><h3>What would falsify it</h3><p>'+esc(L.fals)+'</p>';
+  }
+  h+='<h3>Bets in this lens</h3><div class="members">'+mem.map(function(e){return '<button class="chip" data-ent="'+e.id+'">'+esc(e.short)+'</button>';}).join('')+'</div>';
+  h+='<button class="textbtn" data-reset="1">Show everything</button>';
+  readout.innerHTML=h;
+}
+readout.addEventListener('click',function(ev){
+  var b=ev.target.closest('button');if(!b)return;
+  if(b.dataset.ent){selectEnt(b.dataset.ent);}
+  else if(b.dataset.lens){setLens(b.dataset.lens);}
+  else if(b.dataset.clear){state.sel=null;state.well=null;drawNodes();renderReadout();}
+  else if(b.dataset.reset){setLens('all');}
+});
+function selectEnt(id){state.sel=id;state.well=null;drawNodes();renderReadout();}
+function setLens(k){state.lens=k;state.sel=null;state.well=null;document.getElementById('lens').value=k;gTrail.selectAll('*').remove();drawNodes();renderReadout();}
+
+/* ---------- legend ---------- */
+function renderLegend(){
+  var map=state.colour==='source'?SRC:state.colour==='verdict'?VERD:GEO,field=state.colour==='source'?'src':state.colour==='verdict'?'verdict':'geo';
+  var present={};ENT.forEach(function(e){present[e[field]]=1;});
+  var h='<div class="lrow">';Object.keys(map).forEach(function(k){if(present[k])h+='<span><span class="sw" style="background:var('+map[k].v+')"></span>'+map[k].n+'</span>';});h+='</div><div class="lrow">';
+  var sizes=[50,1000,20000],svgS='<svg width="150" height="76" viewBox="0 0 150 76" aria-hidden="true">';
+  sizes.forEach(function(c,i){var r=rOf(c);var cx=[22,62,116][i];svgS+='<circle cx="'+cx+'" cy="'+(58-r).toFixed(1)+'" r="'+r.toFixed(1)+'" style="fill:none;stroke:var(--ink-3)"/><text x="'+cx+'" y="73" text-anchor="middle" style="font-size:11px;fill:var(--ink-2)">'+fmtMoney(c)+'</text>';});
+  svgS+='</svg>';
+  h+='<span style="display:inline-flex;align-items:center;gap:8px">'+svgS+'</span>';
+  h+='<span>Outer ring: listed or acquired</span><span>Hollow: aggregate flow, not a company</span><span>Dashed: stated target</span><span>Smallest dots: no disclosed capital</span></div>';
+  document.getElementById('legend').innerHTML=h;
+}
+
+/* ---------- time ---------- */
+var slider=document.getElementById('year'),yrEl=document.getElementById('yr'),ticker=document.getElementById('ticker'),playBtn=document.getElementById('play'),playIcon=document.getElementById('playicon');
+function tmax(){return state.proj?PEND:NOW;}
+function renderTicks(){
+  var max=tmax(),h='';
+  for(var y=2021;y<=Math.floor(max);y++){h+='<span style="left:'+((y-START)/(max-START)*100)+'%">'+y+'</span>';}
+  document.getElementById('ticks').innerHTML=h;
+  slider.max=max;
+}
+function updateTime(){
+  slider.value=state.t;
+  yrEl.textContent=fmtDate(state.t);
+  projNote.style('display',state.t>NOW+0.01?null:'none');
+}
+var pulses=[],lastT=state.t,looping=false,lastFrame=0,lastPanel=0;
+function setPlaying(p){
+  state.playing=p;
+  playBtn.setAttribute('aria-label',p?'Pause':'Play');
+  playIcon.setAttribute('d',p?'M4 2.5h3v11H4zM9 2.5h3v11H9z':'M4 2.5v11l9-5.5z');
+  if(p){if(state.t>=tmax()-0.01){state.t=START;visible.forEach(function(e){e.vis=false;});update(0.5);}lastT=state.t;lastFrame=0;ensureLoop();}
+}
+function ensureLoop(){if(!looping){looping=true;requestAnimationFrame(frame);}}
+function frame(now){
+  if(state.playing){
+    if(!lastFrame)lastFrame=now;
+    var dt=Math.min(0.05,(now-lastFrame)/1000);lastFrame=now;
+    var prev=state.t;state.t=Math.min(tmax(),state.t+dt*0.85);
+    collectPulses(prev,state.t,now);
+    update(0.22);
+    if(now-lastPanel>280){lastPanel=now;renderReadout();}
+    if(state.t>=tmax()){setPlaying(false);renderReadout();}
+  }
+  drawPulses(now);
+  if(state.playing||pulses.length){requestAnimationFrame(frame);}else{looping=false;}
+}
+function collectPulses(a,b,now){
+  ENT.forEach(function(e){
+    e.pts.forEach(function(p){
+      if(p.proj&&!state.proj)return;
+      if(p.t>a&&p.t<=b){
+        if(!reduced)pulses.push({e:e,born:now});
+        if(state.lens==='all'||inLens(e))ticker.textContent=fmtDate(p.t)+', '+e.name+': '+p.note;
+      }
+    });
+  });
+}
+function drawPulses(now){
+  pulses=pulses.filter(function(p){return now-p.born<950;});
+  var sel=gPulse.selectAll('circle').data(pulses);
+  sel.join('circle').style('fill','none').style('stroke',function(p){return colourOf(p.e);}).style('stroke-width',2)
+    .attr('cx',function(p){return p.e.x||0;}).attr('cy',function(p){return p.e.y||0;})
+    .attr('r',function(p){var k=(now-p.born)/950;return (p.e.r||4)+4+30*k;})
+    .style('opacity',function(p){var k=(now-p.born)/950;return (state.lens!=='all'&&!inLens(p.e))?0:0.55*(1-k);});
+}
+
+/* ---------- controls ---------- */
+playBtn.addEventListener('click',function(){setPlaying(!state.playing);});
+slider.addEventListener('input',function(){if(state.playing)setPlaying(false);state.t=+slider.value;update(0.5);renderReadout();});
+document.getElementById('lens').addEventListener('change',function(ev){setLens(ev.target.value);});
+function segBind(id,key,after){
+  var box=document.getElementById(id);
+  box.addEventListener('click',function(ev){var b=ev.target.closest('button');if(!b)return;state[key]=b.dataset.v;box.querySelectorAll('button').forEach(function(x){x.setAttribute('aria-pressed',x===b?'true':'false');});after();});
+}
+segBind('colour','colour',function(){drawNodes();renderLegend();renderReadout();});
+segBind('heat','heat',function(){drawHeat();});
+function togBind(id,key,after){
+  var b=document.getElementById(id);
+  b.addEventListener('click',function(){state[key]=!state[key];b.setAttribute('aria-pressed',state[key]?'true':'false');after();});
+}
+togBind('tTrails','trails',function(){gTrail.selectAll('*').remove();drawNodes();});
+togBind('tWhite','white',function(){gWhite.style('display',state.white?null:'none');});
+togBind('tProj','proj',function(){
+  if(!state.proj&&state.t>NOW)state.t=NOW;
+  renderTicks();update(0.4);renderReadout();
+});
+document.getElementById('labels').addEventListener('change',function(ev){state.labels=ev.target.value;drawNodes();});
+
+/* ---------- start ---------- */
+renderTicks();renderLegend();
+if(reduced){state.t=NOW;update();renderReadout();ticker.textContent='Drag the date slider or press play to move through time.';}
+else{state.t=START;update(0.6);renderReadout();setTimeout(function(){setPlaying(true);},450);}
+})();
+</script>
+</body>
+</html>
