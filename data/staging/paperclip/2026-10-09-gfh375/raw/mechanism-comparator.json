@@ -1,0 +1,353 @@
+{
+ "tests": [
+  "mechanism",
+  "comparator"
+ ],
+ "records": [
+  {
+   "doc_id": "e-gfh375-sotorasib-crc-rct",
+   "claim": "FDA label records an RCT (CodeBreaK 300) of the KRAS G12C inhibitor sotorasib plus panitumumab vs SOC in previously treated KRAS G12C mCRC, with PFS and ORR benefit but no significant OS difference.",
+   "quote": "Median in months (95% CI)\t5.6 (4.2, 6.3)\t2 (1.9, 3.9)",
+   "source": "FDA, Lumakras (sotorasib) prescribing information / review, sNDA approved 16 Jan 2025",
+   "url": "https://clinicaltrials.gov/study/NCT05198934",
+   "paperclip": {
+    "path": "/fda/us/fda_a67448b461f4/content.lines",
+    "lines": "L325"
+   },
+   "tier": "A",
+   "domain": "regulatory",
+   "date": "2025-01-16",
+   "stance": "for",
+   "tests": [
+    "mechanism",
+    "comparator"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-sotorasib-accel",
+   "claim": "FDA label: sotorasib (KRAS G12C) is an approved RAS GTPase family inhibitor, NSCLC indication on accelerated approval on ORR/DOR pending confirmatory trial.",
+   "quote": "This indication is approved under accelerated approval based on overall response rate (ORR) and duration of response (DOR).",
+   "source": "FDA, Lumakras prescribing information",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/",
+   "paperclip": {
+    "path": "/fda/us/fda_a67448b461f4/content.lines",
+    "lines": "L11"
+   },
+   "tier": "A",
+   "domain": "regulatory",
+   "date": "2025",
+   "stance": "for",
+   "tests": [
+    "mechanism"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-adagrasib-label",
+   "claim": "FDA label: adagrasib (KRAS G12C) is approved for previously treated KRAS G12C NSCLC and, with cetuximab, for pretreated KRAS G12C CRC.",
+   "quote": "KRAZATI in combination with cetuximab is indicated for the treatment of adult patients with KRAS G12C-mutated locally advanced or metastatic colorectal cancer (CRC)",
+   "source": "FDA, Krazati (adagrasib) prescribing information, NDA216340",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/",
+   "paperclip": {
+    "path": "/fda/us/fda_4deae558ed08/content.lines",
+    "lines": "L37"
+   },
+   "tier": "A",
+   "domain": "regulatory",
+   "date": "2025",
+   "stance": "for",
+   "tests": [
+    "mechanism",
+    "comparator"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-g12c-confirmatory-doubt",
+   "claim": "Against: FDA briefing for sotorasib confirmatory trial CodeBreaK 200 raised bias concerns (investigator-assessed PFS, asymmetric dropout, crossover), so even G12C class RCT validation was contested.",
+   "quote": "This asymmetric early withdrawal of patients in the docetaxel group, was one of the first indications of possible systemic bias in CodeBreakK 200.",
+   "source": "FDA ODAC briefing document, Lumakras sNDA (CodeBreaK 200)",
+   "url": "https://www.fda.gov/advisory-committees",
+   "paperclip": {
+    "path": "/fda/us/fda_8dc5d3290b58/content.lines",
+    "lines": "L31"
+   },
+   "tier": "A",
+   "domain": "regulatory",
+   "date": "2023",
+   "stance": "against",
+   "tests": [
+    "mechanism"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-daraxonrasib-rct",
+   "claim": "Phase 3 RASolute-302 (reported in a secondary commentary): daraxonrasib vs chemotherapy in 2L mPDAC, RAS G12-mutant population median OS 13.2 vs 6.6 months, HR 0.40. Primary RCT paper and any FDA label not retrieved.",
+   "quote": "In patients harboring RAS G12 mutations, daraxonrasib virtually doubled median OS to 13.2 months compared to 6.6 months in the chemotherapy arm (HR 0.40, 95% CI 0.30–0.54; p < 0.001).",
+   "source": "Pillozzi S et al., The KRAS targeting revolution in metastatic pancreatic cancer: RASolute-302 and allele-specific strategies at ASCO 2026, PMC13453085",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13453085/",
+   "paperclip": {
+    "path": "/papers/PMC13453085/content.lines",
+    "lines": "L13"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-08-08",
+   "stance": "against",
+   "tests": [
+    "mechanism",
+    "comparator"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-daraxonrasib-sets-sos",
+   "claim": "Commentary states RASolute-302 establishes daraxonrasib as the new second-line standard of care in mPDAC, i.e. the bar GFH375 must beat or combine with at launch.",
+   "quote": "establishing daraxonrasib as the new second-line standard of care.",
+   "source": "Pillozzi S et al., PMC13453085",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13453085/",
+   "paperclip": {
+    "path": "/papers/PMC13453085/content.lines",
+    "lines": "L13"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-08-08",
+   "stance": "against",
+   "tests": [
+    "comparator"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-daraxonrasib-class-validation",
+   "claim": "Pan-RAS(ON) class (daraxonrasib) now has phase 3 survival benefit in 2L PDAC; supports RAS-pathway targeting but is a different (pan-RAS, not G12D-selective) mechanism.",
+   "quote": "mark a definitive paradigm shift, supporting targeted (K)RAS inhibition as a new standard of care.",
+   "source": "Pillozzi S et al., PMC13453085",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13453085/",
+   "paperclip": {
+    "path": "/papers/PMC13453085/content.lines",
+    "lines": "L11"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-08-08",
+   "stance": "for",
+   "tests": [
+    "mechanism"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-daraxonrasib-g12d-activity",
+   "claim": "Daraxonrasib is a pan-RAS inhibitor that targets mutant and wild-type RAS, so its activity covers KRAS G12D patients; GFH375 is G12D-selective and must show an advantage (tolerability, ORR) over it. Subgroup G12D data for RASolute-302 not retrieved.",
+   "quote": "Daraxonrasib (RMC-6236), a pan-RAS(ON) multi-selective noncovalent tri-complex inhibitor",
+   "source": "Qaseem M et al., From PDAC to NSCLC: daraxonrasib in RASolute 302, PMC13354368",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13354368/",
+   "paperclip": {
+    "path": "/papers/PMC13354368/content.lines",
+    "lines": "L13"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-05-21",
+   "stance": "against",
+   "tests": [
+    "comparator"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-rasolute305-zoldonrasib",
+   "claim": "Zoldonrasib (RMC-9805, G12D-selective RAS(ON)) has a phase 3 (RASolute 305) in 1L KRAS G12D PDAC, a direct same-mechanism-class competitor ahead of or alongside GFH375 phase 3.",
+   "quote": "phase III RASolute 305 initiated in first‐line metastatic KRAS G12D‐mutant PDAC (NCT07621718).",
+   "source": "Honda R, Daraxonrasib and Beyond: Pan-RAS Inhibition, Resistance, and Next-Generation Strategies, PMC13444396",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13444396/",
+   "paperclip": {
+    "path": "/papers/PMC13444396/content.lines",
+    "lines": "L42"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-08-06",
+   "stance": "against",
+   "tests": [
+    "comparator"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-zoldonrasib-nsclc-orr",
+   "claim": "Zoldonrasib phase 1 in previously treated KRAS G12D NSCLC (1200 mg QD, n=18): ORR 61% (confirmed or pending), a high bar for GFH375 in NSCLC.",
+   "quote": "the objective response rate (confirmed response or pending confirmation) was 61% (95% CI: 36, 83).",
+   "source": "Arbour KC et al., Abstract CT019, AACR 2025 (zoldonrasib, NCT06040541)",
+   "url": "https://doi.org/10.1158/1538-7445.am2025-ct019",
+   "paperclip": {
+    "path": "/papers/oa_W4410596274/meta.json",
+    "lines": "abstract field"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-05-22",
+   "stance": "against",
+   "tests": [
+    "comparator"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-hrs4642-adebrelimab",
+   "claim": "HRS-4642 plus adebrelimab in pretreated KRAS G12D mPDAC (n=33): confirmed ORR 48.5%, median OS 11.5 months (ASCO 2026 abstract as summarised in a review).",
+   "quote": "yielded a remarkable confirmed ORR of 48.5% and a median OS of 11.5 months in pretreated mPDAC",
+   "source": "Pillozzi S et al., PMC13453085 (citing ASCO 2026 abstract 4190)",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13453085/",
+   "paperclip": {
+    "path": "/papers/PMC13453085/content.lines",
+    "lines": "L26"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-08-08",
+   "stance": "against",
+   "tests": [
+    "comparator"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-dn022150",
+   "claim": "Another G12D oral inhibitor, DN022150, reported ORR up to 37.5% at 450 mg in a phase I/IIa (56 pts, 66.1% pancreatic), ASCO 2026.",
+   "quote": "with an ORR up to 37.5% at 450 mg.",
+   "source": "Pillozzi S et al., PMC13453085 (citing JCO 2026 44:16_suppl 3007)",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13453085/",
+   "paperclip": {
+    "path": "/papers/PMC13453085/content.lines",
+    "lines": "L26"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-08-08",
+   "stance": "against",
+   "tests": [
+    "comparator"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-setidegrasib-nejm",
+   "claim": "Peer-reviewed NEJM phase 1: KRAS G12D degrader setidegrasib 600 mg gave 36% PR in NSCLC and 24% response in 2L/3L PDAC (n=21), median OS 10.3 months; shows G12D targeting is clinically active but with modest PDAC activity.",
+   "quote": "Among the 21 patients with metastatic pancreatic ductal adenocarcinoma who received the 600-mg dose as second- or third-line treatment",
+   "source": "Park W et al., Setidegrasib in Advanced NSCLC and Pancreatic Cancer, NEJM 2026",
+   "url": "https://doi.org/10.1056/nejmoa2600752",
+   "paperclip": {
+    "path": "/papers/oa_W7140283169/meta.json",
+    "lines": "abstract field"
+   },
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2026-03-25",
+   "stance": "context",
+   "tests": [
+    "mechanism",
+    "comparator"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-setidegrasib-no-approved",
+   "claim": "Same NEJM paper states no targeted therapy against KRAS G12D was approved at the time of writing, i.e. the G12D-selective mechanism is not yet validated by approval.",
+   "quote": "no targeted therapies directed against this variant are currently approved for clinical use.",
+   "source": "Park W et al., NEJM 2026 (setidegrasib)",
+   "url": "https://doi.org/10.1056/nejmoa2600752",
+   "paperclip": {
+    "path": "/papers/oa_W7140283169/meta.json",
+    "lines": "abstract field"
+   },
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2026-03-25",
+   "stance": "against",
+   "tests": [
+    "mechanism"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-gfh375-preclinical",
+   "claim": "GFH375 evidence retrieved is preclinical only (AACR 2024/2025 abstracts); describes an oral G12D (ON/OFF) inhibitor. No clinical efficacy abstract found in Paperclip.",
+   "quote": "GFH375 (VS-7375): An oral, selective KRAS G12D (ON/OFF) inhibitor with potent anti-tumor efficacy",
+   "source": "Yan F et al., Abstract 3318, AACR 2024",
+   "url": "https://doi.org/10.1158/1538-7445.am2024-3318",
+   "paperclip": {
+    "path": "/papers/oa_W4393072763/meta.json",
+    "lines": "title field"
+   },
+   "tier": "C",
+   "domain": "technical",
+   "date": "2024-03-22",
+   "stance": "context",
+   "tests": [
+    "mechanism"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-vs7375-ph2-pdac",
+   "claim": "Verastem registered phase 2 of VS-7375 alone and with cetuximab in metastatic KRAS G12D PDAC (recruiting; start 2026-06-16); single-arm-type phase 2, no randomised comparator evident in registry text.",
+   "quote": "This study will assess the safety and efficacy of VS-7375 alone and in combination with cetuximab in patients with metastatic KRAS G12D - mutated Pancreatic Cancer",
+   "source": "ClinicalTrials.gov NCT07644559",
+   "url": "https://clinicaltrials.gov/study/NCT07644559",
+   "paperclip": {
+    "path": "/trials/NCT07644559/content.lines",
+    "lines": "L1"
+   },
+   "tier": "C",
+   "domain": "regulatory",
+   "date": "2026-06-16",
+   "stance": "context",
+   "tests": [
+    "comparator"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-vs7375-crc-nsclc-ph2",
+   "claim": "Phase 2 VS-7375 studies also registered in KRAS G12D CRC (NCT07659795) and NSCLC (NCT07659782), with cetuximab combinations.",
+   "quote": "This study will assess the safety and efficacy of VS-7375 alone and in combination with cetuximab in patients with metastatic KRAS G12D - mutated Non-Small Cell Lung Cancer",
+   "source": "ClinicalTrials.gov NCT07659782",
+   "url": "https://clinicaltrials.gov/study/NCT07659782",
+   "paperclip": {
+    "path": "/trials/NCT07659782/content.lines",
+    "lines": "L1"
+   },
+   "tier": "C",
+   "domain": "regulatory",
+   "date": "2026",
+   "stance": "context",
+   "tests": [
+    "comparator"
+   ]
+  }
+ ],
+ "proposed_scores": {
+  "mechanism": {
+   "score": 2,
+   "cites": [
+    "e-gfh375-sotorasib-crc-rct",
+    "e-gfh375-adagrasib-label",
+    "e-gfh375-daraxonrasib-class-validation",
+    "e-gfh375-setidegrasib-no-approved",
+    "e-gfh375-g12c-confirmatory-doubt"
+   ],
+   "why": "RAS inhibition as a class is validated by FDA approvals (sotorasib/adagrasib, G12C) including a CRC RCT (CodeBreaK 300), and daraxonrasib has a reported phase 3 OS win. But no KRAS G12D-selective drug is approved or RCT-validated (NEJM 2026 says none approved), and the strongest RCT evidence in hand is secondary-source.",
+   "what_would_raise_it": "Peer-reviewed RASolute-302 paper or FDA approval of daraxonrasib (tier A), plus an RCT or approval of any G12D-selective agent (zoldonrasib RASolute 305, HRS-4642, GFH375 itself)."
+  },
+  "comparator": {
+   "score": 1,
+   "cites": [
+    "e-gfh375-daraxonrasib-rct",
+    "e-gfh375-daraxonrasib-sets-sos",
+    "e-gfh375-zoldonrasib-nsclc-orr",
+    "e-gfh375-hrs4642-adebrelimab",
+    "e-gfh375-rasolute305-zoldonrasib",
+    "e-gfh375-vs7375-ph2-pdac"
+   ],
+   "why": "Daraxonrasib is reported to be the new 2L PDAC standard (OS 13.2 vs 6.6 mo, HR 0.40) and G12D competitors show ORRs of 37-61% in early data; no GFH375 clinical data or head-to-head/cross-trial comparison was found. Planned VS-7375 phase 2s are not randomised against daraxonrasib.",
+   "what_would_raise_it": "Clinical ORR/PFS data for GFH375/VS-7375 in 2L PDAC and NSCLC exceeding zoldonrasib/HRS-4642, a randomised design vs daraxonrasib or combination with it, and a clear tolerability edge over pan-RAS rash/stomatitis."
+  }
+ },
+ "gaps": [
+  "No GFH375/VS-7375 clinical efficacy data (ORR, PFS) found in Paperclip abstracts/PMC; only AACR preclinical abstracts and registry entries.",
+  "No peer-reviewed RASolute-302 primary paper or FDA label/approval for daraxonrasib retrieved; figures come from a commentary (PMC13453085). fda search for daraxonrasib returned only Krazati documents.",
+  "No G12D-subgroup result for daraxonrasib in RASolute-302 retrieved.",
+  "No MRTX1133 clinical data found (searches returned preclinical/review items); no head-to-head or cross-trial analysis of GFH375 vs other G12D inhibitors found.",
+  "No 2L+ NSCLC or CRC standard-of-care guideline text retrieved for the launch window; only G12C labels (sotorasib/adagrasib incl. CRC) and daraxonrasib NSCLC commentary (PMC13354368).",
+  "Registry entries are single-arm/combination phase 2; whether a Verastem randomised phase 3 vs daraxonrasib is planned was not found."
+ ]
+}

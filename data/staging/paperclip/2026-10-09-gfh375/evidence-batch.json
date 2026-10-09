@@ -1,0 +1,1038 @@
+[
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-sotorasib-crc-rct",
+  "data": {
+   "claim": "FDA label records an RCT (CodeBreaK 300) of the KRAS G12C inhibitor sotorasib plus panitumumab vs SOC in previously treated KRAS G12C mCRC, with PFS and ORR benefit but no significant OS difference.",
+   "source": "FDA, Lumakras (sotorasib) prescribing information / review, sNDA approved 16 Jan 2025",
+   "url": "https://clinicaltrials.gov/study/NCT05198934",
+   "tier": "A",
+   "domain": "regulatory",
+   "date": "2025-01-16",
+   "notes": "Stance: for. Verbatim: \"Median in months (95% CI)\t5.6 (4.2, 6.3)\t2 (1.9, 3.9)\" Paperclip: https://paperclip.gxl.ai/citations/fda/fda_a67448b461f4#L325 (/fda/us/fda_a67448b461f4/content.lines L325). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "mechanism",
+    "comparator"
+   ],
+   "stance": "for",
+   "quote": "Median in months (95% CI)\t5.6 (4.2, 6.3)\t2 (1.9, 3.9)",
+   "paperclip": "https://paperclip.gxl.ai/citations/fda/fda_a67448b461f4#L325",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-sotorasib-accel",
+  "data": {
+   "claim": "FDA label: sotorasib (KRAS G12C) is an approved RAS GTPase family inhibitor, NSCLC indication on accelerated approval on ORR/DOR pending confirmatory trial.",
+   "source": "FDA, Lumakras prescribing information",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/",
+   "tier": "A",
+   "domain": "regulatory",
+   "date": "2025",
+   "notes": "Stance: for. Verbatim: \"This indication is approved under accelerated approval based on overall response rate (ORR) and duration of response (DOR).\" Paperclip: https://paperclip.gxl.ai/citations/fda/fda_a67448b461f4#L11 (/fda/us/fda_a67448b461f4/content.lines L11). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "mechanism"
+   ],
+   "stance": "for",
+   "quote": "This indication is approved under accelerated approval based on overall response rate (ORR) and duration of response (DOR).",
+   "paperclip": "https://paperclip.gxl.ai/citations/fda/fda_a67448b461f4#L11",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-adagrasib-label",
+  "data": {
+   "claim": "FDA label: adagrasib (KRAS G12C) is approved for previously treated KRAS G12C NSCLC and, with cetuximab, for pretreated KRAS G12C CRC.",
+   "source": "FDA, Krazati (adagrasib) prescribing information, NDA216340",
+   "url": "https://www.accessdata.fda.gov/drugsatfda_docs/label/",
+   "tier": "A",
+   "domain": "regulatory",
+   "date": "2025",
+   "notes": "Stance: for. Verbatim: \"KRAZATI in combination with cetuximab is indicated for the treatment of adult patients with KRAS G12C-mutated locally advanced or metastatic colorectal cancer (CRC)\" Paperclip: https://paperclip.gxl.ai/citations/fda/fda_4deae558ed08#L37 (/fda/us/fda_4deae558ed08/content.lines L37). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "mechanism",
+    "comparator"
+   ],
+   "stance": "for",
+   "quote": "KRAZATI in combination with cetuximab is indicated for the treatment of adult patients with KRAS G12C-mutated locally advanced or metastatic colorectal cancer (CRC)",
+   "paperclip": "https://paperclip.gxl.ai/citations/fda/fda_4deae558ed08#L37",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-g12c-confirmatory-doubt",
+  "data": {
+   "claim": "Against: FDA briefing for sotorasib confirmatory trial CodeBreaK 200 raised bias concerns (investigator-assessed PFS, asymmetric dropout, crossover), so even G12C class RCT validation was contested.",
+   "source": "FDA ODAC briefing document, Lumakras sNDA (CodeBreaK 200)",
+   "url": "https://www.fda.gov/advisory-committees",
+   "tier": "A",
+   "domain": "regulatory",
+   "date": "2023",
+   "notes": "Stance: against. Verbatim: \"This asymmetric early withdrawal of patients in the docetaxel group, was one of the first indications of possible systemic bias in CodeBreakK 200.\" Paperclip: https://paperclip.gxl.ai/citations/fda/fda_8dc5d3290b58#L31 (/fda/us/fda_8dc5d3290b58/content.lines L31). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "mechanism"
+   ],
+   "stance": "against",
+   "quote": "This asymmetric early withdrawal of patients in the docetaxel group, was one of the first indications of possible systemic bias in CodeBreakK 200.",
+   "paperclip": "https://paperclip.gxl.ai/citations/fda/fda_8dc5d3290b58#L31",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-daraxonrasib-rct",
+  "data": {
+   "claim": "Phase 3 RASolute-302 (reported in a secondary commentary): daraxonrasib vs chemotherapy in 2L mPDAC, RAS G12-mutant population median OS 13.2 vs 6.6 months, HR 0.40. Primary RCT paper and any FDA label not retrieved.",
+   "source": "Pillozzi S et al., The KRAS targeting revolution in metastatic pancreatic cancer: RASolute-302 and allele-specific strategies at ASCO 2026, PMC13453085",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13453085/",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-08-08",
+   "notes": "Stance: against. Verbatim: \"In patients harboring RAS G12 mutations, daraxonrasib virtually doubled median OS to 13.2 months compared to 6.6 months in the chemotherapy arm (HR 0.40, 95% CI 0.30–0.54; p < 0.001).\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC13453085#L13 (/papers/PMC13453085/content.lines L13). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "comparator",
+    "mechanism"
+   ],
+   "stance": "against",
+   "quote": "In patients harboring RAS G12 mutations, daraxonrasib virtually doubled median OS to 13.2 months compared to 6.6 months in the chemotherapy arm (HR 0.40, 95% CI 0.30–0.54; p < 0.001).",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC13453085#L13",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-daraxonrasib-sets-sos",
+  "data": {
+   "claim": "Commentary states RASolute-302 establishes daraxonrasib as the new second-line standard of care in mPDAC, i.e. the bar GFH375 must beat or combine with at launch.",
+   "source": "Pillozzi S et al., PMC13453085",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13453085/",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-08-08",
+   "notes": "Stance: against. Verbatim: \"establishing daraxonrasib as the new second-line standard of care.\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC13453085#L13 (/papers/PMC13453085/content.lines L13). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "comparator"
+   ],
+   "stance": "against",
+   "quote": "establishing daraxonrasib as the new second-line standard of care.",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC13453085#L13",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-daraxonrasib-class-validation",
+  "data": {
+   "claim": "Pan-RAS(ON) class (daraxonrasib) now has phase 3 survival benefit in 2L PDAC; supports RAS-pathway targeting but is a different (pan-RAS, not G12D-selective) mechanism.",
+   "source": "Pillozzi S et al., PMC13453085",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13453085/",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-08-08",
+   "notes": "Stance: for. Verbatim: \"mark a definitive paradigm shift, supporting targeted (K)RAS inhibition as a new standard of care.\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC13453085#L11 (/papers/PMC13453085/content.lines L11). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "mechanism"
+   ],
+   "stance": "for",
+   "quote": "mark a definitive paradigm shift, supporting targeted (K)RAS inhibition as a new standard of care.",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC13453085#L11",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-daraxonrasib-g12d-activity",
+  "data": {
+   "claim": "Daraxonrasib is a pan-RAS inhibitor that targets mutant and wild-type RAS, so its activity covers KRAS G12D patients; GFH375 is G12D-selective and must show an advantage (tolerability, ORR) over it. Subgroup G12D data for RASolute-302 not retrieved.",
+   "source": "Qaseem M et al., From PDAC to NSCLC: daraxonrasib in RASolute 302, PMC13354368",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13354368/",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-05-21",
+   "notes": "Stance: against. Verbatim: \"Daraxonrasib (RMC-6236), a pan-RAS(ON) multi-selective noncovalent tri-complex inhibitor\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC13354368#L13 (/papers/PMC13354368/content.lines L13). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "comparator"
+   ],
+   "stance": "against",
+   "quote": "Daraxonrasib (RMC-6236), a pan-RAS(ON) multi-selective noncovalent tri-complex inhibitor",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC13354368#L13",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-rasolute305-zoldonrasib",
+  "data": {
+   "claim": "Zoldonrasib (RMC-9805, G12D-selective RAS(ON)) has a phase 3 (RASolute 305) in 1L KRAS G12D PDAC, a direct same-mechanism-class competitor ahead of or alongside GFH375 phase 3.",
+   "source": "Honda R, Daraxonrasib and Beyond: Pan-RAS Inhibition, Resistance, and Next-Generation Strategies, PMC13444396",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13444396/",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-08-06",
+   "notes": "Stance: against. Verbatim: \"phase III RASolute 305 initiated in first‐line metastatic KRAS G12D‐mutant PDAC (NCT07621718).\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC13444396#L42 (/papers/PMC13444396/content.lines L42). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "comparator"
+   ],
+   "stance": "against",
+   "quote": "phase III RASolute 305 initiated in first‐line metastatic KRAS G12D‐mutant PDAC (NCT07621718).",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC13444396#L42",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-zoldonrasib-nsclc-orr",
+  "data": {
+   "claim": "Zoldonrasib phase 1 in previously treated KRAS G12D NSCLC (1200 mg QD, n=18): ORR 61% (confirmed or pending), a high bar for GFH375 in NSCLC.",
+   "source": "Arbour KC et al., Abstract CT019, AACR 2025 (zoldonrasib, NCT06040541)",
+   "url": "https://doi.org/10.1158/1538-7445.am2025-ct019",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-05-22",
+   "notes": "Stance: against. Verbatim: \"the objective response rate (confirmed response or pending confirmation) was 61% (95% CI: 36, 83).\" Paperclip: https://paperclip.gxl.ai/citations/papers/oa_W4410596274 (/papers/oa_W4410596274/meta.json abstract field). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "comparator"
+   ],
+   "stance": "against",
+   "quote": "the objective response rate (confirmed response or pending confirmation) was 61% (95% CI: 36, 83).",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/oa_W4410596274",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-hrs4642-adebrelimab",
+  "data": {
+   "claim": "HRS-4642 plus adebrelimab in pretreated KRAS G12D mPDAC (n=33): confirmed ORR 48.5%, median OS 11.5 months (ASCO 2026 abstract as summarised in a review).",
+   "source": "Pillozzi S et al., PMC13453085 (citing ASCO 2026 abstract 4190)",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13453085/",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-08-08",
+   "notes": "Stance: against. Verbatim: \"yielded a remarkable confirmed ORR of 48.5% and a median OS of 11.5 months in pretreated mPDAC\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC13453085#L26 (/papers/PMC13453085/content.lines L26). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "comparator"
+   ],
+   "stance": "against",
+   "quote": "yielded a remarkable confirmed ORR of 48.5% and a median OS of 11.5 months in pretreated mPDAC",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC13453085#L26",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-dn022150",
+  "data": {
+   "claim": "Another G12D oral inhibitor, DN022150, reported ORR up to 37.5% at 450 mg in a phase I/IIa (56 pts, 66.1% pancreatic), ASCO 2026.",
+   "source": "Pillozzi S et al., PMC13453085 (citing JCO 2026 44:16_suppl 3007)",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13453085/",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-08-08",
+   "notes": "Stance: against. Verbatim: \"with an ORR up to 37.5% at 450 mg.\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC13453085#L26 (/papers/PMC13453085/content.lines L26). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "comparator"
+   ],
+   "stance": "against",
+   "quote": "with an ORR up to 37.5% at 450 mg.",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC13453085#L26",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-setidegrasib-nejm",
+  "data": {
+   "claim": "Peer-reviewed NEJM phase 1: KRAS G12D degrader setidegrasib 600 mg gave 36% PR in NSCLC and 24% response in 2L/3L PDAC (n=21), median OS 10.3 months; shows G12D targeting is clinically active but with modest PDAC activity.",
+   "source": "Park W et al., Setidegrasib in Advanced NSCLC and Pancreatic Cancer, NEJM 2026",
+   "url": "https://doi.org/10.1056/nejmoa2600752",
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2026-03-25",
+   "notes": "Stance: context. Verbatim: \"Among the 21 patients with metastatic pancreatic ductal adenocarcinoma who received the 600-mg dose as second- or third-line treatment\" Paperclip: https://paperclip.gxl.ai/citations/papers/oa_W7140283169 (/papers/oa_W7140283169/meta.json abstract field). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "mechanism",
+    "comparator"
+   ],
+   "stance": "context",
+   "quote": "Among the 21 patients with metastatic pancreatic ductal adenocarcinoma who received the 600-mg dose as second- or third-line treatment",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/oa_W7140283169",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-setidegrasib-no-approved",
+  "data": {
+   "claim": "Same NEJM paper states no targeted therapy against KRAS G12D was approved at the time of writing, i.e. the G12D-selective mechanism is not yet validated by approval.",
+   "source": "Park W et al., NEJM 2026 (setidegrasib)",
+   "url": "https://doi.org/10.1056/nejmoa2600752",
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2026-03-25",
+   "notes": "Stance: against. Verbatim: \"no targeted therapies directed against this variant are currently approved for clinical use.\" Paperclip: https://paperclip.gxl.ai/citations/papers/oa_W7140283169 (/papers/oa_W7140283169/meta.json abstract field). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "mechanism"
+   ],
+   "stance": "against",
+   "quote": "no targeted therapies directed against this variant are currently approved for clinical use.",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/oa_W7140283169",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-gfh375-preclinical",
+  "data": {
+   "claim": "GFH375 evidence retrieved is preclinical only (AACR 2024/2025 abstracts); describes an oral G12D (ON/OFF) inhibitor. No clinical efficacy abstract found in Paperclip.",
+   "source": "Yan F et al., Abstract 3318, AACR 2024",
+   "url": "https://doi.org/10.1158/1538-7445.am2024-3318",
+   "tier": "C",
+   "domain": "technical",
+   "date": "2024-03-22",
+   "notes": "Stance: context. Verbatim: \"GFH375 (VS-7375): An oral, selective KRAS G12D (ON/OFF) inhibitor with potent anti-tumor efficacy\" Paperclip: https://paperclip.gxl.ai/citations/papers/oa_W4393072763 (/papers/oa_W4393072763/meta.json title field). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "mechanism"
+   ],
+   "stance": "context",
+   "quote": "GFH375 (VS-7375): An oral, selective KRAS G12D (ON/OFF) inhibitor with potent anti-tumor efficacy",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/oa_W4393072763",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-vs7375-ph2-pdac",
+  "data": {
+   "claim": "Verastem registered phase 2 of VS-7375 alone and with cetuximab in metastatic KRAS G12D PDAC (recruiting; start 2026-06-16); single-arm-type phase 2, no randomised comparator evident in registry text.",
+   "source": "ClinicalTrials.gov NCT07644559",
+   "url": "https://clinicaltrials.gov/study/NCT07644559",
+   "tier": "C",
+   "domain": "regulatory",
+   "date": "2026-06-16",
+   "notes": "Stance: context. Verbatim: \"This study will assess the safety and efficacy of VS-7375 alone and in combination with cetuximab in patients with metastatic KRAS G12D - mutated Pancreatic Cancer\" Paperclip: https://paperclip.gxl.ai/citations/trials/NCT07644559#L1 (/trials/NCT07644559/content.lines L1). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "comparator",
+    "design"
+   ],
+   "stance": "context",
+   "quote": "This study will assess the safety and efficacy of VS-7375 alone and in combination with cetuximab in patients with metastatic KRAS G12D - mutated Pancreatic Cancer",
+   "paperclip": "https://paperclip.gxl.ai/citations/trials/NCT07644559#L1",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-vs7375-crc-nsclc-ph2",
+  "data": {
+   "claim": "Phase 2 VS-7375 studies also registered in KRAS G12D CRC (NCT07659795) and NSCLC (NCT07659782), with cetuximab combinations.",
+   "source": "ClinicalTrials.gov NCT07659782",
+   "url": "https://clinicaltrials.gov/study/NCT07659782",
+   "tier": "C",
+   "domain": "regulatory",
+   "date": "2026",
+   "notes": "Stance: context. Verbatim: \"This study will assess the safety and efficacy of VS-7375 alone and in combination with cetuximab in patients with metastatic KRAS G12D - mutated Non-Small Cell Lung Cancer\" Paperclip: https://paperclip.gxl.ai/citations/trials/NCT07659782#L1 (/trials/NCT07659782/content.lines L1). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "comparator"
+   ],
+   "stance": "context",
+   "quote": "This study will assess the safety and efficacy of VS-7375 alone and in combination with cetuximab in patients with metastatic KRAS G12D - mutated Non-Small Cell Lung Cancer",
+   "paperclip": "https://paperclip.gxl.ai/citations/trials/NCT07659782#L1",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-asco25-fih",
+  "data": {
+   "claim": "China-led first-in-human GFH375 study (NCT06500676) tested 100-900 mg QD and 300 mg BID with no DLTs; ORR 27.3% (6/22) across tumour types, 3 PR in 7 PDAC and 3 PR in 9 NSCLC.",
+   "source": "GenFleet investigators, A first-in-human phase I/II study of GFH375 ..., J Clin Oncol 43(16_suppl):3013 (ASCO 2025 abstract)",
+   "url": "https://doi.org/10.1200/jco.2025.43.16_suppl.3013",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-05-28",
+   "notes": "Stance: for. Verbatim: \"No dose-limiting toxicities (DLTs) were observed at the tested dose levels of 100 mg, 200 mg, 400 mg, 600 mg, 750 mg, 900 mg once daily (QD) and 300 mg twice daily (BID).\" Paperclip: https://paperclip.gxl.ai/citations/papers/oa_W4410816242 (/papers/oa_W4410816242/meta.json abstract field). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "exposure"
+   ],
+   "stance": "for",
+   "quote": "No dose-limiting toxicities (DLTs) were observed at the tested dose levels of 100 mg, 200 mg, 400 mg, 600 mg, 750 mg, 900 mg once daily (QD) and 300 mg twice daily (BID).",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/oa_W4410816242",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-asco25-pk-small",
+  "data": {
+   "claim": "Same abstract: PK shows Tmax 2-4 h and terminal half-life 18.5-21.6 h; data cut-off 3 Jan 2025 with only 32 treated patients (22 evaluable), a small early dataset with no recommended Phase 2 dose stated.",
+   "source": "GenFleet investigators, ASCO 2025 abstract 3013, J Clin Oncol 43(16_suppl)",
+   "url": "https://doi.org/10.1200/jco.2025.43.16_suppl.3013",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-05-28",
+   "notes": "Stance: against. Verbatim: \"GFH375 demonstrated good oral bioavailability with a T max of 2~4 h and a terminal half-life of 18.5-21.6 h.\" Paperclip: https://paperclip.gxl.ai/citations/papers/oa_W4410816242 (/papers/oa_W4410816242/meta.json abstract field). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "exposure"
+   ],
+   "stance": "against",
+   "quote": "GFH375 demonstrated good oral bioavailability with a T max of 2~4 h and a terminal half-life of 18.5-21.6 h.",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/oa_W4410816242",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-asco25-safety",
+  "data": {
+   "claim": "GI adverse events were frequent but grade 1-2; 25% had grade 3/4 treatment-related AEs, no grade 5, no dose reductions.",
+   "source": "GenFleet investigators, ASCO 2025 abstract 3013",
+   "url": "https://doi.org/10.1200/jco.2025.43.16_suppl.3013",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-05-28",
+   "notes": "Stance: context. Verbatim: \"The most common TRAEs were gastrointestinal events including diarrhea (71.9%), vomiting (71.9%) and nausea (62.5%); all were grade 1 or 2.\" Paperclip: https://paperclip.gxl.ai/citations/papers/oa_W4410816242 (/papers/oa_W4410816242/meta.json abstract field). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "exposure"
+   ],
+   "stance": "context",
+   "quote": "The most common TRAEs were gastrointestinal events including diarrhea (71.9%), vomiting (71.9%) and nausea (62.5%); all were grade 1 or 2.",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/oa_W4410816242",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-vs7375-ta-b3-dose",
+  "data": {
+   "claim": "Verastem's US-sponsored Phase 1/2 (NCT07020221) is still enrolling Part B3 testing both 600 mg and 900 mg QD, i.e. the dose was not yet a single settled dose in the ex-China study as of this 2026 trials-in-progress abstract.",
+   "source": "Azad N, Wu T (Verastem), 63A Phase 1/2 Study of VS-7375 ..., The Oncologist, 2026-06-23",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13287896/",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-06-23",
+   "notes": "Stance: against. Verbatim: \"Patient enrollment is currently ongoing in Part B3, in which the preliminary anticancer activity of VS-7375 (600 mg or 900 mg QD) is being assessed\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC13287896#L10 (/papers/PMC13287896/content.lines L10). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "exposure",
+    "design"
+   ],
+   "stance": "against",
+   "quote": "Patient enrollment is currently ongoing in Part B3, in which the preliminary anticancer activity of VS-7375 (600 mg or 900 mg QD) is being assessed",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC13287896#L10",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-vs7375-ph12-reg",
+  "data": {
+   "claim": "Verastem's VS-7375 Phase 1/2 (NCT07020221) is a US-registered study of VS-7375 alone and in combination in KRAS G12D solid tumours; status Recruiting, start 2025-06-24 (registry metadata). It excludes prior direct KRAS G12D inhibitors. Enrolment number and country list not retrievable.",
+   "source": "ClinicalTrials.gov NCT07020221, A Phase 1/2 Study of VS-7375 in Patients With KRAS G12D-Mutated Solid Tumors",
+   "url": "https://clinicaltrials.gov/study/NCT07020221",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-06-24",
+   "notes": "Stance: context. Verbatim: \"This study will assess the safety and efficacy of VS-7375 alone and in combination in patients with advanced solid tumors harboring a KRAS G12D-mutation.\" Paperclip: https://paperclip.gxl.ai/citations/trials/NCT07020221#L1 (/trials/NCT07020221/content.lines L1). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "exposure",
+    "design"
+   ],
+   "stance": "context",
+   "quote": "This study will assess the safety and efficacy of VS-7375 alone and in combination in patients with advanced solid tumors harboring a KRAS G12D-mutation.",
+   "paperclip": "https://paperclip.gxl.ai/citations/trials/NCT07020221#L1",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-vs7375-ph2-crc",
+  "data": {
+   "claim": "Verastem also registered a Phase 2 of VS-7375 in KRAS G12D colorectal cancer (NCT07659795) with cetuximab/panitumumab and mFOLFOX combinations; Recruiting, start 2026-07-28.",
+   "source": "ClinicalTrials.gov NCT07659795, A Phase 2 Study of VS-7375 in KRAS G12D-Mutated Colorectal Cancer",
+   "url": "https://clinicaltrials.gov/study/NCT07659795",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-07-28",
+   "notes": "Stance: context. Verbatim: \"This study will assess the safety and efficacy of VS-7375 alone and in combination with cetuximab or panitumumab and cetuximab plus mFOLFOX\" Paperclip: https://paperclip.gxl.ai/citations/trials/NCT07659795#L1 (/trials/NCT07659795/content.lines L1). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "design"
+   ],
+   "stance": "context",
+   "quote": "This study will assess the safety and efficacy of VS-7375 alone and in combination with cetuximab or panitumumab and cetuximab plus mFOLFOX",
+   "paperclip": "https://paperclip.gxl.ai/citations/trials/NCT07659795#L1",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-ph3-pdac",
+  "data": {
+   "claim": "GenFleet's Phase III in previously treated metastatic KRAS G12D PDAC (NCT07262567) randomises 1:1 versus a chemotherapy control, Recruiting, start 2025-12-04; registry text read does not list countries or enrolment, and the page appears to be a China-sponsor study.",
+   "source": "ClinicalTrials.gov NCT07262567, Phase III Study to Compare GFH375 and Chemotherapy in Patients With KRAS G12D-Mutant Metastatic Pancreatic Cancer",
+   "url": "https://clinicaltrials.gov/study/NCT07262567",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-12-04",
+   "notes": "Stance: context. Verbatim: \"Eligible participants will be randomized 1:1 to the experimental group or the control group for treatment.\" Paperclip: https://paperclip.gxl.ai/citations/trials/NCT07262567#L1 (/trials/NCT07262567/content.lines L1). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "comparator",
+    "design",
+    "population"
+   ],
+   "stance": "context",
+   "quote": "Eligible participants will be randomized 1:1 to the experimental group or the control group for treatment.",
+   "paperclip": "https://paperclip.gxl.ai/citations/trials/NCT07262567#L1",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-ph3-nsclc",
+  "data": {
+   "claim": "GenFleet's randomised study of GFH375 versus docetaxel in previously treated KRAS G12D NSCLC (NCT07668752) is open-label 2:1, Recruiting, start 2026-07-27, after platinum chemo and anti-PD-(L)1; countries and dose not stated in text read.",
+   "source": "ClinicalTrials.gov NCT07668752, A Study to Evaluate GFH375 Versus Docetaxel in NSCLC With KRAS G12D Mutation",
+   "url": "https://clinicaltrials.gov/study/NCT07668752",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-07-27",
+   "notes": "Stance: for. Verbatim: \"You have a two-thirds chance to receive GFH375 and a one-third chance to receive docetaxel.\" Paperclip: https://paperclip.gxl.ai/citations/trials/NCT07668752#L1 (/trials/NCT07668752/content.lines L1). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "design"
+   ],
+   "stance": "for",
+   "quote": "You have a two-thirds chance to receive GFH375 and a one-third chance to receive docetaxel.",
+   "paperclip": "https://paperclip.gxl.ai/citations/trials/NCT07668752#L1",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-nsclc-1l",
+  "data": {
+   "claim": "A randomised first-line KRAS G12D NSCLC study (NCT07554859, Not Yet Recruiting, planned start 2026-05-20) fixes GFH375 at 600 mg QD in all three cohorts (mono, +cetuximab, +pemetrexed), ~90 patients: a China-sponsor trial implying 600 mg is the working dose, but no dose comparison.",
+   "source": "ClinicalTrials.gov NCT07554859, GFH375 Monotherapy and Combination Therapy as First-Line Treatment for Advanced KRAS G12D-Mutant NSCLC",
+   "url": "https://clinicaltrials.gov/study/NCT07554859",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-05-20",
+   "notes": "Stance: context. Verbatim: \"Cohort 1: GFH375 monotherapy (600 mg, QD, oral), approximately 30 participants.\" Paperclip: https://paperclip.gxl.ai/citations/trials/NCT07554859#L1 (/trials/NCT07554859/content.lines L1). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "exposure",
+    "design"
+   ],
+   "stance": "context",
+   "quote": "Cohort 1: GFH375 monotherapy (600 mg, QD, oral), approximately 30 participants.",
+   "paperclip": "https://paperclip.gxl.ai/citations/trials/NCT07554859#L1",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-ph1-main",
+  "data": {
+   "claim": "The China phase I/II study NCT06500676 uses accelerated titration plus BOIN with a Phase Ia that allows non-measurable disease; it is Recruiting since 2024-07-09. It is a dose-escalation design but registry text shows no randomised dose-comparison cohort.",
+   "source": "ClinicalTrials.gov NCT06500676, A Study of GFH375 in Advanced Solid Tumors With KRAS G12D Mutations",
+   "url": "https://clinicaltrials.gov/study/NCT06500676",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2024-07-09",
+   "notes": "Stance: context. Verbatim: \"This is a multicenter, open-label, phase I/II study to explore the safety, tolerability, pharmacokinetics (PK), and preliminary efficacy of GFH375\" Paperclip: https://paperclip.gxl.ai/citations/trials/NCT06500676#L1 (/trials/NCT06500676/content.lines L1). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "design",
+    "exposure"
+   ],
+   "stance": "context",
+   "quote": "This is a multicenter, open-label, phase I/II study to explore the safety, tolerability, pharmacokinetics (PK), and preliminary efficacy of GFH375",
+   "paperclip": "https://paperclip.gxl.ai/citations/trials/NCT06500676#L1",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-ph2-withdrawn",
+  "data": {
+   "claim": "GenFleet's Phase II monotherapy PDAC study (NCT07026916) is registered as Withdrawn (registry metadata), so one planned PDAC monotherapy study did not proceed.",
+   "source": "ClinicalTrials.gov NCT07026916, A Phase II Study to Evaluate GFH375 in KRAS G12D Mutant Metastatic Pancreatic Cancer",
+   "url": "https://clinicaltrials.gov/study/NCT07026916",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-08-01",
+   "notes": "Stance: against. Verbatim: \"This is a multicenter, open-label, phase II study to explore the efficacy, safety/tolerability and pharmacokinetics (PK) of GFH375\" Paperclip: https://paperclip.gxl.ai/citations/trials/NCT07026916#L1 (/trials/NCT07026916/content.lines L1). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "design"
+   ],
+   "stance": "against",
+   "quote": "This is a multicenter, open-label, phase II study to explore the efficacy, safety/tolerability and pharmacokinetics (PK) of GFH375",
+   "paperclip": "https://paperclip.gxl.ai/citations/trials/NCT07026916#L1",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-combo-pdac",
+  "data": {
+   "claim": "GenFleet is also running a Phase Ib/II of GFH375 plus cetuximab or AG chemotherapy (NCT07259590, Recruiting, start 2025-10-21) and a Phase II combo vs monotherapy PDAC study (NCT07784374, Not Yet Recruiting, start 2026-08-31), showing combination strategy in China.",
+   "source": "ClinicalTrials.gov NCT07259590 and NCT07784374",
+   "url": "https://clinicaltrials.gov/study/NCT07259590",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-10-21",
+   "notes": "Stance: context. Verbatim: \"Phase Ib/II clinical study aimed at exploring the safety and efficacy of Regimen A (GFH375 in combination with Cetuximab) and Regimen B (GFH375 in combination with AG)\" Paperclip: https://paperclip.gxl.ai/citations/trials/NCT07259590#L1 (/trials/NCT07259590/content.lines L1). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "design"
+   ],
+   "stance": "context",
+   "quote": "Phase Ib/II clinical study aimed at exploring the safety and efficacy of Regimen A (GFH375 in combination with Cetuximab) and Regimen B (GFH375 in combination with AG)",
+   "paperclip": "https://paperclip.gxl.ai/citations/trials/NCT07259590#L1",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-pdac-kras-spectrum-china-vs-west",
+  "data": {
+   "claim": "Chinese head-PDAC cohort had similar KRAS G12D share to a TCGA (Western) cohort but more G12V and less G12R; no G12C in the Chinese cohort.",
+   "source": "Yang Y et al., The genetic landscape of pancreatic head ductal adenocarcinoma in China and prognosis stratification, 2022",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8855595/",
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2022-02-18",
+   "notes": "Stance: for. Verbatim: \"The proportion of KRAS G12D in the two cohorts was similar (this study 40.7% vs. TCGA 48.2%) while Chinese cohort had a higher mutation rate of G12V (43.5% vs. 22.4%)\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC8855595#L80 (/papers/PMC8855595/content.lines L80). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "population"
+   ],
+   "stance": "for",
+   "quote": "The proportion of KRAS G12D in the two cohorts was similar (this study 40.7% vs. TCGA 48.2%) while Chinese cohort had a higher mutation rate of G12V (43.5% vs. 22.4%)",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC8855595#L80",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-pdac-g12d-share-us",
+  "data": {
+   "claim": "In a large US real-world metastatic PDAC cohort, G12D was 43.6% of KRAS-mutant tumours (G12V 30.8%, G12C 1.6%), so G12D share is comparable to the Chinese cohort.",
+   "source": "Norton C et al., KRAS Mutation Status and Treatment Outcomes in Metastatic Pancreatic Adenocarcinoma, JAMA Netw Open, 2025",
+   "url": "https://doi.org/10.1001/jamanetworkopen.2024.53588",
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2025-01-07",
+   "notes": "Stance: for. Verbatim: \"G12D was the most common (883 [43.6%]), followed by G12V (624 [30.8%]), G12R (319 [15.8%]), other (165 [8.2%]), and G12C (32 [1.6%])\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC11707629#L76 (/papers/PMC11707629/content.lines L76). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "population"
+   ],
+   "stance": "for",
+   "quote": "G12D was the most common (883 [43.6%]), followed by G12V (624 [30.8%]), G12R (319 [15.8%]), other (165 [8.2%]), and G12C (32 [1.6%])",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC11707629#L76",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-nsclc-asian-lower-kras",
+  "data": {
+   "claim": "KRAS mutation frequency in NSCLC is much lower in East Asians (5-20%) than in Whites (23-35%).",
+   "source": "Wang X et al., Additional impact of genetic ancestry over race/ethnicity to prevalence of KRAS mutations in NSCLC, 2024",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11452329/",
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2024-06-19",
+   "notes": "Stance: against. Verbatim: \"with 23%–35% in the White population, followed by 17%–22% in African American and 5%–20% in East Asian populations.\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC11452329#L16 (/papers/PMC11452329/content.lines L16). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "population"
+   ],
+   "stance": "against",
+   "quote": "with 23%–35% in the White population, followed by 17%–22% in African American and 5%–20% in East Asian populations.",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC11452329#L16",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-nsclc-g12c-depleted-asians",
+  "data": {
+   "claim": "KRAS G12C is much rarer in self-reported Asian NSCLC than White NSCLC (3.3% vs 13.4%), so the G12C-dominant Western mix does not hold in Asia; G12D NSCLC is a minority subtype everywhere.",
+   "source": "Adib E et al., Variation in targetable genomic alterations in NSCLC by genetic ancestry, sex, smoking history, and histology, Genome Med, 2022",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9013075/",
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2022-04-15",
+   "notes": "Stance: context. Verbatim: \"KRASG12C mutations were depleted in Asians (Asians: 18/538, 3.3% vs Blacks: 28/309, 9.1% vs Whites: 616/4591, 13.4%, p<0.0001\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC9013075#L81 (/papers/PMC9013075/content.lines L81). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "population"
+   ],
+   "stance": "context",
+   "quote": "KRASG12C mutations were depleted in Asians (Asians: 18/538, 3.3% vs Blacks: 28/309, 9.1% vs Whites: 616/4591, 13.4%, p<0.0001",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC9013075#L81",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-nsclc-china-subtype-mix",
+  "data": {
+   "claim": "In Chinese NSCLC cohorts G12C was still the most frequent KRAS subtype (29.6%) followed by G12D (18.1%); the G12D share is similar to Western NSCLC, though overall KRAS prevalence is lower (12.1%).",
+   "source": "Chen H et al., Prevalence and real-world therapeutic analysis of Chinese patients with KRAS-mutant NSCLC, Cancer Med, 2022",
+   "url": "https://doi.org/10.1002/cam4.4739",
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2022-04-08",
+   "notes": "Stance: context. Verbatim: \"the incidence of G12C was the highest (29.6%), followed by G12D (18.1%), G12V (17.5%), and G12A (8.2%)\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC9554448#L32 (/papers/PMC9554448/content.lines L32). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "population"
+   ],
+   "stance": "context",
+   "quote": "the incidence of G12C was the highest (29.6%), followed by G12D (18.1%), G12V (17.5%), and G12A (8.2%)",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC9554448#L32",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-pooled-china-us-pdac-trials",
+  "data": {
+   "claim": "Systematic review table lists GFH375 phase I/IIa (Zhou, 2025) as a China-only study, while Western ON-inhibitors (daraxonrasib, zoldonrasib, adagrasib) were US studies.",
+   "source": "Tiede KOM et al., Efficacy and safety signals from early-phase studies of KRAS inhibition in pancreatic cancer, Sci Rep, 2026",
+   "url": "https://doi.org/10.1038/s41598-026-40757-3",
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2026-03-11",
+   "notes": "Stance: against. Verbatim: \"Aiping Zhou, 2025 | China | Phase I/IIa | GFH375 (ON/OFF) | 66 | 66 | 59 | 60 (35–74) | KRAS p. G12D | Metastatic | 600 mg QD\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC13103443#L18 (/papers/PMC13103443/content.lines L18). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "population"
+   ],
+   "stance": "against",
+   "quote": "Aiping Zhou, 2025 | China | Phase I/IIa | GFH375 (ON/OFF) | 66 | 66 | 59 | 60 (35–74) | KRAS p. G12D | Metastatic | 600 mg QD",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC13103443#L18",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-china-2l-pdac-realworld",
+  "data": {
+   "claim": "Single-centre Chinese real-world series (1,054 APC pts) of 2L chemotherapy: first-line was 5-FU-based in 437 and gemcitabine-based in 617; no consensus 2L regimen.",
+   "source": "Liu Y et al., Clinical outcomes of second-line chemotherapy in advanced pancreatic adenocarcinoma: a real-world study, 2024",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11414221/",
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2024-07-26",
+   "notes": "Stance: context. Verbatim: \"Four hundred and thirty-seven and 617 patients were treated with 5-fluorouracil- and gemcitabine-based chemotherapy as first-line treatment, respectively.\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC11414221#L10 (/papers/PMC11414221/content.lines L10). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "population"
+   ],
+   "stance": "context",
+   "quote": "Four hundred and thirty-seven and 617 patients were treated with 5-fluorouracil- and gemcitabine-based chemotherapy as first-line treatment, respectively.",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC11414221#L10",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-china-1l-gnp-vs-folfirinox",
+  "data": {
+   "claim": "Chinese single-institution data show first-line nab-paclitaxel+gemcitabine used far more (62 of 117) than mFOLFIRINOX (30), implying a gemcitabine-pretreated 2L population in China.",
+   "source": "Quan Q et al., Real World First-Line Treatments and Outcomes of Nab-Paclitaxel Plus Gemcitabine, mFOLFIRINOX and GEMOX in Chinese Single Institution, 2020",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7816170/",
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2020-12-30",
+   "notes": "Stance: context. Verbatim: \"62 patients in the nab-paclitaxel-gemcitabine group, 30 patients in the mFOLFIRINOX group, and 25 patients in the GEMOX group.\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC7816170#L28 (/papers/PMC7816170/content.lines L28). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "population"
+   ],
+   "stance": "context",
+   "quote": "62 patients in the nab-paclitaxel-gemcitabine group, 30 patients in the mFOLFIRINOX group, and 25 patients in the GEMOX group.",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC7816170#L28",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-pk-selumetinib-asian-higher",
+  "data": {
+   "claim": "For another oral kinase inhibitor, exposure was ~35% higher in Asian than Western healthy subjects, showing ethnic PK differences can exist for targeted oral agents (not a KRAS drug).",
+   "source": "Dymond AW et al., PK and pharmacogenetics of selumetinib in Asian and Western healthy subjects, Eur J Clin Pharmacol, 2017",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5423974/",
+   "tier": "A",
+   "domain": "technical",
+   "date": "2017-03-10",
+   "notes": "Stance: against. Verbatim: \"Dose-normalized AUC and Cmax were 35% (95% CI: 25–47%) and 39% (95% CI: 24–56%) higher in the pooled Asian group, respectively, compared with Western subjects.\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC5423974#L18 (/papers/PMC5423974/content.lines L18). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "population"
+   ],
+   "stance": "against",
+   "quote": "Dose-normalized AUC and Cmax were 35% (95% CI: 25–47%) and 39% (95% CI: 24–56%) higher in the pooled Asian group, respectively, compared with Western subjects.",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC5423974#L18",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-pk-acalabrutinib-chinese-higher",
+  "data": {
+   "claim": "Another oral targeted agent had 28% higher exposure in Chinese patients; no equivalent analysis found for GFH375 or any KRAS inhibitor.",
+   "source": "Yao T et al., Ethnic differences in PK and clinical responses of acalabrutinib between Chinese and White patients, 2025",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12199099/",
+   "tier": "A",
+   "domain": "technical",
+   "date": "2025-02-24",
+   "notes": "Stance: context. Verbatim: \"East Asian race was a statistically significant covariate on relative bioavailability and apparent volume of the peripheral compartment of acalabrutinib, showing 28% higher PK exposures in Chinese patients.\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC12199099#L11 (/papers/PMC12199099/content.lines L11). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "population"
+   ],
+   "stance": "context",
+   "quote": "East Asian race was a statistically significant covariate on relative bioavailability and apparent volume of the peripheral compartment of acalabrutinib, showing 28% higher PK exposures in Chinese patients.",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC12199099#L11",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-vs7375-us-trial-prior-lines",
+  "data": {
+   "claim": "Verastem's US VS-7375 phase 1/2 (NCT07020221) enrols KRAS G12D solid-tumour patients after 1 or 2 prior standard lines, a Western-sponsored trial.",
+   "source": "Azad NS, Wu T, A Phase 1/2 Study of VS-7375 in Advanced KRAS G12D-mt Solid Tumors, Oncologist (trials in progress), 2026",
+   "url": "https://doi.org/10.1093/oncolo/oyag205.064",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-06-23",
+   "notes": "Stance: for. Verbatim: \"Key inclusion criteria include measurable disease according to RECIST vl.1, 1 or 2 prior lines of standard systemic therapy, ECOG performance status of 0 or 1\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC13287896#L10 (/papers/PMC13287896/content.lines L10). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "population"
+   ],
+   "stance": "for",
+   "quote": "Key inclusion criteria include measurable disease according to RECIST vl.1, 1 or 2 prior lines of standard systemic therapy, ECOG performance status of 0 or 1",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC13287896#L10",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-rasolute302-overall",
+  "data": {
+   "claim": "In the overall RASolute-302 population (500 patients, second line) median OS was 13.2 vs 6.7 months, HR 0.40, so daraxonrasib is the benchmark a G12D-only drug must beat in second-line pancreatic cancer.",
+   "source": "Pillozzi S et al., J Hematol Oncol, 2026-08-08, Table 1 (overall population)",
+   "url": "https://doi.org/10.1186/s13045-026-01834-2",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-08-08",
+   "notes": "Stance: against. Verbatim: \"Median Overall Survival (OS) | 13.2 months | 6.7 months | HR = 0.40 (95% CI 0.30-0-53) p<0.001\" Paperclip: https://paperclip.gxl.ai/citations/papers/PMC13453085#L22 (/papers/PMC13453085/content.lines L22). Found and quote-checked by the Paperclip run of 9 Oct 2026; not yet reviewed by Thomas.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "comparator"
+   ],
+   "stance": "against",
+   "quote": "Median Overall Survival (OS) | 13.2 months | 6.7 months | HR = 0.40 (95% CI 0.30-0-53) p<0.001",
+   "paperclip": "https://paperclip.gxl.ai/citations/papers/PMC13453085#L22",
+   "added_by": "Paperclip run (Claude), 9 Oct 2026",
+   "added_at": "2026-10-09T12:00:00.000Z"
+  }
+ }
+]

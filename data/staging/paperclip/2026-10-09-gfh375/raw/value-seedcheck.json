@@ -1,0 +1,113 @@
+{
+ "tests": [
+  "value_gap",
+  "seed_checks"
+ ],
+ "records": [
+  {
+   "doc_id": "e-gfh375-rasolute302-review",
+   "claim": "In the RASolute-302 phase 3 trial, daraxonrasib roughly doubled median overall survival versus chemotherapy in RAS G12-mutant second-line metastatic pancreatic cancer (13.2 vs 6.6 months, HR 0.40).",
+   "quote": "In patients harboring RAS G12 mutations, daraxonrasib virtually doubled median OS to 13.2 months compared to 6.6 months in the chemotherapy arm (HR 0.40, 95% CI 0.30–0.54; p < 0.001).",
+   "source": "Pillozzi S et al., The KRAS targeting revolution in metastatic pancreatic cancer: insights from RASolute-302 and allele-specific strategies at ASCO 2026, J Hematol Oncol, 2026-08-08 (secondary review of the trial)",
+   "url": "https://doi.org/10.1186/s13045-026-01834-2",
+   "paperclip": {
+    "path": "/papers/PMC13453085/content.lines",
+    "lines": "L13"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-08-08",
+   "stance": "against",
+   "tests": [
+    "comparator"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-rasolute302-overall",
+   "claim": "In the overall RASolute-302 population (500 patients, second line) median OS was 13.2 vs 6.7 months, HR 0.40, so daraxonrasib is the benchmark a G12D-only drug must beat in second-line pancreatic cancer.",
+   "quote": "Median Overall Survival (OS) | 13.2 months | 6.7 months | HR = 0.40 (95% CI 0.30-0-53) p<0.001",
+   "source": "Pillozzi S et al., J Hematol Oncol, 2026-08-08, Table 1 (overall population)",
+   "url": "https://doi.org/10.1186/s13045-026-01834-2",
+   "paperclip": {
+    "path": "/papers/PMC13453085/content.lines",
+    "lines": "L22"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-08-08",
+   "stance": "against",
+   "tests": [
+    "comparator"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-phase3-registry",
+   "claim": "A registered randomised (1:1) phase 3 study (title: GFH375 versus chemotherapy) enrols previously treated metastatic pancreatic cancer with centrally confirmed KRAS G12D; recruiting, start 2025-12-04.",
+   "quote": "This study plans to enroll participants with previously treated metastatic pancreatic cancer and harbor centrally confirmed KRAS G12D mutation.",
+   "source": "ClinicalTrials.gov NCT07262567, Phase III Study to Compare GFH375 and Chemotherapy in Patients With KRAS G12D-Mutant Metastatic Pancreatic Cancer",
+   "url": "https://clinicaltrials.gov/study/NCT07262567",
+   "paperclip": {
+    "path": "/trials/NCT07262567/content.lines",
+    "lines": "L1"
+   },
+   "tier": "C",
+   "domain": "regulatory",
+   "date": "2025-12-04",
+   "stance": "for",
+   "tests": [
+    "design",
+    "comparator"
+   ]
+  }
+ ],
+ "proposed_scores": {
+  "value_gap": {
+   "score": null,
+   "cites": [],
+   "why": "Paperclip SEC EDGAR coverage returned 'SEC EDGAR sources are not available' for every search and SQL call, so no filed deal terms (B) or valuations (D) were read. No score can be supported.",
+   "what_would_raise_it": "Verastem 8-K/10-K/10-Q text for the GenFleet licence (upfront, option, milestones, royalties) and comparable KRAS deal terms (Mirati/BMS, Revolution Medicines financings), obtained from EDGAR directly."
+  }
+ },
+ "seed_checks": [
+  {
+   "doc_id": "e-gfh375-china-2025",
+   "seed_claim": "GFH375 showed a 41% response rate at 600 mg in 66 patients in China.",
+   "verdict": "not found",
+   "quote": "",
+   "paperclip": "Searches of abstracts/pmc/biorxiv/medrxiv for GFH375 + response rate/600 mg/China returned no clinical result text; only preclinical abstract (Cancer Res 2024 84:3318, cited in PMC11240577) and PMC11789494 mention GFH375.",
+   "correction": "Unverified. The 41%, 600 mg, n=66 figures are not in anything Paperclip returned. Registry NCT07026916 (phase II, previously treated KRAS G12D mPDAC) exists but gives no results. Needs the ASCO/ESMO 2025 abstract or company release."
+  },
+  {
+   "doc_id": "e-verastem-jun2026",
+   "seed_claim": "VS-7375: the 900 mg dose separates from 600 mg; 13 of 14 patients had CA19-9 responses.",
+   "verdict": "not found",
+   "quote": "",
+   "paperclip": "Search 'VS-7375 900 mg CA19-9' found only PMC13287896 (The Oncologist 2026-06-23, trial-in-progress for Phase 1/2 in cholangiocarcinoma, no results read) and AACR RAS abstract oa_W7133932439 (preclinical). No dose-separation or CA19-9 data found.",
+   "correction": "Unverified. Likely a Verastem press release/corporate deck, not indexed. Do not cite until the primary source is read."
+  },
+  {
+   "doc_id": "e-genfleet-kylin-wings-2025",
+   "seed_claim": "GenFleet is running a Phase 3 of GFH375 against chemotherapy in second-line pancreatic cancer (KYLIN-WINGS).",
+   "verdict": "corrected",
+   "quote": "This study plans to enroll participants with previously treated metastatic pancreatic cancer and harbor centrally confirmed KRAS G12D mutation.",
+   "paperclip": "/trials/NCT07262567/content.lines L1; meta.json: recruiting, start 2025-12-04, title 'Phase III Study to Compare GFH375 and Chemotherapy in Patients With KRAS G12D-Mutant Metastatic Pancreatic Cancer'",
+   "correction": "Phase 3 GFH375 vs chemotherapy exists (NCT07262567, randomised 1:1, previously treated, one prior fluorouracil/gemcitabine regimen). The text read does not name the sponsor or the name 'KYLIN-WINGS' (a 'KYLIN' grep of trials hit nothing relevant). Keep the trial, drop the name and sponsor attribution until confirmed. Also NCT07644559 is a separate Verastem Phase 2 of VS-7375 (+/- cetuximab) in KRAS G12D pancreatic cancer."
+  },
+  {
+   "doc_id": "e-rasolute302-2026",
+   "seed_claim": "Daraxonrasib nearly doubled survival against chemotherapy in previously treated metastatic pancreatic cancer (RASolute 302), hazard ratio 0.40.",
+   "verdict": "confirmed",
+   "quote": "In patients harboring RAS G12 mutations, daraxonrasib virtually doubled median OS to 13.2 months compared to 6.6 months in the chemotherapy arm (HR 0.40, 95% CI 0.30–0.54; p < 0.001).",
+   "paperclip": "/papers/PMC13453085/content.lines L13 and L22 (overall population HR 0.40, 13.2 vs 6.7 months); also PMC13354352 (2026-06-03)",
+   "correction": "Confirmed via secondary peer-reviewed reviews only; the primary trial paper/FDA record was not found in this run. Specify population: HR 0.40 holds in both the RAS G12 group and overall population."
+  }
+ ],
+ "gaps": [
+  "Paperclip SEC EDGAR is unavailable ('SEC EDGAR sources are not available' for search and sql). No Verastem-GenFleet licence terms (upfront, option, milestones, royalties, date) were read, and no filed comparable KRAS deal terms (Mirati/BMS, Revolution Medicines, others). Nothing filled from memory.",
+  "No tier D valuation/funding source for GenFleet or comparable KRAS G12D assets found in the abstracts/pmc corpora.",
+  "No primary text for GFH375 China phase 1 efficacy (41%, 600 mg, n=66) or VS-7375 June 2026 update (900 mg, CA19-9 13/14).",
+  "Sponsor and name 'KYLIN-WINGS' for NCT07262567 not confirmed in text read.",
+  "Primary RASolute 302 paper or FDA decision not located; only secondary reviews.",
+  "A second search batch hit the paperclip rate limit (25 searches/60 s), so one abstracts search for VS-7375 pancreatic activity was not completed."
+ ]
+}

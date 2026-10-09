@@ -1,0 +1,242 @@
+{
+ "tests": [
+  "population"
+ ],
+ "records": [
+  {
+   "doc_id": "e-gfh375-pdac-kras-spectrum-china-vs-west",
+   "claim": "Chinese head-PDAC cohort had similar KRAS G12D share to a TCGA (Western) cohort but more G12V and less G12R; no G12C in the Chinese cohort.",
+   "quote": "The proportion of KRAS G12D in the two cohorts was similar (this study 40.7% vs. TCGA 48.2%) while Chinese cohort had a higher mutation rate of G12V (43.5% vs. 22.4%)",
+   "source": "Yang Y et al., The genetic landscape of pancreatic head ductal adenocarcinoma in China and prognosis stratification, 2022",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC8855595/",
+   "paperclip": {
+    "path": "/papers/PMC8855595/content.lines",
+    "lines": "L80"
+   },
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2022-02-18",
+   "stance": "for",
+   "tests": [
+    "population"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-pdac-g12d-share-us",
+   "claim": "In a large US real-world metastatic PDAC cohort, G12D was 43.6% of KRAS-mutant tumours (G12V 30.8%, G12C 1.6%), so G12D share is comparable to the Chinese cohort.",
+   "quote": "G12D was the most common (883 [43.6%]), followed by G12V (624 [30.8%]), G12R (319 [15.8%]), other (165 [8.2%]), and G12C (32 [1.6%])",
+   "source": "Norton C et al., KRAS Mutation Status and Treatment Outcomes in Metastatic Pancreatic Adenocarcinoma, JAMA Netw Open, 2025",
+   "url": "https://doi.org/10.1001/jamanetworkopen.2024.53588",
+   "paperclip": {
+    "path": "/papers/PMC11707629/content.lines",
+    "lines": "L76"
+   },
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2025-01-07",
+   "stance": "for",
+   "tests": [
+    "population"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-nsclc-asian-lower-kras",
+   "claim": "KRAS mutation frequency in NSCLC is much lower in East Asians (5-20%) than in Whites (23-35%).",
+   "quote": "with 23%–35% in the White population, followed by 17%–22% in African American and 5%–20% in East Asian populations.",
+   "source": "Wang X et al., Additional impact of genetic ancestry over race/ethnicity to prevalence of KRAS mutations in NSCLC, 2024",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11452329/",
+   "paperclip": {
+    "path": "/papers/PMC11452329/content.lines",
+    "lines": "L16"
+   },
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2024-06-19",
+   "stance": "against",
+   "tests": [
+    "population"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-nsclc-g12c-depleted-asians",
+   "claim": "KRAS G12C is much rarer in self-reported Asian NSCLC than White NSCLC (3.3% vs 13.4%), so the G12C-dominant Western mix does not hold in Asia; G12D NSCLC is a minority subtype everywhere.",
+   "quote": "KRASG12C mutations were depleted in Asians (Asians: 18/538, 3.3% vs Blacks: 28/309, 9.1% vs Whites: 616/4591, 13.4%, p<0.0001",
+   "source": "Adib E et al., Variation in targetable genomic alterations in NSCLC by genetic ancestry, sex, smoking history, and histology, Genome Med, 2022",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC9013075/",
+   "paperclip": {
+    "path": "/papers/PMC9013075/content.lines",
+    "lines": "L81"
+   },
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2022-04-15",
+   "stance": "context",
+   "tests": [
+    "population"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-nsclc-china-subtype-mix",
+   "claim": "In Chinese NSCLC cohorts G12C was still the most frequent KRAS subtype (29.6%) followed by G12D (18.1%); the G12D share is similar to Western NSCLC, though overall KRAS prevalence is lower (12.1%).",
+   "quote": "the incidence of G12C was the highest (29.6%), followed by G12D (18.1%), G12V (17.5%), and G12A (8.2%)",
+   "source": "Chen H et al., Prevalence and real-world therapeutic analysis of Chinese patients with KRAS-mutant NSCLC, Cancer Med, 2022",
+   "url": "https://doi.org/10.1002/cam4.4739",
+   "paperclip": {
+    "path": "/papers/PMC9554448/content.lines",
+    "lines": "L32"
+   },
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2022-04-08",
+   "stance": "context",
+   "tests": [
+    "population"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-pooled-china-us-pdac-trials",
+   "claim": "Systematic review table lists GFH375 phase I/IIa (Zhou, 2025) as a China-only study, while Western ON-inhibitors (daraxonrasib, zoldonrasib, adagrasib) were US studies.",
+   "quote": "Aiping Zhou, 2025 | China | Phase I/IIa | GFH375 (ON/OFF) | 66 | 66 | 59 | 60 (35–74) | KRAS p. G12D | Metastatic | 600 mg QD",
+   "source": "Tiede KOM et al., Efficacy and safety signals from early-phase studies of KRAS inhibition in pancreatic cancer, Sci Rep, 2026",
+   "url": "https://doi.org/10.1038/s41598-026-40757-3",
+   "paperclip": {
+    "path": "/papers/PMC13103443/content.lines",
+    "lines": "L18"
+   },
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2026-03-11",
+   "stance": "against",
+   "tests": [
+    "population"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-china-2l-pdac-realworld",
+   "claim": "Single-centre Chinese real-world series (1,054 APC pts) of 2L chemotherapy: first-line was 5-FU-based in 437 and gemcitabine-based in 617; no consensus 2L regimen.",
+   "quote": "Four hundred and thirty-seven and 617 patients were treated with 5-fluorouracil- and gemcitabine-based chemotherapy as first-line treatment, respectively.",
+   "source": "Liu Y et al., Clinical outcomes of second-line chemotherapy in advanced pancreatic adenocarcinoma: a real-world study, 2024",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC11414221/",
+   "paperclip": {
+    "path": "/papers/PMC11414221/content.lines",
+    "lines": "L10"
+   },
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2024-07-26",
+   "stance": "context",
+   "tests": [
+    "population"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-china-1l-gnp-vs-folfirinox",
+   "claim": "Chinese single-institution data show first-line nab-paclitaxel+gemcitabine used far more (62 of 117) than mFOLFIRINOX (30), implying a gemcitabine-pretreated 2L population in China.",
+   "quote": "62 patients in the nab-paclitaxel-gemcitabine group, 30 patients in the mFOLFIRINOX group, and 25 patients in the GEMOX group.",
+   "source": "Quan Q et al., Real World First-Line Treatments and Outcomes of Nab-Paclitaxel Plus Gemcitabine, mFOLFIRINOX and GEMOX in Chinese Single Institution, 2020",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC7816170/",
+   "paperclip": {
+    "path": "/papers/PMC7816170/content.lines",
+    "lines": "L28"
+   },
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2020-12-30",
+   "stance": "context",
+   "tests": [
+    "population"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-pk-selumetinib-asian-higher",
+   "claim": "For another oral kinase inhibitor, exposure was ~35% higher in Asian than Western healthy subjects, showing ethnic PK differences can exist for targeted oral agents (not a KRAS drug).",
+   "quote": "Dose-normalized AUC and Cmax were 35% (95% CI: 25–47%) and 39% (95% CI: 24–56%) higher in the pooled Asian group, respectively, compared with Western subjects.",
+   "source": "Dymond AW et al., PK and pharmacogenetics of selumetinib in Asian and Western healthy subjects, Eur J Clin Pharmacol, 2017",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC5423974/",
+   "paperclip": {
+    "path": "/papers/PMC5423974/content.lines",
+    "lines": "L18"
+   },
+   "tier": "A",
+   "domain": "technical",
+   "date": "2017-03-10",
+   "stance": "against",
+   "tests": [
+    "population"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-pk-acalabrutinib-chinese-higher",
+   "claim": "Another oral targeted agent had 28% higher exposure in Chinese patients; no equivalent analysis found for GFH375 or any KRAS inhibitor.",
+   "quote": "East Asian race was a statistically significant covariate on relative bioavailability and apparent volume of the peripheral compartment of acalabrutinib, showing 28% higher PK exposures in Chinese patients.",
+   "source": "Yao T et al., Ethnic differences in PK and clinical responses of acalabrutinib between Chinese and White patients, 2025",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC12199099/",
+   "paperclip": {
+    "path": "/papers/PMC12199099/content.lines",
+    "lines": "L11"
+   },
+   "tier": "A",
+   "domain": "technical",
+   "date": "2025-02-24",
+   "stance": "context",
+   "tests": [
+    "population"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-vs7375-us-trial-prior-lines",
+   "claim": "Verastem's US VS-7375 phase 1/2 (NCT07020221) enrols KRAS G12D solid-tumour patients after 1 or 2 prior standard lines, a Western-sponsored trial.",
+   "quote": "Key inclusion criteria include measurable disease according to RECIST vl.1, 1 or 2 prior lines of standard systemic therapy, ECOG performance status of 0 or 1",
+   "source": "Azad NS, Wu T, A Phase 1/2 Study of VS-7375 in Advanced KRAS G12D-mt Solid Tumors, Oncologist (trials in progress), 2026",
+   "url": "https://doi.org/10.1093/oncolo/oyag205.064",
+   "paperclip": {
+    "path": "/papers/PMC13287896/content.lines",
+    "lines": "L10"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-06-23",
+   "stance": "for",
+   "tests": [
+    "population"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-nct07262567-ph3-2l",
+   "claim": "GFH375 China phase III (NCT07262567) in previously treated metastatic PDAC allows prior fluorouracil OR gemcitabine therapy, and the registry entry does not state countries.",
+   "quote": "required to experience disease progression on or after at least one prior standard systemic therapy containing fluorouracil or gemcitabine",
+   "source": "ClinicalTrials.gov NCT07262567, Phase III GFH375 vs chemotherapy in KRAS G12D metastatic pancreatic cancer, 2025",
+   "url": "https://clinicaltrials.gov/study/NCT07262567",
+   "paperclip": {
+    "path": "/trials/NCT07262567/content.lines",
+    "lines": "L1"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-12-04",
+   "stance": "context",
+   "tests": [
+    "population"
+   ]
+  }
+ ],
+ "proposed_scores": {
+  "population": {
+   "score": 2,
+   "cites": [
+    "e-gfh375-pdac-kras-spectrum-china-vs-west",
+    "e-gfh375-pdac-g12d-share-us",
+    "e-gfh375-china-1l-gnp-vs-folfirinox",
+    "e-gfh375-pooled-china-us-pdac-trials"
+   ],
+   "why": "PDAC G12D share is similar in Chinese and Western cohorts (about 41-48%), so the biomarker mix plausibly translates, but only peer-reviewed cohort data (tier A) and no GFH375 data in non-Chinese patients were found. Prior-therapy patterns and PK in Western patients remain unshown, so 2 not 3.",
+   "what_would_raise_it": "GFH375/VS-7375 efficacy and PK data in US/EU patients with Western prior-therapy mix (gem/nab-P and FOLFIRINOX), or an MRCT enrolling Western sites with ethnic subgroup results."
+  }
+ },
+ "gaps": [
+  "No registry entry I read lists trial countries/sites for GFH375 trials (NCT06500676, NCT07026916, NCT07262567, NCT07259590, NCT07554859), so whether any Western patients enrolled in China-sponsored GFH375 trials is not shown.",
+  "No peer-reviewed PK or toxicity comparison across ethnicities for any KRAS G12C or G12D inhibitor found; evidence is by analogy (selumetinib, acalabrutinib). A sotorasib/adagrasib Asian-vs-Western PK search hit a rate limit and was not repeated.",
+  "No head-to-head Western vs China 2L pancreatic treatment-pattern paper found; Western pattern (FOLFIRINOX vs gem/nab-P first line, NALIRIFOX) was not sourced with quotable numbers. GFH375 ESMO 2025 LBA84 and ASCO 2025 abstracts were only seen as citations, not read.",
+  "Chinese vs Western colorectal G12D share not sourced; the Chinese CRC paper found (PMC6858340) was only seen as an abstract snippet. TCGA head-PDAC Western comparator is n=91 (small)."
+ ]
+}
