@@ -1,0 +1,280 @@
+{
+ "tests": [
+  "exposure",
+  "design"
+ ],
+ "records": [
+  {
+   "doc_id": "e-gfh375-asco25-fih",
+   "claim": "China-led first-in-human GFH375 study (NCT06500676) tested 100-900 mg QD and 300 mg BID with no DLTs; ORR 27.3% (6/22) across tumour types, 3 PR in 7 PDAC and 3 PR in 9 NSCLC.",
+   "quote": "No dose-limiting toxicities (DLTs) were observed at the tested dose levels of 100 mg, 200 mg, 400 mg, 600 mg, 750 mg, 900 mg once daily (QD) and 300 mg twice daily (BID).",
+   "source": "GenFleet investigators, A first-in-human phase I/II study of GFH375 ..., J Clin Oncol 43(16_suppl):3013 (ASCO 2025 abstract)",
+   "url": "https://doi.org/10.1200/jco.2025.43.16_suppl.3013",
+   "paperclip": {
+    "path": "/papers/oa_W4410816242/meta.json",
+    "lines": "abstract field"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-05-28",
+   "stance": "for",
+   "tests": [
+    "exposure"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-asco25-pk-small",
+   "claim": "Same abstract: PK shows Tmax 2-4 h and terminal half-life 18.5-21.6 h; data cut-off 3 Jan 2025 with only 32 treated patients (22 evaluable), a small early dataset with no recommended Phase 2 dose stated.",
+   "quote": "GFH375 demonstrated good oral bioavailability with a T max of 2~4 h and a terminal half-life of 18.5-21.6 h.",
+   "source": "GenFleet investigators, ASCO 2025 abstract 3013, J Clin Oncol 43(16_suppl)",
+   "url": "https://doi.org/10.1200/jco.2025.43.16_suppl.3013",
+   "paperclip": {
+    "path": "/papers/oa_W4410816242/meta.json",
+    "lines": "abstract field"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-05-28",
+   "stance": "against",
+   "tests": [
+    "exposure"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-asco25-safety",
+   "claim": "GI adverse events were frequent but grade 1-2; 25% had grade 3/4 treatment-related AEs, no grade 5, no dose reductions.",
+   "quote": "The most common TRAEs were gastrointestinal events including diarrhea (71.9%), vomiting (71.9%) and nausea (62.5%); all were grade 1 or 2.",
+   "source": "GenFleet investigators, ASCO 2025 abstract 3013",
+   "url": "https://doi.org/10.1200/jco.2025.43.16_suppl.3013",
+   "paperclip": {
+    "path": "/papers/oa_W4410816242/meta.json",
+    "lines": "abstract field"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-05-28",
+   "stance": "context",
+   "tests": [
+    "exposure"
+   ]
+  },
+  {
+   "doc_id": "e-vs7375-ta-b3-dose",
+   "claim": "Verastem's US-sponsored Phase 1/2 (NCT07020221) is still enrolling Part B3 testing both 600 mg and 900 mg QD, i.e. the dose was not yet a single settled dose in the ex-China study as of this 2026 trials-in-progress abstract.",
+   "quote": "Patient enrollment is currently ongoing in Part B3, in which the preliminary anticancer activity of VS-7375 (600 mg or 900 mg QD) is being assessed",
+   "source": "Azad N, Wu T (Verastem), 63A Phase 1/2 Study of VS-7375 ..., The Oncologist, 2026-06-23",
+   "url": "https://www.ncbi.nlm.nih.gov/pmc/articles/PMC13287896/",
+   "paperclip": {
+    "path": "/papers/PMC13287896/content.lines",
+    "lines": "L10"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-06-23",
+   "stance": "against",
+   "tests": [
+    "exposure",
+    "design"
+   ]
+  },
+  {
+   "doc_id": "e-vs7375-ph12-reg",
+   "claim": "Verastem's VS-7375 Phase 1/2 (NCT07020221) is a US-registered study of VS-7375 alone and in combination in KRAS G12D solid tumours; status Recruiting, start 2025-06-24 (registry metadata). It excludes prior direct KRAS G12D inhibitors. Enrolment number and country list not retrievable.",
+   "quote": "This study will assess the safety and efficacy of VS-7375 alone and in combination in patients with advanced solid tumors harboring a KRAS G12D-mutation.",
+   "source": "ClinicalTrials.gov NCT07020221, A Phase 1/2 Study of VS-7375 in Patients With KRAS G12D-Mutated Solid Tumors",
+   "url": "https://clinicaltrials.gov/study/NCT07020221",
+   "paperclip": {
+    "path": "/trials/NCT07020221/content.lines",
+    "lines": "L1"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-06-24",
+   "stance": "context",
+   "tests": [
+    "exposure",
+    "design"
+   ]
+  },
+  {
+   "doc_id": "e-vs7375-ph2-pdac",
+   "claim": "Verastem has a registered Phase 2 of VS-7375 alone and with cetuximab in metastatic KRAS G12D PDAC (NCT07644559), Recruiting, start 2026-06-16; this is a Phase 2 with no comparator arm described, not a registrational Phase 3.",
+   "quote": "This study will assess the safety and efficacy of VS-7375 alone and in combination with cetuximab in patients with metastatic KRAS G12D - mutated Pancreatic Cancer",
+   "source": "ClinicalTrials.gov NCT07644559, A Phase 2 Study of VS-7375 in KRAS G12D-Mutated Pancreatic Cancer",
+   "url": "https://clinicaltrials.gov/study/NCT07644559",
+   "paperclip": {
+    "path": "/trials/NCT07644559/content.lines",
+    "lines": "L1"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-06-16",
+   "stance": "context",
+   "tests": [
+    "design"
+   ]
+  },
+  {
+   "doc_id": "e-vs7375-ph2-crc",
+   "claim": "Verastem also registered a Phase 2 of VS-7375 in KRAS G12D colorectal cancer (NCT07659795) with cetuximab/panitumumab and mFOLFOX combinations; Recruiting, start 2026-07-28.",
+   "quote": "This study will assess the safety and efficacy of VS-7375 alone and in combination with cetuximab or panitumumab and cetuximab plus mFOLFOX",
+   "source": "ClinicalTrials.gov NCT07659795, A Phase 2 Study of VS-7375 in KRAS G12D-Mutated Colorectal Cancer",
+   "url": "https://clinicaltrials.gov/study/NCT07659795",
+   "paperclip": {
+    "path": "/trials/NCT07659795/content.lines",
+    "lines": "L1"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-07-28",
+   "stance": "context",
+   "tests": [
+    "design"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-ph3-pdac",
+   "claim": "GenFleet's Phase III in previously treated metastatic KRAS G12D PDAC (NCT07262567) randomises 1:1 versus a chemotherapy control, Recruiting, start 2025-12-04; registry text read does not list countries or enrolment, and the page appears to be a China-sponsor study.",
+   "quote": "Eligible participants will be randomized 1:1 to the experimental group or the control group for treatment.",
+   "source": "ClinicalTrials.gov NCT07262567, Phase III Study to Compare GFH375 and Chemotherapy in Patients With KRAS G12D-Mutant Metastatic Pancreatic Cancer",
+   "url": "https://clinicaltrials.gov/study/NCT07262567",
+   "paperclip": {
+    "path": "/trials/NCT07262567/content.lines",
+    "lines": "L1"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-12-04",
+   "stance": "for",
+   "tests": [
+    "design"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-ph3-nsclc",
+   "claim": "GenFleet's randomised study of GFH375 versus docetaxel in previously treated KRAS G12D NSCLC (NCT07668752) is open-label 2:1, Recruiting, start 2026-07-27, after platinum chemo and anti-PD-(L)1; countries and dose not stated in text read.",
+   "quote": "You have a two-thirds chance to receive GFH375 and a one-third chance to receive docetaxel.",
+   "source": "ClinicalTrials.gov NCT07668752, A Study to Evaluate GFH375 Versus Docetaxel in NSCLC With KRAS G12D Mutation",
+   "url": "https://clinicaltrials.gov/study/NCT07668752",
+   "paperclip": {
+    "path": "/trials/NCT07668752/content.lines",
+    "lines": "L1"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-07-27",
+   "stance": "for",
+   "tests": [
+    "design"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-nsclc-1l",
+   "claim": "A randomised first-line KRAS G12D NSCLC study (NCT07554859, Not Yet Recruiting, planned start 2026-05-20) fixes GFH375 at 600 mg QD in all three cohorts (mono, +cetuximab, +pemetrexed), ~90 patients: a China-sponsor trial implying 600 mg is the working dose, but no dose comparison.",
+   "quote": "Cohort 1: GFH375 monotherapy (600 mg, QD, oral), approximately 30 participants.",
+   "source": "ClinicalTrials.gov NCT07554859, GFH375 Monotherapy and Combination Therapy as First-Line Treatment for Advanced KRAS G12D-Mutant NSCLC",
+   "url": "https://clinicaltrials.gov/study/NCT07554859",
+   "paperclip": {
+    "path": "/trials/NCT07554859/content.lines",
+    "lines": "L1"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-05-20",
+   "stance": "context",
+   "tests": [
+    "exposure",
+    "design"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-ph1-main",
+   "claim": "The China phase I/II study NCT06500676 uses accelerated titration plus BOIN with a Phase Ia that allows non-measurable disease; it is Recruiting since 2024-07-09. It is a dose-escalation design but registry text shows no randomised dose-comparison cohort.",
+   "quote": "This is a multicenter, open-label, phase I/II study to explore the safety, tolerability, pharmacokinetics (PK), and preliminary efficacy of GFH375",
+   "source": "ClinicalTrials.gov NCT06500676, A Study of GFH375 in Advanced Solid Tumors With KRAS G12D Mutations",
+   "url": "https://clinicaltrials.gov/study/NCT06500676",
+   "paperclip": {
+    "path": "/trials/NCT06500676/content.lines",
+    "lines": "L1"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2024-07-09",
+   "stance": "context",
+   "tests": [
+    "design",
+    "exposure"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-ph2-withdrawn",
+   "claim": "GenFleet's Phase II monotherapy PDAC study (NCT07026916) is registered as Withdrawn (registry metadata), so one planned PDAC monotherapy study did not proceed.",
+   "quote": "This is a multicenter, open-label, phase II study to explore the efficacy, safety/tolerability and pharmacokinetics (PK) of GFH375",
+   "source": "ClinicalTrials.gov NCT07026916, A Phase II Study to Evaluate GFH375 in KRAS G12D Mutant Metastatic Pancreatic Cancer",
+   "url": "https://clinicaltrials.gov/study/NCT07026916",
+   "paperclip": {
+    "path": "/trials/NCT07026916/content.lines",
+    "lines": "L1"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-08-01",
+   "stance": "against",
+   "tests": [
+    "design"
+   ]
+  },
+  {
+   "doc_id": "e-gfh375-combo-pdac",
+   "claim": "GenFleet is also running a Phase Ib/II of GFH375 plus cetuximab or AG chemotherapy (NCT07259590, Recruiting, start 2025-10-21) and a Phase II combo vs monotherapy PDAC study (NCT07784374, Not Yet Recruiting, start 2026-08-31), showing combination strategy in China.",
+   "quote": "Phase Ib/II clinical study aimed at exploring the safety and efficacy of Regimen A (GFH375 in combination with Cetuximab) and Regimen B (GFH375 in combination with AG)",
+   "source": "ClinicalTrials.gov NCT07259590 and NCT07784374",
+   "url": "https://clinicaltrials.gov/study/NCT07259590",
+   "paperclip": {
+    "path": "/trials/NCT07259590/content.lines",
+    "lines": "L1"
+   },
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025-10-21",
+   "stance": "context",
+   "tests": [
+    "design"
+   ]
+  }
+ ],
+ "proposed_scores": {
+  "exposure": {
+   "score": 1,
+   "cites": [
+    "e-gfh375-asco25-fih",
+    "e-gfh375-asco25-pk-small",
+    "e-vs7375-ta-b3-dose",
+    "e-gfh375-nsclc-1l"
+   ],
+   "why": "Only China data (32 patients, ASCO 2025 abstract, tier C) are readable via Paperclip, and Verastem's own Part B3 is still testing both 600 mg and 900 mg, so the dose is unsettled. No ex-China response or PK data were found, so 'consistent at the chosen dose' cannot be claimed.",
+   "what_would_raise_it": "Verastem Phase 1 data (ORR, PK, safety) at a stated recommended Phase 2 dose in US/ex-China patients, consistent with China exposure; a tier A/B source for 3."
+  },
+  "design": {
+   "score": 1,
+   "cites": [
+    "e-gfh375-ph3-pdac",
+    "e-gfh375-ph3-nsclc",
+    "e-vs7375-ph2-pdac",
+    "e-vs7375-ph2-crc",
+    "e-vs7375-ta-b3-dose",
+    "e-gfh375-ph2-withdrawn"
+   ],
+   "why": "The Phase III (PDAC vs chemo) and NSCLC vs docetaxel randomised studies are GenFleet's, China-led as far as the registry text read shows, and Verastem's own ex-China studies are Phase 1/2 and Phase 2 without a randomised comparator or visible dose-optimisation cohort. Credibility for FDA registration is unproven until a multiregional Phase 3 or FDA-aligned dose-optimisation is shown.",
+   "what_would_raise_it": "Registry or company confirmation of countries in NCT07262567, a Verastem-sponsored randomised Phase 3 with US sites, a randomised 600 vs 900 mg dose-optimisation cohort, or FDA Fast Track/BTD or end-of-Phase-1/2 meeting outcome."
+  }
+ },
+ "gaps": [
+  "FDA designations (Fast Track, Orphan, BTD) for GFH375 or VS-7375: search -s fda for both names returned only unrelated documents; nothing found, which is not proof none exist.",
+  "Name 'KYLIN-WINGS' returned no trial; the best match for a Phase 3 of GFH375 versus chemotherapy in 2L PDAC is NCT07262567, but the registry text read does not give the trial name, countries, enrolment or the exact chemotherapy comparator. Not confirmed as KYLIN-WINGS.",
+  "No ex-China VS-7375 efficacy, PK or safety data in Paperclip (no ASCO/ESMO/AACR Verastem abstracts or SEC text retrieved); registry pages read lack enrolment targets and country lists for NCT07020221, NCT07644559, NCT07659795.",
+  "No ChiCTR record for GFH375 found in trials/cn or trials/intl (the 'VS-7375' hits there are unrelated noise).",
+  "No Project Optimus-style randomised dose-optimisation cohort found in any registry text read; Part B3 of NCT07020221 lists 600 mg or 900 mg QD but whether randomised is not stated.",
+  "Full-text ASCO 2025 abstract is only in OpenAlex metadata (no content.lines), so line pinpoints are 'abstract field'; machine-check against meta.json abstract."
+ ]
+}

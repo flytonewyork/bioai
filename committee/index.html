@@ -1,0 +1,1709 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>Bio x AI investment committee</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Instrument+Sans:wght@400;500;600&family=Spectral:ital,wght@0,400;0,500;0,600;1,400&display=swap" rel="stylesheet">
+<style>
+:root{
+  box-sizing:border-box;
+  padding-top:env(safe-area-inset-top,0px);
+  padding-bottom:env(safe-area-inset-bottom,0px);
+  --bg:#EDF1F2; --surface:#F9FBFB; --sunk:#E3E9EB;
+  --ink:#14212B; --ink-2:#4B5A65; --ink-3:#77848D; --rule:#C8D2D6;
+  --accent:#1D5C88; --accent-ink:#FFFFFF; --accent-weak:rgba(29,92,136,.10);
+  --tA:#13816A; --tB:#2C65B0; --tC:#B5761A; --tD:#8C6AA9; --tU:#C23F37;
+  --ui:"Instrument Sans", system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
+  --read:"Spectral", Georgia, "Times New Roman", serif;
+  color-scheme: light;
+}
+@media (prefers-color-scheme: dark){
+  :root:not([data-theme="light"]){
+    --bg:#0D1317; --surface:#141C21; --sunk:#10171B;
+    --ink:#E3E9EC; --ink-2:#A3B0B8; --ink-3:#76848D; --rule:#27323A;
+    --accent:#86B8E0; --accent-ink:#0D1317; --accent-weak:rgba(134,184,224,.14);
+    --tA:#3CC09E; --tB:#72A3EA; --tC:#E2A64B; --tD:#B99AD9; --tU:#EF6E64;
+    color-scheme: dark;
+  }
+}
+:root[data-theme="dark"]{
+  --bg:#0D1317; --surface:#141C21; --sunk:#10171B;
+  --ink:#E3E9EC; --ink-2:#A3B0B8; --ink-3:#76848D; --rule:#27323A;
+  --accent:#86B8E0; --accent-ink:#0D1317; --accent-weak:rgba(134,184,224,.14);
+  --tA:#3CC09E; --tB:#72A3EA; --tC:#E2A64B; --tD:#B99AD9; --tU:#EF6E64;
+  color-scheme: dark;
+}
+*,*::before,*::after{box-sizing:inherit}
+html{height:100%; scroll-padding-top:env(safe-area-inset-top,0px); -webkit-text-size-adjust:100%}
+body{margin:0; min-height:100%; background:var(--bg); color:var(--ink); font:400 15px/1.5 var(--ui)}
+a{color:var(--accent); text-underline-offset:2px}
+button{font:inherit; color:inherit}
+:focus-visible{outline:2px solid var(--accent); outline-offset:2px}
+.shell{max-width:1080px; margin:0 auto; padding:20px 20px 64px}
+.top{display:flex; flex-wrap:wrap; align-items:flex-end; gap:8px 24px; padding-bottom:14px; border-bottom:1px solid var(--rule)}
+.brand h1{margin:0; font:500 30px/1.15 var(--read); letter-spacing:-.01em}
+.brand p{margin:4px 0 0; color:var(--ink-2); max-width:62ch}
+.status{margin-left:auto; color:var(--ink-3); font-size:13px; display:flex; flex-wrap:wrap; gap:4px 14px}
+.status span::before{content:""; display:inline-block; width:7px; height:7px; border-radius:50%; margin-right:6px; background:var(--ink-3); vertical-align:1px}
+.status .ok::before{background:var(--tA)} .status .warn::before{background:var(--tC)} .status .bad::before{background:var(--tU)}
+nav#nav{display:flex; gap:2px; overflow-x:auto; padding:10px 0 0; margin:0 -4px; scrollbar-width:none}
+nav#nav::-webkit-scrollbar{display:none}
+.tab{flex:0 0 auto; border:0; background:none; padding:8px 12px; border-radius:6px; color:var(--ink-2); cursor:pointer}
+.tab[aria-current="page"]{background:var(--surface); color:var(--ink); box-shadow:inset 0 -2px 0 var(--accent)}
+.tab .n{color:var(--ink-3); margin-left:6px; font-size:12px}
+main{padding-top:22px}
+h2.view{margin:0 0 6px; font:500 26px/1.2 var(--read)}
+.lead{margin:0 0 18px; color:var(--ink-2); max-width:70ch}
+.muted{color:var(--ink-3)}
+.small{font-size:13px}
+.read{font-family:var(--read); font-size:17px; line-height:1.6}
+.bar{display:flex; flex-wrap:wrap; gap:8px; align-items:center; margin:0 0 18px}
+.grow{flex:1}
+.btn{border:1px solid var(--rule); background:var(--surface); padding:7px 12px; border-radius:6px; cursor:pointer; line-height:1.3}
+.btn:hover{border-color:var(--ink-3)}
+.btn.primary{background:var(--accent); color:var(--accent-ink); border-color:var(--accent)}
+.btn.primary:hover{filter:brightness(1.06)}
+.btn.quiet{border-color:transparent; background:none; color:var(--ink-2)}
+.btn.quiet:hover{color:var(--ink); border-color:var(--rule)}
+.btn.danger{color:var(--tU); border-color:transparent; background:none}
+.btn.small{padding:4px 8px; font-size:13px}
+.btn[disabled]{opacity:.5; cursor:not-allowed}
+.linkbtn{border:0; background:none; padding:0; color:var(--accent); cursor:pointer; text-decoration:underline; text-underline-offset:2px; text-align:left}
+input,select,textarea{font:inherit; color:var(--ink); background:var(--surface); border:1px solid var(--rule); border-radius:6px; padding:7px 9px; width:100%}
+textarea{min-height:90px; resize:vertical; line-height:1.5}
+select{width:auto}
+.filters{display:flex; flex-wrap:wrap; gap:8px; margin:0 0 14px}
+.filters input{max-width:280px}
+/* evidence lanes: the one memorable device */
+.lane{display:inline-flex; gap:3px; align-items:center; vertical-align:middle}
+.band{display:inline-block; width:16px; height:6px; border-radius:1px; background:var(--ink-3)}
+.lane-l .band{width:26px; height:8px}
+.band.tA{background:var(--tA)} .band.tB{background:var(--tB)} .band.tC{background:var(--tC)} .band.tD{background:var(--tD)} .band.tU{background:transparent; box-shadow:inset 0 0 0 1.5px var(--ink-3)}
+.band.hollow{background:transparent !important; box-shadow:inset 0 0 0 1.5px var(--ink-3)}
+.band.against{background:repeating-linear-gradient(135deg, var(--tU) 0 3px, transparent 3px 6px) !important; box-shadow:inset 0 0 0 1px var(--tU)}
+.tier{display:inline-grid; place-items:center; min-width:22px; height:20px; padding:0 5px; border-radius:4px; font-weight:600; font-size:12px; color:#fff; background:var(--ink-3)}
+.tier.tA{background:var(--tA)} .tier.tB{background:var(--tB)} .tier.tC{background:var(--tC)} .tier.tD{background:var(--tD)} .tier.tU{background:transparent; color:var(--tU); box-shadow:inset 0 0 0 1.5px var(--tU)}
+:root[data-theme="dark"] .tier:not(.tU){color:#0D1317}
+@media (prefers-color-scheme: dark){ :root:not([data-theme="light"]) .tier:not(.tU){color:#0D1317} }
+.chip{display:inline-block; padding:1px 8px; border-radius:999px; border:1px solid var(--rule); font-size:12.5px; color:var(--ink-2); background:var(--surface)}
+.chip.lead{border-color:var(--accent); color:var(--accent)}
+.chip.support{border-color:var(--tA); color:var(--tA)} .chip.oppose{border-color:var(--tU); color:var(--tU)} .chip.mixed{border-color:var(--tC); color:var(--tC)}
+/* lists */
+.rows{border-top:1px solid var(--rule)}
+.row{display:grid; grid-template-columns:auto 1fr auto; gap:6px 16px; padding:14px 2px; border-bottom:1px solid var(--rule); align-items:start}
+.row.th{grid-template-columns:172px 1fr auto}
+.row.click{cursor:pointer} .row.click:hover{background:var(--accent-weak)}
+.row h3{margin:0; font:500 19px/1.3 var(--read)}
+.row .meta{color:var(--ink-3); font-size:13px}
+.row p{margin:4px 0 0}
+.nums{display:flex; gap:18px; flex-wrap:wrap; align-items:baseline}
+.num b{font:500 24px/1 var(--read)} .num span{display:block; color:var(--ink-3); font-size:12.5px}
+/* thesis detail */
+.back{margin:0 0 10px}
+.th-title{margin:0 0 6px; font:500 34px/1.12 var(--read); letter-spacing:-.01em; max-width:30ch}
+.oneliner{max-width:68ch; margin:0 0 10px}
+.section{margin:30px 0 0}
+.section > h3{margin:0 0 10px; font:600 15px/1.3 var(--ui)}
+.assume{display:grid; grid-template-columns:34px 1fr; gap:4px 14px; padding:12px 0; border-bottom:1px solid var(--rule)}
+.assume .band{margin-top:9px}
+.assume .txt{font-family:var(--read); font-size:16.5px; line-height:1.55}
+.assume .ctl{display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center; margin-top:6px; font-size:13px; color:var(--ink-3)}
+.evchip{border:0; background:var(--sunk); padding:2px 7px 2px 3px; border-radius:5px; font-size:12.5px; color:var(--ink-2); cursor:pointer; display:inline-flex; gap:5px; align-items:center}
+.evchip .tier{height:16px; min-width:16px; font-size:10.5px}
+.scroll{overflow-x:auto}
+table{border-collapse:collapse; width:100%; min-width:560px}
+th,td{text-align:left; padding:8px 10px 8px 0; border-bottom:1px solid var(--rule); vertical-align:top}
+th{font-weight:600; font-size:13px; color:var(--ink-2)}
+.meter{display:inline-block; width:70px; height:6px; background:var(--sunk); border-radius:3px; vertical-align:middle; margin-right:6px; overflow:hidden}
+.meter i{display:block; height:100%; background:var(--accent)}
+ul.plain{margin:0; padding-left:18px} ul.plain li{margin:4px 0}
+/* memos */
+.memo{padding:16px 0; border-bottom:1px solid var(--rule)}
+.memo h4{margin:0; font:600 15px/1.3 var(--ui); display:flex; gap:8px; align-items:center; flex-wrap:wrap}
+.memo .headline{font:500 18px/1.4 var(--read); margin:6px 0}
+.claims{list-style:none; margin:8px 0 0; padding:0}
+.claims li{display:grid; grid-template-columns:24px 1fr; gap:8px; padding:4px 0}
+.chairbox{margin-top:18px; padding:16px 18px; border-left:3px solid var(--accent); background:var(--surface)}
+.verdict{font:500 22px/1.2 var(--read); text-transform:none}
+/* dialogs */
+dialog{border:1px solid var(--rule); border-radius:10px; padding:0; width:min(700px, calc(100vw - 20px)); max-height:88vh; background:var(--bg); color:var(--ink)}
+dialog::backdrop{background:rgba(10,16,20,.45)}
+.dlg{padding:20px 20px 16px; overflow:auto; max-height:88vh}
+.dlg h2{margin:0 0 6px; font:500 22px/1.25 var(--read)}
+.field{margin:12px 0}
+.field label{display:block; font-weight:500; margin-bottom:4px}
+.field .hint{color:var(--ink-3); font-size:12.5px; margin-top:3px}
+.checks{max-height:240px; overflow:auto; border:1px solid var(--rule); border-radius:6px; padding:6px 8px; background:var(--surface)}
+.checks label{display:flex; gap:8px; align-items:flex-start; font-weight:400; padding:4px 0; margin:0}
+.checks input{width:auto; margin-top:4px}
+.form-actions{display:flex; gap:8px; align-items:center; margin-top:16px; position:sticky; bottom:-16px; background:var(--bg); padding:10px 0 6px}
+.form-err{color:var(--tU); min-height:1em; margin:6px 0 0}
+.steps{list-style:none; margin:12px 0; padding:0}
+.steps li{display:grid; grid-template-columns:18px 1fr; gap:10px; padding:8px 0; border-bottom:1px solid var(--rule)}
+.dot{width:10px; height:10px; border-radius:50%; margin-top:6px; background:var(--rule)}
+.dot.thinking{background:var(--tC); animation:pulse 1.2s ease-in-out infinite}
+.dot.done{background:var(--tA)} .dot.failed{background:var(--tU)}
+@keyframes pulse{50%{opacity:.35}}
+@media (prefers-reduced-motion: reduce){ .dot.thinking{animation:none} }
+.chat{display:flex; flex-direction:column; gap:10px; margin:12px 0; max-height:48vh; overflow:auto; padding-right:4px}
+.msg{padding:10px 12px; border-radius:8px; max-width:92%; white-space:pre-wrap}
+.msg.user{align-self:flex-end; background:var(--accent-weak)}
+.msg.agent{align-self:flex-start; background:var(--surface); border:1px solid var(--rule); font-family:var(--read); font-size:16px; line-height:1.55}
+.toast{position:fixed; left:50%; bottom:calc(18px + env(safe-area-inset-bottom,0px)); transform:translateX(-50%); background:var(--ink); color:var(--bg); padding:9px 14px; border-radius:8px; font-size:14px; max-width:min(560px, calc(100vw - 24px)); opacity:0; pointer-events:none; transition:opacity .2s}
+.toast.show{opacity:1}
+.empty{padding:26px 0; color:var(--ink-2); max-width:60ch}
+.kv{display:grid; grid-template-columns:max-content 1fr; gap:4px 14px; margin:8px 0}
+.kv dt{color:var(--ink-3)} .kv dd{margin:0}
+.legend{display:flex; flex-wrap:wrap; gap:6px 16px; margin:0 0 18px; color:var(--ink-2); font-size:13px}
+.legend span{display:inline-flex; gap:6px; align-items:center}
+pre.protocol{white-space:pre-wrap; background:var(--surface); border:1px solid var(--rule); border-radius:8px; padding:12px; font:14px/1.5 var(--ui)}
+/* horses and calls */
+table.wide{min-width:860px}
+td.n, th.n{font-variant-numeric:tabular-nums; white-space:nowrap}
+tr.click{cursor:pointer} tr.click:hover td{background:var(--accent-weak)}
+.checkbar{display:flex; flex-wrap:wrap; gap:6px 10px; align-items:center; margin:0 0 14px; font-size:13px; color:var(--ink-3)}
+.blind{display:grid; grid-template-columns:140px 76px 1fr; gap:6px 10px; align-items:center; padding:4px 0}
+.blind label{margin:0 !important; font-weight:400 !important}
+.evtag{display:inline-flex; gap:4px; align-items:center; background:var(--sunk); padding:1px 6px 1px 2px; border-radius:5px; font-size:12px; color:var(--ink-2); margin:1px 4px 1px 0}
+.evtag .tier{height:15px; min-width:15px; font-size:10px}
+textarea.draft{min-height:320px; font:15px/1.55 var(--read)}
+@media (max-width:640px){
+  .shell{padding:14px 14px 56px}
+  .brand h1{font-size:25px}
+  .th-title{font-size:27px}
+  .row, .row.th{grid-template-columns:1fr; gap:6px}
+  .status{margin-left:0}
+  .blind{grid-template-columns:1fr 76px}
+  .blind > span{grid-column:1 / -1}
+}
+</style>
+</head>
+<body>
+<div class="shell">
+  <header class="top">
+    <div class="brand">
+      <h1>Bio x AI investment committee</h1>
+      <p>Theses argued from first principles, with every claim graded by the evidence behind it.</p>
+    </div>
+    <div class="status" id="status" aria-live="polite"></div>
+    <nav id="nav" aria-label="Sections" style="flex-basis:100%"></nav>
+  </header>
+  <main id="view"></main>
+</div>
+<dialog id="dlg" aria-label="Form"></dialog>
+<dialog id="runDlg" aria-label="Committee in session"></dialog>
+<dialog id="sparDlg" aria-label="Sparring"></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+<script>
+"use strict";
+/* ---------- state ---------- */
+const COLLS = ["axioms", "evidence", "theses", "sessions", "entities", "concepts", "research", "agents", "horses", "rankings", "calls"];
+const TIERS = ["A", "B", "C", "D", "U"];
+const TIER_INFO = {
+  A: "Validated: peer-reviewed result, clinical guideline or regulatory decision",
+  B: "Demand: audited or filed financials, disclosed transactions",
+  C: "Claimed: company statements, preprints, trade reporting",
+  D: "Belief: funding rounds and valuations",
+  U: "Unsourced: model or personal recall, must be verified"
+};
+const DOMAINS = ["first-principles", "technical", "clinical", "regulatory", "market", "company", "industry", "relations", "founder"];
+const STAGES = [
+  ["data", "Data and labs"], ["models", "Models"], ["discovery", "Discovery"], ["development", "Development"],
+  ["patients", "Patients"], ["trust", "Trust layer"], ["infrastructure", "Infrastructure"], ["relations", "People and relationships"]
+];
+const STATUSES = ["supported", "contested", "unsupported", "against"];
+const S = {
+  db: null, sample: null, mcp: null, dl: null, canTools: false,
+  dbState: "connecting", claudeState: "connecting",
+  data: {}, meta: null, loaded: {},
+  ui: { tab: "theses", sel: {}, q: "", tierF: "all", domF: "all", resF: "open", hLaneF: "all", hStatF: "all", busy: {} },
+  run: null, spar: null
+};
+COLLS.forEach(c => { S.data[c] = []; });
+
+/* ---------- helpers ---------- */
+const $ = (sel, root) => (root || document).querySelector(sel);
+function esc(v) { return String(v == null ? "" : v).replace(/[&<>"']/g, ch => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[ch])); }
+function safeUrl(u) { try { const x = new URL(String(u)); return (x.protocol === "https:" || x.protocol === "http:") ? x.href : ""; } catch (e) { return ""; } }
+function link(u, text) { const s = safeUrl(u); return s ? `<a href="${esc(s)}" target="_blank" rel="noopener noreferrer">${esc(text || s)}</a>` : esc(text || ""); }
+function slug(s) { return String(s || "item").toLowerCase().replace(/[^a-z0-9]+/g, "-").replace(/^-+|-+$/g, "").slice(0, 36) || "item"; }
+function newId(prefix, title) { return `${prefix}-${slug(title)}-${Math.random().toString(36).slice(2, 7)}`; }
+function arr(v) { return Array.isArray(v) ? v : []; }
+function str(v) { return v == null ? "" : String(v); }
+function trunc(s, n) { s = str(s); return s.length > n ? s.slice(0, n - 1) + "…" : s; }
+function byId(coll, id) { return S.data[coll].find(d => d.id === id); }
+function nowIso() { return new Date().toISOString(); }
+function fmtDate(iso) { if (!iso) return ""; const d = new Date(iso); if (isNaN(d)) return str(iso); return d.toLocaleDateString(undefined, { year: "numeric", month: "short", day: "numeric" }); }
+function tierOf(t) { return TIERS.includes(t) ? t : "U"; }
+function tierChip(t) { t = tierOf(t); return `<span class="tier t${t}" title="${esc(TIER_INFO[t])}">${t}</span>`; }
+function rubric() { const r = arr(S.meta && S.meta.rubric); return r.length ? r : [{ id: "evidence", name: "Evidence strength", weight: 1, question: "How strong is the evidence?" }]; }
+function stageName(id) { const s = STAGES.find(x => x[0] === id); return s ? s[1] : (id || "Other"); }
+function toast(msg) { const t = $("#toast"); t.textContent = msg; t.classList.add("show"); clearTimeout(toast._t); toast._t = setTimeout(() => t.classList.remove("show"), 3600); }
+function errText(e) {
+  if (!e) return "The action did not complete.";
+  const c = e.code;
+  if (c === "invalid_argument") return "This view can read the committee but cannot change it.";
+  if (c === "quota_exceeded") return "The record store is full. Delete old items, then try again.";
+  if (c === "resource_exhausted") return "Too many requests at once. Wait a moment, then try again.";
+  if (c === "rate_limited") return "Claude is at capacity for this account right now. Try again in a few minutes.";
+  if (c === "not_granted") return "Claude access was declined for this page. Reload the page to be asked again.";
+  if (c === "sampling_disabled") return "Claude is not available for this account.";
+  if (c === "prompt_too_large") return "The briefing is too long for one call. Remove some evidence or shorten the question.";
+  if (c === "refused") return "Claude declined this request. Rephrase the question.";
+  if (c === "session_expired") return "Your session expired. Sign in again, then reload.";
+  if (c === "server_not_connected") return "PubMed is not connected. Add it in claude.ai Settings, Connectors.";
+  if (c === "needs_reauth") return "PubMed needs reconnecting in claude.ai Settings, Connectors.";
+  return e.message || "The action did not complete.";
+}
+
+/* ---------- metrics: the eval harness ---------- */
+function evTier(id) { const e = byId("evidence", id); return e ? tierOf(e.tier) : null; }
+function bestTier(ids) {
+  let best = null;
+  for (const id of arr(ids)) { const t = evTier(id); if (t && (best === null || TIERS.indexOf(t) < TIERS.indexOf(best))) best = t; }
+  return best || "U";
+}
+function metrics(t) {
+  let num = 0, den = 0;
+  for (const c of rubric()) {
+    const sc = t.scorecard && t.scorecard[c.id] && t.scorecard[c.id].score;
+    if (typeof sc === "number") num += sc * (Number(c.weight) || 1);
+    den += 5 * (Number(c.weight) || 1);
+  }
+  const lb = arr(t.assumptions).filter(a => a.load_bearing !== false);
+  const sup = lb.filter(a => a.status === "supported" && ["A", "B"].includes(bestTier(a.evidence)));
+  const gaps = lb.filter(a => a.status === "unsupported" || !arr(a.evidence).length);
+  const against = lb.filter(a => a.status === "against");
+  return { score: den ? Math.round(100 * num / den) : 0, coverage: lb.length ? Math.round(100 * sup.length / lb.length) : 0, gaps: gaps.length, against: against.length, n: lb.length };
+}
+function bandClass(a) {
+  const t = bestTier(a.evidence);
+  if (a.status === "against") return `band t${t} against`;
+  if (a.status === "unsupported" || !arr(a.evidence).length) return "band hollow";
+  return `band t${t}`;
+}
+function lane(assumptions, size) {
+  return `<span class="lane lane-${size || "s"}" aria-hidden="true">${arr(assumptions).map(a => `<i class="${bandClass(a)}"></i>`).join("")}</span>`;
+}
+function statusRank(s) { return { lead: 0, active: 1, parked: 2, killed: 3 }[s] ?? 4; }
+
+/* ---------- horse engine: pure functions (tested by committee/engine.test.mjs) ---------- */
+const HORSE_TESTS = [
+  { id: "mechanism", n: 1, name: "Mechanism", cap: "core" }, { id: "exposure", n: 2, name: "Exposure", cap: "core" },
+  { id: "comparator", n: 3, name: "Comparator", cap: "core" }, { id: "population", n: 4, name: "Population", cap: "core" },
+  { id: "design", n: 5, name: "Design", cap: "core" }, { id: "value_gap", n: 6, name: "Value gap", cap: "value" },
+  { id: "leverage", n: 7, name: "Leverage", cap: "leverage" }, { id: "access", n: 8, name: "Access", cap: "none" }
+];
+const SCORED_TESTS = HORSE_TESTS.filter(t => t.cap !== "none");
+const CORE_TESTS = HORSE_TESTS.filter(t => t.cap === "core").map(t => t.id);
+const ENGINE_DEFAULTS = { p0: 0.15, slope: 0.05, back_p: 0.6, back_v: 2, back_l: 2, spread_pass: 2, non_consensus_pass: 2, stability_max_move: 1, stability_days: 31 };
+const BASIS_TESTS = ["exposure", "comparator", "leverage"];
+function r4(x) { return Math.round(x * 1e4) / 1e4; }
+function engineParams(meta) { const p = Object.assign({}, ENGINE_DEFAULTS); Object.entries((meta && meta.engine_params) || {}).forEach(([k, v]) => { if (typeof v === "number" && isFinite(v)) p[k] = v; }); return p; }
+function capClass(testId) { const t = HORSE_TESTS.find(x => x.id === testId); return t ? t.cap : "none"; }
+// Highest score the cited tiers allow. No citation caps every scored test at 0.
+function tierCap(testId, tiers) {
+  const has = ts => arr(tiers).some(t => ts.includes(t));
+  if (!arr(tiers).length) return 0;
+  const c = capClass(testId);
+  if (c === "core") return has(["A", "B"]) ? 3 : has(["C"]) ? 2 : 1;
+  if (c === "value") return has(["B", "D"]) ? 3 : 1;
+  if (c === "leverage") return has(["A", "B", "C"]) ? 3 : 1;
+  return 3;
+}
+function capMessage(testId, score, tiers) {
+  const cap = tierCap(testId, tiers);
+  if (score <= cap) return null;
+  const name = (HORSE_TESTS.find(x => x.id === testId) || { name: testId }).name;
+  if (!arr(tiers).length) return `${name} cannot score above 0 without a cited evidence record.`;
+  const c = capClass(testId);
+  const need = c === "core" ? (score === 3 ? "at least one A or B citation" : "at least one C or better citation")
+    : c === "value" ? "a B or D citation (a disclosed deal or a valuation)" : "a C or better citation";
+  const best = [...arr(tiers)].sort((a, b) => TIERS.indexOf(a) - TIERS.indexOf(b))[0];
+  return `${name} can score ${score} only with ${need}. The best tier cited is ${best}, so the cap is ${cap}.`;
+}
+// The change rule: a changed score must cite evidence added after the latest snapshot. First scoring is exempt.
+function changeAllowed(prevScore, newScore, citedIds, addedAtOf, lastSnapAt) {
+  if (prevScore == null || prevScore === newScore || !lastSnapAt) return { ok: true };
+  if (arr(citedIds).some(id => str(addedAtOf(id)) > lastSnapAt)) return { ok: true };
+  return { ok: false, msg: "Add the new evidence first." };
+}
+function scoreOf(h, id) { const s = h && h.scores && h.scores[id]; return s && typeof s.score === "number" ? s.score : null; }
+function decide(P, V, L, access, p) {
+  const held = [P >= p.back_p, V >= p.back_v, L >= p.back_l].filter(Boolean).length;
+  if (held === 3 && access === true) return "Back";
+  return held >= 2 ? "Track" : "Drop";
+}
+function horseNumbers(h, p) {
+  const S = CORE_TESTS.reduce((a, id) => a + (scoreOf(h, id) || 0), 0);
+  const P = r4(p.p0 + p.slope * S);
+  const V = scoreOf(h, "value_gap") || 0, L = scoreOf(h, "leverage") || 0;
+  const E = r4(P * V * L);
+  const acc = h && h.scores && h.scores.access;
+  const access = acc && typeof acc.ok === "boolean" ? acc.ok : null;
+  const complete = SCORED_TESTS.every(t => scoreOf(h, t.id) !== null);
+  return { S, P, V, L, E, access, complete, decision: complete ? decide(P, V, L, access, p) : "Unscored" };
+}
+// Rank by E; ties go to the nearer catalyst (undated last), then name.
+function rankHorses(horses, p) {
+  const rows = arr(horses).map(h => Object.assign({ horse: h.id, name: str(h.name), catalyst: str(h.next_catalyst && h.next_catalyst.date) || null }, horseNumbers(h, p)));
+  rows.sort((a, b) => (b.E - a.E) || ((a.catalyst || "9999") < (b.catalyst || "9999") ? -1 : (a.catalyst || "9999") > (b.catalyst || "9999") ? 1 : 0) || a.name.localeCompare(b.name) || a.horse.localeCompare(b.horse));
+  return rows.map((r, i) => Object.assign(r, { rank: i + 1 }));
+}
+function meanE(rows) { return rows.reduce((a, r) => a + r.E, 0) / rows.length; }
+function spreadRatio(rows, p) {
+  if (arr(rows).length < 6) return { value: null, pass: null, note: "needs six horses" };
+  const top = meanE(rows.slice(0, 3)), bottom = meanE(rows.slice(-3));
+  if (bottom === 0) return { value: null, pass: top > 0, note: "bottom three at zero" };
+  const v = r4(top / bottom); return { value: v, pass: v >= p.spread_pass };
+}
+function nonConsensus(rows, horseById, p) {
+  const v = arr(rows).slice(0, 5).filter(r => { const h = horseById(r.horse); return h && BASIS_TESTS.includes(h.why_basis); }).length;
+  return { value: v, pass: v >= p.non_consensus_pass };
+}
+function maxRankMove(a, b) {
+  const m = new Map(arr(b).map(r => [r.horse, r.rank])); let mx = 0;
+  arr(a).forEach(r => { if (m.has(r.horse)) mx = Math.max(mx, Math.abs(r.rank - m.get(r.horse))); });
+  return mx;
+}
+function brierScore(prob, outcome) { return r4(Math.pow(prob - (outcome ? 1 : 0), 2)); }
+function continuousScore(f, x) { return { inside80: x >= f.p10 && x <= f.p90, error: r4(x - f.median), abs_error: r4(Math.abs(x - f.median)) }; }
+function canonicalJson(v) {
+  if (Array.isArray(v)) return "[" + v.map(canonicalJson).join(",") + "]";
+  if (v && typeof v === "object") return "{" + Object.keys(v).sort().filter(k => v[k] !== undefined).map(k => JSON.stringify(k) + ":" + canonicalJson(v[k])).join(",") + "}";
+  return JSON.stringify(v === undefined ? null : v);
+}
+/* ---------- end horse engine ---------- */
+
+/* ---------- init ---------- */
+function init() {
+  render();
+  if (!window.claude || typeof window.claude.use !== "function") { S.dbState = "absent"; S.claudeState = "absent"; render(); return; }
+  window.claude.use("db").then(db => {
+    S.db = db;
+    if (!db) { S.dbState = "absent"; render(); return; }
+    S.dbState = "connected";
+    subscribeAll();
+    render();
+  }).catch(() => { S.dbState = "absent"; render(); });
+  window.claude.use("sample").then(async s => {
+    S.sample = s; S.claudeState = s ? "ready" : "absent";
+    if (s) { try { const l = await s.limits(); S.canTools = !!(l && l.tools); } catch (e) { S.canTools = false; } }
+    render();
+  }).catch(() => { S.claudeState = "absent"; render(); });
+  window.claude.use("mcp").then(m => { S.mcp = m; render(); }).catch(() => {});
+  window.claude.use("downloads").then(d => { S.dl = d; render(); }).catch(() => {});
+}
+
+function subscribeAll() {
+  for (const c of COLLS) {
+    S.db.collection(c).onSnapshot(snap => {
+      S.data[c] = snap.docs.map(d => Object.assign({ id: d.id }, d.data()));
+      S.loaded[c] = true; render();
+    }, err => { S.loaded[c] = true; if (err && err.code === "revoked") S.dbState = "absent"; render(); });
+  }
+  S.db.doc("meta/config").onSnapshot(d => { S.meta = d.exists ? d.data() : null; render(); }, () => {});
+}
+
+/* ---------- render ---------- */
+let rafPending = false;
+function render() { if (rafPending) return; rafPending = true; requestAnimationFrame(() => { rafPending = false; doRender(); }); }
+function doRender() {
+  const a = document.activeElement; const aid = a && a.id; let pos = null;
+  try { pos = a && typeof a.selectionStart === "number" ? a.selectionStart : null; } catch (e) { pos = null; }
+  $("#nav").innerHTML = navHtml();
+  $("#status").innerHTML = statusHtml();
+  $("#view").innerHTML = viewHtml();
+  if (aid && (aid === "q")) { const el = document.getElementById(aid); if (el) { el.focus(); if (pos != null) { try { el.setSelectionRange(pos, pos); } catch (e) {} } } }
+}
+const TABS = [
+  ["theses", "Theses", "theses"], ["horses", "Horses", "horses"], ["calls", "Calls", "calls"], ["sessions", "Records", "sessions"], ["evidence", "Evidence", "evidence"],
+  ["principles", "First principles", "axioms"], ["landscape", "Landscape", "entities"], ["research", "Research queue", "research"],
+  ["concepts", "Concepts", "concepts"], ["committee", "Committee", "agents"], ["method", "How it works", null]
+];
+function navHtml() {
+  return TABS.map(([id, label, coll]) => {
+    let n = "";
+    if (coll === "research") n = S.data.research.filter(r => r.status === "open" || r.status === "needs-web-research").length;
+    else if (coll) n = S.data[coll].length;
+    return `<button class="tab" data-act="tab" data-id="${id}" ${S.ui.tab === id ? 'aria-current="page"' : ""}>${esc(label)}${coll && n ? `<span class="n">${n}</span>` : ""}</button>`;
+  }).join("");
+}
+function statusHtml() {
+  const db = S.dbState === "connected" ? `<span class="ok">Records connected</span>` : S.dbState === "connecting" ? `<span class="warn">Connecting to records</span>` : `<span class="bad">Records unavailable in this view</span>`;
+  const cl = S.claudeState === "ready" ? `<span class="ok">Committee can convene</span>` : S.claudeState === "connecting" ? `<span class="warn">Checking Claude</span>` : `<span class="bad">Claude unavailable here</span>`;
+  const pm = S.mcp ? `<span class="ok">PubMed on first use</span>` : `<span>PubMed off</span>`;
+  return db + cl + pm;
+}
+function viewHtml() {
+  if (S.dbState === "absent") return `<div class="empty"><p>The committee's records live in this artifact's database, which this view cannot reach. Open the artifact from claude.ai to read and add to it.</p></div>`;
+  const loading = S.dbState === "connecting" || !S.loaded.theses;
+  if (loading) return `<p class="muted">Loading the committee's records…</p>`;
+  switch (S.ui.tab) {
+    case "theses": return viewTheses();
+    case "horses": return viewHorses();
+    case "calls": return viewCalls();
+    case "sessions": return viewSessions();
+    case "evidence": return viewEvidence();
+    case "principles": return viewPrinciples();
+    case "landscape": return viewLandscape();
+    case "research": return viewResearch();
+    case "concepts": return viewConcepts();
+    case "committee": return viewCommittee();
+    case "method": return viewMethod();
+    default: return "";
+  }
+}
+function legendHtml() {
+  return `<div class="legend">${TIERS.map(t => `<span>${t === "U" ? '<i class="band hollow"></i>' : `<i class="band t${t}"></i>`} ${t}: ${esc(TIER_INFO[t].split(":")[0])}</span>`).join("")}<span><i class="band tU against"></i> Evidence against</span></div>`;
+}
+
+/* ---------- theses ---------- */
+function viewTheses() {
+  const sel = S.ui.sel.thesis && byId("theses", S.ui.sel.thesis);
+  if (sel) return thesisDetail(sel);
+  const ts = [...S.data.theses].sort((a, b) => (statusRank(a.status) - statusRank(b.status)) || str(b.updated_at).localeCompare(str(a.updated_at)));
+  const canRun = !!S.sample;
+  return `<h2 class="view">Theses</h2>
+  <p class="lead">Each thesis is a chain of assumptions. A band's colour is the strongest evidence behind that assumption; hollow bands are still unsupported.</p>
+  ${legendHtml()}
+  <div class="bar"><button class="btn" data-act="add-thesis">Add a thesis</button>${canRun ? `<button class="btn quiet" data-act="convene" data-id="">Convene on an open question</button>` : ""}</div>
+  ${ts.length ? `<div class="rows">${ts.map(t => { const m = metrics(t); return `<div class="row th click" data-act="open-thesis" data-id="${esc(t.id)}" role="button" tabindex="0">
+      <div>${lane(t.assumptions, "s")}</div>
+      <div><h3>${esc(t.title)}</h3><p class="read" style="font-size:16px">${esc(t.one_liner)}</p><p class="meta">${esc(m.n)} load-bearing assumptions, ${esc(m.gaps)} unsupported${m.against ? `, ${m.against} with evidence against` : ""}</p></div>
+      <div class="nums"><span class="chip ${t.status === "lead" ? "lead" : ""}">${esc(t.status || "active")}</span><div class="num"><b>${m.coverage}%</b><span>evidence coverage</span></div><div class="num"><b>${m.score}</b><span>rubric score</span></div></div>
+    </div>`; }).join("")}</div>` : `<div class="empty">No theses yet. Add one here, or ask Claude in chat to seed the corpus from your last conversation.</div>`}`;
+}
+function thesisDetail(t) {
+  const m = metrics(t);
+  const sessions = S.data.sessions.filter(s => s.thesis === t.id).sort((a, b) => str(b.date).localeCompare(str(a.date)));
+  const comps = arr(t.comps).map(id => byId("entities", id)).filter(Boolean);
+  const canRun = !!S.sample;
+  return `<p class="back"><button class="linkbtn" data-act="back">All theses</button></p>
+  <h2 class="th-title">${esc(t.title)}</h2>
+  <p class="oneliner read">${esc(t.one_liner)}</p>
+  ${t.positioning ? `<p class="muted" style="max-width:70ch">${esc(t.positioning)}</p>` : ""}
+  <div class="nums" style="margin:14px 0"><span class="chip ${t.status === "lead" ? "lead" : ""}">${esc(t.status || "active")}</span>
+    <div class="num"><b>${m.coverage}%</b><span>load-bearing assumptions backed by A or B evidence</span></div>
+    <div class="num"><b>${m.score}</b><span>weighted rubric score out of 100</span></div>
+    <div class="num"><b>${m.gaps}</b><span>unsupported assumptions</span></div></div>
+  <div class="bar">${canRun ? `<button class="btn primary" data-act="convene" data-id="${esc(t.id)}">Convene the committee</button><button class="btn" data-act="spar" data-id="${esc(t.id)}">Spar with one member</button>` : `<span class="muted small">Claude is unavailable in this view, so the committee cannot convene here.</span>`}
+    <span class="grow"></span><button class="btn quiet" data-act="edit-thesis" data-id="${esc(t.id)}">Edit thesis</button></div>
+  <div class="section"><h3>Assumptions</h3>
+    ${legendHtml()}
+    ${arr(t.assumptions).map(a => `<div class="assume"><i class="${bandClass(a)}" style="width:28px;height:8px" aria-hidden="true"></i>
+      <div><div class="txt">${esc(a.text)}</div>
+      <div class="ctl"><span>${esc(a.status || "unsupported")}${a.load_bearing === false ? ", not load-bearing" : ", load-bearing"}</span>
+      ${arr(a.evidence).map(id => { const e = byId("evidence", id); return e ? `<button class="evchip" data-act="open-ev" data-id="${esc(id)}">${tierChip(e.tier)}${esc(trunc(e.source || e.claim, 44))}</button>` : ""; }).join("")}
+      ${a.note ? `<span>${esc(a.note)}</span>` : ""}
+      <button class="linkbtn small" data-act="link-ev" data-id="${esc(t.id)}" data-x="${esc(a.id)}">Link evidence</button>
+      <button class="linkbtn small" data-act="set-status" data-id="${esc(t.id)}" data-x="${esc(a.id)}">Change status</button></div></div></div>`).join("")}
+    <p><button class="btn small" data-act="add-assumption" data-id="${esc(t.id)}">Add an assumption</button></p></div>
+  <div class="section"><h3>Scorecard</h3><div class="scroll"><table><thead><tr><th>Criterion</th><th>Weight</th><th>Score</th><th>Why</th></tr></thead><tbody>
+    ${rubric().map(c => { const sc = t.scorecard && t.scorecard[c.id]; const v = sc && typeof sc.score === "number" ? sc.score : null; return `<tr><td><button class="linkbtn" data-act="edit-score" data-id="${esc(t.id)}" data-x="${esc(c.id)}">${esc(c.name)}</button><div class="muted small">${esc(c.question)}</div></td><td>${esc(c.weight)}</td><td>${v == null ? "—" : `<span class="meter"><i style="width:${v * 20}%"></i></span>${v}`}</td><td class="small">${esc(sc && sc.why)}</td></tr>`; }).join("")}
+  </tbody></table></div></div>
+  ${listSection("What would kill it", t.falsifiers)}
+  ${arr(t.gates).length ? `<div class="section"><h3>Gates</h3><ol class="plain">${arr(t.gates).map(g => `<li><b>${esc(g.name)}</b>: ${esc(g.criteria)}</li>`).join("")}</ol></div>` : ""}
+  ${listSection("Risks", t.risks)}
+  ${listSection("Next tests", t.next_tests)}
+  ${comps.length ? `<div class="section"><h3>Comparables</h3><p>${comps.map(e => `<button class="evchip" data-act="open-entity" data-id="${esc(e.id)}">${tierChip(e.tier)}${esc(e.name)}</button>`).join(" ")}</p></div>` : ""}
+  <div class="section"><h3>Records</h3>${sessions.length ? `<div class="rows">${sessions.map(sessionRow).join("")}</div>` : `<p class="muted">No committee records for this thesis yet.</p>`}</div>`;
+}
+function listSection(title, items) { items = arr(items); return items.length ? `<div class="section"><h3>${esc(title)}</h3><ul class="plain">${items.map(x => `<li>${esc(typeof x === "string" ? x : (x.test || JSON.stringify(x)))}</li>`).join("")}</ul></div>` : ""; }
+
+/* ---------- sessions ---------- */
+function sessionRow(s) {
+  const t = s.thesis && byId("theses", s.thesis);
+  const mode = s.mode === "spar" ? "Sparring" : s.mode === "reconstructed" ? "Reconstructed from chat" : s.mode === "research" ? "Research" : "Committee";
+  const verdict = s.chair && s.chair.verdict ? s.chair.verdict : "";
+  return `<div class="row click" data-act="open-session" data-id="${esc(s.id)}" role="button" tabindex="0">
+    <div class="meta" style="min-width:92px">${esc(fmtDate(s.date))}</div>
+    <div><h3>${esc(s.title || s.question || "Untitled record")}</h3><p class="meta">${esc(mode)}${t ? `, on ${esc(trunc(t.title, 60))}` : ""}${s.mode === "spar" && s.agent ? `, with ${esc((byId("agents", s.agent) || {}).name || s.agent)}` : ""}</p></div>
+    <div>${verdict ? `<span class="chip">${esc(verdict)}</span>` : ""}</div></div>`;
+}
+function viewSessions() {
+  const sel = S.ui.sel.session && byId("sessions", S.ui.sel.session);
+  if (sel) return sessionDetail(sel);
+  const ss = [...S.data.sessions].sort((a, b) => str(b.date).localeCompare(str(a.date)));
+  return `<h2 class="view">Records</h2><p class="lead">Every committee session, sparring match and research run, kept in full so the corpus keeps building.</p>
+  ${ss.length ? `<div class="rows">${ss.map(sessionRow).join("")}</div>` : `<div class="empty">No records yet. Convene the committee from a thesis to create the first one.</div>`}`;
+}
+function stanceChip(st) { const cls = st === "support" ? "support" : st === "oppose" ? "oppose" : st === "mixed" ? "mixed" : ""; return `<span class="chip ${cls}">${esc(st || "no stance")}</span>`; }
+function claimSource(c) {
+  const u = safeUrl(c.url) || (/^https?:\/\//.test(str(c.source)) ? safeUrl(c.source) : "");
+  const e = byId("evidence", c.source);
+  if (e) return `<button class="linkbtn small" data-act="open-ev" data-id="${esc(e.id)}">${esc(trunc(e.source, 60))}</button>`;
+  return u ? link(u, trunc(c.source && !/^https?:/.test(c.source) ? c.source : u, 70)) : `<span class="muted">${esc(c.source || "no source")}</span>`;
+}
+function sessionDetail(s) {
+  const t = s.thesis && byId("theses", s.thesis);
+  const head = `<p class="back"><button class="linkbtn" data-act="back">All records</button></p>
+    <h2 class="th-title" style="font-size:28px; max-width:46ch">${esc(s.title || s.question)}</h2>
+    <p class="muted">${esc(fmtDate(s.date))}${t ? `, on <button class="linkbtn" data-act="open-thesis-from" data-id="${esc(t.id)}">${esc(t.title)}</button>` : ""}${s.mode === "reconstructed" ? ", reconstructed from the chat record" : ""}</p>
+    ${s.question && s.question !== s.title ? `<p class="read">${esc(s.question)}</p>` : ""}${s.note ? `<p class="muted">${esc(s.note)}</p>` : ""}`;
+  if (s.mode === "spar") {
+    const ag = byId("agents", s.agent);
+    return head + `<p class="muted">Sparring with ${esc(ag ? ag.name : s.agent)}</p><div class="chat" style="max-height:none">${arr(s.turns).map(tu => `<div class="msg ${tu.role === "user" ? "user" : "agent"}">${esc(tu.content)}</div>`).join("")}</div>`;
+  }
+  if (s.mode === "research") {
+    return head + `<div class="read" style="white-space:pre-wrap">${esc(s.body || "")}</div>`;
+  }
+  const memos = arr(s.memos);
+  const ch = s.chair;
+  return head + `${memos.map((m, mi) => `<div class="memo"><h4>${esc(m.name || m.agent)} ${stanceChip(m.stance)}${typeof m.confidence === "number" ? `<span class="muted small">confidence ${Math.round(m.confidence * 100)}%</span>` : ""}</h4>
+      <p class="headline">${esc(m.headline)}</p>
+      ${m.reasoning ? `<p class="read" style="font-size:16px; white-space:pre-wrap">${esc(m.reasoning)}</p>` : ""}
+      ${arr(m.claims).length ? `<ul class="claims">${arr(m.claims).map((c, ci) => `<li>${tierChip(c.tier)}<div>${esc(c.claim)} <span class="small">${claimSource(c)}</span>${/doi\.org\//.test(str(c.url) + str(c.source)) && !byId("evidence", c.source) ? ` <button class="linkbtn small" data-act="claim-to-ev" data-id="${esc(s.id)}" data-x="${mi}:${ci}">Add to evidence</button>` : ""}</div></li>`).join("")}</ul>` : ""}
+      ${arr(m.risks).length ? `<p class="small"><b>Risks:</b> ${arr(m.risks).map(esc).join("; ")}</p>` : ""}
+      ${arr(m.questions).length ? `<p class="small"><b>Questions:</b> ${arr(m.questions).map(esc).join(" ")}</p>` : ""}
+      ${arr(m.pubmed).length ? `<p class="small muted">According to PubMed, sources consulted: ${arr(m.pubmed).map(p => link(p.doi ? "https://doi.org/" + p.doi : "", trunc(p.title, 60))).join("; ")}</p>` : ""}
+    </div>`).join("")}
+    ${ch ? `<div class="chairbox"><h4 style="margin:0 0 6px">Chair's synthesis</h4><p class="verdict">Verdict: ${esc(ch.verdict)}</p>
+      ${ch.summary ? `<p class="read" style="font-size:16px">${esc(ch.summary)}</p>` : ""}
+      ${ch.weakest_assumption ? `<p><b>Weakest load-bearing assumption:</b> ${esc(ch.weakest_assumption)}</p>` : ""}
+      ${listInline("Agreements", ch.agreements)}${listInline("Disagreements", ch.disagreements)}${listInline("Decisions", ch.decisions)}
+      ${arr(ch.next_tests).length ? `<p><b>Next tests</b></p><ul class="plain">${arr(ch.next_tests).map(x => `<li>${esc(x.test || x)}${x.kill_if ? `. Kill if: ${esc(x.kill_if)}` : ""}${x.by ? ` (by ${esc(x.by)})` : ""}</li>`).join("")}</ul>` : ""}
+      ${(Object.keys(ch.score_updates || {}).length || arr(ch.assumption_updates).length) && t ? `<p style="margin-top:12px">${s.applied ? `<span class="muted">Updates applied to the thesis on ${esc(fmtDate(s.applied_at))}.</span>` : `<button class="btn" data-act="apply-updates" data-id="${esc(s.id)}">Apply the chair's updates to the thesis</button>`}</p>
+        <ul class="plain small">${Object.entries(ch.score_updates || {}).map(([k, v]) => `<li>Score ${esc(k)} to ${esc(v && v.score)}: ${esc(v && v.why)}</li>`).join("")}${arr(ch.assumption_updates).map(u => `<li>Assumption ${esc(u.id)} to ${esc(u.status)}: ${esc(u.why)}</li>`).join("")}</ul>` : ""}
+    </div>` : ""}`;
+}
+function listInline(title, items) { items = arr(items); return items.length ? `<p><b>${esc(title)}</b></p><ul class="plain">${items.map(x => `<li>${esc(x)}</li>`).join("")}</ul>` : ""; }
+
+/* ---------- evidence ---------- */
+function viewEvidence() {
+  const q = S.ui.q.toLowerCase();
+  let ev = S.data.evidence.filter(e => (S.ui.tierF === "all" || tierOf(e.tier) === S.ui.tierF) && (S.ui.domF === "all" || e.domain === S.ui.domF));
+  if (q) ev = ev.filter(e => (str(e.claim) + " " + str(e.source) + " " + str(e.notes)).toLowerCase().includes(q));
+  ev.sort((a, b) => (TIERS.indexOf(tierOf(a.tier)) - TIERS.indexOf(tierOf(b.tier))) || str(b.date).localeCompare(str(a.date)));
+  return `<h2 class="view">Evidence</h2><p class="lead">Atomic claims, each with its source and tier. Funding and valuations are belief, not proof; they sit in tier D whatever their size.</p>
+  ${legendHtml()}
+  <div class="filters"><input id="q" type="search" placeholder="Search claims and sources" value="${esc(S.ui.q)}" aria-label="Search evidence">
+    <select id="tierF" aria-label="Tier"><option value="all">All tiers</option>${TIERS.map(t => `<option value="${t}" ${S.ui.tierF === t ? "selected" : ""}>Tier ${t}</option>`).join("")}</select>
+    <select id="domF" aria-label="Domain"><option value="all">All domains</option>${DOMAINS.map(d => `<option value="${d}" ${S.ui.domF === d ? "selected" : ""}>${esc(d)}</option>`).join("")}</select>
+    <span class="grow"></span><button class="btn" data-act="add-evidence">Add evidence</button></div>
+  ${ev.length ? `<div class="rows">${ev.map(e => `<div class="row click" data-act="open-ev" data-id="${esc(e.id)}" role="button" tabindex="0"><div>${tierChip(e.tier)}</div>
+      <div><p class="read" style="margin:0; font-size:16.5px">${esc(e.claim)}</p><p class="meta">${esc(e.source)}${e.date ? `, ${esc(e.date)}` : ""}</p></div>
+      <div class="meta">${esc(e.domain || "")}</div></div>`).join("")}</div>` : `<div class="empty">No evidence matches these filters.</div>`}`;
+}
+
+/* ---------- principles ---------- */
+function viewPrinciples() {
+  const ax = [...S.data.axioms].sort((a, b) => (Number(a.order) || 99) - (Number(b.order) || 99));
+  return `<h2 class="view">First principles</h2><p class="lead">The axioms every thesis must be derived from. Each names the evidence that holds it up and what would break it.</p>
+  <div class="bar"><button class="btn" data-act="add-axiom">Add a principle</button></div>
+  <div class="rows">${ax.map(a => `<div class="row"><div class="meta" style="min-width:34px; font-weight:600; color:var(--ink)">${esc(a.label || "")}</div>
+    <div><h3>${esc(a.statement)}</h3>${a.why ? `<p class="small" style="color:var(--ink-2)">${esc(a.why)}</p>` : ""}${a.breaks_if ? `<p class="small"><b>Breaks if:</b> ${esc(a.breaks_if)}</p>` : ""}
+    <p>${arr(a.evidence).map(id => { const e = byId("evidence", id); return e ? `<button class="evchip" data-act="open-ev" data-id="${esc(id)}">${tierChip(e.tier)}${esc(trunc(e.source, 44))}</button>` : ""; }).join(" ")}</p></div>
+    <div><button class="btn quiet small" data-act="edit-axiom" data-id="${esc(a.id)}">Edit</button></div></div>`).join("")}</div>`;
+}
+
+/* ---------- landscape ---------- */
+function viewLandscape() {
+  const groups = STAGES.map(([id, name]) => [id, name, S.data.entities.filter(e => (e.stage || "industry") === id).sort((a, b) => str(a.name).localeCompare(str(b.name)))]).filter(g => g[2].length);
+  const other = S.data.entities.filter(e => !STAGES.some(s => s[0] === e.stage));
+  return `<h2 class="view">Landscape</h2><p class="lead">Companies, institutions and people, placed on the chain from data to patients. Tiers grade the best public evidence for each, not its funding.</p>
+  <div class="bar"><button class="btn" data-act="add-entity">Add to the landscape</button></div>
+  ${groups.map(([id, name, list]) => `<div class="section"><h3>${esc(name)}</h3><div class="rows">${list.map(entityRow).join("")}</div></div>`).join("")}
+  ${other.length ? `<div class="section"><h3>Other</h3><div class="rows">${other.map(entityRow).join("")}</div></div>` : ""}`;
+}
+function entityRow(e) {
+  return `<div class="row click" data-act="open-entity" data-id="${esc(e.id)}" role="button" tabindex="0"><div>${e.kind === "person" ? `<span class="chip">person</span>` : tierChip(e.tier)}</div>
+  <div><h3 style="font-size:17px">${esc(e.name)}</h3><p class="small" style="color:var(--ink-2)">${esc(e.what || e.relation || "")}</p>${e.signal ? `<p class="meta">${esc(e.signal)}</p>` : ""}${horseChips(e.id)}</div>
+  <div class="meta">${esc(e.kind || "")}</div></div>`;
+}
+
+/* ---------- research ---------- */
+function viewResearch() {
+  const f = S.ui.resF;
+  let rs = S.data.research.filter(r => f === "all" || (f === "open" ? (r.status === "open" || r.status === "needs-web-research") : (r.status !== "open" && r.status !== "needs-web-research")));
+  const pr = { high: 0, normal: 1, low: 2 };
+  rs.sort((a, b) => ((pr[a.priority] ?? 1) - (pr[b.priority] ?? 1)) || str(b.created_at).localeCompare(str(a.created_at)));
+  const canRun = !!S.sample;
+  return `<h2 class="view">Research queue</h2><p class="lead">Questions the committee could not settle. Members can take a first pass here, with PubMed for the science; items that need the open web go to Claude in chat, which writes graded evidence back into this corpus.</p>
+  <div class="filters"><select id="resF" aria-label="Show"><option value="open" ${f === "open" ? "selected" : ""}>Open</option><option value="done" ${f === "done" ? "selected" : ""}>Answered or closed</option><option value="all" ${f === "all" ? "selected" : ""}>All</option></select>
+  <span class="grow"></span><button class="btn quiet" data-act="show-protocol">Deep research in chat</button><button class="btn" data-act="add-research">Add a question</button></div>
+  ${rs.length ? `<div class="rows">${rs.map(r => { const t = r.thesis && byId("theses", r.thesis); const busy = S.ui.busy[r.id]; return `<div class="row"><div><span class="chip">${esc(r.priority || "normal")}</span></div>
+    <div><h3 style="font-size:17px">${esc(r.question)}</h3><p class="meta">${esc(r.domain || "")}${t ? `, tests ${esc(trunc(t.title, 50))}` : ""}${r.horse && byId("horses", r.horse) ? `, horse ${esc(byId("horses", r.horse).name)}${r.test ? `, ${esc(testInfo(r.test).name.toLowerCase())} test` : ""}` : ""}${r.why ? `. ${esc(r.why)}` : ""}</p>
+    ${r.result && r.result.answer ? `<p class="small read" style="font-size:15.5px; white-space:pre-wrap">${esc(trunc(r.result.answer, 900))}</p>` : ""}
+    ${r.result && arr(r.result.sources_to_verify).length ? `<p class="small muted">To verify: ${arr(r.result.sources_to_verify).map(esc).join("; ")}</p>` : ""}
+    <p class="meta">Status: ${esc(r.status)}${busy ? ", a member is working on it" : ""}</p></div>
+    <div style="display:flex; flex-direction:column; gap:6px; align-items:flex-end">${canRun && !busy && (r.status === "open" || r.status === "needs-web-research") ? `<button class="btn small" data-act="run-research" data-id="${esc(r.id)}">Take a first pass</button>` : ""}
+    <button class="btn quiet small" data-act="edit-research" data-id="${esc(r.id)}">Edit</button></div></div>`; }).join("")}</div>` : `<div class="empty">Nothing here. The committee adds questions when it cannot settle a load-bearing assumption.</div>`}`;
+}
+
+/* ---------- concepts ---------- */
+function viewConcepts() {
+  const cs = [...S.data.concepts].sort((a, b) => str(a.term).localeCompare(str(b.term)));
+  return `<h2 class="view">Concepts</h2><p class="lead">The committee's working vocabulary, so ideas keep their meaning between sessions.</p>
+  <div class="bar"><button class="btn" data-act="add-concept">Add a concept</button></div>
+  <div class="rows">${cs.map(c => `<div class="row"><div></div><div><h3 style="font-size:18px">${esc(c.term)}</h3><p class="read" style="font-size:16px">${esc(c.definition)}</p>${c.related ? `<p class="meta">Related: ${esc(c.related)}</p>` : ""}</div><div><button class="btn quiet small" data-act="edit-concept" data-id="${esc(c.id)}">Edit</button></div></div>`).join("")}</div>`;
+}
+
+/* ---------- committee ---------- */
+function viewCommittee() {
+  const ag = [...S.data.agents].sort((a, b) => (Number(a.order) || 99) - (Number(b.order) || 99));
+  return `<h2 class="view">Committee</h2><p class="lead">Specialised members, each with a mandate, a method and a standard of proof. Edit a charter to change how that member argues in future sessions.</p>
+  <div class="rows">${ag.map(a => `<div class="row"><div class="meta" style="min-width:24px">${esc(a.order || "")}</div>
+    <div><h3>${esc(a.name)}</h3><p class="small" style="color:var(--ink-2)">${esc(a.role)}</p><p class="small"><b>Mandate:</b> ${esc(a.mandate)}</p><p class="small"><b>Standard of proof:</b> ${esc(a.standard_of_proof)}</p>${arr(a.tools).includes("pubmed") ? `<p class="meta">Searches PubMed during sessions</p>` : ""}</div>
+    <div><button class="btn quiet small" data-act="edit-agent" data-id="${esc(a.id)}">Edit charter</button></div></div>`).join("")}</div>`;
+}
+
+/* ---------- method ---------- */
+function protocolText() {
+  const url = S.meta && S.meta.links && S.meta.links.artifact ? S.meta.links.artifact : "(this artifact's link)";
+  return `Run the research queue for my Bio x AI committee at ${url}.
+For each open item: research it with web search and primary sources; add evidence documents (claim, source, url, tier A to U, domain, date); link new evidence to the thesis assumptions it tests; then update the item with a short answer, the evidence ids and a status of answered.
+Also refresh the landscape: check for new funding, trial readouts, regulatory decisions and acquisitions in Bio x AI since the last refresh date, and record them the same way.`;
+}
+function viewMethod() {
+  const m = S.meta || {};
+  return `<h2 class="view">How the committee works</h2>
+  <p class="lead">A thesis is only as strong as its weakest load-bearing assumption. The harness makes that visible and keeps the argument honest over time.</p>
+  <div class="section"><h3>The loop</h3><ol class="plain">
+    <li>Principles: every thesis must trace back to the first principles on record.</li>
+    <li>Assumptions: a thesis is broken into load-bearing assumptions, each linked to graded evidence.</li>
+    <li>Committee: members file independent memos inside their mandate; the red team attacks the weakest claims; the chair synthesises, proposes score and status changes, and files research questions.</li>
+    <li>Research: questions are answered in the page (with PubMed for the science) or by Claude in chat (with the open web), and the new evidence is written back.</li>
+    <li>Update: you decide whether to apply the chair's updates. Coverage and score move only when evidence moves.</li></ol></div>
+  <div class="section"><h3>Evidence tiers</h3><dl class="kv">${TIERS.map(t => `<dt>${tierChip(t)}</dt><dd>${esc(TIER_INFO[t])}</dd>`).join("")}</dl>
+    <p class="small muted">Evidence coverage counts load-bearing assumptions marked supported whose best evidence is tier A or B.</p></div>
+  <div class="section"><h3>Rubric</h3><div class="scroll"><table><thead><tr><th>Criterion</th><th>Weight</th><th>Question</th></tr></thead><tbody>${rubric().map(c => `<tr><td>${esc(c.name)}</td><td>${esc(c.weight)}</td><td class="small">${esc(c.question)}</td></tr>`).join("")}</tbody></table></div></div>
+  ${horseMethodHtml()}
+  ${arr(m.founder_principles).length ? `<div class="section"><h3>Founder operating principles</h3><ul class="plain">${arr(m.founder_principles).map(x => `<li>${esc(x)}</li>`).join("")}</ul></div>` : ""}
+  <div class="section"><h3>Keeping the landscape current</h3><p>Pages cannot browse the web, so live updates run through Claude in chat, which reads this artifact's records and writes graded evidence back. Paste this into a chat when you want a refresh:</p>
+    <pre class="protocol" id="protocol">${esc(protocolText())}</pre>${m.last_refresh ? `<p class="muted small">Last landscape refresh: ${esc(fmtDate(m.last_refresh))}</p>` : ""}</div>
+  <div class="section"><h3>Take the corpus with you</h3><div class="bar">${S.dl ? `<button class="btn" data-act="export-json">Download the corpus as JSON</button><button class="btn" data-act="export-md">Download a Markdown brief</button>` : `<span class="muted small">Downloads are not available in this view.</span>`}</div>
+    ${m.links && m.links.doc ? `<p class="small">The narrative write-up lives in ${link(m.links.doc, "the Clinical ground truth doc")}.</p>` : ""}</div>
+  <div class="section"><h3>Who built this</h3><p class="small">This page was built with Claude. Anthropic, which makes Claude, is itself a participant in the Bio x AI market this committee studies.</p></div>`;
+}
+
+/* ---------- writes ---------- */
+async function put(coll, id, data) { if (!S.db) throw { message: "The record store is not connected in this view." }; await S.db.collection(coll).doc(id).set(data); }
+async function patch(coll, id, data) { if (!S.db) throw { message: "The record store is not connected in this view." }; await S.db.collection(coll).doc(id).update(data); }
+async function remove(coll, id) { if (!S.db) throw { message: "The record store is not connected in this view." }; await S.db.collection(coll).doc(id).delete(); }
+function clone(o) { return JSON.parse(JSON.stringify(o || {})); }
+
+/* ---------- events ---------- */
+document.addEventListener("click", e => {
+  const b = e.target.closest("[data-act]"); if (!b) return;
+  const fn = ACTIONS[b.dataset.act]; if (!fn) return;
+  e.preventDefault();
+  Promise.resolve(fn(b.dataset.id, b.dataset.x, b)).catch(err => toast(errText(err)));
+});
+document.addEventListener("keydown", e => {
+  if ((e.key === "Enter" || e.key === " ") && e.target.matches && e.target.matches('.row[role="button"], tr[role="button"]')) { e.preventDefault(); e.target.click(); }
+});
+document.addEventListener("input", e => { if (e.target.id === "q") { S.ui.q = e.target.value; render(); } });
+document.addEventListener("change", e => {
+  if (e.target.id === "tierF") { S.ui.tierF = e.target.value; render(); }
+  if (e.target.id === "domF") { S.ui.domF = e.target.value; render(); }
+  if (e.target.id === "resF") { S.ui.resF = e.target.value; render(); }
+  if (e.target.id === "hLaneF") { S.ui.hLaneF = e.target.value; render(); }
+  if (e.target.id === "hStatF") { S.ui.hStatF = e.target.value; render(); }
+});
+function go(tab, sel) { S.ui.tab = tab; S.ui.sel = sel || {}; render(); window.scrollTo({ top: 0 }); }
+
+const ACTIONS = {
+  "tab": id => go(id),
+  "back": () => { S.ui.sel = {}; render(); window.scrollTo({ top: 0 }); },
+  "open-thesis": id => go("theses", { thesis: id }),
+  "open-thesis-from": id => go("theses", { thesis: id }),
+  "open-session": id => go("sessions", { session: id }),
+  "open-ev": id => openEvidence(id),
+  "open-entity": id => openEntity(id),
+  "add-thesis": () => editThesis(null),
+  "edit-thesis": id => editThesis(id),
+  "add-assumption": id => addAssumption(id),
+  "link-ev": (id, x) => linkEvidence(id, x),
+  "set-status": (id, x) => setAssumptionStatus(id, x),
+  "edit-score": (id, x) => editScore(id, x),
+  "convene": id => openConvene(id || null),
+  "spar": id => openSpar(id || null),
+  "add-evidence": () => editEvidence(null),
+  "add-entity": () => editEntity(null),
+  "add-concept": () => editConcept(null),
+  "edit-concept": id => editConcept(id),
+  "add-research": () => editResearch(null),
+  "edit-research": id => editResearch(id),
+  "run-research": id => runResearch(id),
+  "add-axiom": () => editAxiom(null),
+  "edit-axiom": id => editAxiom(id),
+  "edit-agent": id => editAgent(id),
+  "apply-updates": id => applyUpdates(id),
+  "claim-to-ev": (id, x) => claimToEvidence(id, x),
+  "export-json": () => exportJson(),
+  "export-md": () => exportMd(),
+  "show-protocol": () => showProtocol(),
+  "open-horse": id => { const d = $("#dlg"); if (d.open) d.close(); go("horses", { horse: id }); },
+  "add-horse": () => editHorse(null),
+  "edit-horse": id => editHorse(id),
+  "rescore": (id, x) => rescore(id, x),
+  "horse-ev": (id, x) => addHorseEvidence(id, x || ""),
+  "horse-research": (id, x) => fileHorseResearch(id, x || ""),
+  "outreach": id => draftOutreach(id),
+  "snapshot": () => snapshotForm(),
+  "open-snapshot": id => openSnapshot(id),
+  "stability": () => openStability(),
+  "freeze-call": id => freezeCall(id || ""),
+  "open-call": id => openCall(id)
+};
+
+/* ---------- generic form dialog ---------- */
+function fieldHtml(f, i) {
+  const id = `f${i}`; const v = f.value == null ? "" : f.value;
+  let input = "";
+  if (f.type === "textarea" || f.type === "lines") input = `<textarea id="${id}" ${f.rows ? `rows="${f.rows}"` : ""}>${esc(f.type === "lines" ? arr(v).join("\n") : v)}</textarea>`;
+  else if (f.type === "select") input = `<select id="${id}">${f.options.map(o => `<option value="${esc(o[0])}" ${String(o[0]) === String(v) ? "selected" : ""}>${esc(o[1])}</option>`).join("")}</select>`;
+  else if (f.type === "checks") input = `<div class="checks" id="${id}">${f.options.map(o => `<label><input type="checkbox" value="${esc(o[0])}" ${arr(v).includes(o[0]) ? "checked" : ""}><span>${o[2] || ""}${esc(o[1])}</span></label>`).join("")}</div>`;
+  else input = `<input id="${id}" type="${f.type === "url" ? "url" : "text"}" value="${esc(v)}">`;
+  return `<div class="field"><label for="${id}">${esc(f.label)}</label>${input}${f.hint ? `<div class="hint">${esc(f.hint)}</div>` : ""}</div>`;
+}
+function readFields(root, fields) {
+  const out = {};
+  fields.forEach((f, i) => {
+    const el = root.querySelector(`#f${i}`);
+    if (f.type === "checks") out[f.key] = [...el.querySelectorAll("input:checked")].map(x => x.value);
+    else if (f.type === "lines") out[f.key] = el.value.split("\n").map(s => s.trim()).filter(Boolean);
+    else out[f.key] = el.value.trim();
+  });
+  return out;
+}
+function openForm({ title, intro, fields, submit, onSubmit, danger }) {
+  const dlg = $("#dlg");
+  dlg.innerHTML = `<form class="dlg" novalidate><h2>${esc(title)}</h2>${intro ? `<p class="muted">${esc(intro)}</p>` : ""}
+    ${fields.map(fieldHtml).join("")}<p class="form-err" role="alert"></p>
+    <div class="form-actions">${danger ? `<button type="button" class="btn danger" data-f="danger">${esc(danger.label)}</button>` : ""}<span class="grow"></span>
+    <button type="button" class="btn quiet" data-f="cancel">Cancel</button><button type="submit" class="btn primary">${esc(submit || "Save")}</button></div></form>`;
+  const form = dlg.querySelector("form"); const errEl = form.querySelector(".form-err");
+  form.addEventListener("submit", async ev => {
+    ev.preventDefault(); const btn = form.querySelector('button[type="submit"]'); btn.disabled = true; errEl.textContent = "";
+    try { await onSubmit(readFields(form, fields)); dlg.close(); } catch (e) { errEl.textContent = errText(e); btn.disabled = false; }
+  });
+  form.querySelector('[data-f="cancel"]').addEventListener("click", () => dlg.close());
+  if (danger) {
+    const db = form.querySelector('[data-f="danger"]'); let armed = false;
+    db.addEventListener("click", async () => {
+      if (!armed) { armed = true; db.textContent = "Select again to confirm"; return; }
+      try { await danger.run(); dlg.close(); } catch (e) { errEl.textContent = errText(e); }
+    });
+  }
+  dlg.showModal();
+}
+function openInfo(html) {
+  const dlg = $("#dlg");
+  dlg.innerHTML = `<div class="dlg">${html}<div class="form-actions"><span class="grow"></span><button type="button" class="btn" data-f="close">Close</button></div></div>`;
+  dlg.querySelector('[data-f="close"]').addEventListener("click", () => dlg.close());
+  dlg.showModal();
+}
+function need(v, label) { if (!str(v).trim()) throw { message: `${label} is required.` }; }
+
+/* ---------- evidence ---------- */
+function usedBy(evId) {
+  const out = [];
+  S.data.theses.forEach(t => arr(t.assumptions).forEach(a => { if (arr(a.evidence).includes(evId)) out.push(`${t.title}: ${a.text}`); }));
+  S.data.axioms.forEach(a => { if (arr(a.evidence).includes(evId)) out.push(`${a.label} ${a.statement}`); });
+  S.data.horses.forEach(h => Object.entries(h.scores || {}).forEach(([k, s]) => { if (arr(s && s.evidence).includes(evId)) out.push(`Horse ${h.name}: ${testInfo(k).name.toLowerCase()} test`); }));
+  return out;
+}
+function openEvidence(id) {
+  const e = byId("evidence", id); if (!e) return;
+  const uses = usedBy(id);
+  const dlg = $("#dlg");
+  dlg.innerHTML = `<div class="dlg"><h2>${tierChip(e.tier)} Evidence</h2><p class="read">${esc(e.claim)}</p>
+    <dl class="kv"><dt>Source</dt><dd>${link(e.url, e.source || e.url)}</dd><dt>Tier</dt><dd>${esc(TIER_INFO[tierOf(e.tier)])}</dd>${e.date ? `<dt>Date</dt><dd>${esc(e.date)}</dd>` : ""}<dt>Domain</dt><dd>${esc(e.domain || "")}</dd>${e.added_by ? `<dt>Added by</dt><dd>${esc(e.added_by)}</dd>` : ""}</dl>
+    ${e.notes ? `<p class="small">${esc(e.notes)}</p>` : ""}
+    ${uses.length ? `<p class="small"><b>Holds up:</b></p><ul class="plain small">${uses.map(u => `<li>${esc(trunc(u, 160))}</li>`).join("")}</ul>` : `<p class="small muted">Not linked to any assumption or principle yet.</p>`}
+    <div class="form-actions"><button type="button" class="btn quiet" data-f="edit">Edit</button><span class="grow"></span><button type="button" class="btn" data-f="close">Close</button></div></div>`;
+  dlg.querySelector('[data-f="close"]').addEventListener("click", () => dlg.close());
+  dlg.querySelector('[data-f="edit"]').addEventListener("click", () => { dlg.close(); editEvidence(id); });
+  dlg.showModal();
+}
+function editEvidence(id) {
+  const e = id ? byId("evidence", id) : {};
+  const fields = [
+    { key: "claim", label: "Claim", type: "textarea", value: e.claim, hint: "One checkable statement, in your own words." },
+    { key: "source", label: "Source", value: e.source, hint: "Authors, journal or outlet, year." },
+    { key: "url", label: "Link", type: "url", value: e.url },
+    { key: "tier", label: "Tier", type: "select", value: e.tier || "C", options: TIERS.map(t => [t, `${t}: ${TIER_INFO[t]}`]) },
+    { key: "domain", label: "Domain", type: "select", value: e.domain || "industry", options: DOMAINS.map(d => [d, d]) },
+    { key: "date", label: "Date of the source", value: e.date, hint: "For example 2026-03 or 2025." },
+    { key: "notes", label: "Notes", type: "textarea", value: e.notes }
+  ];
+  openForm({ title: id ? "Edit evidence" : "Add evidence", fields, submit: id ? "Save evidence" : "Add evidence",
+    danger: id ? { label: "Delete evidence", run: () => remove("evidence", id) } : null,
+    onSubmit: async v => { need(v.claim, "Claim"); need(v.source, "Source");
+      const doc = Object.assign(clone(e), v, { updated_at: nowIso() }); delete doc.id; if (!id) { doc.added_by = "Thomas"; doc.added_at = nowIso(); }
+      await put("evidence", id || newId("e", v.source), doc); toast(id ? "Evidence saved" : "Evidence added"); } });
+}
+
+/* ---------- theses ---------- */
+function editThesis(id) {
+  const t = id ? byId("theses", id) : {};
+  const ents = S.data.entities.filter(x => x.kind !== "person").sort((a, b) => str(a.name).localeCompare(str(b.name)));
+  const fields = [
+    { key: "title", label: "Title", value: t.title },
+    { key: "one_liner", label: "The thesis in one or two sentences", type: "textarea", value: t.one_liner },
+    { key: "positioning", label: "Positioning and comparables", type: "textarea", value: t.positioning },
+    { key: "status", label: "Status", type: "select", value: t.status || "active", options: [["lead", "Lead"], ["active", "Active"], ["parked", "Parked"], ["killed", "Killed"]] },
+    { key: "falsifiers", label: "What would kill it (one per line)", type: "lines", value: t.falsifiers },
+    { key: "gates", label: "Gates (one per line, as name: criteria)", type: "lines", value: arr(t.gates).map(g => `${g.name}: ${g.criteria}`) },
+    { key: "risks", label: "Risks (one per line)", type: "lines", value: t.risks },
+    { key: "next_tests", label: "Next tests (one per line)", type: "lines", value: t.next_tests },
+    { key: "comps", label: "Comparables", type: "checks", value: arr(t.comps), options: ents.map(x => [x.id, x.name]) }
+  ];
+  openForm({ title: id ? "Edit thesis" : "Add a thesis", fields, submit: id ? "Save thesis" : "Add thesis",
+    danger: id ? { label: "Delete thesis", run: async () => { await remove("theses", id); S.ui.sel = {}; render(); } } : null,
+    onSubmit: async v => { need(v.title, "Title");
+      const doc = Object.assign(clone(t), v, { gates: v.gates.map(line => { const i = line.indexOf(":"); return i > 0 ? { name: line.slice(0, i).trim(), criteria: line.slice(i + 1).trim() } : { name: line, criteria: "" }; }), updated_at: nowIso() });
+      delete doc.id; if (!id) { doc.assumptions = []; doc.scorecard = {}; doc.created_at = nowIso(); }
+      const nid = id || newId("t", v.title); await put("theses", nid, doc); if (!id) go("theses", { thesis: nid }); toast(id ? "Thesis saved" : "Thesis added"); } });
+}
+function addAssumption(tid) {
+  const t = byId("theses", tid); if (!t) return;
+  openForm({ title: "Add an assumption", intro: "State one thing that must be true for the thesis to work.",
+    fields: [{ key: "text", label: "Assumption", type: "textarea" }, { key: "load_bearing", label: "Load-bearing?", type: "select", value: "yes", options: [["yes", "Yes, the thesis fails without it"], ["no", "No, it helps but is not essential"]] }],
+    submit: "Add assumption",
+    onSubmit: async v => { need(v.text, "Assumption"); const as = clone(t.assumptions); let n = as.length + 1; while (as.some(a => a.id === "a" + n)) n++;
+      as.push({ id: "a" + n, text: v.text, load_bearing: v.load_bearing === "yes", status: "unsupported", evidence: [] });
+      await patch("theses", tid, { assumptions: as, updated_at: nowIso() }); toast("Assumption added"); } });
+}
+function linkEvidence(tid, aid) {
+  const t = byId("theses", tid); const a = t && arr(t.assumptions).find(x => x.id === aid); if (!a) return;
+  const ev = [...S.data.evidence].sort((x, y) => TIERS.indexOf(tierOf(x.tier)) - TIERS.indexOf(tierOf(y.tier)));
+  openForm({ title: "Link evidence", intro: a.text, submit: "Save links",
+    fields: [{ key: "evidence", label: "Evidence that bears on this assumption", type: "checks", value: arr(a.evidence), options: ev.map(e => [e.id, `${trunc(e.claim, 110)} (${trunc(e.source, 40)})`, tierChip(e.tier) + " "]) }],
+    onSubmit: async v => { const as = clone(t.assumptions).map(x => x.id === aid ? Object.assign(x, { evidence: v.evidence }) : x); await patch("theses", tid, { assumptions: as, updated_at: nowIso() }); toast("Links saved"); } });
+}
+function setAssumptionStatus(tid, aid) {
+  const t = byId("theses", tid); const a = t && arr(t.assumptions).find(x => x.id === aid); if (!a) return;
+  openForm({ title: "Change status", intro: a.text, submit: "Save status",
+    fields: [{ key: "status", label: "Status", type: "select", value: a.status || "unsupported", options: STATUSES.map(s => [s, s]) },
+      { key: "load_bearing", label: "Load-bearing?", type: "select", value: a.load_bearing === false ? "no" : "yes", options: [["yes", "Yes"], ["no", "No"]] },
+      { key: "text", label: "Wording", type: "textarea", value: a.text },
+      { key: "note", label: "Why", type: "textarea", value: a.note }],
+    danger: { label: "Remove assumption", run: () => patch("theses", tid, { assumptions: clone(t.assumptions).filter(x => x.id !== aid), updated_at: nowIso() }) },
+    onSubmit: async v => { const as = clone(t.assumptions).map(x => x.id === aid ? Object.assign(x, { status: v.status, load_bearing: v.load_bearing === "yes", text: v.text || x.text, note: v.note }) : x);
+      await patch("theses", tid, { assumptions: as, updated_at: nowIso() }); toast("Status saved"); } });
+}
+function editScore(tid, cid) {
+  const t = byId("theses", tid); const c = rubric().find(x => x.id === cid); if (!t || !c) return;
+  const cur = (t.scorecard || {})[cid] || {};
+  openForm({ title: c.name, intro: c.question, submit: "Save score",
+    fields: [{ key: "score", label: "Score", type: "select", value: cur.score == null ? "" : String(cur.score), options: [["", "Not scored"], ...[0, 1, 2, 3, 4, 5].map(n => [String(n), String(n)])] }, { key: "why", label: "Why, with evidence", type: "textarea", value: cur.why }],
+    onSubmit: async v => { const sc = clone(t.scorecard); if (v.score === "") delete sc[cid]; else sc[cid] = { score: Number(v.score), why: v.why }; await patch("theses", tid, { scorecard: sc, updated_at: nowIso() }); toast("Score saved"); } });
+}
+
+/* ---------- entities, concepts, axioms, research, agents ---------- */
+function openEntity(id) {
+  const e = byId("entities", id); if (!e) return;
+  openInfoWithEdit(`<h2>${esc(e.name)}</h2><p class="muted">${esc(e.kind || "")}, ${esc(stageName(e.stage))}</p>
+    ${e.what ? `<p class="read">${esc(e.what)}</p>` : ""}${e.relation ? `<p><b>Relationship:</b> ${esc(e.relation)}</p>` : ""}
+    <dl class="kv">${e.signal ? `<dt>Signal</dt><dd>${esc(e.signal)}</dd>` : ""}${e.kind !== "person" ? `<dt>Evidence tier</dt><dd>${tierChip(e.tier)} ${esc(TIER_INFO[tierOf(e.tier)])}</dd>` : ""}${e.url ? `<dt>Link</dt><dd>${link(e.url)}</dd>` : ""}${e.last_reviewed ? `<dt>Last reviewed</dt><dd>${esc(e.last_reviewed)}</dd>` : ""}</dl>
+    ${e.notes ? `<p class="small">${esc(e.notes)}</p>` : ""}${horseChips(id)}`, () => editEntity(id));
+}
+function openInfoWithEdit(html, onEdit) {
+  const dlg = $("#dlg");
+  dlg.innerHTML = `<div class="dlg">${html}<div class="form-actions"><button type="button" class="btn quiet" data-f="edit">Edit</button><span class="grow"></span><button type="button" class="btn" data-f="close">Close</button></div></div>`;
+  dlg.querySelector('[data-f="close"]').addEventListener("click", () => dlg.close());
+  dlg.querySelector('[data-f="edit"]').addEventListener("click", () => { dlg.close(); onEdit(); });
+  dlg.showModal();
+}
+function editEntity(id) {
+  const e = id ? byId("entities", id) : {};
+  const fields = [
+    { key: "name", label: "Name", value: e.name },
+    { key: "kind", label: "Kind", type: "select", value: e.kind || "company", options: [["company", "Company"], ["nonprofit", "Nonprofit or institute"], ["regulator", "Regulator or standards body"], ["investor", "Investor"], ["acquirer", "Acquirer or incumbent"], ["person", "Person"]] },
+    { key: "stage", label: "Where it sits", type: "select", value: e.stage || "discovery", options: STAGES },
+    { key: "what", label: "What it does", type: "textarea", value: e.what },
+    { key: "signal", label: "Latest signal", value: e.signal, hint: "A round, a readout, a decision, an acquisition." },
+    { key: "tier", label: "Best public evidence", type: "select", value: e.tier || "C", options: TIERS.map(t => [t, `${t}: ${TIER_INFO[t]}`]) },
+    { key: "url", label: "Link", type: "url", value: e.url },
+    { key: "relation", label: "Relationship (people only)", type: "textarea", value: e.relation },
+    { key: "notes", label: "Notes", type: "textarea", value: e.notes }
+  ];
+  openForm({ title: id ? "Edit" : "Add to the landscape", fields, submit: "Save",
+    danger: id ? { label: "Delete", run: () => remove("entities", id) } : null,
+    onSubmit: async v => { need(v.name, "Name"); const doc = Object.assign(clone(e), v, { last_reviewed: new Date().toISOString().slice(0, 10) }); delete doc.id; await put("entities", id || newId("x", v.name), doc); toast("Saved"); } });
+}
+function editConcept(id) {
+  const c = id ? byId("concepts", id) : {};
+  openForm({ title: id ? "Edit concept" : "Add a concept", submit: "Save concept",
+    fields: [{ key: "term", label: "Term", value: c.term }, { key: "definition", label: "Definition", type: "textarea", value: c.definition }, { key: "related", label: "Related ideas or sources", value: c.related }],
+    danger: id ? { label: "Delete concept", run: () => remove("concepts", id) } : null,
+    onSubmit: async v => { need(v.term, "Term"); need(v.definition, "Definition"); const doc = Object.assign(clone(c), v, { updated_at: nowIso() }); delete doc.id; await put("concepts", id || newId("c", v.term), doc); toast("Concept saved"); } });
+}
+function editAxiom(id) {
+  const a = id ? byId("axioms", id) : {};
+  const ev = [...S.data.evidence].sort((x, y) => TIERS.indexOf(tierOf(x.tier)) - TIERS.indexOf(tierOf(y.tier)));
+  openForm({ title: id ? "Edit principle" : "Add a principle", submit: "Save principle",
+    fields: [{ key: "label", label: "Label", value: a.label, hint: "For example P10." }, { key: "statement", label: "Principle", type: "textarea", value: a.statement },
+      { key: "why", label: "Why it holds", type: "textarea", value: a.why }, { key: "breaks_if", label: "What would break it", type: "textarea", value: a.breaks_if },
+      { key: "evidence", label: "Evidence", type: "checks", value: arr(a.evidence), options: ev.map(e => [e.id, `${trunc(e.claim, 100)}`, tierChip(e.tier) + " "]) }],
+    danger: id ? { label: "Delete principle", run: () => remove("axioms", id) } : null,
+    onSubmit: async v => { need(v.statement, "Principle"); const doc = Object.assign(clone(a), v, { updated_at: nowIso() }); delete doc.id; if (!id) doc.order = S.data.axioms.length + 1; await put("axioms", id || newId("p", v.label || v.statement), doc); toast("Principle saved"); } });
+}
+function editResearch(id) {
+  const r = id ? byId("research", id) : {};
+  const fields = [
+    { key: "question", label: "Question", type: "textarea", value: r.question, hint: "Specific and answerable, tied to one load-bearing assumption." },
+    { key: "domain", label: "Domain", type: "select", value: r.domain || "industry", options: DOMAINS.map(d => [d, d]) },
+    { key: "why", label: "What it tests", type: "textarea", value: r.why },
+    { key: "thesis", label: "Thesis", type: "select", value: r.thesis || "", options: [["", "None"], ...S.data.theses.map(t => [t.id, t.title])] },
+    { key: "priority", label: "Priority", type: "select", value: r.priority || "normal", options: [["high", "High"], ["normal", "Normal"], ["low", "Low"]] },
+    { key: "status", label: "Status", type: "select", value: r.status || "open", options: [["open", "Open"], ["needs-web-research", "Needs web research in chat"], ["answered", "Answered"], ["closed", "Closed"]] }
+  ];
+  openForm({ title: id ? "Edit research question" : "Add a research question", fields, submit: "Save question",
+    danger: id ? { label: "Delete question", run: () => remove("research", id) } : null,
+    onSubmit: async v => { need(v.question, "Question"); const doc = Object.assign(clone(r), v, { updated_at: nowIso() }); delete doc.id; if (!id) { doc.created_at = nowIso(); doc.created_by = "Thomas"; } await put("research", id || newId("r", v.question), doc); toast("Question saved"); } });
+}
+function editAgent(id) {
+  const a = byId("agents", id); if (!a) return;
+  openForm({ title: `Edit charter: ${a.name}`, submit: "Save charter",
+    fields: [{ key: "name", label: "Name", value: a.name }, { key: "role", label: "Role", type: "textarea", value: a.role }, { key: "mandate", label: "Mandate", type: "textarea", value: a.mandate },
+      { key: "method", label: "Method", type: "textarea", value: a.method }, { key: "standard_of_proof", label: "Standard of proof", type: "textarea", value: a.standard_of_proof },
+      { key: "blind_spots", label: "What this member watches for", type: "textarea", value: a.blind_spots },
+      { key: "tier", label: "Model", type: "select", value: a.tier || "default", options: [["quick", "Quick"], ["default", "Balanced"], ["complex", "Most capable"]] },
+      { key: "default_panel", label: "On the default panel?", type: "select", value: a.default_panel === false ? "no" : "yes", options: [["yes", "Yes"], ["no", "No"]] }],
+    onSubmit: async v => { const doc = Object.assign(clone(a), v, { default_panel: v.default_panel === "yes", updated_at: nowIso() }); delete doc.id; await put("agents", id, doc); toast("Charter saved"); } });
+}
+function showProtocol() {
+  openInfo(`<h2>Deep research in chat</h2><p>Members in this page can search PubMed but not the open web. For company, market, regulatory and landscape questions, paste this into a chat with Claude; it will read the queue, research with web search, and write graded evidence back here.</p><pre class="protocol">${esc(protocolText())}</pre>`);
+}
+
+/* ---------- committee ---------- */
+function agentsSorted() { return [...S.data.agents].sort((a, b) => (Number(a.order) || 99) - (Number(b.order) || 99)); }
+function openConvene(tid) {
+  if (!S.sample) { toast("Claude is not available in this view."); return; }
+  const t = tid ? byId("theses", tid) : null;
+  const ags = agentsSorted().filter(a => a.id !== "chair");
+  const def = ags.filter(a => a.default_panel !== false).map(a => a.id);
+  openForm({ title: "Convene the committee", intro: t ? `On: ${t.title}. Each member files an independent memo, the red team attacks the weakest claims, and the chair synthesises. Runs on your Claude usage and takes a few minutes.` : "An open question, not tied to a thesis. Runs on your Claude usage and takes a few minutes.",
+    submit: "Convene",
+    fields: [{ key: "question", label: "Question before the committee", type: "textarea", value: t ? `Should we advance "${t.title}" to the next gate, and what is its weakest load-bearing assumption?` : "" },
+      { key: "panel", label: "Members", type: "checks", value: def, options: ags.map(a => [a.id, `${a.name}: ${trunc(a.role, 70)}`]) }],
+    onSubmit: async v => { need(v.question, "Question"); if (!v.panel.length) throw { message: "Choose at least one member." }; setTimeout(() => runCommittee(tid, v.question, v.panel), 0); } });
+}
+async function pool(items, n, fn) { const q = [...items]; const workers = Array.from({ length: Math.min(n, q.length) }, async () => { while (q.length) { const it = q.shift(); await fn(it); } }); await Promise.all(workers); }
+function tierText() { return TIERS.map(t => `${t}: ${TIER_INFO[t]}`).join("\n"); }
+function thesisBrief(t) {
+  return [`Title: ${t.title}`, `One-liner: ${str(t.one_liner)}`, `Positioning: ${str(t.positioning)}`, `Status: ${str(t.status)}`, "Assumptions:",
+    ...arr(t.assumptions).map(a => `- ${a.id} (${a.status || "unsupported"}, best evidence tier ${bestTier(a.evidence)}${a.load_bearing === false ? ", not load-bearing" : ", load-bearing"}): ${a.text} [evidence: ${arr(a.evidence).join(", ") || "none"}]`),
+    `Falsifiers: ${arr(t.falsifiers).join(" | ")}`, `Gates: ${arr(t.gates).map(g => g.name + ": " + g.criteria).join(" | ")}`,
+    `Current scores: ${Object.entries(t.scorecard || {}).map(([k, v]) => `${k}=${v && v.score}`).join(", ")}`].join("\n");
+}
+function buildContext(tid, maxEv) {
+  const t = tid ? byId("theses", tid) : null;
+  const linked = new Set(); if (t) arr(t.assumptions).forEach(a => arr(a.evidence).forEach(id => linked.add(id)));
+  const ev = [...S.data.evidence].sort((a, b) => (Number(linked.has(b.id)) - Number(linked.has(a.id))) || (TIERS.indexOf(tierOf(a.tier)) - TIERS.indexOf(tierOf(b.tier))));
+  return {
+    thesisText: t ? thesisBrief(t) : "No thesis selected: this is an open question.",
+    evLines: ev.slice(0, maxEv || 70).map(e => `${e.id} [${tierOf(e.tier)}] ${trunc(e.claim, 240)} (${trunc(e.source, 80)})`).join("\n"),
+    axLines: [...S.data.axioms].sort((a, b) => (Number(a.order) || 99) - (Number(b.order) || 99)).map(a => `${a.label || a.id}: ${a.statement}`).join("\n"),
+    rubricText: rubric().map(c => `${c.id} (${c.name}, weight ${c.weight}): ${c.question}`).join("\n"),
+    people: S.data.entities.filter(e => e.kind === "person").map(p => `${p.name}: ${str(p.relation || p.what)}`).join("\n"),
+    founder: arr(S.meta && S.meta.founder_principles).join("\n"),
+    landscape: S.data.entities.filter(e => e.kind !== "person").map(e => `${e.name} (${stageName(e.stage)}, tier ${tierOf(e.tier)}): ${trunc(e.what, 90)}${e.signal ? "; " + trunc(e.signal, 80) : ""}`).join("\n")
+  };
+}
+function charter(agent) {
+  return `You are "${agent.name}" on a private investment committee that evaluates Bio x AI investment and founding theses from first principles for Thomas, a physician-founder based in Hong Kong.
+Your role: ${str(agent.role)}
+Your mandate: ${str(agent.mandate)}
+Your method: ${str(agent.method)}
+Your standard of proof: ${str(agent.standard_of_proof)}
+Watch for: ${str(agent.blind_spots)}`;
+}
+function toolNote(agent, withTools) {
+  return withTools ? "You have a pubmed_search tool. Use it for one to three targeted searches when a claim depends on the scientific literature. Cite what you use by DOI link (https://doi.org/...), name PubMed as the source, and mark a claim tier A only when a peer-reviewed article directly shows it."
+    : "You cannot browse the web. Use the corpus below and your own knowledge; anything from your own knowledge that is not in the corpus is tier U and must be flagged for verification.";
+}
+function contextBlock(agent, ctx) {
+  let s = `Evidence tiers:\n${tierText()}\n\nFirst principles the committee has adopted:\n${ctx.axLines}\n\nThesis under review:\n${ctx.thesisText}\n\nScoring rubric (0-5 per criterion):\n${ctx.rubricText}\n\nCorpus evidence (id [tier] claim (source)):\n${ctx.evLines}`;
+  if (["company", "industry", "market"].includes(agent.domain)) s += `\n\nLandscape on record:\n${ctx.landscape}`;
+  if (agent.domain === "relations" && ctx.people) s += `\n\nRelationships on record:\n${ctx.people}`;
+  if (agent.domain === "founder" && ctx.founder) s += `\n\nFounder operating principles:\n${ctx.founder}`;
+  return s;
+}
+const MEMO_FORMAT = `Reply with only one JSON object, no other text:
+{"headline": "your position in one sentence", "stance": "support" | "oppose" | "mixed" | "insufficient-evidence", "confidence": 0.0 to 1.0, "reasoning": "your argument, 150 to 350 words", "claims": [{"claim": "...", "tier": "A|B|C|D|U", "source": "corpus evidence id, DOI link, or own knowledge", "url": "https://... or empty"}], "risks": ["..."], "questions": ["questions for Thomas or other members"], "research_requests": [{"question": "a specific, answerable question", "domain": "technical|clinical|regulatory|market|company|industry|relations", "why": "which load-bearing assumption it tests"}], "scores": {"criterion_id": 0 to 5, only for criteria inside your remit}}`;
+function agentPrompt(agent, ctx, question, prior, withTools) {
+  return `${charter(agent)}
+${toolNote(agent, withTools)}
+
+${contextBlock(agent, ctx)}
+${prior && prior.length ? `\nMemos already filed by other members. Attack the weakest load-bearing claims, cite base rates and counterexamples:\n${prior.map(m => `${m.name} (${m.stance}): ${m.headline} | ${trunc(m.reasoning, 600)} | claims: ${arr(m.claims).map(c => `[${c.tier}] ${trunc(c.claim, 140)}`).join("; ")}`).join("\n")}` : ""}
+
+Question before the committee: ${question}
+
+Write your memo. Argue from first principles and graded evidence, not from narrative or funding momentum: funding and valuations are tier D belief, never proof. Separate what is known from what is assumed. Stay inside your mandate.
+${MEMO_FORMAT}`;
+}
+function chairPrompt(agent, ctx, question, memos) {
+  return `${charter(agent)}
+
+${contextBlock(agent, ctx)}
+
+Question before the committee: ${question}
+
+Memos filed:
+${memos.map(m => `## ${m.name}: ${m.stance}, confidence ${m.confidence}\nHeadline: ${m.headline}\nReasoning: ${trunc(m.reasoning, 1300)}\nClaims: ${arr(m.claims).map(c => `[${c.tier}] ${trunc(c.claim, 160)} (${trunc(c.source, 60)})`).join("; ")}\nRisks: ${arr(m.risks).join("; ")}\nScores: ${JSON.stringify(m.scores || {})}`).join("\n\n")}
+
+Synthesise. Weigh claims by evidence tier, not by how many members made them. Name the weakest load-bearing assumption. Propose score or status changes only where the memos give evidence-based reasons, using the assumption ids and criterion ids above.
+Reply with only one JSON object, no other text:
+{"verdict": "advance" | "revise" | "park" | "kill", "summary": "...", "agreements": ["..."], "disagreements": ["..."], "weakest_assumption": "assumption id and why", "decisions": ["..."], "next_tests": [{"test": "...", "kill_if": "...", "by": "date or milestone"}], "score_updates": {"criterion_id": {"score": 0 to 5, "why": "..."}}, "assumption_updates": [{"id": "assumption id", "status": "supported|contested|unsupported|against", "why": "..."}], "research_requests": [{"question": "...", "domain": "...", "why": "..."}]}`;
+}
+function cleanClaims(v) { return arr(v).slice(0, 12).map(c => ({ claim: trunc(str(c && c.claim), 600), tier: tierOf(c && c.tier), source: trunc(str(c && c.source), 200), url: safeUrl(c && c.url) })).filter(c => c.claim); }
+function cleanReqs(v) { return arr(v).slice(0, 6).map(r => ({ question: trunc(str(r && r.question), 400), domain: DOMAINS.includes(r && r.domain) ? r.domain : "industry", why: trunc(str(r && r.why), 300) })).filter(r => r.question); }
+function cleanScores(v) { const out = {}; const ids = rubric().map(c => c.id); Object.entries(v || {}).forEach(([k, n]) => { const x = Number(n && typeof n === "object" ? n.score : n); if (ids.includes(k) && x >= 0 && x <= 5) out[k] = Math.round(x); }); return out; }
+function normalizeMemo(agent, o) {
+  o = o && typeof o === "object" ? o : {};
+  const st = ["support", "oppose", "mixed", "insufficient-evidence"].includes(o.stance) ? o.stance : "mixed";
+  const conf = Math.max(0, Math.min(1, Number(o.confidence)));
+  return { agent: agent.id, name: agent.name, stance: st, confidence: isNaN(conf) ? null : conf, headline: trunc(str(o.headline), 300), reasoning: trunc(str(o.reasoning), 5000),
+    claims: cleanClaims(o.claims), risks: arr(o.risks).slice(0, 8).map(x => trunc(str(x), 300)), questions: arr(o.questions).slice(0, 6).map(x => trunc(str(x), 300)),
+    research_requests: cleanReqs(o.research_requests), scores: cleanScores(o.scores) };
+}
+function normalizeChair(o) {
+  o = o && typeof o === "object" ? o : {};
+  const su = {}; const ids = rubric().map(c => c.id);
+  Object.entries(o.score_updates || {}).forEach(([k, v]) => { const n = Number(v && v.score); if (ids.includes(k) && n >= 0 && n <= 5) su[k] = { score: Math.round(n), why: trunc(str(v.why), 400) }; });
+  return { verdict: ["advance", "revise", "park", "kill"].includes(o.verdict) ? o.verdict : "revise", summary: trunc(str(o.summary), 3000),
+    agreements: arr(o.agreements).slice(0, 8).map(x => trunc(str(x), 300)), disagreements: arr(o.disagreements).slice(0, 8).map(x => trunc(str(x), 300)),
+    weakest_assumption: trunc(str(o.weakest_assumption), 400), decisions: arr(o.decisions).slice(0, 8).map(x => trunc(str(x), 300)),
+    next_tests: arr(o.next_tests).slice(0, 6).map(x => ({ test: trunc(str(x && x.test || x), 300), kill_if: trunc(str(x && x.kill_if), 300), by: trunc(str(x && x.by), 80) })),
+    score_updates: su, assumption_updates: arr(o.assumption_updates).slice(0, 12).map(u => ({ id: str(u && u.id), status: STATUSES.includes(u && u.status) ? u.status : "contested", why: trunc(str(u && u.why), 400) })).filter(u => u.id),
+    research_requests: cleanReqs(o.research_requests) };
+}
+function payloadOf(res) {
+  if (!res) return null;
+  if (res.payload !== undefined) { if (typeof res.payload === "string") { try { return JSON.parse(res.payload); } catch (e) { return null; } } return res.payload; }
+  const tb = arr(res.content).find(b => b && b.type === "text"); if (tb) { try { return JSON.parse(tb.text); } catch (e) { return null; } }
+  return null;
+}
+async function pubmedSearch(query, max, signal) {
+  if (!S.mcp) throw { message: "PubMed is not available in this view." };
+  const r1 = await S.mcp.callTool("PubMed", "search_articles", { query, max_results: max, sort: "relevance" }, { signal });
+  const p1 = payloadOf(r1) || {};
+  const ids = arr(p1.pmids).slice(0, max).map(String);
+  if (!ids.length) return { source: "PubMed", results: [], note: "No results for this query." };
+  const r2 = await S.mcp.callTool("PubMed", "get_article_metadata", { pmids: ids }, { signal });
+  const p2 = payloadOf(r2) || {};
+  return { source: "PubMed", attribution: "According to PubMed. Cite DOIs as https://doi.org/<doi>.",
+    results: arr(p2.articles).map(a => ({ pmid: str(a && a.identifiers && a.identifiers.pmid), doi: str((a && a.identifiers && a.identifiers.doi) || (a && a.doi)), title: str(a && a.title), journal: str(a && a.journal && a.journal.title), year: str(a && a.publication_date && a.publication_date.year), types: arr(a && a.article_types), abstract: trunc(str(a && a.abstract), 900) })) };
+}
+function pubmedTool(onFound, onNote) {
+  return { name: "pubmed_search", description: "Search PubMed, the index of peer-reviewed biomedical literature. Returns up to 6 articles with title, journal, year, DOI and an abstract excerpt. Use precise scientific queries.",
+    inputSchema: { type: "object", properties: { query: { type: "string", description: "PubMed query, for example: perturbation response prediction benchmark" }, max_results: { type: "integer", description: "1 to 6" } }, required: ["query"] },
+    async execute(input, context) {
+      const q = str(input && input.query).trim(); if (!q) throw new Error("Empty query");
+      onNote && onNote("Searching PubMed: " + trunc(q, 70));
+      try { const res = await pubmedSearch(q, Math.max(1, Math.min(6, Number(input && input.max_results) || 5)), context && context.signal); onFound && onFound(res.results); return res; }
+      catch (e) { const msg = errText(e); onNote && onNote(msg); throw new Error(msg); }
+    } };
+}
+function stepFor(id) { return S.run && S.run.steps.find(s => s.id === id); }
+async function runAgent(agent, ctx, question, prior, signal) {
+  const step = stepFor(agent.id); step.state = "thinking"; renderRun();
+  const withTools = arr(agent.tools).includes("pubmed") && !!S.mcp && S.canTools;
+  const found = [];
+  const opts = { signal, modelTier: agent.tier || "default", onText: ({ text }) => { step.len = text.length; renderRunSoon(); } };
+  if (withTools) opts.tools = [pubmedTool(r => { found.push(...r.map(x => ({ doi: x.doi, title: x.title, journal: x.journal, year: x.year }))); }, n => { step.note = n; renderRunSoon(); })];
+  else opts.cache = false;
+  try {
+    const out = await S.sample.json(agentPrompt(agent, ctx, question, prior, withTools), opts);
+    const memo = normalizeMemo(agent, out); if (found.length) memo.pubmed = found.slice(0, 12);
+    step.state = "done"; step.headline = memo.headline; renderRun(); return memo;
+  } catch (e) {
+    if (e && e.code === "cancelled") throw e;
+    const memo = { agent: agent.id, name: agent.name, stance: "insufficient-evidence", confidence: null, headline: e && e.code === "invalid_json" ? "The memo arrived unstructured; the raw text is kept below." : `This member could not file a memo: ${errText(e)}`, reasoning: e && e.text ? trunc(e.text, 5000) : "", claims: [], risks: [], questions: [], research_requests: [], scores: {} };
+    step.state = e && e.code === "invalid_json" ? "done" : "failed"; step.headline = memo.headline; renderRun(); return memo;
+  }
+}
+async function runCommittee(tid, question, panel) {
+  const get = id => byId("agents", id);
+  const members = panel.map(get).filter(a => a && a.id !== "red-team");
+  const red = panel.includes("red-team") ? get("red-team") : null;
+  const chair = get("chair");
+  const steps = [...members, ...(red ? [red] : []), ...(chair ? [chair] : [])].map(a => ({ id: a.id, name: a.name, state: "waiting" }));
+  const ctl = new AbortController();
+  S.run = { tid, question, steps, ctl, state: "running", sessionId: null, error: "" };
+  openRun();
+  const ctx = buildContext(tid, 70); const ctxChair = buildContext(tid, 30);
+  const memos = [];
+  try {
+    await pool(members, 2, async a => { memos.push(await runAgent(a, ctx, question, null, ctl.signal)); });
+    const ordered = panel.map(id => memos.find(m => m.agent === id)).filter(Boolean);
+    if (red) ordered.push(await runAgent(red, ctx, question, ordered, ctl.signal));
+    let synthesis = null;
+    if (chair) {
+      const step = stepFor("chair"); step.state = "thinking"; renderRun();
+      try { synthesis = normalizeChair(await S.sample.json(chairPrompt(chair, ctxChair, question, ordered), { signal: ctl.signal, modelTier: chair.tier || "complex", cache: false, onText: ({ text }) => { step.len = text.length; renderRunSoon(); } })); step.state = "done"; step.headline = "Verdict: " + synthesis.verdict; }
+      catch (e) { if (e && e.code === "cancelled") throw e; step.state = "failed"; step.headline = "The chair could not synthesise: " + errText(e); }
+      renderRun();
+    }
+    const id = "s-" + new Date().toISOString().slice(0, 10) + "-" + Math.random().toString(36).slice(2, 7);
+    await put("sessions", id, { title: trunc(question, 140), question, date: nowIso(), thesis: tid || null, mode: "live", panel, memos: ordered, chair: synthesis, applied: false });
+    S.run.sessionId = id;
+    const seen = new Set(S.data.research.map(r => str(r.question).toLowerCase()));
+    const reqs = [...(synthesis ? synthesis.research_requests.map(r => Object.assign({ by: "chair" }, r)) : []), ...ordered.flatMap(m => m.research_requests.map(r => Object.assign({ by: m.agent }, r)))]
+      .filter(r => { const k = r.question.toLowerCase(); if (seen.has(k)) return false; seen.add(k); return true; }).slice(0, 8);
+    for (const r of reqs) await put("research", newId("r", r.question), { question: r.question, domain: r.domain, why: r.why, thesis: tid || null, priority: "normal", status: "open", source_session: id, created_at: nowIso(), created_by: r.by });
+    S.run.state = "done"; S.run.newResearch = reqs.length;
+  } catch (e) { S.run.state = e && e.code === "cancelled" ? "stopped" : "failed"; S.run.error = errText(e); }
+  renderRun();
+}
+let runTimer = null;
+function renderRunSoon() { if (runTimer) return; runTimer = setTimeout(() => { runTimer = null; renderRun(); }, 400); }
+function openRun() { const d = $("#runDlg"); renderRun(); if (!d.open) d.showModal(); }
+function renderRun() {
+  const d = $("#runDlg"); const r = S.run; if (!r) return;
+  const t = r.tid && byId("theses", r.tid);
+  d.innerHTML = `<div class="dlg"><h2>${r.state === "running" ? "The committee is in session" : r.state === "done" ? "Session recorded" : r.state === "stopped" ? "Session stopped" : "The session could not finish"}</h2>
+    <p class="muted">${t ? esc(t.title) + ". " : ""}${esc(trunc(r.question, 220))}</p>
+    <ul class="steps">${r.steps.map(s => `<li><span class="dot ${s.state}"></span><div><b>${esc(s.name)}</b> <span class="muted small">${s.state === "waiting" ? "waiting" : s.state === "thinking" ? (s.len ? `writing, ${s.len} characters` : "thinking") : s.state === "done" ? "filed" : "failed"}</span>
+      ${s.note && s.state === "thinking" ? `<div class="small muted">${esc(s.note)}</div>` : ""}${s.headline ? `<div class="small">${esc(s.headline)}</div>` : ""}</div></li>`).join("")}</ul>
+    ${r.error ? `<p class="form-err">${esc(r.error)}</p>` : ""}
+    ${r.state === "done" && r.newResearch ? `<p class="small muted">${r.newResearch} new questions went to the research queue.</p>` : ""}
+    <div class="form-actions"><span class="grow"></span>${r.state === "running" ? `<button class="btn" data-f="stop">Stop the session</button>` : `<button class="btn quiet" data-f="close">Close</button>${r.sessionId ? `<button class="btn primary" data-f="open">Open the record</button>` : ""}`}</div></div>`;
+  const stop = d.querySelector('[data-f="stop"]'); if (stop) stop.addEventListener("click", () => r.ctl.abort());
+  const cl = d.querySelector('[data-f="close"]'); if (cl) cl.addEventListener("click", () => d.close());
+  const op = d.querySelector('[data-f="open"]'); if (op) op.addEventListener("click", () => { d.close(); go("sessions", { session: r.sessionId }); });
+}
+async function applyUpdates(sid) {
+  const s = byId("sessions", sid); if (!s || !s.chair || !s.thesis) return;
+  const t = byId("theses", s.thesis); if (!t) { toast("The thesis for this record no longer exists."); return; }
+  const sc = clone(t.scorecard); Object.entries(s.chair.score_updates || {}).forEach(([k, v]) => { sc[k] = { score: v.score, why: v.why + ` (committee, ${fmtDate(s.date)})` }; });
+  const as = clone(t.assumptions).map(a => { const u = arr(s.chair.assumption_updates).find(x => x.id === a.id); return u ? Object.assign(a, { status: u.status, note: u.why }) : a; });
+  await patch("theses", t.id, { scorecard: sc, assumptions: as, updated_at: nowIso() });
+  await patch("sessions", sid, { applied: true, applied_at: nowIso() });
+  toast("The chair's updates are applied to the thesis");
+}
+async function claimToEvidence(sid, x) {
+  const s = byId("sessions", sid); if (!s) return; const [mi, ci] = str(x).split(":").map(Number);
+  const m = arr(s.memos)[mi]; const c = m && arr(m.claims)[ci]; if (!c) return;
+  const url = safeUrl(c.url) || safeUrl(c.source);
+  editEvidencePrefill({ claim: c.claim, source: /^https?:/.test(c.source) ? `PubMed, ${url}` : c.source, url, tier: c.tier, domain: "technical", notes: `Filed by ${m.name} in the session of ${fmtDate(s.date)}. Check that the paper shows exactly this claim.` });
+}
+function editEvidencePrefill(pre) {
+  const fields = [
+    { key: "claim", label: "Claim", type: "textarea", value: pre.claim }, { key: "source", label: "Source", value: pre.source }, { key: "url", label: "Link", type: "url", value: pre.url },
+    { key: "tier", label: "Tier", type: "select", value: pre.tier, options: TIERS.map(t => [t, `${t}: ${TIER_INFO[t]}`]) },
+    { key: "domain", label: "Domain", type: "select", value: pre.domain, options: DOMAINS.map(d => [d, d]) }, { key: "date", label: "Date of the source", value: "" }, { key: "notes", label: "Notes", type: "textarea", value: pre.notes }];
+  openForm({ title: "Add to evidence", fields, submit: "Add evidence", onSubmit: async v => { need(v.claim, "Claim"); await put("evidence", newId("e", v.source || v.claim), Object.assign(v, { added_by: "committee", added_at: nowIso() })); toast("Evidence added"); } });
+}
+
+/* ---------- sparring ---------- */
+function openSpar(tid) {
+  if (!S.sample) { toast("Claude is not available in this view."); return; }
+  const ags = agentsSorted();
+  S.spar = { tid, agent: (ags.find(a => a.id === "red-team") || ags[0] || {}).id, turns: [], sessionId: null, busy: false, ctl: null, live: "" };
+  renderSpar(); $("#sparDlg").showModal();
+}
+function renderSpar() {
+  const d = $("#sparDlg"); const sp = S.spar; if (!sp) return;
+  const t = sp.tid && byId("theses", sp.tid); const ags = agentsSorted();
+  const prev = d.querySelector("#sparIn"); const draft = (prev ? prev.value : "") || sp.restore || ""; sp.restore = "";
+  d.innerHTML = `<div class="dlg"><h2>Spar with one member</h2><p class="muted">${t ? `On ${esc(t.title)}. ` : ""}Every exchange is saved to the records.</p>
+    <div class="field"><label for="sparAgent">Member</label><select id="sparAgent" ${sp.turns.length ? "disabled" : ""}>${ags.map(a => `<option value="${esc(a.id)}" ${a.id === sp.agent ? "selected" : ""}>${esc(a.name)}</option>`).join("")}</select></div>
+    <div class="chat" id="chatLog">${sp.turns.map(tu => `<div class="msg ${tu.role === "user" ? "user" : "agent"}">${esc(tu.content)}</div>`).join("")}${sp.busy ? `<div class="msg agent">${esc(sp.live || "Thinking…")}</div>` : ""}</div>
+    <div class="field"><label for="sparIn">Your argument or question</label><textarea id="sparIn" rows="3">${esc(draft)}</textarea></div>
+    <p class="form-err" id="sparErr"></p>
+    <div class="form-actions"><button class="btn quiet" data-f="close">Close</button><span class="grow"></span>${sp.busy ? `<button class="btn" data-f="stop">Stop</button>` : `<button class="btn primary" data-f="send">Send</button>`}</div></div>`;
+  d.querySelector("#sparAgent").addEventListener("change", e => { sp.agent = e.target.value; });
+  d.querySelector('[data-f="close"]').addEventListener("click", () => { if (sp.ctl) sp.ctl.abort(); d.close(); });
+  const send = d.querySelector('[data-f="send"]'); if (send) send.addEventListener("click", sparSend);
+  const stop = d.querySelector('[data-f="stop"]'); if (stop) stop.addEventListener("click", () => sp.ctl && sp.ctl.abort());
+  const log = d.querySelector("#chatLog"); log.scrollTop = log.scrollHeight;
+}
+async function sparSend() {
+  const sp = S.spar; const d = $("#sparDlg"); const box = d.querySelector("#sparIn"); const msg = box.value.trim(); if (!msg || sp.busy) return;
+  const agent = byId("agents", sp.agent); if (!agent) return;
+  sp.turns.push({ role: "user", content: msg }); box.value = ""; sp.busy = true; sp.live = ""; sp.ctl = new AbortController(); renderSpar();
+  const withTools = arr(agent.tools).includes("pubmed") && !!S.mcp && S.canTools;
+  const ctx = buildContext(sp.tid, 45);
+  const intro = `${charter(agent)}\n${toolNote(agent, withTools)}\n\n${contextBlock(agent, ctx)}\n\nYou are sparring with Thomas one to one. Challenge his reasoning from first principles, ask for evidence, label evidence tiers inline like [A] or [U], and name what would change your mind. Keep replies under 220 words unless he asks for more. Plain text, no JSON.`;
+  const turns = [{ role: "user", content: intro }, ...sp.turns.slice(-16)];
+  const opts = { signal: sp.ctl.signal, modelTier: agent.tier === "complex" ? "complex" : "default", onText: ({ text }) => { sp.live = text; renderSparLive(); } };
+  if (withTools) opts.tools = [pubmedTool(null, n => { sp.live = n; renderSparLive(); })]; else opts.cache = false;
+  try {
+    const { text } = await S.sample(turns, opts);
+    sp.turns.push({ role: "assistant", content: text });
+    const doc = { title: trunc(sp.turns[0].content, 120), date: nowIso(), mode: "spar", agent: agent.id, thesis: sp.tid || null, turns: sp.turns.slice(-40), updated_at: nowIso() };
+    if (!sp.sessionId) { sp.sessionId = "s-" + new Date().toISOString().slice(0, 10) + "-spar-" + Math.random().toString(36).slice(2, 7); await put("sessions", sp.sessionId, doc); }
+    else await patch("sessions", sp.sessionId, { turns: doc.turns, updated_at: doc.updated_at });
+  } catch (e) {
+    if (!(e && e.code === "cancelled")) { const err = d.querySelector("#sparErr"); if (err) err.textContent = errText(e); }
+    if (e && e.text) sp.turns.push({ role: "assistant", content: e.text + " [interrupted]" }); else { const lost = sp.turns.pop(); sp.restore = lost ? lost.content : ""; }
+  }
+  sp.busy = false; sp.live = ""; renderSpar();
+}
+function renderSparLive() {
+  const d = $("#sparDlg"); const log = d.querySelector("#chatLog"); if (!log) return;
+  const last = log.querySelector(".msg.agent:last-child"); if (last && S.spar.busy) last.textContent = S.spar.live || "Thinking…";
+  log.scrollTop = log.scrollHeight;
+}
+
+/* ---------- research: first pass in the page ---------- */
+const DOMAIN_AGENT = { technical: "technical", clinical: "clinical", regulatory: "regulatory", market: "market", company: "company", industry: "industry", relations: "relations", founder: "founder-fit", "first-principles": "first-principles" };
+async function runResearch(rid) {
+  const r = byId("research", rid); if (!r || !S.sample) return;
+  const agent = byId("agents", DOMAIN_AGENT[r.domain] || "first-principles") || byId("agents", "first-principles"); if (!agent) return;
+  S.ui.busy[rid] = true; render(); toast(`${agent.name} is taking a first pass`);
+  const withTools = arr(agent.tools).includes("pubmed") && !!S.mcp && S.canTools;
+  const ctx = buildContext(r.thesis, 50);
+  const prompt = `${charter(agent)}\n${toolNote(agent, withTools)}\n\n${contextBlock(agent, ctx)}\n\nResearch question from the committee's queue: ${r.question}\nWhat it tests: ${str(r.why)}\n\nAnswer as far as graded evidence allows. Say plainly what you could not establish and what should be checked on the open web.\nReply with only one JSON object, no other text:\n{"answer": "150 to 300 words", "status": "answered" | "partial" | "needs-web-research", "claims": [{"claim": "...", "tier": "A|B|C|D|U", "source": "...", "url": "https://... or empty"}], "sources_to_verify": ["specific documents, filings or pages to check"]}`;
+  const found = [];
+  const opts = { modelTier: agent.tier || "default" };
+  if (withTools) opts.tools = [pubmedTool(res => found.push(...res.map(x => ({ doi: x.doi, title: x.title }))), null)]; else opts.cache = false;
+  try {
+    const o = await S.sample.json(prompt, opts);
+    const status = ["answered", "partial", "needs-web-research"].includes(o && o.status) ? o.status : "partial";
+    const result = { answer: trunc(str(o && o.answer), 4000), claims: cleanClaims(o && o.claims), sources_to_verify: arr(o && o.sources_to_verify).slice(0, 8).map(x => trunc(str(x), 200)), by: agent.id, at: nowIso(), pubmed: found.slice(0, 10) };
+    await patch("research", rid, { result, status: status === "answered" ? "answered" : "needs-web-research", updated_at: nowIso() });
+    const body = `${result.answer}\n\nClaims:\n${result.claims.map(c => `[${c.tier}] ${c.claim} (${c.source}${c.url ? ", " + c.url : ""})`).join("\n")}${result.sources_to_verify.length ? `\n\nTo verify:\n${result.sources_to_verify.join("\n")}` : ""}${found.length ? `\n\nAccording to PubMed, articles consulted:\n${found.map(f => `${f.title} https://doi.org/${f.doi}`).join("\n")}` : ""}`;
+    await put("sessions", "s-" + new Date().toISOString().slice(0, 10) + "-research-" + Math.random().toString(36).slice(2, 7), { title: trunc(r.question, 140), question: r.question, date: nowIso(), mode: "research", agent: agent.id, thesis: r.thesis || null, body });
+    toast(status === "answered" ? "First pass recorded" : "First pass recorded; it still needs web research in chat");
+  } catch (e) { toast(errText(e)); }
+  delete S.ui.busy[rid]; render();
+}
+
+/* ---------- horses: shared ---------- */
+const HORSE_STATUSES = ["Scoring", "Active", "Paused", "Closed"];
+const OUTREACH_DEFAULT = [
+  { part: "Who I am", text: "{why_you}" },
+  { part: "What I have looked at", text: "I have scored {name} ({originator}{licensee_part}) on public evidence: {scorecard}." },
+  { part: "Where I am least sure", text: "The weakest test is {weakest}. {weakest_why}" },
+  { part: "What I can bring", text: "{leverage_why}" },
+  { part: "The ask", text: "Would you have 20 minutes before {catalyst}?" }
+];
+function horseRubric() { const r = arr(S.meta && S.meta.horse_rubric); return HORSE_TESTS.map(t => Object.assign({}, t, r.find(x => x && x.id === t.id) || {}, { id: t.id, n: t.n, cap: t.cap })); }
+function testInfo(id) { return horseRubric().find(t => t.id === id) || { id: id, name: str(id) }; }
+function hParams() { return engineParams(S.meta); }
+function byCreated(a, b) { return str(b.created_at).localeCompare(str(a.created_at)); }
+function lastSnapshot() { return S.data.rankings.filter(r => r.trigger !== "stability").sort(byCreated)[0] || null; }
+function lastStability() { return S.data.rankings.filter(r => r.trigger === "stability").sort(byCreated)[0] || null; }
+function liveRows() { return rankHorses(S.data.horses, hParams()); }
+function localDay(d) { d = d || new Date(); return `${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, "0")}-${String(d.getDate()).padStart(2, "0")}`; }
+function daysBetween(a, b) { return Math.round((new Date(b + "T00:00:00") - new Date(a + "T00:00:00")) / 864e5); }
+function fmtN(x) { return x == null || !isFinite(x) ? "—" : String(Math.round(x * 100) / 100); }
+function num(s) { s = str(s).trim(); if (!s) return null; const x = Number(s); return isFinite(x) ? x : null; }
+function accessText(a) { return a === true ? "yes" : a === false ? "no" : "—"; }
+function entName(id) { const e = byId("entities", id); return e ? e.name : str(id); }
+function entChip(id) { if (!id) return ""; const e = byId("entities", id); return e ? `<button class="evchip" data-act="open-entity" data-id="${esc(id)}">${tierChip(e.tier)}${esc(e.name)}</button>` : `<span class="chip">${esc(id)}</span>`; }
+function horseChips(entId) {
+  const hs = S.data.horses.filter(h => h.originator === entId || h.licensee === entId);
+  return hs.length ? `<p class="meta" style="display:flex; flex-wrap:wrap; gap:4px; align-items:center">Horses: ${hs.map(h => `<button class="evchip" data-act="open-horse" data-id="${esc(h.id)}">${esc(h.name)}</button>`).join("")}</p>` : "";
+}
+function decisionChip(d) { const cls = d === "Back" ? "support" : d === "Track" ? "mixed" : d === "Drop" ? "oppose" : ""; return `<span class="chip ${cls}">${esc(d || "—")}</span>`; }
+function checkChip(label, c) {
+  if (!c || c.pass == null) return `<span class="chip">${esc(label)}: ${esc(c && c.note ? c.note : "not run")}</span>`;
+  return `<span class="chip ${c.pass ? "support" : "oppose"}" ${c.note ? `title="${esc(c.note)}"` : ""}>${esc(label)} ${c.value == null ? "" : esc(fmtN(c.value)) + ", "}${c.pass ? "pass" : "fail"}</span>`;
+}
+function evTags(ids) { return arr(ids).map(id => { const e = byId("evidence", id); return e ? `<span class="evtag">${tierChip(e.tier)}${esc(trunc(e.source || e.claim, 36))}</span>` : ""; }).join(""); }
+function evChips(ids) { return arr(ids).map(id => { const e = byId("evidence", id); return e ? `<button class="evchip" data-act="open-ev" data-id="${esc(id)}">${tierChip(e.tier)}${esc(trunc(e.source || e.claim, 44))}</button>` : `<span class="chip">${esc(id)} missing</span>`; }).join(" "); }
+function citedTiers(ids) { return arr(ids).map(evTier).filter(Boolean); }
+function capHint(tid) {
+  const c = capClass(tid);
+  return c === "core" ? "Tier rule: 3 needs an A or B citation, 2 needs C or better, D or U alone caps at 1, no citation scores 0."
+    : c === "value" ? "Tier rule: 2 or 3 needs a B or D citation (a disclosed deal or a valuation); anything else caps at 1; no citation scores 0."
+    : "Tier rule: 2 or 3 needs a C or better citation; D or U alone caps at 1; no citation scores 0.";
+}
+function catalystText(c) { return c && (c.event || c.date) ? `${str(c.event)}${c.date ? `${c.event ? ", " : ""}${fmtDate(c.date)}` : ""}` : "—"; }
+
+/* ---------- horses: views ---------- */
+function viewHorses() {
+  const sel = S.ui.sel.horse && byId("horses", S.ui.sel.horse);
+  if (sel) return horseDetail(sel);
+  const rows = liveRows(); const snap = lastSnapshot(); const was = new Map(arr(snap && snap.rows).map(r => [r.horse, r.rank]));
+  const lanes = [...new Set(S.data.horses.map(h => str(h.lane)).filter(Boolean))].sort();
+  const shown = rows.filter(r => { const h = byId("horses", r.horse) || {}; return (S.ui.hLaneF === "all" || str(h.lane) === S.ui.hLaneF) && (S.ui.hStatF === "all" || str(h.status || "Scoring") === S.ui.hStatF); });
+  const snappedToday = !!byId("rankings", "rk-" + localDay());
+  const ck = (snap && snap.checks) || {};
+  const all = [...S.data.rankings].sort((a, b) => str(b.date).localeCompare(str(a.date)) || byCreated(a, b));
+  return `<h2 class="view">Horses</h2><p class="lead">Assets ranked by expected value, E = P × V × L. Evidence tiers cap every test score, and a score moves only when new evidence arrives.</p>
+  <div class="checkbar">${snap ? `<span>Last snapshot ${esc(fmtDate(snap.date))}</span>${checkChip("Spread ratio", ck.spread_ratio)}${checkChip("Non-consensus", ck.non_consensus)}${checkChip("Stability", ck.stability_moves)}` : `<span>No snapshot yet. Score the horses, then take the first snapshot.</span>`}</div>
+  <div class="filters"><select id="hLaneF" aria-label="Lane"><option value="all">All lanes</option>${lanes.map(l => `<option value="${esc(l)}" ${S.ui.hLaneF === l ? "selected" : ""}>${esc(l)}</option>`).join("")}</select>
+    <select id="hStatF" aria-label="Status"><option value="all">All statuses</option>${HORSE_STATUSES.map(s => `<option value="${s}" ${S.ui.hStatF === s ? "selected" : ""}>${s}</option>`).join("")}</select>
+    <span class="grow"></span><button class="btn quiet" data-act="add-horse">Add a horse</button><button class="btn quiet" data-act="stability">Stability check</button>
+    <button class="btn" data-act="snapshot" ${snappedToday ? 'disabled title="Today\'s snapshot is already taken"' : ""}>Snapshot now</button></div>
+  ${shown.length ? `<div class="scroll"><table class="wide"><thead><tr><th class="n">Rank</th><th>Horse</th><th>Lane</th><th class="n">P</th><th class="n">V</th><th class="n">L</th><th>Access</th><th class="n">E</th><th>Decision</th><th>Next catalyst</th><th>Status</th></tr></thead><tbody>
+    ${shown.map(r => { const h = byId("horses", r.horse) || {}; const w = was.get(r.horse); return `<tr class="click" data-act="open-horse" data-id="${esc(r.horse)}" role="button" tabindex="0">
+      <td class="n">${r.rank}${w != null && w !== r.rank ? `<div class="muted small">was ${w}</div>` : ""}</td>
+      <td><b>${esc(h.name)}</b><div class="muted small">${esc(entName(h.originator))}${h.licensee ? ` to ${esc(entName(h.licensee))}` : ""}</div></td>
+      <td class="small">${esc(h.lane || "")}</td><td class="n">${fmtN(r.P)}</td><td class="n">${r.V}</td><td class="n">${r.L}</td><td>${accessText(r.access)}</td><td class="n"><b>${fmtN(r.E)}</b></td>
+      <td>${decisionChip(r.decision)}</td><td class="small">${esc(catalystText(h.next_catalyst))}</td><td class="small">${esc(h.status || "Scoring")}</td></tr>`; }).join("")}
+  </tbody></table></div>` : `<div class="empty">${S.data.horses.length ? "No horses match these filters." : "No horses yet. Seed them from chat or add one here."}</div>`}
+  ${all.length ? `<div class="section"><h3>Snapshots and stability checks</h3><div class="rows">${all.map(r => `<div class="row click" data-act="open-snapshot" data-id="${esc(r.id)}" role="button" tabindex="0">
+    <div class="meta" style="min-width:92px">${esc(fmtDate(r.date))}</div>
+    <div><h3 style="font-size:16px">${r.trigger === "stability" ? "Stability check" : `Snapshot, ${esc(r.trigger || "manual")}`}</h3><p class="meta">${arr(r.rows).length} horses${arr(r.rows)[0] ? `; first: ${esc(entOrHorse(r.rows[0].horse))}` : ""}</p></div>
+    <div class="checkbar" style="margin:0">${r.trigger === "stability" ? checkChip("Largest move", (r.checks || {}).stability_moves) : checkChip("Spread", (r.checks || {}).spread_ratio) + checkChip("Non-consensus", (r.checks || {}).non_consensus)}</div></div>`).join("")}</div></div>` : ""}`;
+}
+function entOrHorse(hid) { const h = byId("horses", hid); return h ? h.name : hid; }
+function horseDetail(h) {
+  const p = hParams(); const n = horseNumbers(h, p); const live = liveRows().find(r => r.horse === h.id);
+  const acc = (h.scores || {}).access || {}; const id = esc(h.id);
+  const hist = [...arr(h.history)].reverse();
+  const calls = S.data.calls.filter(c => c.horse === h.id).sort((a, b) => str(b.frozen_at).localeCompare(str(a.frozen_at)));
+  return `<p class="back"><button class="linkbtn" data-act="back">All horses</button></p>
+  <h2 class="th-title">${esc(h.name)}</h2>
+  <p style="display:flex; flex-wrap:wrap; gap:6px; align-items:center; margin:6px 0">${h.originator ? `<span class="muted small">Originator</span>${entChip(h.originator)}` : ""}${h.licensee ? `<span class="muted small">Licensee</span>${entChip(h.licensee)}` : ""}${h.lane ? `<span class="chip">${esc(h.lane)}</span>` : ""}<span class="chip">${esc(h.status || "Scoring")}</span></p>
+  ${h.territory_note ? `<p class="muted small">${esc(h.territory_note)}</p>` : ""}
+  <p><b>Next catalyst:</b> ${esc(catalystText(h.next_catalyst))}${h.next_catalyst && h.next_catalyst.event && !h.next_catalyst.date ? " (date unknown)" : ""}</p>
+  <div class="nums" style="margin:14px 0">${decisionChip(n.decision)}
+    <div class="num"><b>${live ? live.rank : "—"}</b><span>live rank</span></div>
+    <div class="num"><b>${n.S}</b><span>S, tests 1–5, of 15</span></div>
+    <div class="num"><b>${fmtN(n.P)}</b><span>P = ${p.p0} + ${p.slope} × S</span></div>
+    <div class="num"><b>${n.V}</b><span>V, value gap</span></div>
+    <div class="num"><b>${n.L}</b><span>L, leverage</span></div>
+    <div class="num"><b>${fmtN(n.E)}</b><span>E = P × V × L</span></div></div>
+  ${h.why_you ? `<p class="read" style="max-width:70ch"><b>Why you:</b> ${esc(h.why_you)}${h.why_basis ? ` <span class="muted small">(rests on ${esc(testInfo(h.why_basis).name.toLowerCase())})</span>` : ""}</p>` : `<p class="muted">No why-you line yet.</p>`}
+  <p><b>Access:</b> ${accessText(n.access)}${acc.route ? `. Route: ${esc(acc.route)}` : ""}</p>
+  <div class="bar"><button class="btn" data-act="edit-horse" data-id="${id}">Edit horse</button><button class="btn quiet" data-act="horse-ev" data-id="${id}">Add evidence</button><button class="btn quiet" data-act="horse-research" data-id="${id}">File a research question</button><span class="grow"></span><button class="btn quiet" data-act="outreach" data-id="${id}">Draft outreach</button></div>
+  <div class="section"><h3>Tests</h3>${horseRubric().map(t => testRow(h, t)).join("")}</div>
+  <div class="section"><h3>Rank history</h3>${hist.length ? `<div class="scroll"><table><thead><tr><th>Date</th><th class="n">Rank</th><th class="n">E</th><th>Cause</th><th>Evidence behind the move</th></tr></thead><tbody>
+    ${hist.map(x => `<tr><td class="n">${esc(x.date)}</td><td class="n">${x.prev_rank != null ? `${esc(x.prev_rank)} to ` : ""}${esc(x.rank)}</td><td class="n">${fmtN(x.E)}</td><td>${esc(x.cause)}</td><td>${evChips(x.evidence) || `<span class="muted">—</span>`}</td></tr>`).join("")}</tbody></table></div>` : `<p class="muted">No history yet. A line appears when a snapshot moves this horse.</p>`}</div>
+  <div class="section"><h3>Calls</h3>${calls.length ? callsTable(calls) : `<p class="muted">No calls on this horse yet.</p>`}<p><button class="btn small" data-act="freeze-call" data-id="${id}">Freeze a call on this horse</button></p></div>`;
+}
+function testRow(h, t) {
+  const s = (h.scores || {})[t.id] || {}; const id = esc(h.id), tid = esc(t.id);
+  let head;
+  if (t.cap === "none") head = `<b>${esc(t.name)}</b> <span>${accessText(typeof s.ok === "boolean" ? s.ok : null)}</span>`;
+  else {
+    const v = typeof s.score === "number" ? s.score : null;
+    head = `<b>${esc(t.name)}</b> ${v == null ? `<span class="muted">not scored</span>` : `<span class="meter" aria-hidden="true"><i style="width:${Math.round(v / 3 * 100)}%"></i></span>${v} of 3`}<span class="muted small">, cited evidence allows up to ${tierCap(t.id, citedTiers(s.evidence))}</span>`;
+  }
+  return `<div class="assume"><span class="muted" style="font-weight:600">${t.n}</span><div><div>${head}</div>${t.question ? `<div class="muted small">${esc(t.question)}</div>` : ""}
+    ${s.why ? `<div class="txt" style="font-size:15.5px; margin-top:4px">${esc(s.why)}</div>` : ""}${t.cap === "none" && s.route ? `<div class="small">Route: ${esc(s.route)}</div>` : ""}
+    <div class="ctl">${evChips(s.evidence)}
+    <button class="linkbtn small" data-act="rescore" data-id="${id}" data-x="${tid}">${t.cap === "none" ? "Set access" : "Rescore"}</button>
+    ${t.cap !== "none" ? `<button class="linkbtn small" data-act="horse-ev" data-id="${id}" data-x="${tid}">Add evidence</button><button class="linkbtn small" data-act="horse-research" data-id="${id}" data-x="${tid}">Cannot score: file a question</button>` : ""}</div></div></div>`;
+}
+function horseMethodHtml() {
+  const p = hParams();
+  return `<div class="section"><h3>Horses: the ranking engine</h3>
+  <p>Each horse is scored 0 to 3 on seven tests, plus yes or no on access. S is the sum of tests 1 to 5; P = ${p.p0} + ${p.slope} × S; V is the value-gap score and L the leverage score; E = P × V × L. Horses rank by E, ties going to the nearer catalyst.</p>
+  <p>Back when P is at least ${p.back_p}, V is at least ${p.back_v}, L is at least ${p.back_l} and access is yes. Track when two of those three thresholds hold, which includes all three without access. Drop otherwise. A horse with any test unscored shows as unscored.</p>
+  <div class="scroll"><table><thead><tr><th>Test</th><th>To score 3</th><th>To score 2</th><th>Capped at 1 when</th></tr></thead><tbody>
+    <tr><td>1–5, mechanism to design</td><td>At least one A or B citation</td><td>At least one C or better</td><td>Only D or U cited</td></tr>
+    <tr><td>6, value gap</td><td>A B or D citation</td><td>A B or D citation</td><td>Only A, C or U cited</td></tr>
+    <tr><td>7, leverage</td><td>C or better</td><td>C or better</td><td>Only D or U cited</td></tr></tbody></table></div>
+  <p class="small muted">No citation scores 0 on any test. A changed score must cite evidence added after the latest snapshot, or the save is refused with "Add the new evidence first"; a first score is exempt. Each snapshot freezes every number with the parameters and three checks: spread ratio (mean E of the top three over the bottom three, passes at ${p.spread_pass}), non-consensus count (top-five horses whose why-you line rests on exposure, comparator or leverage, passes at ${p.non_consensus_pass}) and the monthly blind stability rescore (passes when no horse moves more than ${p.stability_max_move} rank).</p></div>`;
+}
+
+/* ---------- horses: actions ---------- */
+function editHorse(id) {
+  const h = id ? byId("horses", id) : {};
+  const ents = S.data.entities.filter(x => x.kind !== "person").sort((a, b) => str(a.name).localeCompare(str(b.name)));
+  const eopts = [["", "None"], ...ents.map(x => [x.id, x.name])];
+  const cat = h.next_catalyst || {};
+  const fields = [
+    { key: "name", label: "Name", value: h.name },
+    { key: "lane", label: "Lane", value: h.lane, hint: "For example RAS, PD-1 × VEGF, ADC." },
+    { key: "originator", label: "Originator", type: "select", value: h.originator || "", options: eopts, hint: "Add the company to the landscape first if it is missing." },
+    { key: "licensee", label: "Licensee", type: "select", value: h.licensee || "", options: eopts },
+    { key: "territory_note", label: "Territory", type: "textarea", value: h.territory_note },
+    { key: "cat_event", label: "Next catalyst", value: cat.event },
+    { key: "cat_date", label: "Catalyst date", value: cat.date, hint: "YYYY-MM-DD; leave blank if unknown." },
+    { key: "why_you", label: "Why you", type: "textarea", value: h.why_you, hint: "Why you, specifically, have an edge on this horse." },
+    { key: "why_basis", label: "The why-you line rests on", type: "select", value: h.why_basis || "", options: [["", "Not set"], ...SCORED_TESTS.map(t => [t.id, testInfo(t.id).name])], hint: "Feeds the non-consensus check: exposure, comparator or leverage count." },
+    { key: "status", label: "Status", type: "select", value: h.status || "Scoring", options: HORSE_STATUSES.map(s => [s, s]) }
+  ];
+  openForm({ title: id ? "Edit horse" : "Add a horse", fields, submit: id ? "Save horse" : "Add horse",
+    danger: id ? { label: "Delete horse", run: async () => { await remove("horses", id); S.ui.sel = {}; render(); } } : null,
+    onSubmit: async v => {
+      need(v.name, "Name");
+      if (v.cat_date && !/^\d{4}-\d{2}-\d{2}$/.test(v.cat_date)) throw { message: "Write the catalyst date as YYYY-MM-DD." };
+      const doc = Object.assign(clone(h), { name: v.name, lane: v.lane, originator: v.originator || null, licensee: v.licensee || null, territory_note: v.territory_note,
+        next_catalyst: v.cat_event || v.cat_date ? { event: v.cat_event, date: v.cat_date || null } : null, why_you: v.why_you, why_basis: v.why_basis || null, status: v.status, updated_at: nowIso() });
+      delete doc.id; if (!id) { doc.scores = {}; doc.history = []; doc.created_at = nowIso(); }
+      let nid = id; if (!nid) { nid = "h-" + slug(v.name); if (byId("horses", nid)) nid = newId("h", v.name); }
+      await put("horses", nid, doc); if (!id) go("horses", { horse: nid }); toast(id ? "Horse saved" : "Horse added"); } });
+}
+function evBears(e, hid, tid) { return (arr(e.horses).includes(hid) ? 2 : 0) + (arr(e.tests).includes(tid) ? 1 : 0); }
+function rescore(hid, tid) {
+  const h = byId("horses", hid); const t = testInfo(tid); if (!h || !HORSE_TESTS.some(x => x.id === tid)) return;
+  const cur = (h.scores || {})[tid] || {};
+  if (t.cap === "none") {
+    openForm({ title: `${h.name}: access`, intro: t.question || "Is there a working route to the people who decide on this asset?", submit: "Save access",
+      fields: [{ key: "ok", label: "Access", type: "select", value: cur.ok === true ? "yes" : cur.ok === false ? "no" : "", options: [["", "Unknown"], ["yes", "Yes"], ["no", "No"]] },
+        { key: "route", label: "Route", type: "textarea", value: cur.route, hint: "Institutions and public roles only; no personal contact details." }],
+      onSubmit: async v => { const sc = clone(h.scores); sc.access = { ok: v.ok === "yes" ? true : v.ok === "no" ? false : null, route: v.route, at: nowIso() }; await patch("horses", hid, { scores: sc, updated_at: nowIso() }); toast("Access saved"); } });
+    return;
+  }
+  const ev = [...S.data.evidence].sort((a, b) => (evBears(b, hid, tid) - evBears(a, hid, tid)) || (TIERS.indexOf(tierOf(a.tier)) - TIERS.indexOf(tierOf(b.tier))));
+  const anchors = t.anchors || {}; const snap = lastSnapshot();
+  const opts = [0, 1, 2, 3].map(n => [String(n), anchors[n] ? `${n}: ${trunc(anchors[n], 90)}` : String(n)]);
+  openForm({ title: `${h.name}: ${t.name.toLowerCase()}`, intro: t.question || "", submit: "Save score",
+    fields: [{ key: "score", label: "Score", type: "select", value: cur.score == null ? "" : String(cur.score), options: cur.score == null ? [["", "Not scored"], ...opts] : opts },
+      { key: "why", label: "Why", type: "textarea", value: cur.why },
+      { key: "evidence", label: "Evidence cited", type: "checks", value: arr(cur.evidence), options: ev.map(e => [e.id, `${trunc(e.claim, 100)} (${trunc(e.source, 40)}${e.added_at ? `, filed ${str(e.added_at).slice(0, 10)}` : ""})`, tierChip(e.tier) + " "]),
+        hint: capHint(tid) + (snap ? ` A changed score must cite evidence filed after the snapshot of ${snap.date}.` : "") }],
+    onSubmit: async v => {
+      if (v.score === "") throw { message: "Choose a score, or file a research question if this test cannot be scored yet." };
+      const n = Number(v.score);
+      const capMsg = capMessage(tid, n, citedTiers(v.evidence)); if (capMsg) throw { message: capMsg };
+      const ch = changeAllowed(cur.score == null ? null : cur.score, n, v.evidence, eid => (byId("evidence", eid) || {}).added_at, snap ? str(snap.created_at) : null);
+      if (!ch.ok) throw { message: ch.msg };
+      const sc = clone(h.scores); sc[tid] = { score: n, why: v.why, evidence: v.evidence, at: nowIso() };
+      await patch("horses", hid, { scores: sc, updated_at: nowIso() }); toast("Score saved"); } });
+}
+function addHorseEvidence(hid, tid) {
+  const h = byId("horses", hid); if (!h) return;
+  const fields = [
+    { key: "claim", label: "Claim", type: "textarea", hint: "One checkable statement, in your own words." },
+    { key: "source", label: "Source", hint: "Authors, journal or outlet, year." }, { key: "url", label: "Link", type: "url" },
+    { key: "tier", label: "Tier", type: "select", value: "", options: [["", "Choose a tier"], ...TIERS.map(t => [t, `${t}: ${TIER_INFO[t]}`])] },
+    { key: "domain", label: "Domain", type: "select", value: "clinical", options: DOMAINS.map(d => [d, d]) },
+    { key: "date", label: "Date of the source", hint: "For example 2026-10 or 2026-10-14." },
+    { key: "tests", label: "Tests it informs", type: "checks", value: tid ? [tid] : [], options: SCORED_TESTS.map(t => [t.id, testInfo(t.id).name]) },
+    { key: "notes", label: "Notes", type: "textarea" }];
+  openForm({ title: `Add evidence for ${h.name}`, intro: "Filed to the committee's evidence store and tagged to this horse. Cite it in a rescore to move a score.", fields, submit: "Add evidence",
+    onSubmit: async v => { need(v.claim, "Claim"); need(v.source, "Source"); need(v.tier, "Tier");
+      await put("evidence", newId("e", v.source), Object.assign(v, { horses: [hid], added_by: "Thomas", added_at: nowIso(), updated_at: nowIso() })); toast("Evidence added"); } });
+}
+function fileHorseResearch(hid, tid) {
+  const h = byId("horses", hid); if (!h) return;
+  openForm({ title: "File a research question", intro: `${h.name}. The question goes to the committee's research queue.`, submit: "File question",
+    fields: [{ key: "question", label: "Question", type: "textarea", value: tid ? `What evidence would let us score ${testInfo(tid).name.toLowerCase()} for ${h.name}?` : "", hint: "Specific and answerable." },
+      { key: "test", label: "Test", type: "select", value: tid, options: [["", "Not tied to one test"], ...SCORED_TESTS.map(t => [t.id, testInfo(t.id).name])] },
+      { key: "domain", label: "Domain", type: "select", value: "clinical", options: DOMAINS.map(d => [d, d]) },
+      { key: "priority", label: "Priority", type: "select", value: "normal", options: [["high", "High"], ["normal", "Normal"], ["low", "Low"]] }],
+    onSubmit: async v => { need(v.question, "Question");
+      await put("research", newId("r", v.question), { question: v.question, domain: v.domain, why: v.test ? "The test cannot be scored from the evidence on file." : "", thesis: null, horse: hid, test: v.test || null, priority: v.priority, status: "open", created_at: nowIso(), created_by: "Thomas" });
+      toast("Question filed to the research queue"); } });
+}
+function draftOutreach(hid) {
+  const h = byId("horses", hid); if (!h) return;
+  const n = horseNumbers(h, hParams()); const sc = h.scores || {};
+  const scored = SCORED_TESTS.filter(t => scoreOf(h, t.id) !== null);
+  const weakest = scored.filter(t => t.cap === "core").sort((a, b) => scoreOf(h, a.id) - scoreOf(h, b.id))[0];
+  const c = h.next_catalyst || {};
+  const vars = { name: h.name, originator: entName(h.originator), licensee_part: h.licensee ? `, licensed to ${entName(h.licensee)}` : "",
+    why_you: str(h.why_you) || "[why-you line not written yet]",
+    scorecard: scored.length ? scored.map(t => `${testInfo(t.id).name.toLowerCase()} ${scoreOf(h, t.id)} of 3`).join(", ") + `; P ${fmtN(n.P)}, E ${fmtN(n.E)}` : "[not scored yet]",
+    weakest: weakest ? testInfo(weakest.id).name.toLowerCase() : "[not scored yet]", weakest_why: weakest ? str(sc[weakest.id].why) : "",
+    leverage_why: str(sc.leverage && sc.leverage.why) || "[leverage reason not recorded]",
+    catalyst: c.event ? `${c.event}${c.date ? ` on ${fmtDate(c.date)}` : ""}` : "your next readout" };
+  const tpl = arr(S.meta && S.meta.outreach_template).length === 5 ? S.meta.outreach_template : OUTREACH_DEFAULT;
+  const text = tpl.map((x, i) => `${i + 1}. ${str(x.part)}\n${str(x.text).replace(/\{(\w+)\}/g, (m, k) => vars[k] != null ? vars[k] : m)}`).join("\n\n");
+  const dlg = $("#dlg");
+  dlg.innerHTML = `<div class="dlg"><h2>Draft outreach: ${esc(h.name)}</h2><p class="muted small">Built from the scorecard and the why-you line only. Nothing is saved or sent; edit it here, then copy it.</p>
+    <textarea class="draft" id="draftText" aria-label="Draft">${esc(text)}</textarea>
+    <div class="form-actions"><span class="grow"></span><button class="btn quiet" data-f="close">Close</button><button class="btn primary" data-f="copy">Copy</button></div></div>`;
+  dlg.querySelector('[data-f="close"]').addEventListener("click", () => dlg.close());
+  dlg.querySelector('[data-f="copy"]').addEventListener("click", () => { const ta = dlg.querySelector("#draftText"); const done = () => toast("Draft copied");
+    if (navigator.clipboard && navigator.clipboard.writeText) navigator.clipboard.writeText(ta.value).then(done, () => { ta.select(); toast("Select all and copy by hand"); }); else { ta.select(); toast("Select all and copy by hand"); } });
+  dlg.showModal();
+}
+
+/* ---------- horses: snapshots and stability ---------- */
+function snapshotForm() {
+  if (byId("rankings", "rk-" + localDay())) { toast("Today's snapshot is already taken. The next one can be taken tomorrow."); return; }
+  if (!S.data.horses.length) { toast("Add a horse first."); return; }
+  const rows = liveRows(); const unscored = rows.filter(r => !r.complete).length;
+  openForm({ title: "Snapshot now", intro: `Freezes the ranked list of ${rows.length} horses with the parameters and validity checks, and adds a history line to each horse whose rank moved.${unscored ? ` ${unscored} horses are not fully scored and are ranked on the tests they have.` : ""}`, submit: "Take the snapshot",
+    fields: [{ key: "trigger", label: "Trigger", type: "select", value: "weekly", options: [["weekly", "Weekly review"], ["evidence", "New evidence"], ["catalyst", "Catalyst"], ["manual", "Other"]] }],
+    onSubmit: v => takeSnapshot(v.trigger) });
+}
+async function takeSnapshot(trigger) {
+  const day = localDay(); const id = "rk-" + day;
+  if (byId("rankings", id)) throw { message: "Today's snapshot is already taken." };
+  const p = hParams(); const rows = liveRows(); const hm = new Map(S.data.horses.map(h => [h.id, h]));
+  const prev = lastSnapshot(); const prevRank = new Map(arr(prev && prev.rows).map(r => [r.horse, r.rank]));
+  const stab = lastStability(); const sm = stab && stab.checks && stab.checks.stability_moves;
+  const stability = sm && daysBetween(stab.date, day) <= p.stability_days ? { value: sm.value, pass: sm.pass, date: stab.date } : { value: null, pass: null, note: "due" };
+  await put("rankings", id, { date: day, trigger, params: p,
+    rows: rows.map(r => ({ horse: r.horse, rank: r.rank, S: r.S, P: r.P, V: r.V, L: r.L, E: r.E, access: r.access, decision: r.decision, catalyst: r.catalyst })),
+    checks: { spread_ratio: spreadRatio(rows, p), non_consensus: nonConsensus(rows, hid => hm.get(hid), p), stability_moves: stability },
+    created_by: "Thomas", created_at: nowIso() });
+  const since = prev ? str(prev.created_at) : ""; let moved = 0;
+  for (const r of rows) {
+    const was = prevRank.has(r.horse) ? prevRank.get(r.horse) : null;
+    if (was === r.rank) continue;
+    const h = hm.get(r.horse);
+    const cited = [...new Set(Object.values(h.scores || {}).flatMap(s => arr(s && s.evidence)))];
+    const fresh = was == null ? [] : cited.filter(eid => str((byId("evidence", eid) || {}).added_at) > since);
+    await patch("horses", r.horse, { history: [...arr(h.history), { date: day, rank: r.rank, prev_rank: was, E: r.E, cause: was == null ? "initial" : fresh.length ? "new evidence" : "others moved", evidence: fresh, snapshot: id }] });
+    moved++;
+  }
+  toast(`Snapshot taken. ${moved} ${moved === 1 ? "horse" : "horses"} moved.`);
+}
+function openSnapshot(id) {
+  const r = byId("rankings", id); if (!r) return; const ck = r.checks || {}; const st = r.trigger === "stability";
+  openInfo(`<h2>${st ? "Stability check" : "Snapshot"}, ${esc(fmtDate(r.date))}</h2>
+    <p class="muted small">Numbers as frozen${st ? "; blind rescores, with the live rank alongside" : `; trigger: ${esc(r.trigger || "manual")}`}. Parameters: p0 ${esc(r.params && r.params.p0)}, slope ${esc(r.params && r.params.slope)}.</p>
+    <div class="checkbar">${st ? checkChip("Largest rank move", ck.stability_moves) : checkChip("Spread ratio", ck.spread_ratio) + checkChip("Non-consensus", ck.non_consensus) + checkChip("Stability", ck.stability_moves)}</div>
+    <div class="scroll"><table><thead><tr><th class="n">Rank</th><th>Horse</th><th class="n">S</th><th class="n">P</th><th class="n">V</th><th class="n">L</th><th class="n">E</th><th>Decision</th></tr></thead><tbody>
+    ${arr(r.rows).map(x => `<tr><td class="n">${esc(x.rank)}${x.live_rank != null ? ` <span class="muted small">(live ${esc(x.live_rank)})</span>` : ""}</td><td>${esc(entOrHorse(x.horse))}</td><td class="n">${esc(x.S)}</td><td class="n">${fmtN(x.P)}</td><td class="n">${esc(x.V)}</td><td class="n">${esc(x.L)}</td><td class="n">${fmtN(x.E)}</td><td>${decisionChip(x.decision)}</td></tr>`).join("")}</tbody></table></div>`);
+}
+function openStability() {
+  const hs = [...S.data.horses].sort((a, b) => str(a.name).localeCompare(str(b.name)));
+  if (hs.length < 2) { toast("The stability check needs at least two horses."); return; }
+  const p = hParams(); const stab = lastStability(); const dlg = $("#dlg");
+  dlg.innerHTML = `<form class="dlg" novalidate><h2>Stability check</h2><p class="muted">Rescore each horse from the evidence it already cites, with its scores and reasons hidden. The check passes when no horse moves more than ${p.stability_max_move} rank against the live ranking. Leave a horse blank to leave it out. Run it once a month${stab ? `; last run ${esc(fmtDate(stab.date))}` : ""}.</p>
+    ${hs.map(h => `<div class="section" style="margin-top:18px"><h3>${esc(h.name)}</h3>${SCORED_TESTS.map(t => { const s = (h.scores || {})[t.id] || {}; const fid = `b-${slug(h.id)}-${t.id}`; return `<div class="blind"><label for="${esc(fid)}">${esc(testInfo(t.id).name)}</label><select id="${esc(fid)}" data-h="${esc(h.id)}" data-t="${esc(t.id)}"><option value="">—</option>${[0, 1, 2, 3].map(n => `<option value="${n}">${n}</option>`).join("")}</select><span>${evTags(s.evidence) || `<span class="muted small">no evidence cited</span>`}</span></div>`; }).join("")}</div>`).join("")}
+    <p class="form-err" role="alert"></p><div class="form-actions"><span class="grow"></span><button type="button" class="btn quiet" data-f="cancel">Cancel</button><button type="submit" class="btn primary">Record the check</button></div></form>`;
+  const form = dlg.querySelector("form"); const errEl = form.querySelector(".form-err");
+  form.querySelector('[data-f="cancel"]').addEventListener("click", () => dlg.close());
+  form.addEventListener("submit", async ev => { ev.preventDefault(); const btn = form.querySelector('button[type="submit"]'); btn.disabled = true; errEl.textContent = "";
+    try { await recordStability(form, hs, p); dlg.close(); } catch (e) { errEl.textContent = errText(e); btn.disabled = false; } });
+  dlg.showModal();
+}
+async function recordStability(form, hs, p) {
+  const day = localDay(); const id = `rk-${day}-stability`;
+  if (byId("rankings", id)) throw { message: "A stability check is already recorded for today." };
+  const vals = {}; form.querySelectorAll("select[data-h]").forEach(el => { (vals[el.dataset.h] = vals[el.dataset.h] || {})[el.dataset.t] = el.value; });
+  const blind = [];
+  for (const h of hs) {
+    const v = vals[h.id] || {};
+    if (SCORED_TESTS.every(t => !v[t.id])) continue;
+    if (SCORED_TESTS.some(t => !v[t.id])) throw { message: `Score all seven tests for ${h.name}, or leave it blank.` };
+    const scores = Object.assign({}, h.scores || {});
+    for (const t of SCORED_TESTS) {
+      const ids = arr(((h.scores || {})[t.id] || {}).evidence); const n = Number(v[t.id]);
+      const msg = capMessage(t.id, n, citedTiers(ids)); if (msg) throw { message: `${h.name}: ${msg}` };
+      scores[t.id] = { score: n, evidence: ids };
+    }
+    blind.push(Object.assign({}, h, { scores }));
+  }
+  if (blind.length < 2) throw { message: "Rescore at least two horses." };
+  const set = new Set(blind.map(h => h.id));
+  const blindRows = rankHorses(blind, p); const liveSet = rankHorses(S.data.horses.filter(h => set.has(h.id)), p);
+  const mv = maxRankMove(blindRows, liveSet); const liveMap = new Map(liveSet.map(r => [r.horse, r.rank]));
+  await put("rankings", id, { date: day, trigger: "stability", params: p,
+    rows: blindRows.map(r => ({ horse: r.horse, rank: r.rank, S: r.S, P: r.P, V: r.V, L: r.L, E: r.E, access: r.access, decision: r.decision, live_rank: liveMap.get(r.horse) })),
+    checks: { stability_moves: { value: mv, pass: mv <= p.stability_max_move } }, created_by: "Thomas", created_at: nowIso() });
+  toast(`Stability check recorded: largest move ${mv}, ${mv <= p.stability_max_move ? "pass" : "fail"}`);
+}
+
+/* ---------- calls ---------- */
+const CALL_FROZEN_KEYS = ["code", "horse", "question", "type", "unit", "forecast", "frozen_at", "resolve_by", "created_by"];
+function callRecord(c) { const o = {}; CALL_FROZEN_KEYS.forEach(k => { if (c[k] !== undefined) o[k] = c[k]; }); return o; }
+async function sha256Hex(text) {
+  if (!(window.crypto && crypto.subtle)) throw { message: "This browser cannot compute SHA-256 here." };
+  const buf = await crypto.subtle.digest("SHA-256", new TextEncoder().encode(text));
+  return [...new Uint8Array(buf)].map(b => b.toString(16).padStart(2, "0")).join("");
+}
+function callStatus(c) { return c.resolution ? "resolved" : (c.resolve_by && c.resolve_by < localDay() ? "overdue" : "open"); }
+function forecastText(c) { const f = c.forecast || {}; const u = c.unit ? ` ${c.unit}` : ""; return c.type === "binary" ? `${fmtN(f.p * 100)}% yes` : `${f.median}${u} (80%: ${f.p10} to ${f.p90})`; }
+function resultText(c) { const r = c.resolution; if (!r) return "—"; return c.type === "binary" ? (r.value ? "yes" : "no") : `${r.value}${c.unit ? " " + c.unit : ""}`; }
+function scoreText(c) { const s = c.score; if (!s) return "—"; return c.type === "binary" ? `Brier ${s.brier}` : `${s.inside80 ? "inside" : "outside"} 80%, error ${s.error}`; }
+function callsTable(cs) {
+  return `<div class="scroll"><table class="wide"><thead><tr><th>Call</th><th>Horse</th><th>Question</th><th>Frozen</th><th>Resolves by</th><th>Forecast</th><th>Status</th><th>Score</th></tr></thead><tbody>
+  ${cs.map(c => { const st = callStatus(c); return `<tr class="click" data-act="open-call" data-id="${esc(c.id)}" role="button" tabindex="0"><td class="n">${esc(c.code)}</td><td>${esc(entOrHorse(c.horse))}</td><td class="small">${esc(trunc(c.question, 120))}</td>
+    <td class="n">${esc(fmtDate(c.frozen_at))}</td><td class="n">${esc(c.resolve_by)}</td><td class="n small">${esc(forecastText(c))}</td><td><span class="chip ${st === "overdue" ? "oppose" : st === "resolved" ? "support" : ""}">${st}</span></td><td class="n small">${esc(scoreText(c))}</td></tr>`; }).join("")}
+  </tbody></table></div>`;
+}
+function viewCalls() {
+  const cs = [...S.data.calls].sort((a, b) => str(b.frozen_at).localeCompare(str(a.frozen_at)));
+  const res = cs.filter(c => c.resolution && c.score);
+  const bin = res.filter(c => c.type === "binary"); const con = res.filter(c => c.type === "continuous");
+  return `<h2 class="view">Calls</h2><p class="lead">Forecasts frozen before the evidence arrives, each hashed so the record cannot drift. Binary calls get a Brier score; continuous calls are checked against their 80% interval and scored by error against the median.</p>
+  <div class="nums" style="margin:0 0 10px"><div class="num"><b>${cs.length}</b><span>frozen</span></div><div class="num"><b>${res.length}</b><span>resolved</span></div>
+    <div class="num"><b>${bin.length ? fmtN(bin.reduce((a, c) => a + c.score.brier, 0) / bin.length) : "—"}</b><span>mean Brier, ${bin.length} binary</span></div>
+    <div class="num"><b>${con.length ? Math.round(100 * con.filter(c => c.score.inside80).length / con.length) + "%" : "—"}</b><span>inside the 80% interval, ${con.length} continuous</span></div></div>
+  <p class="small muted">${res.length >= 10 ? "Ten calls have resolved, so full CRPS scoring is now due for continuous calls." : `Full CRPS scoring starts once ten calls resolve (${res.length} of 10 so far).`}</p>
+  <div class="bar"><span class="grow"></span><button class="btn" data-act="freeze-call" data-id="">Freeze a call</button></div>
+  ${cs.length ? callsTable(cs) : `<div class="empty">No calls yet. Freeze one before the readout it forecasts.</div>`}`;
+}
+function freezeCall(hid) {
+  const hs = [...S.data.horses].sort((a, b) => str(a.name).localeCompare(str(b.name)));
+  if (!hs.length) { toast("Add a horse first."); return; }
+  const fields = [
+    { key: "code", label: "Call code", hint: "Short and unique, for example TT-001-600." },
+    { key: "horse", label: "Horse", type: "select", value: hid || hs[0].id, options: hs.map(h => [h.id, h.name]) },
+    { key: "question", label: "Question", type: "textarea", hint: "Exactly what settles it: endpoint, line of therapy, dose, cohort." },
+    { key: "type", label: "Type", type: "select", value: "continuous", options: [["continuous", "Continuous: a number with an 80% interval"], ["binary", "Binary: yes or no"]] },
+    { key: "median", label: "Median (continuous)", hint: "For a rate, write 0.23 for 23%." },
+    { key: "p10", label: "10th percentile (continuous)" }, { key: "p90", label: "90th percentile (continuous)" },
+    { key: "prob", label: "Probability of yes (binary)", hint: "Between 0 and 1." },
+    { key: "unit", label: "Unit", hint: "Optional, for example proportion or months." },
+    { key: "resolve_by", label: "Resolves by", hint: "YYYY-MM-DD." }];
+  openForm({ title: "Freeze a call", intro: "Once frozen, the forecast cannot be edited. The page computes a SHA-256 of the call and downloads the exact JSON it hashed, for OSF and OpenTimestamps.", fields, submit: "Freeze the call",
+    onSubmit: async v => {
+      need(v.code, "Call code"); need(v.question, "Question"); need(v.resolve_by, "Resolves by");
+      if (!/^\d{4}-\d{2}-\d{2}$/.test(v.resolve_by)) throw { message: "Write the resolution date as YYYY-MM-DD." };
+      const id = "c-" + slug(v.code);
+      if (byId("calls", id)) throw { message: "A call with this code already exists, and frozen calls cannot be replaced." };
+      let forecast;
+      if (v.type === "binary") { const pr = num(v.prob); if (pr == null || pr <= 0 || pr >= 1) throw { message: "Give a probability between 0 and 1." }; forecast = { p: pr }; }
+      else {
+        const m = num(v.median), lo = num(v.p10), hi = num(v.p90);
+        if ([m, lo, hi].some(x => x == null)) throw { message: "Give the median and both percentiles as numbers." };
+        if (!(lo <= m && m <= hi)) throw { message: "The percentiles must bracket the median: 10th ≤ median ≤ 90th." };
+        forecast = { median: m, p10: lo, p90: hi };
+      }
+      const rec = { code: v.code, horse: v.horse, question: v.question, type: v.type, unit: v.unit, forecast, frozen_at: nowIso(), resolve_by: v.resolve_by, created_by: "Thomas" };
+      const text = canonicalJson(rec); const sha = await sha256Hex(text);
+      await put("calls", id, Object.assign({}, rec, { resolution: null, score: null, proof: { sha256: sha, osf: "", opentimestamps: "" } }));
+      toast("Call frozen"); setTimeout(() => saveFile(`call-${slug(v.code)}.json`, text, "application/json"), 0); } });
+}
+function openCall(id) {
+  const c = byId("calls", id); if (!c) return; const h = byId("horses", c.horse); const pr = c.proof || {}; const dlg = $("#dlg");
+  dlg.innerHTML = `<div class="dlg"><h2>Call ${esc(c.code)}</h2><p class="read">${esc(c.question)}</p>
+    <dl class="kv"><dt>Horse</dt><dd>${h ? `<button class="linkbtn" data-act="open-horse" data-id="${esc(h.id)}">${esc(h.name)}</button>` : esc(c.horse)}</dd>
+    <dt>Type</dt><dd>${esc(c.type)}</dd><dt>Forecast</dt><dd>${esc(forecastText(c))}</dd><dt>Frozen</dt><dd>${esc(c.frozen_at)}</dd><dt>Resolves by</dt><dd>${esc(c.resolve_by)}</dd><dt>Status</dt><dd>${esc(callStatus(c))}</dd>
+    <dt>SHA-256</dt><dd class="small" style="word-break:break-all">${esc(pr.sha256 || "—")} <span id="verifyOut" class="muted"></span></dd>
+    <dt>OSF</dt><dd>${pr.osf ? link(pr.osf) : "—"}</dd><dt>OpenTimestamps</dt><dd>${pr.opentimestamps ? link(pr.opentimestamps) : "—"}</dd>
+    ${c.resolution ? `<dt>Result</dt><dd>${esc(resultText(c))}</dd><dt>Source</dt><dd>${link(c.resolution.source_url)}</dd><dt>Score</dt><dd>${esc(scoreText(c))}</dd>${c.resolution.note ? `<dt>Note</dt><dd>${esc(c.resolution.note)}</dd>` : ""}` : ""}</dl>
+    <p class="small muted">The forecast is read-only. Only the proof links and the resolution can still be written.</p>
+    <div class="form-actions"><button class="btn quiet" data-f="dl">Download JSON</button><button class="btn quiet" data-f="proof">Proof links</button><span class="grow"></span>${c.resolution ? "" : `<button class="btn" data-f="resolve">Resolve</button>`}<button class="btn" data-f="close">Close</button></div></div>`;
+  dlg.querySelector('[data-f="close"]').addEventListener("click", () => dlg.close());
+  dlg.querySelector('[data-f="dl"]').addEventListener("click", () => saveFile(`call-${slug(c.code)}.json`, canonicalJson(callRecord(c)), "application/json"));
+  dlg.querySelector('[data-f="proof"]').addEventListener("click", () => { dlg.close(); editProof(id); });
+  const rb = dlg.querySelector('[data-f="resolve"]'); if (rb) rb.addEventListener("click", () => { dlg.close(); resolveCall(id); });
+  sha256Hex(canonicalJson(callRecord(c))).then(x => { const el = dlg.querySelector("#verifyOut"); if (el) el.textContent = x === pr.sha256 ? "(matches the stored record)" : "(does not match: the record changed after freezing)"; }, () => {});
+  dlg.showModal();
+}
+function editProof(id) {
+  const c = byId("calls", id); if (!c) return; const pr = c.proof || {};
+  openForm({ title: `Proof links for ${c.code}`, intro: `SHA-256 ${pr.sha256 || ""}`, submit: "Save links",
+    fields: [{ key: "osf", label: "OSF registration", type: "url", value: pr.osf }, { key: "opentimestamps", label: "OpenTimestamps proof", type: "url", value: pr.opentimestamps }],
+    onSubmit: async v => { if ((v.osf && !safeUrl(v.osf)) || (v.opentimestamps && !safeUrl(v.opentimestamps))) throw { message: "Links must start with https://." };
+      await patch("calls", id, { proof: Object.assign({}, pr, { osf: v.osf, opentimestamps: v.opentimestamps }) }); toast("Proof links saved"); } });
+}
+function resolveCall(id) {
+  const c = byId("calls", id); if (!c || c.resolution) return;
+  const fields = [c.type === "binary" ? { key: "result", label: "Outcome", type: "select", value: "", options: [["", "Choose"], ["yes", "Yes"], ["no", "No"]] } : { key: "result", label: `Observed value${c.unit ? ` (${c.unit})` : ""}` },
+    { key: "source_url", label: "Source link", type: "url", hint: "Required: the readout, filing or publication that settles the call." }, { key: "note", label: "Note", type: "textarea" }];
+  openForm({ title: `Resolve ${c.code}`, intro: c.question, fields, submit: "Resolve the call",
+    onSubmit: async v => {
+      const src = safeUrl(v.source_url); if (!src) throw { message: "A source link is required to resolve a call." };
+      let value, score;
+      if (c.type === "binary") { if (!v.result) throw { message: "Choose the outcome." }; value = v.result === "yes"; score = { brier: brierScore(c.forecast.p, value) }; }
+      else { value = num(v.result); if (value == null) throw { message: "Give the observed value as a number." }; score = continuousScore(c.forecast, value); }
+      await patch("calls", id, { resolution: { value, source_url: src, note: v.note, resolved_at: nowIso() }, score }); toast("Call resolved"); } });
+}
+
+/* ---------- export ---------- */
+async function saveFile(name, text, type) {
+  if (!S.dl) { toast("Downloads are not available in this view."); return; }
+  try { const r = await S.dl.save({ filename: name, data: new Blob([text], { type }) }); if (r && r.status === "saved") toast(`Saved ${name}`); }
+  catch (e) { if (e && e.code === "declined") return; toast(e && e.code === "rate_limited" ? "A save is already waiting for your answer." : errText(e)); }
+}
+function exportJson() { const payload = { exported_at: nowIso(), meta: S.meta }; COLLS.forEach(c => { payload[c] = S.data[c]; }); return saveFile("bio-ai-committee-corpus.json", JSON.stringify(payload, null, 2), "application/json"); }
+function exportMd() {
+  const L = [];
+  L.push("# Bio x AI investment committee", "", `Exported ${fmtDate(nowIso())}.`, "", "## Evidence tiers", ...TIERS.map(t => `- ${t}: ${TIER_INFO[t]}`), "");
+  L.push("## First principles", ...[...S.data.axioms].sort((a, b) => (Number(a.order) || 99) - (Number(b.order) || 99)).map(a => `- ${a.label}: ${a.statement} Breaks if: ${str(a.breaks_if)}`), "");
+  for (const t of [...S.data.theses].sort((a, b) => statusRank(a.status) - statusRank(b.status))) {
+    const m = metrics(t);
+    L.push(`## Thesis: ${t.title} (${t.status})`, "", str(t.one_liner), "", `Evidence coverage ${m.coverage}%, rubric score ${m.score}/100, ${m.gaps} unsupported assumptions.`, "", "### Assumptions");
+    arr(t.assumptions).forEach(a => L.push(`- [${bestTier(a.evidence)}] (${a.status}) ${a.text}${arr(a.evidence).length ? ` Evidence: ${arr(a.evidence).map(id => { const e = byId("evidence", id); return e ? `${e.source}${e.url ? " " + e.url : ""}` : id; }).join("; ")}` : ""}`));
+    if (arr(t.falsifiers).length) L.push("", "### What would kill it", ...arr(t.falsifiers).map(x => `- ${x}`));
+    L.push("");
+  }
+  L.push("## Records");
+  [...S.data.sessions].sort((a, b) => str(b.date).localeCompare(str(a.date))).forEach(s => { L.push(`### ${fmtDate(s.date)}: ${s.title || s.question}`); if (s.chair) L.push(`Verdict: ${s.chair.verdict}. ${str(s.chair.summary)}`); arr(s.memos).forEach(m => L.push(`- ${m.name} (${m.stance}): ${m.headline}`)); L.push(""); });
+  L.push("## Open research questions", ...S.data.research.filter(r => r.status === "open" || r.status === "needs-web-research").map(r => `- ${r.question} (${r.domain})`), "");
+  L.push("## Evidence", ...[...S.data.evidence].sort((a, b) => TIERS.indexOf(tierOf(a.tier)) - TIERS.indexOf(tierOf(b.tier))).map(e => `- [${tierOf(e.tier)}] ${e.claim} Source: ${e.source}${e.url ? " " + e.url : ""}`));
+  return saveFile("bio-ai-committee-brief.md", L.join("\n"), "text/markdown");
+}
+
+init();
+</script>
+</body>
+</html>

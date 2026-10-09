@@ -1,0 +1,983 @@
+[
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-rasolute302-2026",
+  "data": {
+   "claim": "Daraxonrasib nearly doubled survival against chemotherapy in previously treated metastatic pancreatic cancer (RASolute 302), hazard ratio 0.40.",
+   "source": "The ASCO Post, 10 June 2026",
+   "url": "https://ascopost.com/issues/june-10-2026/daraxonrasib-nearly-doubles-survival-in-previously-treated-metastatic-pancreatic-cancer/",
+   "tier": "A",
+   "domain": "clinical",
+   "date": "2026-06",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3. Source check, Paperclip run 9 Oct 2026: CONFIRMED from a peer-reviewed review (PMC13453085, J Hematol Oncol, Aug 2026), not the primary paper. HR 0.40 holds in both the RAS G12 group (13.2 vs 6.6 months) and the overall population (13.2 vs 6.7). The figures are secondary-sourced, so tier A is not yet earned on this record alone; Thomas to decide the tier.",
+   "horses": [
+    "h-daraxonrasib-hk",
+    "h-gfh375"
+   ],
+   "tests": [
+    "mechanism",
+    "comparator"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-daraxonrasib-fda-2026",
+  "data": {
+   "claim": "FDA approved daraxonrasib in previously treated metastatic pancreatic cancer on 26 August 2026, the first RAS-targeted therapy for the disease.",
+   "source": "AGA News, August 2026",
+   "url": "https://news.gastro.org/issues/2026/august-2026/fda-approves-first-rastargeted-therapy-for-metastatic-pancreatic-cancer/",
+   "tier": "A",
+   "domain": "regulatory",
+   "date": "2026-08-26",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "horses": [
+    "h-daraxonrasib-hk",
+    "h-gfh375",
+    "h-eras-0015",
+    "h-hrs-4642"
+   ],
+   "tests": [
+    "comparator"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-hk-1plus-2026",
+  "data": {
+   "claim": "Hong Kong registers new drugs on one reference-agency approval plus local clinical data (the 1+ mechanism).",
+   "source": "Hong Kong Government press release, 23 April 2026",
+   "url": "https://www.info.gov.hk/gia/general/202604/23/P2026042300600.htm",
+   "tier": "A",
+   "domain": "regulatory",
+   "date": "2026-04-23",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "horses": [
+    "h-daraxonrasib-hk"
+   ],
+   "tests": [
+    "design"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-fda-mrct-draft-2024",
+  "data": {
+   "claim": "FDA draft guidance sets out considerations for generating clinical evidence from oncology multiregional clinical development programmes.",
+   "source": "US FDA draft guidance, 2024",
+   "url": "https://www.fda.gov/regulatory-information/search-fda-guidance-documents/considerations-generating-clinical-evidence-oncology-multiregional-clinical-development-programs",
+   "tier": "A",
+   "domain": "regulatory",
+   "date": "2024",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "horses": [],
+   "tests": [
+    "population",
+    "design"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-au-phase1-petermac",
+  "data": {
+   "claim": "Asian sponsors rose from 6% to 39% of Australian oncology Phase 1 trials between 2012 and 2022.",
+   "source": "Peter MacCallum Cancer Centre publication 3161",
+   "url": "https://publications.petermac.org/Publications/3161",
+   "tier": "A",
+   "domain": "clinical",
+   "date": "",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3. Publication date not recorded.",
+   "horses": [
+    "h-lm-350"
+   ],
+   "tests": [
+    "design"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-pfizer-3sbio-2025",
+  "data": {
+   "claim": "Pfizer paid $1.25B upfront to 3SBio for SSGJ-707 (PF-08634404).",
+   "source": "Caixin Global, 18 June 2025",
+   "url": "https://www.caixinglobal.com/2025-06-18/global-drugmakers-tap-chinese-biotech-for-novel-cancer-therapies-102331506.html",
+   "tier": "B",
+   "domain": "market",
+   "date": "2025-06-18",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "horses": [
+    "h-pf-08634404"
+   ],
+   "tests": [
+    "value_gap"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-bms-hengrui-2026",
+  "data": {
+   "claim": "Bristol Myers Squibb and Jiangsu Hengrui agreed a deal worth up to $15.2B across 13 early programmes.",
+   "source": "PharmaSource, 2026",
+   "url": "https://pharmasource.global/content/chart/china-now-sources-32-of-global-biopharma-out-licensing-deals-up-from-5-in-2020/",
+   "tier": "B",
+   "domain": "market",
+   "date": "2026",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "horses": [
+    "h-bms-hengrui",
+    "h-hrs-4642"
+   ],
+   "tests": [
+    "value_gap"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-gfh375-china-2025",
+  "data": {
+   "claim": "GFH375 showed a 41% response rate at 600 mg in 66 patients in China.",
+   "source": "Verastem Oncology press release, 2025",
+   "url": "https://investor.verastem.com/news-releases/news-release-details/verastem-oncology-announces-updated-data-partner-genfleet-0/",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2025",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3. Source check, Paperclip run 9 Oct 2026: NOT FOUND. Paperclip holds no text with the 41% at 600 mg. A 2026 meta-analysis (PMC13103443) lists the China Phase I/IIa at 66 patients, which supports the n only. Read the Verastem release before this carries a score above 1.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "exposure",
+    "design"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-verastem-jun2026",
+  "data": {
+   "claim": "VS-7375: the 900 mg dose separates from 600 mg; 13 of 14 patients had CA19-9 responses.",
+   "source": "Verastem Oncology presentation, June 2026",
+   "url": "https://verastem.gcs-web.com/node/16011/pdf",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-06",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3. Source check, Paperclip run 9 Oct 2026: NOT FOUND. Paperclip does not index Verastem decks. Read the deck before this supports any score.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "exposure"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-genfleet-kylin-wings-2025",
+  "data": {
+   "claim": "GenFleet is running a Phase 3 of GFH375 against chemotherapy in second-line pancreatic cancer (KYLIN-WINGS).",
+   "source": "GenFleet HKEX announcement, 5 December 2025",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1205/2025120500055.pdf",
+   "tier": "C",
+   "domain": "company",
+   "date": "2025-12-05",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3. Source check, Paperclip run 9 Oct 2026: PARTLY CONFIRMED. A Phase 3 of GFH375 against chemotherapy in previously treated KRAS G12D pancreatic cancer exists (NCT07262567, 1:1, recruiting since 4 Dec 2025; see e-gfh375-ph3-pdac). The registry text names neither GenFleet nor KYLIN-WINGS; confirm both from the HKEX announcement.",
+   "horses": [
+    "h-gfh375"
+   ],
+   "tests": [
+    "design",
+    "comparator"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-erasca-jul2026",
+  "data": {
+   "claim": "ERAS-0015 pooled early data: 57% unconfirmed response in 7 patients.",
+   "source": "Erasca investor presentation, July 2026",
+   "url": "https://investors.erasca.com/static-files/a1ac0939-4817-4a5d-af1b-8b81e11c7ccf",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026-07",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "horses": [
+    "h-eras-0015"
+   ],
+   "tests": [
+    "exposure"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-harmoni-western-2026",
+  "data": {
+   "claim": "HARMONi (Western patients): the overall survival hazard ratio for ivonescimab ranged from 0.98 to 0.76 across data cuts.",
+   "source": "Fierce Pharma, 2026",
+   "url": "https://www.fiercepharma.com/pharma/summit-therapeutics-updates-ivonescimab-survival-data-ahead-fda-decision-date",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "horses": [
+    "h-ivonescimab"
+   ],
+   "tests": [
+    "population",
+    "comparator"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-trofuse005-2026",
+  "data": {
+   "claim": "Sac-TMT met overall and progression-free survival endpoints in a global Phase 3 (TroFuse-005).",
+   "source": "1st Oncology, 2026",
+   "url": "https://www.1stoncology.com/blog/?p=111078",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "horses": [
+    "h-sac-tmt"
+   ],
+   "tests": [
+    "mechanism",
+    "design"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-kelun-lung06-2026",
+  "data": {
+   "claim": "Kelun's sac-TMT won a China-only first-line lung cancer Phase 3 in a population missing from Merck's global programme; data due at ESMO 2026.",
+   "source": "Fierce Pharma, 2026",
+   "url": "https://www.fiercepharma.com/pharma/kelun-scores-sac-tmt-win-first-line-nsclc-population-missing-merck-massive-phase-3-program",
+   "tier": "C",
+   "domain": "clinical",
+   "date": "2026",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "horses": [
+    "h-sac-tmt"
+   ],
+   "tests": [
+    "population"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-insilico-phase1-2026",
+  "data": {
+   "claim": "Insilico's ISM3412 and ISM6331 are in global Phase 1 trials.",
+   "source": "Insilico Medicine news release, 2026",
+   "url": "https://insilico.com/news/u4cbsok2s1-insilico-medicine-announces-us888-millio?amp=true",
+   "tier": "C",
+   "domain": "company",
+   "date": "2026",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "horses": [
+    "h-ism3412",
+    "h-ism6331"
+   ],
+   "tests": [
+    "design"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-lm-350-au-2025",
+  "data": {
+   "claim": "LaNova dosed the first patient with LM-350 in Australia.",
+   "source": "Tiger Brokers news, 2025",
+   "url": "https://www.itiger.com/news/2570932610",
+   "tier": "C",
+   "domain": "company",
+   "date": "2025",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "horses": [
+    "h-lm-350"
+   ],
+   "tests": [
+    "design"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-china-discount-2025",
+  "data": {
+   "claim": "Chinese assets trade 40% to 50% below Western comparables in total deal size.",
+   "source": "PharmaSource, 2025",
+   "url": "https://pharmasource.global/content/chart/china-now-sources-32-of-global-biopharma-out-licensing-deals-up-from-5-in-2020/",
+   "tier": "C",
+   "domain": "market",
+   "date": "2025",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "horses": [],
+   "tests": [
+    "value_gap"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "evidence",
+  "doc_id": "e-isomorphic-talks-2026",
+  "data": {
+   "claim": "Isomorphic Labs is reported in talks at a $40B or higher valuation, with no patient yet dosed.",
+   "source": "Tech Funding News, 2026",
+   "url": "https://techfundingnews.com/deepmind-spinout-isomorphic-labs-eyes-40b-valuation-less-than-five-months-after-2-1b-round-report",
+   "tier": "D",
+   "domain": "market",
+   "date": "2026",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "horses": [
+    "h-isomorphic-first"
+   ],
+   "tests": [
+    "value_gap"
+   ],
+   "added_by": "Thomas (horse book)",
+   "added_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "entities",
+  "doc_id": "x-genfleet",
+  "data": {
+   "name": "GenFleet Therapeutics",
+   "kind": "company",
+   "stage": "development",
+   "what": "Originator of GFH375 (VS-7375), an oral KRAS G12D inhibitor; keeps Greater China rights.",
+   "signal": "GFH375 41% response at 600 mg in China; Phase 3 against chemotherapy in second-line pancreatic cancer.",
+   "tier": "C",
+   "url": "https://www1.hkexnews.hk/listedco/listconews/sehk/2025/1205/2025120500055.pdf",
+   "notes": "Added with the horses module, 9 Oct 2026.",
+   "last_reviewed": "2026-10-09"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "entities",
+  "doc_id": "x-verastem",
+  "data": {
+   "name": "Verastem Oncology",
+   "kind": "company",
+   "stage": "development",
+   "what": "Licensee of VS-7375 (GFH375) outside Greater China.",
+   "signal": "June 2026: 900 mg separates from 600 mg; 13 of 14 CA19-9 responses.",
+   "tier": "C",
+   "url": "https://verastem.gcs-web.com/node/16011/pdf",
+   "notes": "Added with the horses module, 9 Oct 2026.",
+   "last_reviewed": "2026-10-09"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "entities",
+  "doc_id": "x-akeso",
+  "data": {
+   "name": "Akeso",
+   "kind": "company",
+   "stage": "development",
+   "what": "Originator of ivonescimab, a PD-1 × VEGF bispecific antibody.",
+   "signal": "Ivonescimab licensed to Summit outside its home territories.",
+   "tier": "C",
+   "url": "https://www.fiercepharma.com/pharma/summit-therapeutics-updates-ivonescimab-survival-data-ahead-fda-decision-date",
+   "notes": "Added with the horses module, 9 Oct 2026.",
+   "last_reviewed": "2026-10-09"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "entities",
+  "doc_id": "x-summit",
+  "data": {
+   "name": "Summit Therapeutics",
+   "kind": "company",
+   "stage": "development",
+   "what": "Licensee of ivonescimab in Western markets.",
+   "signal": "HARMONi Western survival hazard ratio 0.98 to 0.76 across cuts, ahead of an FDA decision.",
+   "tier": "C",
+   "url": "https://www.fiercepharma.com/pharma/summit-therapeutics-updates-ivonescimab-survival-data-ahead-fda-decision-date",
+   "notes": "Added with the horses module, 9 Oct 2026.",
+   "last_reviewed": "2026-10-09"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "entities",
+  "doc_id": "x-kelun",
+  "data": {
+   "name": "Kelun-Biotech",
+   "kind": "company",
+   "stage": "development",
+   "what": "Originator of sacituzumab tirumotecan (sac-TMT), a TROP2 antibody-drug conjugate.",
+   "signal": "China-only first-line lung win; data at ESMO 2026.",
+   "tier": "C",
+   "url": "https://www.fiercepharma.com/pharma/kelun-scores-sac-tmt-win-first-line-nsclc-population-missing-merck-massive-phase-3-program",
+   "notes": "Added with the horses module, 9 Oct 2026.",
+   "last_reviewed": "2026-10-09"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "entities",
+  "doc_id": "x-merck",
+  "data": {
+   "name": "Merck & Co.",
+   "kind": "company",
+   "stage": "development",
+   "what": "Global licensee of sac-TMT outside Greater China.",
+   "signal": "Sac-TMT met overall and progression-free survival in a global Phase 3.",
+   "tier": "C",
+   "url": "https://www.1stoncology.com/blog/?p=111078",
+   "notes": "Added with the horses module, 9 Oct 2026.",
+   "last_reviewed": "2026-10-09"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "entities",
+  "doc_id": "x-joyo",
+  "data": {
+   "name": "Joyo Pharmatech",
+   "kind": "company",
+   "stage": "development",
+   "what": "Originator of ERAS-0015, licensed to Erasca.",
+   "signal": "ERAS-0015 early data reported by Erasca, July 2026.",
+   "tier": "C",
+   "url": "https://investors.erasca.com/static-files/a1ac0939-4817-4a5d-af1b-8b81e11c7ccf",
+   "notes": "Added with the horses module, 9 Oct 2026.",
+   "last_reviewed": "2026-10-09"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "entities",
+  "doc_id": "x-erasca",
+  "data": {
+   "name": "Erasca",
+   "kind": "company",
+   "stage": "development",
+   "what": "Licensee of ERAS-0015, a RAS-targeted molecular glue.",
+   "signal": "Pooled early data: 57% unconfirmed response in 7 patients.",
+   "tier": "C",
+   "url": "https://investors.erasca.com/static-files/a1ac0939-4817-4a5d-af1b-8b81e11c7ccf",
+   "notes": "Added with the horses module, 9 Oct 2026.",
+   "last_reviewed": "2026-10-09"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "entities",
+  "doc_id": "x-hengrui",
+  "data": {
+   "name": "Jiangsu Hengrui Pharmaceuticals",
+   "kind": "company",
+   "stage": "development",
+   "what": "Chinese pharma; originator of HRS-4642 and of the programmes in the BMS deal.",
+   "signal": "BMS deal worth up to $15.2B across 13 early programmes.",
+   "tier": "B",
+   "url": "https://pharmasource.global/content/chart/china-now-sources-32-of-global-biopharma-out-licensing-deals-up-from-5-in-2020/",
+   "notes": "Added with the horses module, 9 Oct 2026.",
+   "last_reviewed": "2026-10-09"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "entities",
+  "doc_id": "x-revmed",
+  "data": {
+   "name": "Revolution Medicines",
+   "kind": "company",
+   "stage": "development",
+   "what": "Developer of daraxonrasib, a RAS(ON) multi-selective inhibitor.",
+   "signal": "FDA approval in previously treated metastatic pancreatic cancer, 26 August 2026.",
+   "tier": "A",
+   "url": "https://news.gastro.org/issues/2026/august-2026/fda-approves-first-rastargeted-therapy-for-metastatic-pancreatic-cancer/",
+   "notes": "Added with the horses module, 9 Oct 2026.",
+   "last_reviewed": "2026-10-09"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "entities",
+  "doc_id": "x-3sbio",
+  "data": {
+   "name": "3SBio",
+   "kind": "company",
+   "stage": "development",
+   "what": "Originator of SSGJ-707, a PD-1 × VEGF bispecific licensed to Pfizer.",
+   "signal": "Pfizer paid $1.25B upfront for SSGJ-707 (2025).",
+   "tier": "B",
+   "url": "https://www.caixinglobal.com/2025-06-18/global-drugmakers-tap-chinese-biotech-for-novel-cancer-therapies-102331506.html",
+   "notes": "Added with the horses module, 9 Oct 2026.",
+   "last_reviewed": "2026-10-09"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "entities",
+  "doc_id": "x-pfizer",
+  "data": {
+   "name": "Pfizer",
+   "kind": "company",
+   "stage": "development",
+   "what": "Licensee of SSGJ-707, now PF-08634404.",
+   "signal": "$1.25B upfront to 3SBio (2025).",
+   "tier": "B",
+   "url": "https://www.caixinglobal.com/2025-06-18/global-drugmakers-tap-chinese-biotech-for-novel-cancer-therapies-102331506.html",
+   "notes": "Added with the horses module, 9 Oct 2026.",
+   "last_reviewed": "2026-10-09"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "entities",
+  "doc_id": "x-lanova",
+  "data": {
+   "name": "LaNova Medicines (Sino Biopharm)",
+   "kind": "company",
+   "stage": "development",
+   "what": "Originator of LM-350.",
+   "signal": "First patient dosed with LM-350 in Australia (2025).",
+   "tier": "C",
+   "url": "https://www.itiger.com/news/2570932610",
+   "notes": "Added with the horses module, 9 Oct 2026.",
+   "last_reviewed": "2026-10-09"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "entities",
+  "doc_id": "x-bms",
+  "data": {
+   "name": "Bristol Myers Squibb",
+   "kind": "company",
+   "stage": "development",
+   "what": "Licensee of 13 early Hengrui programmes.",
+   "signal": "Deal worth up to $15.2B with Hengrui (2026).",
+   "tier": "B",
+   "url": "https://pharmasource.global/content/chart/china-now-sources-32-of-global-biopharma-out-licensing-deals-up-from-5-in-2020/",
+   "notes": "Added with the horses module, 9 Oct 2026.",
+   "last_reviewed": "2026-10-09"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "horses",
+  "doc_id": "h-gfh375",
+  "data": {
+   "name": "GFH375 / VS-7375",
+   "lane": "RAS",
+   "originator": "x-genfleet",
+   "licensee": "x-verastem",
+   "territory_note": "GenFleet keeps mainland China, Hong Kong, Macau, Taiwan",
+   "next_catalyst": {
+    "event": "Verastem update",
+    "date": "2026-10-14"
+   },
+   "scores": {},
+   "why_you": "",
+   "why_basis": null,
+   "status": "Scoring",
+   "history": [],
+   "created_at": "2026-10-09T10:00:00.000Z",
+   "updated_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "horses",
+  "doc_id": "h-isomorphic-first",
+  "data": {
+   "name": "Isomorphic's first oncology candidate",
+   "lane": "AI platform",
+   "originator": "x-isomorphic",
+   "licensee": null,
+   "territory_note": "",
+   "next_catalyst": null,
+   "scores": {},
+   "why_you": "",
+   "why_basis": null,
+   "status": "Scoring",
+   "history": [],
+   "created_at": "2026-10-09T10:00:00.000Z",
+   "updated_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "horses",
+  "doc_id": "h-ivonescimab",
+  "data": {
+   "name": "Ivonescimab",
+   "lane": "PD-1 × VEGF",
+   "originator": "x-akeso",
+   "licensee": "x-summit",
+   "territory_note": "",
+   "next_catalyst": {
+    "event": "FDA decision",
+    "date": null
+   },
+   "scores": {},
+   "why_you": "",
+   "why_basis": null,
+   "status": "Scoring",
+   "history": [],
+   "created_at": "2026-10-09T10:00:00.000Z",
+   "updated_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "horses",
+  "doc_id": "h-sac-tmt",
+  "data": {
+   "name": "Sac-TMT",
+   "lane": "ADC",
+   "originator": "x-kelun",
+   "licensee": "x-merck",
+   "territory_note": "",
+   "next_catalyst": {
+    "event": "ESMO 2026 presentation of the China first-line lung data",
+    "date": null
+   },
+   "scores": {},
+   "why_you": "",
+   "why_basis": null,
+   "status": "Scoring",
+   "history": [],
+   "created_at": "2026-10-09T10:00:00.000Z",
+   "updated_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "horses",
+  "doc_id": "h-eras-0015",
+  "data": {
+   "name": "ERAS-0015",
+   "lane": "RAS",
+   "originator": "x-joyo",
+   "licensee": "x-erasca",
+   "territory_note": "",
+   "next_catalyst": null,
+   "scores": {},
+   "why_you": "",
+   "why_basis": null,
+   "status": "Scoring",
+   "history": [],
+   "created_at": "2026-10-09T10:00:00.000Z",
+   "updated_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "horses",
+  "doc_id": "h-hrs-4642",
+  "data": {
+   "name": "HRS-4642",
+   "lane": "RAS",
+   "originator": "x-hengrui",
+   "licensee": null,
+   "territory_note": "",
+   "next_catalyst": null,
+   "scores": {},
+   "why_you": "",
+   "why_basis": null,
+   "status": "Scoring",
+   "history": [],
+   "created_at": "2026-10-09T10:00:00.000Z",
+   "updated_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "horses",
+  "doc_id": "h-daraxonrasib-hk",
+  "data": {
+   "name": "Daraxonrasib into Hong Kong",
+   "lane": "RAS",
+   "originator": "x-revmed",
+   "licensee": null,
+   "territory_note": "",
+   "next_catalyst": null,
+   "scores": {},
+   "why_you": "",
+   "why_basis": null,
+   "status": "Scoring",
+   "history": [],
+   "created_at": "2026-10-09T10:00:00.000Z",
+   "updated_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "horses",
+  "doc_id": "h-pf-08634404",
+  "data": {
+   "name": "PF-08634404 / SSGJ-707",
+   "lane": "PD-1 × VEGF",
+   "originator": "x-3sbio",
+   "licensee": "x-pfizer",
+   "territory_note": "",
+   "next_catalyst": null,
+   "scores": {},
+   "why_you": "",
+   "why_basis": null,
+   "status": "Scoring",
+   "history": [],
+   "created_at": "2026-10-09T10:00:00.000Z",
+   "updated_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "horses",
+  "doc_id": "h-lm-350",
+  "data": {
+   "name": "LM-350",
+   "lane": "",
+   "originator": "x-lanova",
+   "licensee": null,
+   "territory_note": "",
+   "next_catalyst": null,
+   "scores": {},
+   "why_you": "",
+   "why_basis": null,
+   "status": "Scoring",
+   "history": [],
+   "created_at": "2026-10-09T10:00:00.000Z",
+   "updated_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "horses",
+  "doc_id": "h-bms-hengrui",
+  "data": {
+   "name": "BMS–Hengrui basket",
+   "lane": "Basket",
+   "originator": "x-hengrui",
+   "licensee": "x-bms",
+   "territory_note": "",
+   "next_catalyst": null,
+   "scores": {},
+   "why_you": "",
+   "why_basis": null,
+   "status": "Scoring",
+   "history": [],
+   "created_at": "2026-10-09T10:00:00.000Z",
+   "updated_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "horses",
+  "doc_id": "h-ism3412",
+  "data": {
+   "name": "ISM3412",
+   "lane": "AI-designed small molecule",
+   "originator": "x-insilico",
+   "licensee": null,
+   "territory_note": "",
+   "next_catalyst": null,
+   "scores": {},
+   "why_you": "",
+   "why_basis": null,
+   "status": "Scoring",
+   "history": [],
+   "created_at": "2026-10-09T10:00:00.000Z",
+   "updated_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "set",
+  "collection": "horses",
+  "doc_id": "h-ism6331",
+  "data": {
+   "name": "ISM6331",
+   "lane": "AI-designed small molecule",
+   "originator": "x-insilico",
+   "licensee": null,
+   "territory_note": "",
+   "next_catalyst": null,
+   "scores": {},
+   "why_you": "",
+   "why_basis": null,
+   "status": "Scoring",
+   "history": [],
+   "created_at": "2026-10-09T10:00:00.000Z",
+   "updated_at": "2026-10-09T10:00:00.000Z"
+  }
+ },
+ {
+  "op": "update",
+  "collection": "meta",
+  "doc_id": "config",
+  "if_version": 1,
+  "data": {
+   "horse_rubric": [
+    {
+     "id": "mechanism",
+     "name": "Mechanism",
+     "question": "Is the mechanism, or its class, validated in patients?",
+     "anchors": {
+      "0": "No human evidence for the mechanism",
+      "1": "Preclinical rationale or a single uncontrolled signal",
+      "2": "Consistent human activity in the class",
+      "3": "Class validated by a randomised trial or a regulatory approval"
+     }
+    },
+    {
+     "id": "exposure",
+     "name": "Exposure",
+     "question": "Has the asset shown the activity and exposure it needs outside China, at the dose that will be registered?",
+     "anchors": {
+      "0": "No clinical data",
+      "1": "China-only data, or the registration dose not settled",
+      "2": "Early ex-China data pointing the same way",
+      "3": "Ex-China data consistent with China at the chosen dose"
+     }
+    },
+    {
+     "id": "comparator",
+     "name": "Comparator",
+     "question": "Will it beat the standard of care that will exist when it launches?",
+     "anchors": {
+      "0": "Likely inferior to the coming standard",
+      "1": "Unclear against a newly raised bar",
+      "2": "Competitive with the coming standard",
+      "3": "Clear advantage over the coming standard"
+     }
+    },
+    {
+     "id": "population",
+     "name": "Population",
+     "question": "Will the trial population translate to Western patients (biomarker mix, prior therapy, ethnicity)?",
+     "anchors": {
+      "0": "Known mismatch",
+      "1": "Unknown",
+      "2": "Plausible match with some gaps",
+      "3": "Shown to translate"
+     }
+    },
+    {
+     "id": "design",
+     "name": "Design",
+     "question": "Is the global development design credible to the FDA (multiregional data, dose optimisation, comparator choice)?",
+     "anchors": {
+      "0": "No credible path",
+      "1": "China-led design with gaps the FDA has flagged",
+      "2": "Multiregional plan with minor gaps",
+      "3": "Design aligned with FDA guidance and under way"
+     }
+    },
+    {
+     "id": "value_gap",
+     "name": "Value gap",
+     "question": "How far below Western comparables is the asset priced?",
+     "anchors": {
+      "0": "No discount, or priced above comparables",
+      "1": "Discount unclear",
+      "2": "Clear discount",
+      "3": "Large, documented discount"
+     }
+    },
+    {
+     "id": "leverage",
+     "name": "Leverage",
+     "question": "How much does your position (Hong Kong, clinical, Asia access) add to the outcome or the information edge?",
+     "anchors": {
+      "0": "None",
+      "1": "Marginal",
+      "2": "Real but replicable",
+      "3": "Distinctive and hard to replicate"
+     }
+    },
+    {
+     "id": "access",
+     "name": "Access",
+     "question": "Is there a working route to the people who decide on this asset?",
+     "anchors": {}
+    }
+   ],
+   "engine_params": {
+    "p0": 0.15,
+    "slope": 0.05,
+    "back_p": 0.6,
+    "back_v": 2,
+    "back_l": 2,
+    "spread_pass": 2,
+    "non_consensus_pass": 2,
+    "stability_max_move": 1,
+    "stability_days": 31
+   }
+  }
+ }
+]
