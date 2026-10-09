@@ -10,7 +10,7 @@
    "tier": "A",
    "domain": "clinical",
    "date": "2026-06",
-   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3. Source check, Paperclip run 9 Oct 2026: CONFIRMED from a peer-reviewed review (PMC13453085, J Hematol Oncol, Aug 2026), not the primary paper. HR 0.40 holds in both the RAS G12 group (13.2 vs 6.6 months) and the overall population (13.2 vs 6.7). The figures are secondary-sourced, so tier A is not yet earned on this record alone; Thomas to decide the tier.",
    "horses": [
     "h-daraxonrasib-hk",
     "h-gfh375"
@@ -169,7 +169,7 @@
    "tier": "C",
    "domain": "clinical",
    "date": "2025",
-   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3. Source check, Paperclip run 9 Oct 2026: NOT FOUND. Paperclip holds no text with the 41% at 600 mg. A 2026 meta-analysis (PMC13103443) lists the China Phase I/IIa at 66 patients, which supports the n only. Read the Verastem release before this carries a score above 1.",
    "horses": [
     "h-gfh375"
    ],
@@ -192,7 +192,7 @@
    "tier": "C",
    "domain": "clinical",
    "date": "2026-06",
-   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3. Source check, Paperclip run 9 Oct 2026: NOT FOUND. Paperclip does not index Verastem decks. Read the deck before this supports any score.",
    "horses": [
     "h-gfh375"
    ],
@@ -214,7 +214,7 @@
    "tier": "C",
    "domain": "company",
    "date": "2025-12-05",
-   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3.",
+   "notes": "Filed from the horse ranking build spec (9 Oct 2026). The claim is the spec's short form; check it against the source before it carries a score of 3. Source check, Paperclip run 9 Oct 2026: PARTLY CONFIRMED. A Phase 3 of GFH375 against chemotherapy in previously treated KRAS G12D pancreatic cancer exists (NCT07262567, 1:1, recruiting since 4 Dec 2025; see e-gfh375-ph3-pdac). The registry text names neither GenFleet nor KYLIN-WINGS; confirm both from the HKEX announcement.",
    "horses": [
     "h-gfh375"
    ],

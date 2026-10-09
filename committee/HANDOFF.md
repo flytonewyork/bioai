@@ -26,7 +26,10 @@ Then start Claude Code in the repo root and paste the "Prompt for the new sessio
 ## Remaining steps, in order
 
 1. **Seed the database.** Apply `committee/seed/horses-seed-2026-10-09.json` with the ArtifactData
-   `batch` action against the artifact URL. Read `meta/config` first. If its version is no longer 1,
+   `batch` action against the artifact URL. Then apply `committee/seed/horses-gfh375-evidence-2026-10-09.json`
+   (41 evidence records for GFH375 from the 9 Oct Paperclip run, every quote checked against its source;
+   all ids start `e-gfh375-` or `e-vs7375-`, check none exist). Two horses cite entities `x-insilico` and `x-isomorphic`;
+   both must already exist among the live entities. Read `meta/config` first. If its version is no longer 1,
    change the `if_version` on the last entry (the `meta/config` update) to the current version. All
    other entries create new documents. Check first that none of these ids already exist:
    `x-genfleet`, `x-verastem`, `x-akeso`, `x-summit`, `x-kelun`, `x-merck`, `x-joyo`, `x-erasca`,
