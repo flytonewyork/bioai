@@ -1,0 +1,25 @@
+{
+  "_note": "Fake records for committee/engine.test.mjs. Not real evidence.",
+  "evidence": {
+    "e-fake-a": {"tier": "A", "added_at": "2026-10-09T10:00:00.000Z"},
+    "e-fake-b": {"tier": "B", "added_at": "2026-10-09T10:00:00.000Z"},
+    "e-fake-c": {"tier": "C", "added_at": "2026-10-09T10:00:00.000Z"},
+    "e-fake-d": {"tier": "D", "added_at": "2026-10-09T10:00:00.000Z"},
+    "e-fake-u": {"tier": "U", "added_at": "2026-10-09T10:00:00.000Z"},
+    "e-fake-c-late": {"tier": "C", "added_at": "2026-10-13T09:00:00.000Z"}
+  },
+  "gfh375": {
+    "id": "h-fake-gfh375", "name": "Fake GFH375",
+    "next_catalyst": {"event": "update", "date": "2026-10-14"},
+    "scores": {
+      "mechanism": {"score": 3, "evidence": ["e-fake-a"]},
+      "exposure": {"score": 1, "evidence": ["e-fake-c"]},
+      "comparator": {"score": 1, "evidence": ["e-fake-a"]},
+      "population": {"score": 2, "evidence": ["e-fake-c"]},
+      "design": {"score": 1, "evidence": ["e-fake-c"]},
+      "value_gap": {"score": 2, "evidence": ["e-fake-b"]},
+      "leverage": {"score": 3, "evidence": ["e-fake-c"]},
+      "access": {"ok": false, "route": "investor relations"}
+    }
+  }
+}
